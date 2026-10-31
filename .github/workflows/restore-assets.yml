@@ -1,0 +1,27 @@
+name: Restore binary assets
+# The site is pushed as text only; images arrive as *.b64 files. This job turns them back
+# into real PNG/JPG files on main so GitHub Pages serves normal images.
+on:
+  push:
+    branches: [main]
+    paths: ['**/*.b64']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode .b64 files
+        run: |
+          find . -name '*.b64' -not -path './.git/*' | while read -r f; do
+            base64 -d "$f" > "${f%.b64}"
+            rm "$f"
+          done
+      - name: Commit restored images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || (git commit -m "Restore binary assets" && git push)
