@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Virus Watch Weekly — Issue 7 (2026-10-26)</title>
-  <meta name="description" content="Newly discovered malware, ransomware, and computer viruses — summarized. Issue 7." />
+  <title>Virus Watch Weekly — Issue 8 (2026-11-02)</title>
+  <meta name="description" content="Newly discovered malware, ransomware, and computer viruses — summarized. Issue 8." />
   <link rel="canonical" href="https://jbarnes1960.github.io/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Virus Watch Weekly · NEXA Lending" />
-  <meta property="og:title" content="Virus Watch Weekly — Issue 7: Week of Oct 20 – 26, 2026" />
-  <meta property="og:description" content="Plain-English malware alerts and how to stay safe — LiteLLM, a hugely popular AI developer tool, was published with password-stealing malware inside; FBI and CISA warn businesses about SafePay…" />
+  <meta property="og:title" content="Virus Watch Weekly — Issue 8: Week of Oct 27 – Nov 2, 2026" />
+  <meta property="og:description" content="Plain-English malware alerts and how to stay safe — New password stealer asks an AI chatbot to rank its victims by how much they&#x27;re worth; Ransomware is locking Synology network storage boxes…" />
   <meta property="og:url" content="https://jbarnes1960.github.io/" />
   <meta property="og:image" content="https://jbarnes1960.github.io/assets/brand/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Virus Watch Weekly — Issue 7: Week of Oct 20 – 26, 2026" />
-  <meta name="twitter:description" content="Plain-English malware alerts and how to stay safe — LiteLLM, a hugely popular AI developer tool, was published with password-stealing malware inside; FBI and CISA warn businesses about SafePay…" />
+  <meta name="twitter:title" content="Virus Watch Weekly — Issue 8: Week of Oct 27 – Nov 2, 2026" />
+  <meta name="twitter:description" content="Plain-English malware alerts and how to stay safe — New password stealer asks an AI chatbot to rank its victims by how much they&#x27;re worth; Ransomware is locking Synology network storage boxes…" />
   <meta name="twitter:image" content="https://jbarnes1960.github.io/assets/brand/og-image.png" />
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="stylesheet" href="assets/style-v2.css" />
@@ -40,13 +40,13 @@
 
     <div class="hero">
       <div class="hero-meta">
-        <span class="badge badge-issue">Issue 7</span>
-        <span>2026-10-26</span>
-        <span>Week of Oct 20 – 26, 2026</span>
+        <span class="badge badge-issue">Issue 8</span>
+        <span>2026-11-02</span>
+        <span>Week of Oct 27 – Nov 2, 2026</span>
         <span>6 top stories</span>
       </div>
       <h2>This week in malware</h2>
-      <p class="intro">Welcome to Virus Watch Weekly #7. Research for this issue was pulled from public reporting on Monday, Oct 26, 2026 (America/Denver). This week&#x27;s theme: thieves going after your saved logins. A popular AI developer tool was booby-trapped at the source, the FBI and CISA warned businesses about a ransomware gang that walks in through firewalls and backup servers, and fake download sites showing up in search results handed out a password stealer. Plus a new stealer that targets AI assistant accounts, a spy-grade bootkit that slips past Windows Secure Boot, and fake Japanese apps that drain bank accounts on Android.</p>
+      <p class="intro">Welcome to Virus Watch Weekly #8. Research for this issue was pulled from public reporting on Monday, Nov 2, 2026 (America/Denver). This week&#x27;s theme: criminals putting AI to work, and hitting the places we keep our backups. A new password stealer hands everything it takes to an AI chatbot to rank who is worth robbing, fake ChatGPT and Claude desktop apps on GitHub turned PCs into crypto-mining machines, and home and office network storage boxes from Synology are being locked by ransomware. Plus a Japanese cloud-desktop provider told customers to unplug their computers, a hidden back door that takes orders through Microsoft 365 calendar entries, and an infamous password stealer that came back from a police takedown as a full remote-control tool.</p>
     </div>
 
     <section aria-labelledby="top-stories">
@@ -56,121 +56,121 @@
 <details class="story" id="story-1">
   <summary class="story-summary">
     <div class="story-header">
-      <h4>LiteLLM, a hugely popular AI developer tool, was published with password-stealing malware inside</h4>
+      <h4>New password stealer asks an AI chatbot to rank its victims by how much they&#x27;re worth</h4>
       <span class="severity severity-high">High</span>
     </div>
-    <div class="malware-name">LiteLLM 1.107.0 supply-chain stealer (&quot;privcollect&quot;) + hourly remote-code backdoor</div>
+    <div class="malware-name">VOLTA-AUTODOXER (self-deleting Windows infostealer)</div>
     <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
   </summary>
   <div class="story-body">
-    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>LiteLLM is free software that programmers use to connect apps to AI services like ChatGPT and Claude, and it is downloaded tens of millions of times a month. On Oct 21, attackers broke into the project&#x27;s publishing system and released a poisoned version (1.107.0) for about two to three hours. Anyone whose systems pulled that version had their passwords, cloud keys, and browser logins copied and sent to the attackers, and Mac and Linux machines also got a hidden back door. Most people never touch LiteLLM directly, but if your business has developers or uses AI tools built in-house, ask them today whether this version ever ran.</p></div>
-    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>If your team uses LiteLLM, check whether version 1.107.0 was installed or the Docker &quot;latest&quot; image was pulled on Oct 21. If so, remove it and go back to 1.106.2 or a newer clean release.</li><li>Treat any computer or server that ran 1.107.0 as compromised: take it offline and have it rebuilt rather than just cleaned.</li><li>Change every password, cloud key, and access token that machine could reach, including browser-saved passwords and AI service keys.</li><li>Ask developers to lock software to exact, checked version numbers instead of always grabbing &quot;latest&quot;.</li></ul></div>
-    <p>LiteLLM&#x27;s release pipeline was compromised around 4:00 a.m. PST on Oct 21, 2026, pushing v1.107.0 to PyPI and to Docker Hub/GHCR tags (v1.107.0, latest, main-latest, main-stable). Exposure windows: PyPI 11:39–13:23 UTC; Docker 11:46–14:20 UTC. The source repository was untouched; the wheels added cook.pth, cook.py and sitecustomize.py, so the payload runs at every Python interpreter start even without importing litellm. cook.py (&#x27;privcollect&#x27;) harvests browser passwords/cookies, SSH/GPG/TLS keys, AWS/Azure/GCP and Kubernetes/Docker/Vault/CI secrets, AI tool configs (~/.cursor, ~/.claude, Windsurf, etc.) and env vars, RSA-encrypts them and POSTs to litellm[.]dev/healthcheck. On Linux/macOS, sitecustomize.py daemonizes and hourly fetches a C2 domain from a GitHub dead drop (letters9813) and executes /codepy. LiteLLM suspects a GitHub token leaked in AI gateway logs; Microsoft, Aikido, Socket and JFrog published analyses. Releases 1.106.2 and 1.107.0rc1/rc2 are not affected; enterprise private builds were not impacted.</p>
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>This is a program that, once it gets onto a Windows PC, grabs saved passwords, saved credit cards, email, Wi-Fi passwords and crypto wallets. Then it does something new: it searches the victim&#x27;s Gmail for Amazon, DoorDash and PayPal receipts to work out their home address and habits, and sends the whole profile to an AI chatbot to rank what is worth stealing first. Afterward it deletes itself, so you may never see it. The best defense is the boring one: don&#x27;t run programs from unknown sources, and don&#x27;t let your browser be the only place your passwords and cards live.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Only install software from the maker&#x27;s official website or app store; skip &#x27;free&#x27; cracked tools, game cheats and emulators.</li><li>Use a dedicated password manager instead of saving passwords and credit cards in your web browser.</li><li>Turn on two-step sign-in (MFA) for Gmail, Microsoft, PayPal and Amazon so a stolen password alone isn&#x27;t enough.</li><li>If a PC may be infected, change important passwords from a different, clean device and sign out all other sessions.</li><li>Watch bank and card statements for small test charges, and set up purchase alerts with your card issuer.</li></ul></div>
+    <p>Cisco Talos documented VOLTA-AUTODOXER, a self-deleting Windows infostealer built for resale (six build-time slots for Telegram channel, API keys and settings). It steals browser passwords, cookies and saved cards (bypassing Chrome App-Bound Encryption by launching Chrome headless), Outlook/Thunderbird profiles, Microsoft OAuth tokens, Discord and Roblox sessions, plaintext Wi-Fi keys, SSH/cloud configs and screenshots, and tries to crack crypto-wallet vaults inline. It then enriches the haul live (Gmail receipt searches for Amazon/DoorDash/Uber Eats/Grubhub/Walmart/PayPal, delivery order histories, Discord profile), builds Identity_Report.txt/JSON, and POSTs it via OpenRouter to Claude Opus 4.6 (temperature 0.2) with a &#x27;forensic intelligence analyst&#x27; prompt; on refusal it falls back to Kimi K2, then Gemini 2.5 Flash. Output (AI_Analysis.txt) and the dossier are exfiltrated as volta_dox.zip over Telegram; without an API key it skips the AI step.</p>
     <div class="story-meta">
-      <div><strong>Platforms:</strong> Windows, macOS, Linux (Python environments and Docker containers)</div>
-      <div><strong>How it spreads:</strong> Supply chain: poisoned official PyPI package and Docker images</div>
+      <div><strong>Platforms:</strong> Windows</div>
+      <div><strong>How it spreads:</strong> Delivered as a custom build by each criminal customer; Talos did not tie it to a single lure. Runs once, steals, then deletes itself.</div>
     </div>
-    <div class="story-source">Source: <a href="https://www.bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware/" rel="noopener noreferrer" target="_blank">BleepingComputer; The Hacker News; Microsoft Security Blog; LiteLLM incident notice</a></div>
+    <div class="story-source">Source: <a href="https://www.tomshardware.com/tech-industry/cyber-security/new-ai-driven-windows-malware-feeds-stolen-data-to-claude-to-rank-victims-assets-by-value-then-deletes-itself-payload-builds-custom-target-assessment-can-switch-models-if-one-refuses-or-skip-the-ai-step-entirely" rel="noopener noreferrer" target="_blank">Cisco Talos research via Tom&#x27;s Hardware (Nov 1, 2026)</a></div>
   </div>
 </details>
 <details class="story" id="story-2">
   <summary class="story-summary">
     <div class="story-header">
-      <h4>FBI and CISA warn businesses about SafePay ransomware</h4>
+      <h4>Ransomware is locking Synology network storage boxes through an unpatched security hole</h4>
       <span class="severity severity-high">High</span>
     </div>
-    <div class="malware-name">SafePay ransomware (#StopRansomware advisory AA26-293A)</div>
+    <div class="malware-name">C3RB3R (Cerber variant) — &#x27;.L0CK3D&#x27; files, &#x27;read-me3.txt&#x27; note</div>
     <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
   </summary>
   <div class="story-body">
-    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>SafePay is a criminal gang that locks up a company&#x27;s files and demands a cryptocurrency ransom. On Oct 20 the U.S. government&#x27;s cyber defense agency (CISA) and partners published a warning because the group has been very active since 2024 against businesses across North America and beyond. They usually get in by guessing or stealing passwords, through phishing emails, or through unpatched firewalls and backup servers, then quietly turn off security tools before locking everything. Small offices are exactly the kind of target this advice is meant for.</p></div>
-    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Update your office firewall and VPN (especially Cisco ASA or SonicWall) and any Veeam backup server. These are the exact products the advisory names.</li><li>Turn on multi-factor authentication (a code or app prompt on top of the password) for VPN, email, and remote access.</li><li>Use long, unique passwords and remove old or unused accounts. The gang often just guesses or reuses passwords.</li><li>Keep at least one backup copy offline or unreachable from your network, and test that you can actually restore from it.</li><li>If you see a ransom note, unplug affected machines from the network and report it at stopransomware.gov or to your local FBI field office.</li></ul></div>
-    <p>CISA&#x27;s joint #StopRansomware advisory AA26-293A (Oct 20, 2026) details SafePay, active since August 2024 against businesses and critical infrastructure in North America, South America, Europe and Australia. Initial access: stolen or brute-forced credentials, phishing, and exploitation of edge and backup systems, with listed CVEs CVE-2020-3259 and CVE-2023-20269 (Cisco ASA/FTD), CVE-2023-27532 and CVE-2024-40711 (Veeam Backup &amp; Replication), and CVE-2024-40766 (SonicWall SonicOS). Post-compromise the actors create or hijack accounts, use legitimate admin tools (living off the land) for lateral movement and discovery, disable security protections, then encrypt and leave a crypto-ransom note. Key actions: patch firewalls/edge devices, enforce MFA, restrict admin tools and privileges, and apply zero-trust principles. STIX IOCs are provided.</p>
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Lots of homes and small offices use a Synology &#x27;NAS&#x27; box, a small file server that holds family photos, business documents and backups. Since about Oct 28, criminals have been breaking into ones that are reachable from the internet and scrambling every file, then asking for about $3,000 in bitcoin (doubling after five days). A password or two-step login doesn&#x27;t stop this one, because the attackers use a flaw that skips the login entirely. If you own a Synology box, update it today and make sure it isn&#x27;t open to the whole internet.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Update Synology DSM to 7.4-90075, 7.3.2-86009-4, 7.2.2-72806-9 or 7.2.1-69057-12 (or newer). Check the full build number, not just &#x27;7.2.2&#x27;.</li><li>Don&#x27;t leave the NAS admin page open to the internet: turn off router port forwarding and UPnP for it, and use a VPN for remote access.</li><li>Keep at least one backup copy somewhere the NAS can&#x27;t reach, like an unplugged USB drive or a separate cloud backup.</li><li>Turn on DSM automatic updates and Btrfs snapshots so you can roll files back.</li><li>If files end in .L0CK3D, unplug the NAS from the network and power it off, then get professional help before paying anything.</li></ul></div>
+    <p>Since ~Oct 28, 2026, South Korean users have reported Synology NAS devices encrypted with a Cerber variant (&#x27;C3RB3R&#x27;), appending .L0CK3D and dropping read-me3.txt demanding 0.03696 BTC (~$2,952), doubling after five days. Chinese firm 360 attributes initial access to two unauthenticated DSM flaws disclosed Sep 18 (CVE-2026-13639, predictable session entropy CWE-331; CVE-2026-13684, SCGI output encoding CWE-116; both CVSS 9.8), while Synology points to the Dec 2024 fix (Synology-SA-24:20). Common factor: DSM management exposed to the internet via port forwarding, UPnP, QuickConnect or reverse proxy. Per-file 256-bit keys wrapped with RSA-2048; no free decryptor. Fixed DSM builds: 7.4-90075, 7.3.2-86009-4, 7.2.2-72806-9, 7.2.1-69057-12 or later. JPCERT/CC flagged the flaws Sep 30; Synology Japan urged updates Oct 29.</p>
     <div class="story-meta">
-      <div><strong>Platforms:</strong> Windows networks; Cisco ASA, SonicWall firewalls; Veeam backup servers</div>
-      <div><strong>How it spreads:</strong> Stolen/guessed passwords, phishing, unpatched firewalls and backup servers</div>
+      <div><strong>Platforms:</strong> Synology NAS (DiskStation Manager / DSM)</div>
+      <div><strong>How it spreads:</strong> Remote exploitation of internet-exposed DSM management interfaces; no user action or login required.</div>
     </div>
-    <div class="story-source">Source: <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a" rel="noopener noreferrer" target="_blank">CISA #StopRansomware advisory AA26-293A</a></div>
+    <div class="story-source">Source: <a href="https://bitcomme.com/ransomware-c3rb3r-hits-synology-nas-3-9-million-won-in-bitcoin-demanded-no-fix-beyond-patching/" rel="noopener noreferrer" target="_blank">Bitcomme, summarizing Korean reporting, 360&#x27;s analysis and Synology&#x27;s advisory (Nov 1, 2026)</a></div>
   </div>
 </details>
 <details class="story" id="story-3">
   <summary class="story-summary">
     <div class="story-header">
-      <h4>Fake Chocolatey and Windows activation sites in search results handed out the Armorsteal stealer</h4>
-      <span class="severity severity-high">High</span>
+      <h4>Fake ChatGPT and Claude desktop apps on GitHub secretly turn PCs into crypto miners</h4>
+      <span class="severity severity-med">Med</span>
     </div>
-    <div class="malware-name">Armorsteal (Python RAT, keylogger and infostealer)</div>
+    <div class="malware-name">Yoba campaign: YobaDropper + YobaLoader delivering XMRig miner</div>
     <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
   </summary>
   <div class="story-body">
-    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Criminals built lookalike copies of two websites people search for when setting up Windows PCs: Chocolatey, a free tool for installing programs, and a popular Windows activation script site. The fake sites showed up in search results and told visitors to paste an install command into PowerShell (a Windows command window). That command quietly installed Armorsteal, which records keystrokes, swaps crypto wallet addresses you copy, and steals passwords, Discord and Steam logins, and crypto wallets, while still installing the real program so nothing looked wrong. Always type the address of official download sites yourself instead of trusting a search result.</p></div>
-    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Get Chocolatey only from chocolatey.org (note the spelling) and type the address yourself rather than clicking a search ad or result.</li><li>Never paste a command into PowerShell, Command Prompt, or Run because a website told you to, unless your IT person confirms it.</li><li>Avoid unofficial Windows activation tools; use a properly licensed copy of Windows instead.</li><li>Ask IT to check for a folder named C:\Windows\SystemHealth\Update or scheduled tasks named SysCheck2 or SysCheckX. Either is a sign of this infection.</li><li>If infected, change your passwords from a different, clean device and move any crypto to a new wallet.</li></ul></div>
-    <p>Zscaler ThreatLabz (Oct 22, 2026) describes an SEO-poisoning campaign identified in September 2026 using lookalike domains choclatey[.]org (Chocolatey) and massgravel[.]net (Microsoft Activation Scripts/Massgrave). The lure&#x27;s install.ps1 requests elevation, hides the PowerShell window, downloads a ZIP to C:\Windows\SystemHealth\Update\, runs the legitimate Chocolatey installer as cover, and unpacks a Python 3.11 runtime with Pyarmor-protected scripts. Armorsteal combines a signed-task remote-access module (runs only operator-signed tasks), keylogger/clipboard hijacker, and a stealer for Discord tokens, browser data, crypto wallets, SSH keys, Steam sessions and password managers. Persistence via SysCheck2/SysCheckX scheduled tasks. C2 workerstats[.]net with standby domains; lure sites were taken down Sep 25 and Oct 1, but operators moved to new infrastructure in early October.</p>
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Criminals posted fake download pages on GitHub for made-up AI apps with exciting names like &#x27;GPT-6 Astra&#x27; and &#x27;Claude Opus&#x27; desktop. The download includes a real, signed OpenAI or Anthropic program, so it looks trustworthy, but a hidden file tucked next to it gets loaded too. That hidden file quietly uses your computer to mine cryptocurrency for the criminals, which slows your PC, runs up your power bill and wears out the hardware. Only get AI apps from the company&#x27;s own website.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Download ChatGPT only from openai.com and Claude only from claude.ai or anthropic.com, never from a random GitHub page.</li><li>Be suspicious of AI apps with names that don&#x27;t exist yet (like &#x27;GPT-6&#x27;); that&#x27;s a common lure.</li><li>If your PC&#x27;s fan runs loud and it&#x27;s slow when idle, open Task Manager and look for unknown programs using lots of CPU.</li><li>Keep Microsoft Defender or your antivirus turned on and up to date.</li></ul></div>
+    <p>Check Point Research&#x27;s &#x27;Yoba&#x27; campaign uses fake GitHub repositories posing as desktop apps (GPT-5.6 Sol, GPT-6 Astra, Claude Opus). ZIPs ship a legitimate signed OpenAI Codex or Claude executable renamed Setup.exe alongside a malicious winmm.dll (YobaDropper) that is DLL-sideloaded and only runs under the expected host name (hash check 0xE6C2F326). YobaLoader, sideloaded by wmpdmc.exe, pulls an image from a Telegram channel, uses its last 50 bytes to seed a DGA (adjective-noun-verb-digit.dedyn[.]io), resolves a Base64 TXT record via Google DNS-over-HTTPS, decrypts a catbox[.]moe URL and injects an XMRig miner into svchost.exe. First repo created ~July 2026; malicious releases from late August.</p>
     <div class="story-meta">
       <div><strong>Platforms:</strong> Windows</div>
-      <div><strong>How it spreads:</strong> Poisoned search results leading to lookalike download sites and a pasted PowerShell command</div>
+      <div><strong>How it spreads:</strong> Fake GitHub repositories and releases advertising unofficial AI desktop apps.</div>
     </div>
-    <div class="story-source">Source: <a href="https://www.zscaler.com/blogs/security-research/seo-poisoning-campaign-delivers-new-armorsteal-malware" rel="noopener noreferrer" target="_blank">Zscaler ThreatLabz</a></div>
+    <div class="story-source">Source: <a href="https://thehackernews.com/2026/10/fake-chatgpt-and-claude-apps-abuse.html" rel="noopener noreferrer" target="_blank">Check Point Research via The Hacker News (Oct 29, 2026)</a></div>
   </div>
 </details>
 <details class="story" id="story-4">
   <summary class="story-summary">
     <div class="story-header">
-      <h4>Aokigahara: a new password stealer that also grabs your AI assistant accounts</h4>
-      <span class="severity severity-med">Med</span>
+      <h4>Japan&#x27;s GMO tells cloud-desktop customers to unplug their PCs after hackers threaten ransomware</h4>
+      <span class="severity severity-high">High</span>
     </div>
-    <div class="malware-name">Aokigahara / Aoki infostealer (possibly earlier Kamidere or Stygian)</div>
+    <div class="malware-name">Onamae Desktop Cloud breach with planted ransomware threat</div>
     <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
   </summary>
   <div class="story-body">
-    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Aokigahara is a new Windows program that steals saved information from an infected PC: browser passwords, crypto wallets, email and VPN logins, and password manager data. What&#x27;s new is that it also hunts for the sign-in files of AI tools like ChatGPT Desktop, Claude, Cursor, GitHub Copilot, and Gemini, so criminals can use or resell someone&#x27;s paid AI account and peek at their private chats. It doesn&#x27;t break into those AI products; it just copies what&#x27;s already stored on the PC. Researchers haven&#x27;t said exactly how it spreads, so the usual rules apply: install software only from official sources and be wary of unexpected downloads.</p></div>
-    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Turn on multi-factor authentication for your AI accounts (ChatGPT, Claude, Copilot, Gemini) as well as email and banking.</li><li>Install apps only from official sites or app stores, and skip cracked or &quot;free premium&quot; software.</li><li>If a PC may be infected, sign out of all sessions on your AI and email accounts from a clean device and change those passwords.</li><li>Developers should rotate API keys, SSH keys, and cloud credentials stored on any machine that might be affected.</li></ul></div>
-    <p>Check Point Research (Oct 23, 2026) and Symantec/Carbon Black (reported Oct 21) describe Aokigahara (Aoki), a Windows infostealer observed in the wild, possibly an evolution of Kamidere/Stygian. Beyond browsers (41), desktop and extension crypto wallets, VPN, FTP/SFTP, email and password managers, a dedicated &#x27;aisessions&#x27; handler collects auth/session/config files for Claude Code and Desktop, ChatGPT Desktop, Codex, Cursor, Windsurf/Codeium, GitHub Copilot, Gemini CLI, JetBrains AI Assistant, Amazon Q and Kiro, plus Git credentials, SSH keys, AWS/Azure/GCP credential files and SSO caches, and queries Windows Credential Manager. No vulnerability in the AI products is exploited. Initial delivery vector unspecified; unattributed and financially motivated.</p>
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>GMO runs a popular rented-computer service in Japan, often used by people who trade currencies with MetaTrader software. Hackers broke in on Oct 20, may have planted malware on up to 26,739 customer machines, demanded about $50 million, and threatened to set off ransomware. GMO refused to pay, told customers to shut down and unplug their computers, and confirmed stolen customer data was posted online. The lesson for everyone: when a service you rent gets hacked, change those passwords and follow the company&#x27;s official instructions quickly.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>If you use a hosted or cloud desktop, change the passwords for every account you used on it, especially trading and banking logins.</li><li>Turn on two-step sign-in for brokerage and MetaTrader accounts where your broker supports it.</li><li>Follow only the provider&#x27;s official website or email for instructions; scammers often pose as the company after a breach.</li><li>Keep your own backup of important files and settings instead of relying on the provider alone.</li></ul></div>
+    <p>GMO Internet detected an intrusion on Oct 20, 2026 into Onamae Desktop Cloud (a Japanese VPS service) that could have installed malware on up to 26,739 customer servers; it shut servers down and said payment data was not exposed but MetaTrader 4/5 credentials and trading-account details may be. The attacker demanded ¥8 billion (~$50M), which GMO refused, offering ¥5,000 per customer. On Oct 26 GMO warned of a planned leak and ransomware trigger; on Oct 27 it told customers to disconnect PCs, shut them down and unplug cables before noon while working with Trend Micro. GMO later confirmed company and customer data were published; BleepingComputer reports no ransomware actually triggered on customer machines.</p>
     <div class="story-meta">
-      <div><strong>Platforms:</strong> Windows</div>
-      <div><strong>How it spreads:</strong> Not yet specified by researchers (standalone Windows stealer binaries)</div>
+      <div><strong>Platforms:</strong> Hosted Windows VPS (Onamae Desktop Cloud); MetaTrader 4/5 trading accounts</div>
+      <div><strong>How it spreads:</strong> Intrusion into the provider&#x27;s infrastructure, with the attacker claiming malware staged on customer servers.</div>
     </div>
-    <div class="story-source">Source: <a href="https://research.checkpoint.com/2026/infostealer-riding-the-ai-train/" rel="noopener noreferrer" target="_blank">Check Point Research</a></div>
+    <div class="story-source">Source: <a href="https://www.bleepingcomputer.com/news/security/japans-gmo-urges-customers-to-shut-down-pcs-amid-ransomware-threat/" rel="noopener noreferrer" target="_blank">BleepingComputer (Oct 27, 2026)</a></div>
   </div>
 </details>
 <details class="story" id="story-5">
   <summary class="story-summary">
     <div class="story-header">
-      <h4>BlackX: a spy-grade bootkit that sneaks past Windows Secure Boot</h4>
+      <h4>GraphFleet back door takes orders through hidden Microsoft 365 calendar entries</h4>
       <span class="severity severity-med">Med</span>
     </div>
-    <div class="malware-name">BlackX UEFI bootkit (APT41-linked, Baton Drop CVE-2022-21894)</div>
+    <div class="malware-name">GraphFleet (64-bit Windows backdoor abusing Microsoft Graph)</div>
     <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
   </summary>
   <div class="story-body">
-    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>A bootkit is malware that loads before Windows itself starts, so it can switch off antivirus and hide from it. Kaspersky found BlackX being used by a Chinese state-linked spy group against government offices in Central Asia, and it worked even on fully updated PCs. The reason is that Microsoft&#x27;s old fix for the flaw it uses requires an extra manual step that almost nobody takes. Ordinary home users aren&#x27;t the target here, but businesses should ask their IT provider whether that extra Secure Boot step has been done.</p></div>
-    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Keep Windows updates turned on, but know that updates alone don&#x27;t fully close this hole.</li><li>Ask your IT provider to complete Microsoft&#x27;s manual Secure Boot revocation steps for the Baton Drop flaw (CVE-2022-21894) on business PCs.</li><li>Keep Secure Boot turned on in each PC&#x27;s settings, and don&#x27;t disable it to run unofficial tools.</li><li>Organizations that handle sensitive government or diplomatic work should have IT check for the warning signs Kaspersky published.</li></ul></div>
-    <p>Kaspersky (via BleepingComputer, Oct 24, 2026) analyzed BlackX, a UEFI bootkit used in early 2026 espionage against diplomatic agencies in Tajikistan, Uzbekistan and Turkmenistan, attributed with medium confidence to APT41 (Brass Typhoon). It reuses a BlackLotus-like exploit of Baton Drop (CVE-2022-21894) to enroll attacker Machine Owner Keys and load arbitrary EFI files, bypassing Secure Boot. It drops a kernel driver signed with a revoked certificate that disables security processes and registry callbacks, tampers with ETW, protects its files (opening them launches Calculator), and deploys a RAT using Google Drive/OneDrive/Yandex.Disk for C2 plus OxiDLLRunner (sideloaded by googleupdate.exe). All victims were fully patched; the Baton Drop mitigation requires manually revoking the &#x27;Windows Production PCA 2011&#x27; certificate, and that certificate&#x27;s Oct 19, 2026 expiration does not block vulnerable binaries unless it is added to the blocklist (DBX).</p>
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Most malware has to &#x27;phone home&#x27; to a criminal&#x27;s server, which security tools can spot. GraphFleet instead logs in to a Microsoft 365 account and reads its instructions from hidden notes attached to a calendar event, and if that fails, from email drafts, To Do tasks or a OneDrive file. To your company&#x27;s network it looks like normal Microsoft Teams traffic. It mainly matters to businesses: watch for odd Microsoft sign-ins and have your IT person know about it.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Businesses: review Microsoft 365 sign-in logs for Teams sign-ins from unfamiliar devices or locations.</li><li>If anything looks off, revoke the affected user&#x27;s sessions and refresh tokens, not just the password.</li><li>Require MFA and limit which apps can get access to company Microsoft 365 data.</li><li>Have your IT provider check PCs for a hidden file at %LOCALAPPDATA%\Microsoft\WindowsUpdate\state.dat and a &#x27;OneDriveSync.cmd&#x27; in the Startup folder.</li></ul></div>
+    <p>Rubrik Zero Labs (Oct 30) analyzed GraphFleet, a 64-bit Windows backdoor (campaign marker gcx-fleet-2026-10, mutex Global\gc-7f2a91c4) that uses an OAuth refresh token to sign in to Microsoft Graph as Microsoft Teams (FOCI family). Primary C2 is open extensions (com.c2.cmd / com.c2.out) on a per-host &#x27;Sync-&lt;id&gt;&#x27; calendar event, with fallbacks to Outlook Drafts (cmd-/out-), Microsoft To Do (notes-), and OneDrive approot settings.dat. Tokens are cached DPAPI-encrypted at %LOCALAPPDATA%\Microsoft\WindowsUpdate\state.dat; recovery via a SharePoint token drop (heightcontrollawnandlandsca-my[.]sharepoint[.]com) and an HMAC-verified BNB Smart Chain contract. Commands include shell execution, in-memory PE/shellcode loading, a script VM, self-update, and persistence via Run key, UserInitMprLogonScript, Startup folder, or a print-processor component (mpf64).</p>
     <div class="story-meta">
-      <div><strong>Platforms:</strong> Windows (UEFI firmware / boot process)</div>
-      <div><strong>How it spreads:</strong> Targeted espionage by a state-linked group; requires prior access to the machine</div>
+      <div><strong>Platforms:</strong> Windows; Microsoft 365 accounts</div>
+      <div><strong>How it spreads:</strong> Initial access not described; relies on a stolen or attacker-controlled Microsoft 365 refresh token.</div>
     </div>
-    <div class="story-source">Source: <a href="https://www.bleepingcomputer.com/news/security/blackx-uefi-bootkit-exploits-baton-drop-flaw-to-bypass-secure-boot/" rel="noopener noreferrer" target="_blank">BleepingComputer (Kaspersky research)</a></div>
+    <div class="story-source">Source: <a href="https://zerolabs.rubrik.com/blog/commands-cloud-uncovering-graphfleet-backdoor" rel="noopener noreferrer" target="_blank">Rubrik Zero Labs (Oct 30, 2026)</a></div>
   </div>
 </details>
 <details class="story" id="story-6">
   <summary class="story-summary">
     <div class="story-header">
-      <h4>Black Hawk: fake Japanese tax and shopping apps hijack Android phones to drain bank accounts</h4>
+      <h4>StealC, a password stealer police shut down in June, is back as a full remote-control tool</h4>
       <span class="severity severity-med">Med</span>
     </div>
-    <div class="malware-name">Black Hawk / Eagle Android RAT</div>
+    <div class="malware-name">Stadia RAT (StealC rebrand)</div>
     <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
   </summary>
   <div class="story-body">
-    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Criminals are passing around fake Android apps that pretend to be Japanese tax services, shopping sites, messaging apps, and investment offers. Once installed, the app quietly unpacks a hidden remote-control program that records how you unlock your phone, watches your screen, and uses the banking app on your behalf to move money without you noticing. The campaign targets Japan, but the trick of a fake official app works anywhere. Only install apps from Google Play, and never from a link in a text or social media ad.</p></div>
-    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Install apps only from Google Play, and leave the &quot;install unknown apps&quot; setting turned off.</li><li>Be suspicious of any text, email, or ad that asks you to download a tax, refund, or investment app.</li><li>If an app asks for Accessibility or screen-sharing permissions it doesn&#x27;t need, deny it and uninstall the app.</li><li>Turn on transaction alerts with your bank, and call the number on your card right away if you see a transfer you didn&#x27;t make.</li></ul></div>
-    <p>Symantec&#x27;s Oct 23, 2026 protection bulletin summarizes STAR Labs research on a financially motivated Android campaign using lightweight, packed dropper apps impersonating Japanese tax services, retail platforms, messaging apps and fake investment schemes. The dropper decrypts and silently installs a WebSocket-based RAT managed from panels branded Black Hawk or Eagle. The RAT captures device unlock methods (PIN/pattern), intercepts financial data, and streams the screen, letting operators manipulate banking apps to perform fraudulent transactions without alerting the user.</p>
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>In June, international police shut down StealC, a widely sold password-stealing program. Four months later, its seller is back with &#x27;Stadia,&#x27; which still steals passwords, cookies and crypto wallets but now also lets criminals secretly see and control your screen, run commands and move files. It hides under names that look like real Windows or Google updaters. It&#x27;s sold to other criminals for $300 to $900 a month, so expect it to show up through all the usual traps: fake downloads, cracked software and booby-trapped links.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Avoid cracked software, game cheats and &#x27;free&#x27; paid apps; they&#x27;re the most common way stealers arrive.</li><li>Keep Microsoft Defender on, and treat any unknown Defender exclusion you didn&#x27;t add as a red flag.</li><li>Store passwords in a password manager and turn on two-step sign-in for email, banking and crypto accounts.</li><li>If you suspect infection, disconnect the PC and change passwords from a different device.</li></ul></div>
+    <p>Varonis Threat Labs (Oct 22; covered by The Hacker News Oct 29) found StealC&#x27;s seller relaunched on Oct 16 as Stadia, a Windows RAT priced $300/$550/$900 per month with a free Pro month for former StealC customers. Modules: hidden VNC, remote cmd, loader (EXE/PS/CMD/MSI, disk or memory), file explorer, process manager, and a stealer built on StealC v3.5 (a byte-identical 26 KB Chromium App-Bound Encryption helper blob). Installs to C:\ProgramData\&lt;12 random chars&gt;\ using names like MicrosoftEdgeUpdate.exe or GoogleUpdate.exe, adds a hidden COM-registered scheduled task every 15 minutes for 3,650 days, and when elevated adds a Defender exclusion. C2 is HTTP POST of Base64 RC4 ciphertext labeled application/json; exits on Russian/CIS locales.</p>
     <div class="story-meta">
-      <div><strong>Platforms:</strong> Android</div>
-      <div><strong>How it spreads:</strong> Fake apps outside official stores, disguised as Japanese government, retail and investment apps</div>
+      <div><strong>Platforms:</strong> Windows</div>
+      <div><strong>How it spreads:</strong> Malware-as-a-service; each buyer chooses delivery (typically fake downloads, cracks and loaders).</div>
     </div>
-    <div class="story-source">Source: <a href="https://www.broadcom.com/support/security-center/protection-bulletin/fake-japanese-apps-deliver-black-hawk-android-rat" rel="noopener noreferrer" target="_blank">Broadcom Symantec protection bulletin (STAR Labs research)</a></div>
+    <div class="story-source">Source: <a href="https://www.varonis.com/blog/stealc-returns" rel="noopener noreferrer" target="_blank">Varonis Threat Labs (Oct 22, 2026)</a></div>
   </div>
 </details>
       </div>
@@ -180,18 +180,19 @@
       <h3 id="quick-hits">Quick Hits</h3>
       <div class="quick-hits-box">
         <ul class="quick-hits">
-<li>Eclipse ransomware (Atos, Oct 19): researchers found the gang&#x27;s own server left open on the internet, revealing its full toolkit and active attacks on seven organizations in five countries. A rare look inside a ransomware operation that only started in August.</li>
-<li>The Gentlemen ransomware (Acronis, Oct 21): one of this year&#x27;s busiest ransomware groups claims more than 800 victims, many in the U.S. and Europe, and uses tools that switch off security software before locking files.</li>
-<li>Rust-based stealer in pirated software (AhnLab ASEC, via IntelFusions, Oct 21): a new password thief hides in cracked program downloads and quits if it thinks researchers are watching. Another reason to skip pirated software.</li>
-<li>Heartbreaker macOS ransomware (Patrick Wardle, via SecurityWeek, Oct 23): an odd Mac ransomware that tries to rebuild itself to dodge antivirus. Its single built-in key means files can be recovered for free, so it isn&#x27;t a big threat yet.</li>
-<li>OpenCode AI coding tool flaw (Pillar Security, via The Hacker News, Oct 22): a critical bug on Windows let a malicious add-on server run code during sign-in. Developers should update to version 1.18.33 or later.</li>
+<li>Binance says a compromised DevOps engineer&#x27;s laptop led to the theft of about $6.3 billion in crypto on Oct 29, which TRM Labs and Chainalysis tie to North Korea&#x27;s TraderTraitor (Lazarus) group; Binance says user funds are covered (BleepingComputer, Oct 30).</li>
+<li>The n0n ransomware gang left its own staging server open, exposing 829 attack scripts, five encryptor versions and an AI coding setup; it broke in mostly by trying leaked passwords on FortiGate VPNs and open Remote Desktop (SOCRadar via Crypto Briefing, Oct 30).</li>
+<li>CISA says attackers are now exploiting &#x27;Node2Shell&#x27; (CVE-2026-111497), a critical bug in Google&#x27;s Brotli compression library; businesses running affected servers should patch and rebuild container images (BleepingComputer, Oct 28).</li>
+<li>A critical Linux kernel bug (CVE-2026-98432) can give remote attackers full control of some servers; Ubuntu and Red Hat fixes are still rolling out, with no in-the-wild attacks reported yet (BleepingComputer, Oct 30).</li>
+<li>Old copies of Popcorn Time / Time4Popcorn left a background updater on millions of PCs and Macs that attackers could have hijacked; Malwarebytes says uninstall it (Malwarebytes, Oct 26).</li>
+<li>Update Microsoft Authenticator on Android: versions before 6.2606.4246 could leak sign-in tokens to other apps, and Microsoft shipped out-of-band Windows updates to distrust compromised eMudhra certificates (SANS Internet Storm Center, Oct 28).</li>
         </ul>
       </div>
     </section>
 
     <section aria-labelledby="sources">
       <h3 id="sources">Sources</h3>
-      <div class="sources-note">Primary sources this week: BleepingComputer, The Hacker News, Microsoft Security Blog and LiteLLM&#x27;s own incident notice on the LiteLLM 1.107.0 compromise (Oct 21–23); CISA #StopRansomware advisory AA26-293A on SafePay (Oct 20); Zscaler ThreatLabz on Armorsteal (Oct 22); Check Point Research and Symantec/Carbon Black on Aokigahara (Oct 21–23); Kaspersky&#x27;s BlackX research via BleepingComputer (Oct 24); Broadcom Symantec protection bulletin on STAR Labs&#x27; Black Hawk research (Oct 23). Quick hits from Atos Threat Research Center, Acronis TRU, AhnLab ASEC via IntelFusions, SecurityWeek&#x27;s weekly roundup, and Pillar Security via The Hacker News. New sources scouted this week: Atos Threat Research Center, Acronis TRU, Broadcom&#x27;s Symantec protection bulletins, Cynet CyOps, and IntelFusions. Skipped items already covered in earlier issues (ICMacOS, Midnight Mimosa, Hirudo, AvisLoader, PoeLLM) and items without primary reporting.</div>
+      <div class="sources-note">Primary sources this week: Cisco Talos research on VOLTA-AUTODOXER via Tom&#x27;s Hardware (Nov 1); 360 and Synology advisories on C3RB3R via Bitcomme (Nov 1); Check Point Research on the Yoba campaign via The Hacker News (Oct 29); BleepingComputer on GMO Onamae Desktop Cloud (Oct 27), Binance (Oct 30), Node2Shell (Oct 28) and the Linux MPTCP flaw (Oct 30); Rubrik Zero Labs on GraphFleet (Oct 30); Varonis Threat Labs on Stadia (Oct 22). Quick hits also drew on SOCRadar (via Crypto Briefing), Malwarebytes and the SANS Internet Storm Center. New sources scouted this week: Rubrik Zero Labs, Varonis Threat Labs, Bitcomme (Korean-language incident roundups in English) and Tom&#x27;s Hardware&#x27;s security desk. Skipped items already covered in earlier issues (Aokigahara, Armorsteal, ICMacOS, SafePay, LunexStealer) and items without primary reporting.</div>
     </section>
 
     <section class="subscribe-box" id="subscribe" aria-labelledby="subscribe-heading">
@@ -222,7 +223,8 @@
     <section aria-labelledby="archive">
       <h3 id="archive">Archive</h3>
       <ul class="archive-list">
-<li><a href="issues/2026-10-26.html">2026-10-26</a> ← current</li>
+<li><a href="issues/2026-11-02.html">2026-11-02</a> ← current</li>
+<li><a href="issues/2026-10-26.html">2026-10-26</a></li>
 <li><a href="issues/2026-10-19.html">2026-10-19</a></li>
 <li><a href="issues/2026-10-12.html">2026-10-12</a></li>
 <li><a href="issues/2026-10-05.html">2026-10-05</a></li>
@@ -233,7 +235,7 @@
     </section>
 
     <footer class="site-footer">
-      <p>Virus Watch Weekly · Issue 7 · 2026-10-26</p>
+      <p>Virus Watch Weekly · Issue 8 · 2026-11-02</p>
       <p>
         <a href="subscribe.html">Subscribe</a>
         ·
