@@ -150,16 +150,18 @@ function render(){
 }
 function mailBody(R,brief){
   var L=[],n=0;
-  D.comps.forEach(function(c,i){if(!changed(i))return;n++;var s=S[i],t;
-    if(s&&s.m==='actual'&&s.p>0)t='sold '+usd(s.p);else if(s&&s.m==='llp')t='sold at LLP '+usd(c.list);else t='not confirmed (list '+usd(c.list)+')';
-    L.push('#'+(i+1)+' '+short(c.addr)+': '+t)});
-  if(!n)L.push('No changes to the sold prices.');
-  L.push('New indicated value: '+usd(R.indR));
-  return (brief?'':'Hi James, sold price updates for 1717 Cherry Glade Trail:\n')+L.join('\n')+(brief?'':'\n- Todd');
+  function line(i,all){var c=D.comps[i],s=S[i],t;
+    if(s&&s.m==='actual'&&s.p>0)t='sold '+usd(s.p);else if(s&&s.m==='llp')t='sold at LLP '+usd(c.list);else t=all?'LLP '+usd(c.list)+' (unconfirmed)':'not confirmed (list '+usd(c.list)+')';
+    return '#'+(i+1)+' '+short(c.addr)+': '+t}
+  D.comps.forEach(function(c,i){if(changed(i)){n++;L.push(line(i,false))}});
+  if(!n){D.comps.forEach(function(c,i){L.push(line(i,true))})}
+  L.push('Indicated value: '+usd(R.indR));
+  var head=n?'Hi James, sold price updates for 1717 Cherry Glade Trail:\n':'Hi James, I reviewed the CMA for 1717 Cherry Glade Trail. These are the current sold prices:\n';
+  return (brief?'':head)+L.join('\n')+(brief?'':'\n- Todd');
 }
 function mailUrls(R){
   var su='CMA sold price update, 1717 Cherry Glade',m=mailBody(R),g,ml;
-  function mk(m){return {g:'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to='+encodeURIComponent(D.email)+'&su='+encodeURIComponent(su)+'&body='+encodeURIComponent(m),
+  function mk(m){return {g:'https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(D.email)+'&su='+encodeURIComponent(su)+'&body='+encodeURIComponent(m),
                          m:'mailto:'+D.email+'?subject='+encodeURIComponent(su)+'&body='+encodeURIComponent(m)}}
   var u=mk(m);if(u.g.length>1800){u=mk(mailBody(R,true))}
   if(u.g.length>1800){u=mk('Sold price changes: see the copied summary. New indicated value '+usd(R.indR))}
