@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
+<ellipse cx="240" cy="278" rx="225" ry="14" fill="#2e8b57" opacity=".35"/>
+<rect x="0" y="262" width="480" height="22" rx="11" fill="#3c9a62"/>
+<!-- trees -->
+<g><rect x="34" y="196" width="8" height="70" fill="#6b4a2f"/><ellipse cx="38" cy="176" rx="30" ry="42" fill="#2f7d4f"/><ellipse cx="30" cy="190" rx="20" ry="28" fill="#3c9a62"/></g>
+<!-- house -->
+<rect x="92" y="118" width="196" height="146" fill="#f6f1e7"/>
+<rect x="64" y="170" width="70" height="94" fill="#efe7d6"/>
+<rect x="270" y="168" width="82" height="96" fill="#efe7d6"/>
+<!-- roofs -->
+<path d="M82 124 L190 54 L298 124 Z" fill="#17408f"/>
+<path d="M54 176 L99 140 L144 176 Z" fill="#17408f"/>
+<path d="M262 174 L311 136 L360 174 Z" fill="#17408f"/>
+<rect x="244" y="62" width="18" height="40" fill="#b9553f"/><rect x="240" y="58" width="26" height="7" fill="#8f3f2e"/>
+<!-- gable window -->
+<circle cx="190" cy="104" r="11" fill="#cfe3ff" stroke="#17408f" stroke-width="3"/>
+<!-- columns + door -->
+<rect x="150" y="190" width="80" height="74" fill="#ffffff"/>
+<g fill="#ffffff" stroke="#c9c2b2" stroke-width="1.5"><rect x="148" y="156" width="8" height="108"/><rect x="224" y="156" width="8" height="108"/></g>
+<rect x="146" y="150" width="88" height="8" fill="#ffffff" stroke="#c9c2b2" stroke-width="1.5"/>
+<rect x="172" y="198" width="36" height="66" rx="3" fill="#b3202e"/><circle cx="202" cy="232" r="2.6" fill="#ffe7a3"/>
+<rect x="166" y="186" width="48" height="10" rx="5" fill="#ffe7a3" opacity=".8"/>
+<!-- windows -->
+<g fill="#cfe3ff" stroke="#17408f" stroke-width="2.5"><rect x="104" y="136" width="30" height="40"/><rect x="246" y="136" width="30" height="40"/><rect x="104" y="196" width="30" height="40"/><rect x="246" y="196" width="30" height="40"/>
+<rect x="76" y="198" width="46" height="62" rx="2" fill="#dfe8f6"/><rect x="290" y="196" width="50" height="64" rx="2" fill="#dfe8f6"/></g>
+<g stroke="#17408f" stroke-width="2"><line x1="119" y1="136" x2="119" y2="176"/><line x1="261" y1="136" x2="261" y2="176"/><line x1="119" y1="196" x2="119" y2="236"/><line x1="261" y1="196" x2="261" y2="236"/><line x1="99" y1="198" x2="99" y2="260"/><line x1="315" y1="196" x2="315" y2="260"/></g>
+<!-- walkway -->
+<path d="M180 264 L200 264 L226 284 L154 284 Z" fill="#d9d3c3"/>
+<!-- SOLD sign -->
+<g transform="translate(372,0)">
+<rect x="26" y="104" width="7" height="166" fill="#7a5a3a"/>
+<rect x="-2" y="108" width="2" height="2" fill="none"/>
+<rect x="-14" y="112" width="96" height="74" rx="4" fill="#ffffff" stroke="#0a2a6b" stroke-width="4"/>
+<rect x="-14" y="112" width="96" height="22" rx="4" fill="#0a2a6b"/>
+<text x="34" y="128" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="12" text-anchor="middle" fill="#ffffff" letter-spacing="1.6">RE/MAX</text>
+<text x="34" y="172" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="32" text-anchor="middle" fill="#d3202f">SOLD</text>
+<rect x="-6" y="188" width="80" height="16" rx="3" fill="#d3202f"/>
+<text x="34" y="200" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="10" text-anchor="middle" fill="#ffffff" letter-spacing="1">MOVE ONCE</text>
+</g>
+</svg>

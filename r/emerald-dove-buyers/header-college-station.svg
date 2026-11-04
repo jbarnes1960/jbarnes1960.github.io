@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 14 1200 190" width="1200" height="190" preserveAspectRatio="xMidYMax slice">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a2a6b"/><stop offset=".55" stop-color="#1b56b8"/><stop offset="1" stop-color="#7db0f0"/></linearGradient></defs>
+<rect width="1200" height="220" fill="url(#sky)"/>
+<g fill="#fff" opacity=".13"><ellipse cx="120" cy="52" rx="90" ry="12"/><ellipse cx="980" cy="38" rx="110" ry="12"/><ellipse cx="1060" cy="52" rx="70" ry="9"/></g>
+<circle cx="520" cy="48" r="22" fill="#ffe7a3" opacity=".9"/>
+<path d="M0 168 C120 150 260 156 380 160 C520 150 700 152 820 158 C960 150 1100 154 1200 150 L1200 168 L0 168Z" fill="#5f8fd6"/>
+<!-- live oaks -->
+<g fill="#17408f"><ellipse cx="90" cy="148" rx="54" ry="22"/><ellipse cx="60" cy="138" rx="30" ry="16"/><ellipse cx="124" cy="140" rx="32" ry="15"/><rect x="86" y="150" width="8" height="18"/>
+<ellipse cx="1150" cy="146" rx="46" ry="20"/><rect x="1146" y="150" width="8" height="18"/></g>
+<!-- water tower -->
+<g fill="#0c2a74"><rect x="190" y="104" width="4" height="64"/><rect x="226" y="104" width="4" height="64"/><rect x="208" y="104" width="4" height="64"/><ellipse cx="210" cy="96" rx="34" ry="18"/></g>
+<text x="210" y="101" font-family="Arial" font-weight="800" font-size="11" text-anchor="middle" fill="#ffffff">COLLEGE STATION</text>
+<!-- Academic Building style dome -->
+<g fill="#0c2a74"><rect x="300" y="120" width="150" height="48"/><rect x="345" y="96" width="60" height="26"/><path d="M350 96 Q375 50 400 96Z"/><rect x="373" y="44" width="4" height="14"/><path d="M290 120 L375 104 L460 120Z"/></g>
+<g fill="#ffe7a3" opacity=".85"><rect x="310" y="132" width="6" height="18"/><rect x="324" y="132" width="6" height="18"/><rect x="338" y="132" width="6" height="18"/><rect x="352" y="132" width="6" height="18"/><rect x="366" y="132" width="6" height="18"/><rect x="380" y="132" width="6" height="18"/><rect x="394" y="132" width="6" height="18"/><rect x="408" y="132" width="6" height="18"/><rect x="422" y="132" width="6" height="18"/><rect x="436" y="132" width="6" height="18"/></g>
+<!-- stadium bowl -->
+<g fill="#0c2a74"><path d="M680 168 L680 96 L700 90 L880 90 L900 96 L900 168Z"/>
+<rect x="696" y="70" width="6" height="22"/><rect x="878" y="70" width="6" height="22"/><rect x="688" y="64" width="22" height="8"/><rect x="870" y="64" width="22" height="8"/></g>
+<g fill="#ffe7a3" opacity=".9"><rect x="690" y="66" width="18" height="4"/><rect x="872" y="66" width="18" height="4"/></g>
+<g stroke="#2d63bd" stroke-width="3"><line x1="684" y1="104" x2="896" y2="104"/><line x1="684" y1="116" x2="896" y2="116"/><line x1="684" y1="128" x2="896" y2="128"/><line x1="684" y1="140" x2="896" y2="140"/><line x1="684" y1="152" x2="896" y2="152"/></g>
+<rect x="560" y="134" width="30" height="34" fill="#0c2a74"/><rect x="594" y="120" width="40" height="48" fill="#0c2a74"/><rect x="599" y="128" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="599" y="139" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="608" y="139" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="617" y="139" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="608" y="150" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="640" y="138" width="26" height="30" fill="#0c2a74"/><rect x="645" y="157" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="654" y="157" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="940" y="128" width="36" height="40" fill="#0c2a74"/><rect x="954" y="136" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="963" y="136" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="945" y="147" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="954" y="147" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="980" y="114" width="28" height="54" fill="#0c2a74"/><rect x="985" y="144" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="1012" y="132" width="44" height="36" fill="#0c2a74"/><rect x="1026" y="140" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="1035" y="140" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="1044" y="140" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="1017" y="151" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="1060" y="122" width="30" height="46" fill="#0c2a74"/><rect x="1065" y="130" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="1065" y="141" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="1074" y="141" width="4" height="5" fill="#ffe7a3" opacity=".85"/><rect x="1083" y="152" width="4" height="5" fill="#ffe7a3" opacity=".85"/>
+<!-- Texas flag -->
+<g transform="translate(500,92)"><rect x="0" y="0" width="3" height="76" fill="#c9d6ee"/><rect x="3" y="2" width="16" height="30" fill="#0a47a8"/><rect x="19" y="2" width="30" height="15" fill="#fff"/><rect x="19" y="17" width="30" height="15" fill="#d3202f"/>
+<path d="M11 10 l1.8 5 5 0 -4 3 1.6 5 -4.4-3 -4.4 3 1.6-5 -4-3 5 0z" fill="#fff"/></g>
+<rect x="0" y="168" width="1200" height="52" fill="#0b1f55"/><rect x="0" y="168" width="1200" height="4" fill="#d3202f"/>
+<g stroke="#fff" stroke-width="3" stroke-dasharray="26 22" opacity=".75"><line x1="0" y1="204" x2="1200" y2="204"/></g>
+<g transform="translate(155,-31) scale(1.15)">
+<rect x="708" y="132" width="132" height="62" rx="5" fill="#fff"/><rect x="708" y="164" width="132" height="10" fill="#d3202f"/>
+<text x="774" y="156" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="17" text-anchor="middle" fill="#0a2a6b" letter-spacing="1.5">MOVING</text>
+<path d="M842 150 L876 150 L894 170 L894 194 L842 194 Z" fill="#d3202f"/><path d="M850 157 L872 157 L884 171 L850 171 Z" fill="#cfe3ff"/>
+<rect x="700" y="190" width="200" height="6" rx="3" fill="#0a2a6b"/>
+<g fill="#0a1a44"><circle cx="738" cy="196" r="14"/><circle cx="866" cy="196" r="14"/></g><g fill="#c9d6ee"><circle cx="738" cy="196" r="6"/><circle cx="866" cy="196" r="6"/></g></g>
+</svg>
