@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>638 Woodmont Dr | Hypothetical buyer scenario kit | James Barnes, NEXA Lending</title><style>
+:root{--navy:#0f2a44;--teal:#127c84;--gold:#c9963b;--line:#dde3e9}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:Helvetica,Arial,sans-serif;color:#1f2a36;background:#eef1f4;-webkit-text-size-adjust:100%;overflow-wrap:break-word;word-wrap:break-word}
+.page{max-width:960px;margin:20px auto;background:#fff;box-shadow:0 2px 14px rgba(0,0,0,.08)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 32px;border-bottom:1px solid var(--line)}
+.top img.logo{width:120px;height:auto;display:block}
+.top .lo{display:flex;align-items:center;gap:10px;font-size:13px;color:#444;line-height:1.35}
+.top .lo img{width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--navy)}
+.hero{background:linear-gradient(135deg,#0f2a44 0%,#163f63 60%,#127c84 100%);color:#fff;padding:30px 32px 26px}
+.hero .tag{letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:#f1d7a6}
+.hero h1{margin:8px 0 4px;font-family:Georgia,serif;font-size:32px;font-weight:normal;line-height:1.15}
+.hero .city{font-size:16px;opacity:.92}
+.hero .price{margin-top:16px;font-size:28px;font-weight:700}
+.hero .price small{font-size:13px;font-weight:400;opacity:.9;display:block;margin-top:2px}
+.banner{background:#fff7e6;border:2px solid #f0c36d;border-radius:10px;padding:12px 14px;font-size:14px;color:#5a3d00;line-height:1.5;margin:0}
+section{padding:22px 32px;border-bottom:1px solid var(--line)}
+h2{font-family:Georgia,serif;font-size:21px;font-weight:normal;color:var(--navy);margin:0 0 12px;border-left:4px solid var(--gold);padding-left:10px}
+h3{font-size:15px;color:var(--navy);margin:0 0 6px}
+p,li{font-size:15px;line-height:1.55}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:10px;text-align:center}
+.stat .v{font-size:19px;font-weight:700;color:var(--navy)}
+.stat .k{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#5c6a78;margin-top:2px}
+.stat.warn{border-color:#f0c36d;background:#fff9ec}.stat.warn .v{color:#8a5a00}
+.src{font-size:12px;color:#5c6a78;line-height:1.5}
+.src a,.note a,td a{color:var(--teal)}
+.note{font-size:13px;color:#4a5866;line-height:1.5;margin-top:10px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{border:2px solid var(--teal);border-radius:10px;padding:14px}
+.card.alt{border-color:var(--gold)}
+.card .big{font-size:24px;font-weight:800;color:var(--navy);margin:2px 0 6px}
+.card .big small{font-size:13px;font-weight:400;color:#5c6a78}
+.kv{width:100%;border-collapse:collapse;font-size:14px}
+.kv td{padding:6px 0;border-bottom:1px solid #eef1f4;vertical-align:top}
+.kv td:last-child{text-align:right;font-weight:700;padding-left:10px}
+.kv tr.sum td{border-top:2px solid var(--navy);border-bottom:0;font-weight:800;color:var(--navy)}
+.tbd{display:inline-block;background:#fff3d6;color:#7a5410;border-radius:4px;font-size:12px;padding:1px 7px;font-weight:800;letter-spacing:.03em}
+.est{display:inline-block;background:#e8f3f4;color:#0f5c63;border-radius:4px;font-size:11px;padding:1px 6px;font-weight:700;text-transform:uppercase}
+.pill{display:inline-block;font-size:11px;font-weight:700;border-radius:10px;padding:2px 8px;background:#eef3f9;color:var(--navy)}
+.comp{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:0 0 8px;font-size:14px;line-height:1.45}
+.comp b.n{display:inline-block;width:24px;height:24px;line-height:24px;border-radius:12px;background:var(--navy);color:#fff;text-align:center;font-size:13px;margin-right:6px}
+.comp .lp{float:right;font-weight:800;color:var(--navy);font-size:16px}
+.ladder{position:relative;height:auto;border:1px solid var(--line);border-radius:10px;padding:14px 14px 8px;background:#fafcfd}
+.lrow{display:flex;align-items:center;gap:8px;margin:0 0 8px;font-size:13px}
+.lrow .lab{width:150px;flex:none}
+.lrow .bar{flex:1;background:#eef1f4;border-radius:6px;height:22px;position:relative;min-width:0}
+.lrow .fill{position:absolute;top:0;bottom:0;border-radius:6px}
+.lrow .val{width:78px;flex:none;text-align:right;font-weight:700}
+.btn{display:inline-block;background:var(--gold);color:#0f2a44!important;font-weight:800;padding:12px 18px;border-radius:8px;text-decoration:none;margin:6px 8px 4px 0;font-size:15px}
+.btn.n{background:#0b2a4a;color:#fff!important}
+.cta{background:var(--navy);color:#fff;display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:center}
+.cta h2{color:#fff}.cta a{color:#9fe0e4}
+.cta .contact{font-size:14px;line-height:1.7}
+.cta .contact img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);display:block;margin-bottom:8px}
+.ehl{text-align:center;font-size:12px;color:#4a5866;padding:14px 32px 18px;line-height:1.5}
+.mapimg{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;display:block}
+@media (max-width:700px){
+ .grid{grid-template-columns:repeat(2,1fr)}.cards,.cta{grid-template-columns:1fr}
+ section,.hero{padding:18px 16px}.top{padding:12px 16px;flex-wrap:wrap}.hero h1{font-size:26px}.hero .price{font-size:24px}
+ .page{margin:0;box-shadow:none}.lrow .lab{width:108px}.lrow .val{width:70px}.ehl{padding:14px 16px}
+ .btn{display:block;text-align:center;margin:8px 0}
+}
+@media print{.cards{display:block;font-size:0}.card{display:inline-block;width:49%;margin:0 0 12px 0;vertical-align:top;font-size:14px}.card:nth-child(odd){margin-right:2%}h2{break-after:avoid}section{break-inside:auto}body{background:#fff}.page{margin:0;box-shadow:none;max-width:none}section.cta,.card,.comp,.ladder,.grid,.banner{break-inside:avoid}
+ .hero,.cta,.lrow .fill,.banner,.btn{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head><body><div class="page"><div class="top"><img class="logo" src="https://nexamortgage.com/wp-content/uploads/2024/12/NEXA-Lending-LOGO-Black-768x407.png" alt="NEXA Lending" width="120"><div class="lo"><img src="https://media.base44.com/images/public/6a88eb45fae51c90f1a1e29c/a67f1c91e_james-barnes-headshot-240.jpg" alt="James Barnes" width="60" height="60"><div><b style="color:#0f2a44;font-size:15px">James Barnes</b><br>Senior Loan Officer, NEXA Lending<br>NMLS #215987 &middot; <a href="tel:+15122288124" style="color:#444;text-decoration:none">(512) 228-8124</a></div></div></div>
+<div class="hero"><div class="tag">Buyer scenario kit &middot; Pleasant Manor &middot; Dallas</div>
+<h1>638 Woodmont Drive</h1><div class="city">Dallas, TX 75217 &middot; Dallas County</div>
+<div class="price">$220,000 <span style="font-size:15px;font-weight:400">hypothetical scenario</span><small>Not a list price. This home is off market and is not an active listing.</small></div></div>
+<section style="padding-bottom:16px"><p class="banner"><b>Hypothetical scenario, not an active listing.</b> 638 Woodmont Dr is off market; no MLS listing was found. The $220,000 price is a planning number for a buyer conversation, not an offer, a list price or an appraisal. Nothing here is an advertisement of a home for sale.</p></section>
+
+<section><h2>The home (public record)</h2>
+<div class="grid">
+<div class="stat"><div class="v">3</div><div class="k">Bedrooms</div></div>
+<div class="stat"><div class="v">1</div><div class="k">Bathroom</div></div>
+<div class="stat"><div class="v">1,191</div><div class="k">Sq ft, 1 story</div></div>
+<div class="stat"><div class="v">1959</div><div class="k">Year built</div></div>
+<div class="stat"><div class="v">7,763 sf</div><div class="k">Lot</div></div>
+<div class="stat"><div class="v">1-car</div><div class="k">Attached garage (~231 sf)</div></div>
+<div class="stat"><div class="v">Gas / window</div><div class="k">Heat / cooling</div></div>
+<div class="stat warn"><div class="v">Not verified</div><div class="k">Condition</div></div>
+</div>
+<p>A one-story 1959 home in the Pleasant Manor subdivision of southeast Dallas, on a 7,763 sq ft lot with an attached one-car garage, gas heat and window-unit cooling. <b>No listing, photos or inspection of the inside exist</b>, so its condition and any updates are unknown.</p>
+<p class="src">Sources: county-derived records at <a href="https://www.findaneighborhood.com/address/tx/dallas/638-woodmont-dr">findaneighborhood.com</a> and <a href="https://propintel.co/property/texas/dallas-county/638-woodmont-dr">propintel.co</a> (APN 00-00055-033-900-0000). Accessed Nov 5, 2026. Not verified with Dallas CAD.</p>
+</section>
+
+<section><h2>What nearby homes closed at</h2>
+<p><b>Condition is the whole story here.</b> Closed homes of the same size and age within 0.7 mile fall into two price groups. Which group this home belongs to depends on its condition, which has not been seen.</p>
+<div class="ladder" role="img" aria-label="Bar chart of last list prices of six nearby closed sales compared with the $220,000 hypothetical price"><div style="font-size:12px;color:#5c6a78;margin-bottom:8px"><b>Illustration, not a photo.</b> Last list prices of nearby closed sales (bars start at $100,000). <span style="color:#127c84;font-weight:700">Teal = Group A, renovated</span> &middot; <span style="color:#a07020;font-weight:700">Gold = Group B, dated / as-is</span> &middot; striped = the hypothetical price.</div><div class="lrow"><div class="lab"><b>3.</b> 6245 Fenway <span class="pill">A</span></div><div class="bar"><div class="fill" style="left:0;width:96.9%;background:#127c84"></div></div><div class="val">$255,000</div></div><div class="lrow"><div class="lab"><b>1.</b> 565 Alcorn <span class="pill">A</span></div><div class="bar"><div class="fill" style="left:0;width:86.9%;background:#127c84"></div></div><div class="val">$239,000</div></div><div class="lrow"><div class="lab"><b>2.</b> 515 Elkhart <span class="pill">A</span></div><div class="bar"><div class="fill" style="left:0;width:66.9%;background:#127c84"></div></div><div class="val">$207,000</div></div><div class="lrow"><div class="lab"><b>4.</b> 6620 Atha <span class="pill">B</span></div><div class="bar"><div class="fill" style="left:0;width:49.4%;background:#c9963b"></div></div><div class="val">$178,999</div></div><div class="lrow"><div class="lab"><b>5.</b> 1224 Templecliff <span class="pill">B</span></div><div class="bar"><div class="fill" style="left:0;width:18.8%;background:#c9963b"></div></div><div class="val">$130,000</div></div><div class="lrow"><div class="lab"><b>6.</b> 726 Helena <span class="pill">B</span></div><div class="bar"><div class="fill" style="left:0;width:12.5%;background:#c9963b"></div></div><div class="val">$119,999</div></div><div class="lrow"><div class="lab"><b>Scenario</b> 638 Woodmont</div><div class="bar"><div class="fill" style="left:0;width:75.0%;background:repeating-linear-gradient(45deg,#0f2a44 0 6px,#5b7895 6px 12px)"></div></div><div class="val">$220,000</div></div></div>
+<h3 style="margin-top:16px">Group A &middot; updated or renovated</h3><div class="comp"><span class="lp">$239,000</span><b class="n">1</b><b>565 Alcorn Ave</b><br><span style="color:#4a5866">4 / 2 bd/ba &middot; 1,245 sf &middot; built 1959 &middot; 0.15 mi &middot; closed Oct 21, 2026</span><br>Beautifully renovated; same subdivision &middot; <a href="https://www.har.com/homedetail/565-alcorn-ave-dallas-tx-75217/1398834">HAR listing</a></div><div class="comp"><span class="lp">$207,000</span><b class="n">2</b><b>515 Elkhart Ave</b><br><span style="color:#4a5866">3 / 1 bd/ba &middot; 1,066 sf &middot; built 1955 &middot; 0.54 mi &middot; closed Sep 3, 2026</span><br>Fully renovated; best 3/1 match &middot; <a href="https://www.har.com/homedetail/515-elkhart-ave-dallas-tx-75217/1399905">HAR listing</a></div><div class="comp"><span class="lp">$255,000</span><b class="n">3</b><b>6245 Fenway St</b><br><span style="color:#4a5866">4 / 2 bd/ba &middot; 1,332 sf &middot; built 1956 &middot; 0.65 mi &middot; closed May 22, 2026</span><br>Remodeled brick &middot; <a href="https://www.har.com/homedetail/6245-fenway-st-dallas-tx-75217/1396340">HAR listing</a></div>
+<h3 style="margin-top:14px">Group B &middot; dated or as-is</h3><div class="comp"><span class="lp">$178,999</span><b class="n">4</b><b>6620 Atha Dr</b><br><span style="color:#4a5866">3 / 2 bd/ba &middot; 1,197 sf &middot; built 1963 &middot; 0.58 mi &middot; closed Oct 2, 2026</span><br>Dated, &ldquo;plenty of potential&rdquo; (iBuyer resale) &middot; <a href="https://www.har.com/homedetail/6620-atha-dr-dallas-tx-75217/8904601">HAR listing</a></div><div class="comp"><span class="lp">$130,000</span><b class="n">5</b><b>1224 Templecliff Dr</b><br><span style="color:#4a5866">3 / 1 bd/ba &middot; 1,239 sf &middot; built 1958 &middot; 0.66 mi &middot; closed Oct 30, 2026</span><br>&ldquo;Need TLC&rdquo;, investor special &middot; <a href="https://www.har.com/homedetail/1224-templecliff-dr-dallas-tx-75217/1398027">HAR listing</a></div><div class="comp"><span class="lp">$119,999</span><b class="n">6</b><b>726 Helena St</b><br><span style="color:#4a5866">3 / 2 bd/ba &middot; 1,294 sf &middot; built 1955 &middot; 0.62 mi &middot; closed Oct 16, 2026</span><br>Fixer-upper, sold as-is, cash only &middot; <a href="https://www.har.com/homedetail/726-helena-st-dallas-tx-75217/1396485">HAR listing</a></div>
+<p class="note"><b>All prices are LAST LIST PRICES, not sale prices.</b> Texas does not disclose sale prices; these are the final asking prices of homes that closed, from HAR.com (NTREIS MLS). Actual prices and seller concessions are unknown. Group A averages $234,000 and Group B $143,000 at last list, with no adjustments. Full detail, sources and the homes considered and not used are in the CMA (attached separately as a PDF and HTML file). That CMA was prepared by a loan officer and is not an appraisal.</p>
+
+<p style="margin:10px 0 0"><a class="btn n" href="https://www.google.com/maps/dir/638%20Woodmont%20Dr%2C%20Dallas%2C%20TX%2075217/565%20Alcorn%20Ave%2C%20Dallas%2C%20TX%2075217/515%20Elkhart%20Ave%2C%20Dallas%2C%20TX%2075217/6245%20Fenway%20St%2C%20Dallas%2C%20TX%2075217/6620%20Atha%20Dr%2C%20Dallas%2C%20TX%2075217/1224%20Templecliff%20Dr%2C%20Dallas%2C%20TX%2075217/726%20Helena%20St%2C%20Dallas%2C%20TX%2075217">Open the comps in Google Maps</a></p>
+</section>
+
+<section><h2>Ways a buyer could finance $220,000</h2>
+<p>Minimum down payments by program, for a $220,000 purchase of a primary home. These are program rules, not a quote. Rates, payments and closing costs are in the <b>separate financing worksheet</b>.</p>
+<div class="cards">
+<div class="card"><h3>FHA, 3.5% down</h3><div class="big">$7,700 <small>down</small></div><table class="kv">
+<tr><td>Base loan</td><td>$212,300</td></tr><tr><td>Upfront MIP (1.75%, financed)</td><td>$3,715.25</td></tr><tr><td>Total loan</td><td>$216,015.25</td></tr><tr><td>Monthly MIP</td><td>yes, for the loan&#39;s life at this down payment</td></tr></table></div>
+<div class="card"><h3>Conventional, 5% down</h3><div class="big">$11,000 <small>down</small></div><table class="kv">
+<tr><td>Loan amount</td><td>$209,000 (95% LTV)</td></tr><tr><td>Mortgage insurance</td><td>required; cost <span class="tbd">TBD</span></td></tr></table></div>
+<div class="card alt"><h3>Conventional, 3% down <span class="pill">if eligible</span></h3><div class="big">$6,600 <small>down</small></div><table class="kv">
+<tr><td>Loan amount</td><td>$213,400 (97% LTV)</td></tr><tr><td>Who qualifies</td><td>first-time buyers or HomeReady / Home Possible eligible; not guaranteed</td></tr><tr><td>If not eligible</td><td>5% down option above</td></tr></table></div>
+<div class="card alt"><h3>VA, 0% down <span class="pill">eligible veterans</span></h3><div class="big">$0 <small>down</small></div><table class="kv">
+<tr><td>Funding fee (first use, 2.15%, financed)</td><td>$4,730</td></tr><tr><td>Total loan</td><td>$224,730</td></tr><tr><td>Assumes</td><td>VA eligibility, full entitlement, not exempt from the fee</td></tr></table></div>
+</div>
+<p class="note">Closing costs, prepaid items and any seller credit are extra and are not shown here. Seller credits are subject to each program&#39;s limits.</p>
+</section>
+
+<section><h2>Before writing an offer near $220,000</h2>
+<ul>
+<li><b>See the inside first.</b> Renovated homes nearby closed at last list prices of $207,000&ndash;$255,000; dated or as-is homes at $119,999&ndash;$178,999. If this home is not updated, $220,000 is above every as-is comp.</li>
+<li><b>Plan for the appraisal.</b> The lender&#39;s appraisal must support the price. If it comes in lower, the buyer pays the gap, renegotiates or walks away under the contract terms.</li>
+<li><b>FHA and VA appraisals also check the home&#39;s condition</b> (safety, soundness and security). A dated home may need repairs before closing.</li>
+<li><b>Property taxes:</b> this home&#39;s tax bill was not verified. Check the Dallas CAD record; a buyer&#39;s homestead exemption can lower the bill.</li>
+<li><b>Get pre-approved</b> so the buyer knows the program, cash needed and payment before touring.</li>
+</ul></section>
+<section class="cta"><div><h2>Talk through a $220,000 scenario</h2><p>Call or email me to compare FHA, Conventional and VA for this home, including the full fee breakdown.</p><a class="btn" href="tel:+15122288124">&#9742; Call James</a><a class="btn" href="mailto:jbarnes@nexalending.com">&#9993; Email James</a><p class="src" style="color:#c9d6e2;margin-top:10px">Apply online: <a href="https://app.bevri.ai/apply/app?lo=215987">https://app.bevri.ai/apply/app?lo=215987</a></p></div><div class="contact"><img src="https://media.base44.com/images/public/6a88eb45fae51c90f1a1e29c/a67f1c91e_james-barnes-headshot-240.jpg" alt="James Barnes" width="96" height="96"><b style="font-size:17px">James Barnes</b><br>Senior Loan Officer, NEXA Lending<br>NMLS #215987<br>&#9742; <a href="tel:+15122288124">(512) 228-8124</a><br>&#9993; <a href="mailto:jbarnes@nexalending.com">jbarnes@nexalending.com</a></div></section>
+<div class="ehl"><b>&#8962; EQUAL HOUSING OPPORTUNITY</b> &middot; James Barnes, Senior Loan Officer, NEXA Lending, NMLS #215987 &middot; Hypothetical scenario for discussion only; 638 Woodmont Dr is not listed for sale. Not a commitment to lend, a loan estimate or an appraisal. Comp data from HAR.com (NTREIS MLS) and county-derived public records, believed reliable but not guaranteed. Prepared Nov 5, 2026.</div></div></body></html>
