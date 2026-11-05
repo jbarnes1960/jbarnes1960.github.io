@@ -45,30 +45,32 @@ h3{color:var(--navy);font-size:20px;margin:0 0 8px;font-family:"Helvetica Neue",
 .card{background:#fff;border-radius:16px;box-shadow:0 4px 18px rgba(10,31,92,.07);padding:18px 18px 20px;margin:18px 0;border-top:5px solid var(--blue)}
 .card.pay{border-top-color:var(--red)}
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
-.kpi{background:var(--ice);border-radius:12px;padding:12px 12px 11px}
+.kpi{background:var(--ice);border-radius:12px;padding:12px 12px 11px;display:flex;flex-direction:column;min-width:0}
 .kpi b{display:block;font-size:clamp(18px,2vw,22px);color:var(--navy);font-variant-numeric:tabular-nums;line-height:1.2}
 .kpi span{display:block;font-size:12.5px;color:var(--mute);margin-top:3px}
-.kpi em{font-style:normal;display:block;font-size:12.5px;color:var(--navy);margin-top:4px;line-height:1.35}
+.kpi em{font-style:normal;display:block;font-size:12.5px;color:var(--navy);margin-top:auto;padding-top:4px;line-height:1.35}
 .delta{border-radius:12px;padding:12px 14px;margin:0 0 14px;font-weight:700;color:var(--navy);background:#eef3fb}
 .delta.lower{background:#e5f6ec;color:#145c32}
 .delta.higher{background:#fdecea;color:#8c1d13}
 .delta p{margin:0}
 .delta .fine{display:block;font-weight:400;color:var(--mute);margin-top:4px}
 .delta.lower .fine,.delta.higher .fine{color:inherit;opacity:.85}
-.asm{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:8px 0 12px}
-.asm label{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:700;color:var(--navy)}
-.asm .hint{font-weight:400;color:var(--mute);font-size:12px;line-height:1.35}
-.asm input{font-size:16px;padding:10px 12px;border:1px solid #c5d2e6;border-radius:10px;width:100%;color:var(--ink);background:#fff}
+.asm{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin:8px 0 12px;align-items:stretch}
+.asm label{grid-column:span 2;display:flex;flex-direction:column;gap:4px;min-width:0;background:#f7f9fc;border:1px solid var(--line);border-radius:12px;padding:10px 12px 12px;font-size:13px;font-weight:700;color:var(--navy)}
+.asm label.half{grid-column:span 3}
+.asm .hint{font-weight:400;color:var(--mute);font-size:12px;line-height:1.35;flex:1 1 auto}
+.asm input{margin-top:8px;flex:0 0 auto;font-size:16px;padding:10px 12px;border:1px solid #c5d2e6;border-radius:10px;width:100%;color:var(--ink);background:#fff}
 .warn{background:#fff6e5;border-left:4px solid #b8860b;padding:10px 12px;border-radius:8px;font-size:14px;margin:8px 0 12px}
 .note{font-size:14px;color:var(--mute)}
 details{margin:8px 0 12px}
 details summary{cursor:pointer;font-weight:700;color:var(--navy);min-height:44px;display:flex;align-items:center}
 details p{margin:8px 0}
-table{border-collapse:collapse;width:100%;font-size:14.5px}
-th,td{padding:9px 8px;border-bottom:1px solid #e3e9f3;text-align:left;vertical-align:top}
-thead th{color:var(--navy);background:#f1f5fb;font-size:13.5px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;table-layout:fixed}
+th,td{padding:9px 8px;border-bottom:1px solid #e3e9f3;text-align:left;vertical-align:top;overflow-wrap:break-word}
+thead th{color:var(--navy);background:#f1f5fb;font-size:13.5px;vertical-align:bottom}
 td,thead th:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
-tbody th{text-align:left;font-weight:600;color:var(--navy);width:42%}
+tbody th{text-align:left;font-weight:600;color:var(--navy);width:36%}
+#paytable th:nth-child(2),#paytable th:nth-child(3),#valuetable th:nth-child(2),#valuetable th:nth-child(3),#taxtable th:nth-child(2),#taxtable th:nth-child(3){width:32%}
 tr.group th{background:#f7f9fc;color:var(--mute);font-size:12px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;text-align:left}
 tr.total th,tr.total td{background:#e8f1fd;font-size:16px;border-bottom:0}
 tr.total th{font-weight:800}
@@ -106,15 +108,26 @@ footer{font-size:12.5px;color:var(--mute);padding:22px 0 36px}
   table{font-size:13.5px}
   th,td{padding:8px 5px}
 }
+@media (max-width:700px){
+  .asm{grid-template-columns:1fr 1fr}
+  .asm label,.asm label.half{grid-column:1 / -1}
+  .asm label.pair{grid-column:span 1}
+}
 @media (max-width:640px){
+  #paytable, #valuetable, #taxtable,
+  #paytable thead, #paytable tbody, #valuetable thead, #valuetable tbody, #taxtable thead, #taxtable tbody{display:block;width:100%}
   #paytable, #valuetable, #taxtable{font-size:14.5px}
   #paytable thead tr, #valuetable thead tr, #taxtable thead tr,
-  #paytable tbody tr, #valuetable tbody tr, #taxtable tbody tr{display:grid;grid-template-columns:1fr 1fr}
+  #paytable tbody tr, #valuetable tbody tr, #taxtable tbody tr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);width:100%}
   #paytable thead th:first-child, #valuetable thead th:first-child, #taxtable thead th:first-child{display:none}
-  #paytable tbody th, #valuetable tbody th, #taxtable tbody th{grid-column:1 / -1;width:auto;border-bottom:0;padding-bottom:2px;text-align:left}
-  #paytable td, #valuetable td, #taxtable td{text-align:left;padding-top:2px}
+  #paytable th, #valuetable th, #taxtable th, #paytable td, #valuetable td, #taxtable td{width:auto}
+  #paytable tbody th, #valuetable tbody th, #taxtable tbody th{grid-column:1 / -1;border-bottom:0;padding-bottom:2px;text-align:left}
+  #paytable td, #valuetable td, #taxtable td{text-align:left;padding-top:2px;min-width:0}
   #paytable tr.group th, #valuetable tr.group th, #taxtable tr.group th{grid-column:1 / -1}
-  #paytable thead th, #valuetable thead th, #taxtable thead th{text-align:left}
+  #paytable thead th:nth-child(2), #paytable thead th:nth-child(3),
+  #valuetable thead th:nth-child(2), #valuetable thead th:nth-child(3),
+  #taxtable thead th:nth-child(2), #taxtable thead th:nth-child(3){width:100%}
+  #paytable thead th, #valuetable thead th, #taxtable thead th{text-align:left;vertical-align:bottom;min-width:0}
 }
 @media (max-width:560px){
   .hero .wrap{padding-bottom:96px}
@@ -122,7 +135,6 @@ footer{font-size:12.5px;color:var(--mute);padding:22px 0 36px}
   .card{padding:14px}
   .person{flex-direction:column;align-items:flex-start}
   .btns .btn{flex:1 1 calc(50% - 8px)}
-  thead th:first-child{font-size:0}
   tbody th{font-size:12.5px}
 }
 @page{size:letter;margin:0.42in 0.48in}
@@ -233,19 +245,19 @@ footer{font-size:12.5px;color:var(--mute);padding:22px 0 36px}
           <span class="hint">30 is the starting conventional term.</span>
           <input id="tm" type="number" value="30" min="1" max="40" step="1" inputmode="numeric">
         </label>
-        <label>Homeowners insurance, $ per $1,000 of value per year
+        <label class="half">Homeowners insurance, $ per $1,000 of value per year
           <span class="hint">Assumption. Annual premium = value ÷ 1,000 × this amount.</span>
           <input id="ins" type="number" value="5.00" min="0" max="50" step="0.25" inputmode="decimal">
         </label>
-        <label>Mortgage insurance, % of the loan per year
+        <label class="half">Mortgage insurance, % of the loan per year
           <span class="hint">Assumption. Added only when loan-to-value is over 80%.</span>
           <input id="pmi" type="number" value="0.50" min="0" max="5" step="0.05" inputmode="decimal">
         </label>
-        <label id="hoaFromLab">Origin HOA, $ per month
+        <label class="half pair" id="hoaFromLab">Origin HOA, $ per month
           <span class="hint">Optional. Default $0. Not property tax.</span>
           <input id="hoaFrom" type="number" value="0" min="0" max="5000" step="1" inputmode="decimal">
         </label>
-        <label>Colorado Springs HOA or metro-district fee, $ per month
+        <label class="half pair">Colorado Springs HOA or metro-district fee, $ per month
           <span class="hint">Optional. Default $0. A separate bill, not the property-tax rate.</span>
           <input id="hoaCs" type="number" value="0" min="0" max="5000" step="1" inputmode="decimal">
         </label>
