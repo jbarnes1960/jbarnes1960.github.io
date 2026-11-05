@@ -475,16 +475,30 @@ function postJson(url,body,ms){
  var ctl=(typeof AbortController!=='undefined')?new AbortController():null,t=ctl?setTimeout(function(){ctl.abort()},ms||15000):null;
  return fetch(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body),signal:ctl?ctl.signal:undefined}).then(function(x){if(t)clearTimeout(t);return x.json().catch(function(){return {}}).then(function(d){if(!x.ok)throw new Error('HTTP '+x.status);return d})},function(e){if(t)clearTimeout(t);throw e});}
 function backupBody(p){
- var L=[],skip={message:1,_subject:1,_template:1,_captcha:1,_replyto:1};
- for(var k in p){if(skip[k]||p[k]===''||p[k]==null)continue;L.push(k.replace(/_/g,' ')+': '+p[k])}
+ var x=p._cf||{},F=[],lab=PARTIAL_LABEL,partial=!!p.status;
+ function add(k,v){v=(v==null?'':String(v)).trim();if(v&&v!=='n/a'&&v!=='$0')F.push([k,v])}
+ var ph=String(p.phone||'').replace(/\D/g,'');if(ph.length===11&&ph[0]==='1')ph=ph.slice(1);if(ph.length===10)ph=ph.slice(0,3)+'-'+ph.slice(3,6)+'-'+ph.slice(6);else ph=String(p.phone||'');
+ var ad=[p.utm_source,p.utm_medium,p.utm_campaign,p.utm_content].filter(Boolean).join(' / ');
+ var adTag=p.utm_content||p.utm_campaign||p.utm_source||'';
+ add('Lead',(partial?'PARTIAL ':'')+lab+(x.product&&x.product!==lab?' \u2013 '+x.product:''));
+ add('Name',p.name);add('Phone',ph);add('Email',p.email);add('Best time to call',p.best_time_to_call);
+ add('Property',p.property);
+ var xs=x.f||[];for(var j=0;j<xs.length;j++)add(xs[j][0],xs[j][1]);
+ add('Referral',p.referral||p.referral_company);
+ add('Ad source',ad||'(none)');
  var em=String(p.email||'').trim();
- return {access_key:BACKUP_KEY,name:String(p.name||'(no name)'),email:validEmail(em)?em:NOTIFY_EMAIL,subject:String(p._subject||'New lead'),message:(L.join('\n')+(p.message?'\n\n----\n'+p.message:'')).replace(/\b(?:https?:\/\/|www\.)\S+/gi,'[link omitted]'),phone:p.phone||'',utm_source:p.utm_source||'',utm_medium:p.utm_medium||'',utm_campaign:p.utm_campaign||'',utm_content:p.utm_content||''};}
+ var msg=(partial?'PARTIAL '+lab+' lead (form not finished): ':lab+' lead: ')+(p.name||'(no name)')+(x.headline?' - '+x.headline:'');
+ var o={access_key:BACKUP_KEY,email:validEmail(em)?em:NOTIFY_EMAIL,subject:(partial?'Partial ':'New ')+lab+' lead \u2013 '+(p.name||'(no name)')+(adTag?' \u2013 Ad '+adTag:''),message:msg.replace(/\b(?:https?:\/\/|www\.)\S+/gi,'[link omitted]')};
+ for(var n=0;n<F.length;n++)o[F[n][0]]=F[n][1].replace(/\b(?:https?:\/\/|www\.)\S+/gi,'[link omitted]');
+ return o;}
 function deliver(payload){
  return postJson(BACKUP_ENDPOINT,backupBody(payload),15000).then(function(d){if(d&&d.success===false)throw new Error((d&&d.message)||'backup rejected');return {success:true,via:'backup'}})
  .catch(function(){return postJson(FORM_ENDPOINT,payload,15000).then(function(d){if(!fsOk(d))throw new Error('not accepted');return {success:true,via:'formsubmit'}})});}
 function postEndpoint(rec){
  var i=rec.input,r=rec.result;
  var payload={_subject:'New DSCR intake lead – '+(i.name||'(no name)'),_template:'table',_captcha:'false',name:i.name,entity:i.btype==='llc'?i.entity:'',phone:fmtPhone(i.phone),email:i.email,referral:i.referral,property:addrOf(i),property_type:PTYPE[i.ptype],purpose:PURPOSE[i.purpose],loan_amount:fmt$(i.amount),ltv:isFinite(r.ltv)?pct(r.ltv):'n/a',monthly_rent:fmt$(i.rent),pitia:fmt$(r.calc.pitia),dscr:ratio(r.calc.dscr),dscr_tier:r.tier.lbl,message:buildSummary(rec),_replyto:i.email||NOTIFY_EMAIL};addMeta(payload);
+ try{var pv=i.purpose==='purchase'&&i.price>0?i.price:i.value;
+  Object.defineProperty(payload,'_cf',{value:{f:[['Loan amount',fmt$(i.amount)],[i.purpose==='purchase'?'Purchase price':'Property value',fmt$(pv)],['Purpose',PURPOSE[i.purpose]],['Monthly rent',fmt$(i.rent)],['Debt service coverage',ratio(r.calc.dscr)+' ('+r.tier.lbl+')'],['Loan to value',isFinite(r.ltv)?pct(r.ltv):''],['Credit range',i.ficoLabel],['Entity',i.btype==='llc'?i.entity:'']],headline:fmt$(i.amount)+' '+(PURPOSE[i.purpose]||'')},enumerable:false});}catch(e){}
  return deliver(payload);}
 function fsOk(d){return !!d&&(d.success===true||d.success==='true')}
 var CALL_HTML='<a href="tel:+15122288124">Call James at (512) 228-8124</a>';
