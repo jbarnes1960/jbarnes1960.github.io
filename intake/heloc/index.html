@@ -305,7 +305,7 @@ table.cmp td::before{content:attr(data-l);display:block;font-size:12px;font-weig
   </div>
   <div data-f="occ"><label for="occ">Occupancy <span class="req">*</span></label><select id="occ"><option value="primary">Primary residence</option><option value="second">Second home</option><option value="investment">Investment property</option></select></div>
   <div data-f="ptype"><label for="ptype">Property type <span class="req">*</span></label><select id="ptype"></select></div>
-  <div id="ownedWrap" class="hide" data-f="owned12"><label>Owned 12+ months? <span class="req">*</span> <span class="hint">(Aven non-owner-occupied rule)</span></label><div class="radios"><label><input type="radio" name="owned12" value="y"> Yes</label><label><input type="radio" name="owned12" value="n"> No</label></div><div class="err"></div></div>
+  <div id="ownedWrap" class="hide" data-f="owned12"><label>Owned 12+ months? <span class="req">*</span> <span class="hint">(NEXA Aven non-owner-occupied rule)</span></label><div class="radios"><label><input type="radio" name="owned12" value="y"> Yes</label><label><input type="radio" name="owned12" value="n"> No</label></div><div class="err"></div></div>
   <div data-f="llc"><label>Will title be vested in an LLC? <span class="req">*</span></label><div class="radios"><label><input type="radio" name="llc" value="n" checked> No</label><label><input type="radio" name="llc" value="y"> Yes</label></div></div>
  </div></div>
  <div class="card"><h2>3. Loan request &amp; liens</h2>
@@ -383,7 +383,7 @@ function calcDti(c){
  DEBT_KEYS.forEach(function(k){debts+=Number((c.debts||{})[k[0]])||0});
  var pay=(c.payment!=null&&c.payment!==''&&!isNaN(Number(c.payment)))?Number(c.payment):helocPayment(c.amount,c.rate,c.term,c.type);
  return {income:income,debts:debts,payment:pay,current:income>0?debts/income*100:NaN,withHeloc:income>0?(debts+pay)/income*100:NaN};}
-function dtiCaps(amount){return [{id:'aven',name:'Aven',cap:amount<=100000?55:50},{id:'figure',name:'Figure',cap:50},{id:'helix',name:'HELIX',cap:50},{id:'nfty',name:'NFTYDoor',cap:50}];}
+function dtiCaps(amount){return [{id:'aven',name:'NEXA Aven',cap:amount<=100000?55:50},{id:'figure',name:'Figure',cap:50},{id:'helix',name:'HELIX',cap:50},{id:'nfty',name:'NFTYDoor',cap:50}];}
 function fmt$(n){return '$'+Math.round(n).toLocaleString('en-US');}
 function pct(n){return (Math.round(n*10)/10)+'%';}
 function R(id,name){var r={id:id,name:name,fails:[],pros:[],cons:[],cautions:[],assumed:[],score:50,terms:'',maxCltv:null,dtiCap:null,headroom:null};
@@ -401,39 +401,39 @@ function rateScore(r,i,fixed,variable,note){
  if(note)r.warn(note);}
 
 function evalAven(i,x){
- var r=R('aven','Aven'),big=i.amount>400000,noo=i.occ!=='primary',TX=i.state==='TX';
- if(['NY','NV','MA','HI'].indexOf(i.state)>=0) r.fail('Aven does not lend in '+SN[i.state]+' (excluded: NY, NV, MA, HI).');
- else if(big&&['ID','NM','OK','SD','WY','AR','LA'].indexOf(i.state)>=0) r.fail('Aven does not lend lines over $400K in '+SN[i.state]+'.');
- if(i.amount<5000) r.fail("Line is under Aven's $5,000 minimum.");
- if(i.amount>1000000) r.fail("Line is over Aven's $1,000,000 maximum.");
+ var r=R('aven','NEXA Aven'),big=i.amount>400000,noo=i.occ!=='primary',TX=i.state==='TX';
+ if(['NY','NV','MA','HI'].indexOf(i.state)>=0) r.fail('NEXA Aven does not lend in '+SN[i.state]+' (excluded: NY, NV, MA, HI).');
+ else if(big&&['ID','NM','OK','SD','WY','AR','LA'].indexOf(i.state)>=0) r.fail('NEXA Aven does not lend lines over $400K in '+SN[i.state]+'.');
+ if(i.amount<5000) r.fail("Line is under NEXA Aven's $5,000 minimum.");
+ if(i.amount>1000000) r.fail("Line is over NEXA Aven's $1,000,000 maximum.");
  var minF=620,mwhy='';if(noo){minF=680;mwhy=' for non-owner-occupied';} if(big){minF=760;mwhy=' for lines over $400K (tri-bureau)';}
- if(i.fico<minF) r.fail('Credit score '+i.ficoLabel+" is below Aven's "+minF+' minimum'+mwhy+'. (Every applicant must clear it.)');
- if(big&&noo) r.fail('Aven lines over $400K must be owner-occupied.');
- if(noo&&i.amount>250000) r.fail('Aven non-owner-occupied lines top out at $250,000.');
- if(noo&&i.owned12===false) r.fail('Aven requires non-owner-occupied properties to be owned 12+ months.');
- if(noo&&i.owned12==null) r.warn('Confirm the property has been owned 12+ months (Aven requirement for non-owner-occupied).');
- if(i.occ==='second') r.assume("Aven groups 2nd homes with non-owner-occupied for FICO and CLTV on its page; treated that way here (conservative).");
+ if(i.fico<minF) r.fail('Credit score '+i.ficoLabel+" is below NEXA Aven's "+minF+' minimum'+mwhy+'. (Every applicant must clear it.)');
+ if(big&&noo) r.fail('NEXA Aven lines over $400K must be owner-occupied.');
+ if(noo&&i.amount>250000) r.fail('NEXA Aven non-owner-occupied lines top out at $250,000.');
+ if(noo&&i.owned12===false) r.fail('NEXA Aven requires non-owner-occupied properties to be owned 12+ months.');
+ if(noo&&i.owned12==null) r.warn('Confirm the property has been owned 12+ months (NEXA Aven requirement for non-owner-occupied).');
+ if(i.occ==='second') r.assume("NEXA Aven groups 2nd homes with non-owner-occupied for FICO and CLTV on its page; treated that way here (conservative).");
  var cap=i.amount<=100000?89:(i.amount<=400000?85:80);
  if(noo){ if(i.fico>=720)cap=Math.min(cap,75); else if(i.fico>=680){cap=Math.min(cap,70); if(i.amount>100000)r.fail('Non-owner-occupied lines with a 680-719 score are limited to $100,000 (at 70% CLTV).');}}
- if(TX&&i.occ==='primary'&&cap>80){cap=80;r.assume('Texas home-equity loans on a primary residence are capped at 80% CLTV by state law. Applied here; the comparison only lists Aven\'s 2% Texas origination fee.');}
+ if(TX&&i.occ==='primary'&&cap>80){cap=80;r.assume('Texas home-equity loans on a primary residence are capped at 80% CLTV by state law. Applied here; the comparison only lists NEXA Aven\'s 2% Texas origination fee.');}
  cltvCheck(r,i,x,cap,i.amount<=100000?'lines up to $100K':i.amount<=400000?'lines up to $400K':'lines over $400K');
  dtiCheck(r,i,i.amount<=100000?55:50,i.amount<=100000?'lines up to $100K':'lines over $100K');
- if(i.lien===3) r.fail('Aven only does 1st or 2nd liens, not a 3rd.');
+ if(i.lien===3) r.fail('NEXA Aven only does 1st or 2nd liens, not a 3rd.');
  if(i.lien===2){ if(i.amount>0.4*i.value) r.fail('As a 2nd lien the line cannot exceed 40% of home value ('+fmt$(0.4*i.value)+').');
   if(i.value-x.existing-i.amount<30000) r.fail('As a 2nd lien, $30,000 of equity must remain after the line (only '+fmt$(Math.max(0,i.value-x.existing-i.amount))+' would).');}
- if(i.ptype==='highrise') r.fail("Aven doesn't accept high-rise condos.");
- if(i.ptype==='manuf') r.fail('Manufactured homes are not on Aven\'s eligible property list.');
- if(i.ptype==='coop') r.fail('Co-ops are not on Aven\'s eligible property list.');
- if(i.ptype==='nonwarr'){r.con(25,"Aven lists 'condo (not high-rise)' and doesn't mention non-warrantable condos; confirm before submitting.");}
- if(i.llc) r.fail("Aven doesn't allow LLC vesting (individual or revocable family trust only).");
+ if(i.ptype==='highrise') r.fail("NEXA Aven doesn't accept high-rise condos.");
+ if(i.ptype==='manuf') r.fail('Manufactured homes are not on NEXA Aven\'s eligible property list.');
+ if(i.ptype==='coop') r.fail('Co-ops are not on NEXA Aven\'s eligible property list.');
+ if(i.ptype==='nonwarr'){r.con(25,"NEXA Aven lists 'condo (not high-rise)' and doesn't mention non-warrantable condos; confirm before submitting.");}
+ if(i.llc) r.fail("NEXA Aven doesn't allow LLC vesting (individual or revocable family trust only).");
  if(i.apps===2) r.warn('Co-borrowers are allowed; both applicants must clear 620 on Experian FICO 9 and Vantage 4.');
  // scoring
  rateScore(r,i,true,false);
  r.pro(3,'100% of the line funds at closing.');
  if(i.speed){ r.pro(10,'Fully automated underwriting keeps things moving.'); if(big)r.con(8,'Lines over $400K need a 1004 appraisal (about 7-10 days).'); }
- if(TX) r.pro(8,'Texas fee is a flat 2% origination.'); else r.pro(4,'Initial draw fee runs 1.9%-4.9%; Aven covers title and signing.');
+ if(TX) r.pro(8,'Texas fee is a flat 2% origination.'); else r.pro(4,'Initial draw fee runs 1.9%-4.9%; NEXA Aven covers title and signing.');
  if(i.dti>50) r.pro(10,'Highest DTI allowance of the four (55% on lines up to $100K).');
- if(i.drawAmt>0&&i.drawAmt<i.amount) r.warn('Aven funds 100% of the line at closing, so the payment is based on the full line, not the expected '+fmt$(i.drawAmt)+' draw.');
+ if(i.drawAmt>0&&i.drawAmt<i.amount) r.warn('NEXA Aven funds 100% of the line at closing, so the payment is based on the full line, not the expected '+fmt$(i.drawAmt)+' draw.');
  r.terms='Fixed rate · max CLTV '+(r.maxCltv||'-')+'% · DTI up to '+(r.dtiCap||'-')+'% · 100% initial draw';
  return r;}
 
@@ -520,7 +520,6 @@ function evalHelix(i,x){
  if(i.ptype==='manuf') r.fail("HELIX lists modular homes but not manufactured (HUD) homes; treated as ineligible. Confirm if the home is truly modular.");
  if(i.ptype==='coop') r.fail("Co-ops aren't on HELIX's eligible property list.");
  if(i.ptype==='highrise') r.warn("HELIX lists condos (including non-warrantable) but doesn't mention high-rise specifically; confirm.");
- r.warn('You must be licensed in '+SN[i.state]+' to submit with NEXA HELIX.');
  rateScore(r,i,false,true);
  if(i.speed){ r.pro(8,'Target close in 5-7 business days (HELIX is in beta, so it may run longer).'); if(TX&&prim) r.con(5,'Texas primary homes always need a full appraisal, which adds time.'); }
  if(TX&&prim&&!i.speed) r.warn('Texas primary homes always need a full appraisal.');
@@ -560,7 +559,6 @@ function evalNfty(i,x){
  if(i.ptype==='nonwarr') r.con(25,"NFTYDoor lists 'condo' and doesn't mention non-warrantable; confirm first.");
  if(i.ptype==='highrise') r.warn("NFTYDoor lists 'condo' without addressing high-rise; confirm.");
  if(i.ptype==='pud') r.con(3,"NFTYDoor lists PUDs but not townhomes explicitly; confirm if townhome.");
- r.warn('You must be licensed in '+SN[i.state]+' to submit with NFTYDoor.');
  if(i.occ==='investment') r.warn('NFTYDoor allows up to 15 financed properties for the borrower.');
  if(TX) r.warn('Texas: 12-day cooling-off period before closing.');
  if(i.apps===2) r.assume('The comparison does not address co-borrowers for NFTYDoor; assumed allowed.');
@@ -586,7 +584,7 @@ function evaluate(i){
 /*APP_START*/
 // ---- CONFIG ----------------------------------------------------------------
 var NOTIFY_EMAIL='jbarnes@nexalending.com';
-// FORM_ENDPOINT: FormSubmit AJAX endpoint (leads emailed to NOTIFY_EMAIL). Set to '' to use the mailto method only.
+// FORM_ENDPOINT: FormSubmit AJAX endpoint = FALLBACK (primary is CodeFreeForm, see BACKUP_ENDPOINT; leads emailed to NOTIFY_EMAIL). Set to '' to use the mailto method only.
 var FORM_ENDPOINT='https://formsubmit.co/ajax/jbarnes@nexalending.com';
 var STORE_KEY='nexa_heloc_requests_v1';
 // ---------------------------------------------------------------------------
@@ -689,7 +687,7 @@ function updateCalc(){
  var caps=dtiCaps(c.amount>0?c.amount:0);
  function box(t,v){return '<div class="dbox '+dtiClass(v)+'"><div class="t">'+t+'</div><div class="n">'+pct(v)+'</div>'+(show?'<div class="chips">'+caps.map(function(p){return '<span class="chip '+(v<=p.cap?'ok':'no')+'">'+p.name+' '+p.cap+'%</span>'}).join('')+'</div>':'')+'</div>'}
  out.innerHTML=box('DTI before '+W+'  ('+fmt$(r.debts)+' / '+fmt$(r.income)+')',r.current)+box('DTI with '+W+'  ('+fmt$(r.debts+r.payment)+' / '+fmt$(r.income)+')',r.withHeloc)+
-  '<div class="dtiouth small-note">New '+W+' payment counted: <b>'+fmt$(r.payment)+'/mo</b> ('+(c.type==='io'?'interest-only on '+fmt$(c.amount):'amortizing '+fmt$(c.amount)+' over '+c.term+' years')+' at an estimated '+c.rate+'%).'+(show?' Green = within every program cap, amber = within Aven only, red = over all caps. Chips show each program\'s base cap (Aven 55% up to $100K, 50% above). Figure, HELIX and NFTYDoor drop to 45% in some cases (lower scores, 2-4 units, higher CLTV); the screening result applies those.':' Green is 50% or less, amber is 50-55%, red is above 55%. HELOC program caps are not applied to a HELOAN.')+'</div>';
+  '<div class="dtiouth small-note">New '+W+' payment counted: <b>'+fmt$(r.payment)+'/mo</b> ('+(c.type==='io'?'interest-only on '+fmt$(c.amount):'amortizing '+fmt$(c.amount)+' over '+c.term+' years')+' at an estimated '+c.rate+'%).'+(show?' Green = within every program cap, amber = within NEXA Aven only, red = over all caps. Chips show each program\'s base cap (NEXA Aven 55% up to $100K, 50% above). Figure, HELIX and NFTYDoor drop to 45% in some cases (lower scores, 2-4 units, higher CLTV); the screening result applies those.':' Green is 50% or less, amber is 50-55%, red is above 55%. HELOC program caps are not applied to a HELOAN.')+'</div>';
 }
 function recalcPay(){syncPay();updateCalc()}
 function setPanel(open){$('calcPanel').classList.toggle('hide',!open);$('calcToggle').setAttribute('aria-expanded',open?'true':'false');$('calcToggle').innerHTML=open?'Hide calculator &#9652;':'Calculate DTI &#9662;'}
@@ -855,11 +853,26 @@ function mailtoFor(rec){
  return 'mailto:'+NOTIFY_EMAIL+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(buildSummary(rec));
 }
 function openMailto(rec){var a=document.createElement('a');a.href=mailtoFor(rec);a.style.display='none';document.body.appendChild(a);a.click();document.body.removeChild(a)}
+// Lead delivery: primary = CodeFreeForm (key below is public by design; routes to NOTIFY_EMAIL), fallback = FormSubmit.
+// Whichever accepts the lead counts as sent; if both fail the caller falls back to the mailto link.
+var BACKUP_ENDPOINT='https://codefreeform.com/api/contact-api/';
+var BACKUP_KEY='2F5DF1';
+function postJson(url,body,ms){
+ var ctl=(typeof AbortController!=='undefined')?new AbortController():null,t=ctl?setTimeout(function(){ctl.abort()},ms||15000):null;
+ return fetch(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body),signal:ctl?ctl.signal:undefined}).then(function(x){if(t)clearTimeout(t);return x.json().catch(function(){return {}}).then(function(d){if(!x.ok)throw new Error('HTTP '+x.status);return d})},function(e){if(t)clearTimeout(t);throw e});}
+function backupBody(p){
+ var L=[],skip={message:1,_subject:1,_template:1,_captcha:1,_replyto:1};
+ for(var k in p){if(skip[k]||p[k]===''||p[k]==null)continue;L.push(k.replace(/_/g,' ')+': '+p[k])}
+ var em=String(p.email||'').trim();
+ return {access_key:BACKUP_KEY,name:String(p.name||'(no name)'),email:validEmail(em)?em:NOTIFY_EMAIL,subject:String(p._subject||'New lead'),message:(L.join('\n')+(p.message?'\n\n----\n'+p.message:'')).replace(/\b(?:https?:\/\/|www\.)\S+/gi,'[link omitted]'),phone:p.phone||'',utm_source:p.utm_source||'',utm_medium:p.utm_medium||'',utm_campaign:p.utm_campaign||'',utm_content:p.utm_content||''};}
+function deliver(payload){
+ return postJson(BACKUP_ENDPOINT,backupBody(payload),15000).then(function(d){if(d&&d.success===false)throw new Error((d&&d.message)||'backup rejected');return {success:true,via:'backup'}})
+ .catch(function(){return postJson(FORM_ENDPOINT,payload,15000).then(function(d){if(!fsOk(d))throw new Error('not accepted');return {success:true,via:'formsubmit'}})});}
 function postEndpoint(rec){
  var i=rec.input;
  var payload={_subject:'New HELOC intake lead – '+(i.name||'(no name)'),_template:'table',_captcha:'false',product_type:i.product,name:i.name,phone:fmtPhone(i.phone),email:i.email,referral_company:i.referral||'',
   property:i.street+', '+i.city+', '+i.state+' '+i.zip,loan_amount:fmt$(i.amount),heloc_line:fmt$(i.lineAmt||0),initial_draw:fmt$(i.drawAmt||0),heloan_amount:fmt$(i.loanAmt||0),heloan_term_years:i.loanTerm||'',intended_use:USES[i.use]||'',cltv:pct(rec.result.cltv),dti_used:pct(i.dti),dti_before_heloc:i.dtiCalc?pct(i.dtiCalc.current):'n/a',dti_with_heloc:i.dtiCalc?pct(i.dtiCalc.withHeloc):'n/a',recommended_program:rec.result.best?rec.result.best.name:(rec.result.screened===false?'Not screened':'None'),message:buildSummary(rec),_replyto:i.email||NOTIFY_EMAIL};addMeta(payload);
- return fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)}).then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()});
+ return deliver(payload);
 }
 function fsOk(d){return !!d&&(d.success===true||d.success==='true')}
 var CALL_HTML='<a href="tel:+15122288124">Call James at (512) 228-8124</a>';
@@ -1007,7 +1020,7 @@ function sendPartial(trigger){
  partialSent=true;
  var payload=addMeta({_subject:'Partial '+PARTIAL_LABEL+' lead \u2013 '+n,_template:'table',_captcha:'false',status:'PARTIAL lead - visitor has not submitted the full form yet',name:n,phone:okPh?fmtPhone(okPh?ph.replace(/\D/g,'').replace(/^1(?=\d{10}$)/,''):ph):ph,email:em});
  if(em&&okEm)payload._replyto=em;
- try{fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)}).then(function(x){return x.json()}).then(function(d){if(!fsOk(d))partialSent=false}).catch(function(){partialSent=false})}catch(e){partialSent=false}
+ try{deliver(payload).catch(function(){partialSent=false})}catch(e){partialSent=false}
 }
 (function(){
  readUtm();

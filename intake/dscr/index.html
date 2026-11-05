@@ -322,7 +322,7 @@ function evaluate(i){
  return {calc:d,ltv:ltv,basis:basis,tier:s.tier,flags:s.flags,maxLtv:s.maxLtv,maxLtvWhy:s.maxLtvWhy,cashOut:i.purpose==='co'?Math.max(0,i.amount-i.liens):0};}
 /*ENGINE_END*/
 
-// FORM_ENDPOINT: FormSubmit AJAX endpoint (leads emailed to NOTIFY_EMAIL). Set to '' to use the mailto method only.
+// FORM_ENDPOINT: FormSubmit AJAX endpoint = FALLBACK (primary is CodeFreeForm, see BACKUP_ENDPOINT; leads emailed to NOTIFY_EMAIL). Set to '' to use the mailto method only.
 var FORM_ENDPOINT='https://formsubmit.co/ajax/jbarnes@nexalending.com';
 var NOTIFY_EMAIL='jbarnes@nexalending.com';
 var STORE_KEY='nexa_dscr_requests_v1';
@@ -467,10 +467,25 @@ function buildSummary(rec){
 function subjectFor(rec){return 'DSCR Request - '+(rec.input.btype==='llc'?rec.input.entity:rec.input.name)+' - DSCR '+ratio(rec.result.calc.dscr)+' ('+rec.result.tier.lbl+')'}
 function mailtoFor(rec){return 'mailto:'+NOTIFY_EMAIL+'?subject='+encodeURIComponent(subjectFor(rec))+'&body='+encodeURIComponent(buildSummary(rec))}
 function openMailto(rec){var a=document.createElement('a');a.href=mailtoFor(rec);a.style.display='none';document.body.appendChild(a);a.click();document.body.removeChild(a)}
+// Lead delivery: primary = CodeFreeForm (key below is public by design; routes to NOTIFY_EMAIL), fallback = FormSubmit.
+// Whichever accepts the lead counts as sent; if both fail the caller falls back to the mailto link.
+var BACKUP_ENDPOINT='https://codefreeform.com/api/contact-api/';
+var BACKUP_KEY='2F5DF1';
+function postJson(url,body,ms){
+ var ctl=(typeof AbortController!=='undefined')?new AbortController():null,t=ctl?setTimeout(function(){ctl.abort()},ms||15000):null;
+ return fetch(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body),signal:ctl?ctl.signal:undefined}).then(function(x){if(t)clearTimeout(t);return x.json().catch(function(){return {}}).then(function(d){if(!x.ok)throw new Error('HTTP '+x.status);return d})},function(e){if(t)clearTimeout(t);throw e});}
+function backupBody(p){
+ var L=[],skip={message:1,_subject:1,_template:1,_captcha:1,_replyto:1};
+ for(var k in p){if(skip[k]||p[k]===''||p[k]==null)continue;L.push(k.replace(/_/g,' ')+': '+p[k])}
+ var em=String(p.email||'').trim();
+ return {access_key:BACKUP_KEY,name:String(p.name||'(no name)'),email:validEmail(em)?em:NOTIFY_EMAIL,subject:String(p._subject||'New lead'),message:(L.join('\n')+(p.message?'\n\n----\n'+p.message:'')).replace(/\b(?:https?:\/\/|www\.)\S+/gi,'[link omitted]'),phone:p.phone||'',utm_source:p.utm_source||'',utm_medium:p.utm_medium||'',utm_campaign:p.utm_campaign||'',utm_content:p.utm_content||''};}
+function deliver(payload){
+ return postJson(BACKUP_ENDPOINT,backupBody(payload),15000).then(function(d){if(d&&d.success===false)throw new Error((d&&d.message)||'backup rejected');return {success:true,via:'backup'}})
+ .catch(function(){return postJson(FORM_ENDPOINT,payload,15000).then(function(d){if(!fsOk(d))throw new Error('not accepted');return {success:true,via:'formsubmit'}})});}
 function postEndpoint(rec){
  var i=rec.input,r=rec.result;
  var payload={_subject:'New DSCR intake lead – '+(i.name||'(no name)'),_template:'table',_captcha:'false',name:i.name,entity:i.btype==='llc'?i.entity:'',phone:fmtPhone(i.phone),email:i.email,referral:i.referral,property:addrOf(i),property_type:PTYPE[i.ptype],purpose:PURPOSE[i.purpose],loan_amount:fmt$(i.amount),ltv:isFinite(r.ltv)?pct(r.ltv):'n/a',monthly_rent:fmt$(i.rent),pitia:fmt$(r.calc.pitia),dscr:ratio(r.calc.dscr),dscr_tier:r.tier.lbl,message:buildSummary(rec),_replyto:i.email||NOTIFY_EMAIL};addMeta(payload);
- return fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)}).then(function(x){if(!x.ok)throw new Error('HTTP '+x.status);return x.json()});}
+ return deliver(payload);}
 function fsOk(d){return !!d&&(d.success===true||d.success==='true')}
 var CALL_HTML='<a href="tel:+15122288124">Call James at (512) 228-8124</a>';
 function setNote(html){var n=$('emailNote');if(n)n.innerHTML=html}
@@ -602,7 +617,7 @@ function sendPartial(trigger){
  partialSent=true;
  var payload=addMeta({_subject:'Partial '+PARTIAL_LABEL+' lead \u2013 '+n,_template:'table',_captcha:'false',status:'PARTIAL lead - visitor has not submitted the full form yet',name:n,phone:okPh?fmtPhone(okPh?ph.replace(/\D/g,'').replace(/^1(?=\d{10}$)/,''):ph):ph,email:em});
  if(em&&okEm)payload._replyto=em;
- try{fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)}).then(function(x){return x.json()}).then(function(d){if(!fsOk(d))partialSent=false}).catch(function(){partialSent=false})}catch(e){partialSent=false}
+ try{deliver(payload).catch(function(){partialSent=false})}catch(e){partialSent=false}
 }
 (function(){
  readUtm();
