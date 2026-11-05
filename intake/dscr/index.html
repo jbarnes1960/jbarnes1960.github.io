@@ -141,7 +141,7 @@ button:disabled{opacity:.5;cursor:not-allowed}
  <p class="intro">Both loans finance a rental; the difference is how you qualify. A DSCR loan looks at the property, not your paycheck: the lender compares its monthly rent to its payment (PITIA), so there are no tax returns, W-2s or DTI, LLC vesting is often allowed, and documentation is faster and simpler. The trade-off is usually a slightly higher rate and down payment, and prepayment penalties are common. A conventional investor loan (Fannie Mae/Freddie Mac) is full-doc: it qualifies you on personal income and DTI, typically with lower rates and fees, but it counts against your DTI, limits financed properties, and requires personal-name vesting. DSCR suits self-employed borrowers, investors with many properties, LLC buyers and anyone scaling. Conventional suits W-2 or strongly documented income, a few properties, and the lowest rate.</p>
  <p class="sub">Tell us about your investment property and your scenario. The calculator below estimates the payment (PITIA), your debt service coverage ratio (DSCR = monthly rent &divide; PITIA) and the loan-to-value, then gives you a quick preliminary look. James Barnes will follow up with you personally. <span class="req" style="color:#b42318">*</span> = required. <span style="display:none"><button type="button" class="link" id="sampleBtn" tabindex="-1" aria-hidden="true">Fill sample data</button></span></p>
  <form id="f" novalidate autocomplete="off">
- <input type="hidden" id="source" value="dscr"><input type="hidden" id="utm_source"><input type="hidden" id="utm_medium"><input type="hidden" id="utm_campaign">
+ <input type="hidden" id="source" value="dscr"><input type="hidden" id="utm_source"><input type="hidden" id="utm_medium"><input type="hidden" id="utm_campaign"><input type="hidden" id="utm_content">
  <div class="card"><h2>1. Borrower, contact &amp; experience</h2><div class="grid">
   <div class="full" data-f="btype"><label>Borrowing as <span class="req">*</span></label><div class="radios"><label><input type="radio" name="btype" value="ind" checked> Individual</label><label><input type="radio" name="btype" value="llc"> LLC / entity</label></div></div>
   <div class="full hide" id="entityWrap" data-f="entity"><label for="entity">Entity name <span class="req">*</span> <span class="hint">(exact legal name of the LLC / entity that will hold title)</span></label><input type="text" id="entity" autocomplete="off"><div class="err"></div></div>
@@ -587,9 +587,9 @@ if(typeof document!=='undefined'&&typeof window!=='undefined'&&document.getEleme
 
 /* ---- lead capture: UTM hidden fields, partial lead ---- */
 var LEAD_SOURCE='dscr',PARTIAL_LABEL='DSCR',partialSent=false,finalSent=false;
-function readUtm(){var q={};try{var p=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign'].forEach(function(k){q[k]=(p.get(k)||'').slice(0,200)})}catch(e){q={utm_source:'',utm_medium:'',utm_campaign:''}}
- ['utm_source','utm_medium','utm_campaign'].forEach(function(k){var el=$(k);if(el&&q[k])el.value=q[k]});}
-function leadMeta(){return {source:$('source').value||LEAD_SOURCE,utm_source:$('utm_source').value,utm_medium:$('utm_medium').value,utm_campaign:$('utm_campaign').value,best_time_to_call:$('besttime').value||'No preference'}}
+function readUtm(){var q={};try{var p=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){q[k]=(p.get(k)||'').slice(0,200)})}catch(e){q={utm_source:'',utm_medium:'',utm_campaign:'',utm_content:''}}
+ ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){var el=$(k);if(el&&q[k])el.value=q[k]});}
+function leadMeta(){return {source:$('source').value||LEAD_SOURCE,utm_source:$('utm_source').value,utm_medium:$('utm_medium').value,utm_campaign:$('utm_campaign').value,utm_content:$('utm_content').value,best_time_to_call:$('besttime').value||'No preference'}}
 function addMeta(payload){var m=leadMeta();for(var k in m)payload[k]=m[k];return payload}
 function validPhone(v){var d=String(v||'').replace(/\D/g,'');if(d.length===11&&d[0]==='1')d=d.slice(1);return d.length===10&&!/^[01]/.test(d)}
 function validEmail(v){return /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(String(v||'').trim())}

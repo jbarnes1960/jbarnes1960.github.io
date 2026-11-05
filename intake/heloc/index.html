@@ -191,7 +191,7 @@ table.cmp td::before{content:attr(data-l);display:block;font-size:12px;font-weig
   <p><b>Who each tends to fit:</b> a HELOC for ongoing or uncertain costs, such as renovations done in phases; a HELOAN for a one-time, known amount, such as debt consolidation, where a predictable payment matters.</p>
  </div>
  <form id="f" novalidate autocomplete="off">
- <input type="hidden" id="source" value="heloc"><input type="hidden" id="utm_source"><input type="hidden" id="utm_medium"><input type="hidden" id="utm_campaign">
+ <input type="hidden" id="source" value="heloc"><input type="hidden" id="utm_source"><input type="hidden" id="utm_medium"><input type="hidden" id="utm_campaign"><input type="hidden" id="utm_content">
  <div class="card" id="productCard" data-f="product"><h2>Choose a product <span class="req">*</span></h2>
   <div class="ptcards" role="radiogroup" aria-label="Product type">
    <label class="ptcard"><input type="radio" name="product_type" value="heloc"><span class="box"><span class="t">HELOC (line of credit)</span><span class="d">Revolving line. Draw what you need, when you need it.</span></span></label>
@@ -992,9 +992,9 @@ if(typeof document!=='undefined'&&typeof window!=='undefined'&&document.getEleme
 
 /* ---- lead capture: UTM hidden fields, partial lead ---- */
 var LEAD_SOURCE='heloc',PARTIAL_LABEL='HELOC',partialSent=false,finalSent=false;
-function readUtm(){var q={};try{var p=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign'].forEach(function(k){q[k]=(p.get(k)||'').slice(0,200)})}catch(e){q={utm_source:'',utm_medium:'',utm_campaign:''}}
- ['utm_source','utm_medium','utm_campaign'].forEach(function(k){var el=$(k);if(el&&q[k])el.value=q[k]});}
-function leadMeta(){return {source:$('source').value||LEAD_SOURCE,utm_source:$('utm_source').value,utm_medium:$('utm_medium').value,utm_campaign:$('utm_campaign').value,best_time_to_call:$('besttime').value||'No preference'}}
+function readUtm(){var q={};try{var p=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){q[k]=(p.get(k)||'').slice(0,200)})}catch(e){q={utm_source:'',utm_medium:'',utm_campaign:'',utm_content:''}}
+ ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){var el=$(k);if(el&&q[k])el.value=q[k]});}
+function leadMeta(){return {source:$('source').value||LEAD_SOURCE,utm_source:$('utm_source').value,utm_medium:$('utm_medium').value,utm_campaign:$('utm_campaign').value,utm_content:$('utm_content').value,best_time_to_call:$('besttime').value||'No preference'}}
 function addMeta(payload){var m=leadMeta();for(var k in m)payload[k]=m[k];return payload}
 function validPhone(v){var d=String(v||'').replace(/\D/g,'');if(d.length===11&&d[0]==='1')d=d.slice(1);return d.length===10&&!/^[01]/.test(d)}
 function validEmail(v){return /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(String(v||'').trim())}
