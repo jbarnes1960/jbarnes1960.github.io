@@ -1,0 +1,9 @@
+614 Campus St: Texas Ally listing page https://www.texasally.com/homes-for-sale-details/614-CAMPUS-STREET-TROY-TX-76579/21223972/51/
+  Media: https://api.cotality.com/trestle/Media/Property/PHOTO-Jpeg/1156639131/... (MLS photo via Cotality/Trestle)
+  Also mirrored at Coldwell Banker og:image https://m.cbhomes.com/p/700/21223972/e095BEcA117F4A6/original.webp
+  Local: images/614-campus.jpg (house number 614 visible)
+
+618 Campus St: Texas Ally listing page https://www.texasally.com/homes-for-sale-details/618-CAMPUS-STREET-TROY-TX-76579/21223985/51/
+  Media: https://api.cotality.com/trestle/Media/Property/PHOTO-Jpeg/1156630979/... (MLS photo via Cotality/Trestle)
+  Also mirrored at Coldwell Banker og:image https://m.cbhomes.com/p/700/21223985/77a6326D003942F/original.webp
+  Local: images/618-campus.jpg (house number 618 visible)
