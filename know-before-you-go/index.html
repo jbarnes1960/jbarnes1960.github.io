@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Know Before You Go | Nexa Lending – James Barnes</title>
+<meta name="description" content="Selling and moving? Find out what you can qualify for before you list. Estimates only, not a loan approval.">
+<style>
+:root{--navy:#0b2a5b;--blue:#1a4fa0;--soft:#e8eefa;--line:#d6dce8;--ok:#1b7a3d;--warn:#a86400;--bad:#a12626}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#222;background:#f4f6fb;line-height:1.5}
+.wrap{max-width:860px;margin:0 auto;padding:16px}
+a{color:var(--blue)}
+.agent{border:2px dashed #9aa9c4;border-radius:8px;background:#fff;padding:10px 14px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px;font-size:14px}
+.agent .slot{color:#55657a}
+.agent b{color:var(--navy);font-size:16px}
+.agent .tag{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#7a8aa5;display:block}
+.hdr{background:var(--navy);color:#fff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-radius:6px}
+.hdr img.logo{height:48px;width:auto;max-width:55%}
+.hdr .who{display:flex;align-items:center;gap:10px;text-align:right;font-size:12.5px}
+.hdr .who b{font-size:15px}.hdr .who a{color:#fff;text-decoration:none}
+.hdr img.head{height:60px;width:60px;border-radius:50%;object-fit:cover;background:#fff}
+.hero{background:linear-gradient(135deg,#0b2a5b,#1a4fa0);color:#fff;border-radius:8px;padding:28px 24px;margin:12px 0}
+.hero h1{margin:0 0 6px;font-size:36px;line-height:1.1}
+.hero p{margin:0 0 14px;font-size:17px;max-width:640px}
+.hero .btns a{display:inline-block;margin:0 8px 8px 0}
+.btn{background:#fff;color:var(--navy);text-decoration:none;font-weight:bold;font-size:15px;padding:12px 20px;border-radius:8px;display:inline-block;border:0;cursor:pointer;font-family:inherit}
+.btn.pri{background:var(--navy);color:#fff}
+.btn.ghost{background:transparent;color:#fff;border:1px solid #fff}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px 22px;margin:14px 0}
+.card h2{color:var(--navy);font-size:22px;margin:0 0 8px}
+.card h3{color:var(--blue);font-size:16px;margin:16px 0 6px}
+.eyebrow{color:#55657a;font-size:12px;font-weight:bold;letter-spacing:.04em;text-transform:uppercase;margin:0 0 4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.why{background:var(--soft);border-radius:8px;padding:12px 14px}.why b{color:var(--navy)}
+label{display:block;font-size:13px;font-weight:bold;color:#33425b;margin:10px 0 3px}
+label small{font-weight:normal;color:#66758c}
+input[type=text],input[type=number],input[type=email],input[type=tel],select,textarea{width:100%;padding:10px;border:1px solid #b9c4d8;border-radius:6px;font-size:15px;font-family:inherit;background:#fff}
+textarea{min-height:60px}
+.chk{display:flex;gap:8px;align-items:flex-start;font-size:14px;font-weight:normal;margin:8px 0}
+.chk input{margin-top:3px}
+.note{font-size:12.5px;color:#55657a}
+.results{display:none;margin-top:16px;border:2px solid var(--navy);border-radius:8px;padding:14px 16px;background:#fafcff}
+.ratio{display:flex;gap:12px;flex-wrap:wrap;margin:8px 0}
+.ratio div{flex:1;min-width:150px;background:var(--soft);border-radius:8px;padding:10px 12px}
+.ratio b{display:block;font-size:26px;color:var(--navy)}
+table.prog{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+table.prog th,table.prog td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.s-likely{color:var(--ok);font-weight:bold}.s-possible{color:var(--warn);font-weight:bold}.s-unlikely{color:var(--bad);font-weight:bold}
+table.cmp{width:100%;border-collapse:collapse;font-size:14px}
+table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:6px;text-align:left}
+table.cmp td input{padding:8px}
+.diff{font-weight:bold;color:var(--navy);white-space:nowrap}
+.src a{display:inline-block;margin:2px 10px 2px 0;font-size:13.5px}
+.cl li{margin:6px 0;list-style:none}
+.cl{padding:0;margin:0}
+.cl label{font-weight:normal;font-size:14.5px;margin:0;display:flex;gap:8px}
+.linkcard{border:1px solid var(--line);border-radius:8px;padding:14px;background:#fff}
+.linkcard h3{margin:0 0 4px;color:var(--navy)}
+.linkcard p{margin:0 0 10px;font-size:14px}
+.sig .name{font-size:16px;font-weight:bold;color:var(--navy)}
+.sig .btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.sig a.sbtn{background:var(--navy);color:#fff;text-decoration:none;font-weight:bold;font-size:14px;padding:10px 16px;border-radius:6px}
+.sig a.sbtn.sec{background:#fff;color:var(--navy);border:1px solid var(--navy)}
+.disc{font-size:11.5px;color:#55657a;margin-top:10px}
+.toast{display:none;margin-top:10px;padding:10px 12px;border-radius:6px;font-size:14px}
+.toast.ok{display:block;background:#e6f4ea;color:#14532d}.toast.err{display:block;background:#fdecec;color:#7a1d1d}
+@media(max-width:700px){.grid2,.grid3{grid-template-columns:1fr}.hero h1{font-size:28px}.hdr .who{text-align:left}.card{padding:16px 14px}table.cmp{font-size:13px}.btn{width:100%;text-align:center}}
+@media print{
+ body{background:#fff}.wrap{max-width:none;padding:0}
+ .hero{background:var(--navy)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .hdr{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .card{break-inside:avoid;border-color:#bbb}
+ .noprint,.hero .btns{display:none!important}
+ #printnote{display:block!important}
+}
+#printnote{display:none;font-size:13px;border:1px solid var(--line);padding:8px 12px;margin:8px 0;border-radius:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- CO-BRAND HEADER SLOT (listing agent). Fill with URL params ?agent=Name&brokerage=Brokerage&phone=5125551234&email=a@b.com or replace the placeholders below. -->
+<div class="agent" id="agentHeader">
+ <div><span class="tag">Provided to you by your listing agent</span><b id="agName">[Listing Agent Name]</b><br><span class="slot" id="agBrok">[Brokerage Name] · [License #]</span></div>
+ <div class="slot" id="agContact">[Agent Phone] · [Agent Email]</div>
+</div>
+
+<div class="hdr">
+ <img class="logo" alt="NEXA Lending" src="assets/nexa-logo.png">
+ <div class="who"><div><b>James Barnes</b><br>Senior Loan Officer · NEXA Lending · NMLS 215987<br><a href="tel:+15122288124">(512) 228-8124</a> · <a href="mailto:jbarnes@nexalending.com">jbarnes@nexalending.com</a></div><img class="head" alt="James Barnes" src="assets/james-headshot.png"></div>
+</div>
+
+<div class="hero">
+ <p class="eyebrow" style="color:#cfe0ff">For homeowners who are selling and moving</p>
+ <h1>Know Before You Go</h1>
+ <p>Find out what you can qualify for <b>before</b> you list, before you pack, and before you sign anything. It takes about five minutes and it's free.</p>
+ <div class="btns"><a class="btn" href="#prequal">Start my quick check</a><a class="btn ghost" href="tel:+15122288124">Call James</a></div>
+</div>
+<div id="printnote">The interactive tools (prequalification check and area comparison) work on the live page: <b>https://jbarnes1960.github.io/know-before-you-go/</b>. Worksheets below can be filled in by hand.</div>
+
+<div class="card" id="why">
+ <p class="eyebrow">Why now</p>
+ <h2>Don't list first and find out later</h2>
+ <p>Selling your home is the easy part. The surprise usually comes when it's time to buy the next one. Many sellers list, get an offer, and only then learn they can't get the new mortgage they assumed they could. Then the move is on a clock and the options are thin.</p>
+ <div class="grid3">
+  <div class="why"><b>Credit issues</b><br>A late payment, a high card balance, or an old collection can change which loan programs you can use and what they cost. Some of it can be fixed, but it takes time you won't have once you're under contract.</div>
+  <div class="why"><b>Income changes</b><br>A new job, less overtime, retirement, or going self-employed changes how a lender counts your income. Better to hear that now than during underwriting.</div>
+  <div class="why"><b>Higher costs in the new area</b><br>Property taxes, insurance, HOA dues, and flood or wind coverage can be very different from where you live today, and they all count toward your qualifying payment.</div>
+ </div>
+ <h3>What checking first gives you</h3>
+ <ul>
+  <li><b>A real price range</b> for your next home, so you shop and list with confidence.</li>
+  <li><b>Time to fix things</b> (pay down a card, correct a credit report error, document income) before they become deadlines.</li>
+  <li><b>Better timing choices</b>, such as whether to sell first, buy first, or ask for a longer closing or a rent-back.</li>
+  <li><b>No rushed decisions</b> and fewer deals falling apart late.</li>
+ </ul>
+ <p class="note">Checking with a loan officer does not commit you to anything. Your listing agent and I work together so your sale and your purchase fit.</p>
+</div>
+
+<div class="card" id="prequal">
+ <p class="eyebrow">Tool 1</p>
+ <h2>Quick prequalification check</h2>
+ <p>Enter your numbers and see your debt-to-income ratios and the loan programs you would <i>likely</i> fit. Everything is calculated in your browser. Nothing is sent until you press "Send my results to James."</p>
+ <form id="pq" onsubmit="return false" autocomplete="off" novalidate>
+ <div class="grid2">
+  <div><label for="f_income">Gross monthly income (before taxes) <small>all borrowers, $</small></label><input id="f_income" type="number" min="0" step="any" inputmode="decimal"></div>
+  <div><label for="f_credit">Credit score range <small>your best estimate</small></label>
+   <select id="f_credit"><option value="">Choose…</option><option value="0">Below 580</option><option value="580">580 – 619</option><option value="620">620 – 639</option><option value="640">640 – 679</option><option value="680">680 – 719</option><option value="720">720 or higher</option><option value="-1">Not sure</option></select></div>
+ </div>
+ <h3>Monthly debts that show on your credit report <small class="note">(do not include your current housing payment if it will be paid off at closing)</small></h3>
+ <div class="grid3">
+  <div><label for="f_car">Car payments</label><input id="f_car" type="number" min="0" step="any"></div>
+  <div><label for="f_student">Student loans</label><input id="f_student" type="number" min="0" step="any"></div>
+  <div><label for="f_cards">Credit card minimums</label><input id="f_cards" type="number" min="0" step="any"></div>
+  <div><label for="f_other">Other debts <small>(child support, personal loans…)</small></label><input id="f_other" type="number" min="0" step="any"></div>
+ </div>
+ <h3>The home you're moving to</h3>
+ <div class="grid3">
+  <div><label for="f_price">Target purchase price, $</label><input id="f_price" type="number" min="0" step="any"></div>
+  <div><label for="f_down">Down payment available, $ <small>(e.g. from your sale)</small></label><input id="f_down" type="number" min="0" step="any"></div>
+  <div><label for="f_state">Where <small>(city, state)</small></label><input id="f_state" type="text"></div>
+ </div>
+ <p class="note" style="margin-top:8px">Your estimated monthly housing payment is needed to figure the ratios. Either type the total, or let the tool add it up from the pieces. <b>I don't supply a rate:</b> use one from a quote or a loan estimate, and the comparison tool below can feed in taxes and insurance.</p>
+ <div class="grid2">
+  <div><label for="f_pay">Option A: total new monthly housing payment, $ <small>(principal, interest, taxes, insurance, HOA)</small></label><input id="f_pay" type="number" min="0" step="any"></div>
+  <div class="note" style="align-self:end;padding-bottom:10px">Or use Option B below. If you fill Option A, it's used.</div>
+ </div>
+ <div class="grid3">
+  <div><label for="f_rate">Option B: interest rate % <small>from a quote</small></label><input id="f_rate" type="number" min="0" step="any"></div>
+  <div><label for="f_term">Term</label><select id="f_term"><option value="30">30 years</option><option value="20">20 years</option><option value="15">15 years</option></select></div>
+  <div><label for="f_taxrate">Property tax rate % <small>per year</small></label><input id="f_taxrate" type="number" min="0" step="any"></div>
+  <div><label for="f_ins">Home insurance, $ per year</label><input id="f_ins" type="number" min="0" step="any"></div>
+  <div><label for="f_hoa">HOA, $ per month</label><input id="f_hoa" type="number" min="0" step="any"></div>
+  <div><label for="f_mi">Mortgage insurance, $ per month <small>(if quoted)</small></label><input id="f_mi" type="number" min="0" step="any"></div>
+ </div>
+ <h3>A few things that change the answer</h3>
+ <label class="chk"><input type="checkbox" id="c_vet"> I or my spouse served in the military (VA loan may be possible)</label>
+ <label class="chk"><input type="checkbox" id="c_late"> Late payments or collections in the last 12 months</label>
+ <label class="chk"><input type="checkbox" id="c_bk"> Bankruptcy, foreclosure, or short sale in the last 7 years</label>
+ <label class="chk"><input type="checkbox" id="c_inc"> My income changed, or will change, in the last 2 years (new job, self-employed, retiring, less overtime)</label>
+ <label class="chk"><input type="checkbox" id="c_rural"> The new home is in a rural area</label>
+ <div style="margin-top:12px"><button class="btn pri" type="button" id="calcBtn">Show my ratios and likely programs</button></div>
+ </form>
+
+ <div class="results" id="results" aria-live="polite">
+  <h3 style="margin-top:0">Your estimate</h3>
+  <div class="ratio">
+   <div><span class="note">Front-end ratio (housing ÷ income)</span><b id="r_front">–</b><span class="note" id="r_front_n"></span></div>
+   <div><span class="note">Back-end ratio (housing + debts ÷ income)</span><b id="r_back">–</b><span class="note" id="r_back_n"></span></div>
+   <div><span class="note">Down payment</span><b id="r_dp">–</b><span class="note" id="r_dp_n"></span></div>
+  </div>
+  <p class="note" id="r_pay"></p>
+  <table class="prog" id="progTable"><thead><tr><th>Program</th><th>Likely fit?</th><th>Why (rule of thumb)</th></tr></thead><tbody></tbody></table>
+  <div id="r_flags"></div>
+  <p class="disc"><b>This is not a loan approval, a prequalification letter, or a commitment to lend.</b> Estimates use general rules of thumb that differ by lender, loan product, and your full file. Final eligibility depends on credit, income, assets, property, and underwriting.</p>
+
+  <h3>Send my results to James <small class="note">(optional)</small></h3>
+  <p class="note">James will review your numbers and call you with next steps. No obligation.</p>
+  <div class="grid2">
+   <div><label for="s_name">Your name *</label><input id="s_name" type="text" autocomplete="name"></div>
+   <div><label for="s_phone">Phone *</label><input id="s_phone" type="tel" autocomplete="tel"></div>
+   <div><label for="s_email">Email *</label><input id="s_email" type="email" autocomplete="email"></div>
+   <div><label for="s_agent">Your listing agent <small>(if any)</small></label><input id="s_agent" type="text"></div>
+  </div>
+  <label for="s_notes">Anything else James should know? <small>(optional)</small></label><textarea id="s_notes"></textarea>
+  <label class="chk"><input type="checkbox" id="s_consent"> I agree James Barnes / NEXA Lending may contact me about these results and that this is an estimate, not an approval.</label>
+  <button class="btn pri" type="button" id="sendBtn">Send my results to James</button>
+  <div class="toast" id="toast"></div>
+ </div>
+</div>
+
+<div class="card" id="compare">
+ <p class="eyebrow">Tool 2</p>
+ <h2>Where you are now vs. where you're moving</h2>
+ <p>Type in what you know for each place. The tool shows the differences. There are no pre-filled numbers: look yours up on your tax bill and insurance policy, or use the public sources below.</p>
+ <div class="src"><b>Look up real numbers:</b>
+  <a href="https://www.census.gov/quickfacts" target="_blank" rel="noopener">Census QuickFacts (home values, taxes, income by place)</a>
+  <a href="https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area" target="_blank" rel="noopener">BEA Regional Price Parities (cost of living)</a>
+  <a href="https://taxfoundation.org/data/all/state/property-taxes-by-state-county/" target="_blank" rel="noopener">Tax Foundation property taxes by county</a>
+  <a href="https://msc.fema.gov/portal/home" target="_blank" rel="noopener">FEMA flood map lookup</a>
+ </div>
+ <div style="overflow-x:auto">
+ <table class="cmp" id="cmpTable">
+  <thead><tr><th></th><th>Now</th><th>Moving to</th><th>Difference</th></tr></thead>
+  <tbody>
+   <tr><td>Area / city</td><td><input type="text" id="n_area"></td><td><input type="text" id="m_area"></td><td></td></tr>
+   <tr><td>Home price or value, $</td><td><input type="number" id="n_price" min="0" step="any"></td><td><input type="number" id="m_price" min="0" step="any"></td><td class="diff" id="d_price"></td></tr>
+   <tr><td>Property tax rate, % per year</td><td><input type="number" id="n_tax" min="0" step="any"></td><td><input type="number" id="m_tax" min="0" step="any"></td><td class="diff" id="d_tax"></td></tr>
+   <tr><td>Home insurance, $ per year</td><td><input type="number" id="n_ins" min="0" step="any"></td><td><input type="number" id="m_ins" min="0" step="any"></td><td class="diff" id="d_ins"></td></tr>
+   <tr><td>HOA, $ per month</td><td><input type="number" id="n_hoa" min="0" step="any"></td><td><input type="number" id="m_hoa" min="0" step="any"></td><td class="diff" id="d_hoa"></td></tr>
+   <tr><td>Utilities, $ per month</td><td><input type="number" id="n_util" min="0" step="any"></td><td><input type="number" id="m_util" min="0" step="any"></td><td class="diff" id="d_util"></td></tr>
+   <tr><td>Other monthly costs, $ <small>(commute, flood/wind cover, etc.)</small></td><td><input type="number" id="n_oth" min="0" step="any"></td><td><input type="number" id="m_oth" min="0" step="any"></td><td class="diff" id="d_oth"></td></tr>
+   <tr><td><b>Taxes + insurance, per month</b></td><td id="n_ti">–</td><td id="m_ti">–</td><td class="diff" id="d_ti"></td></tr>
+   <tr><td><b>Total non-mortgage monthly costs</b></td><td id="n_tot">–</td><td id="m_tot">–</td><td class="diff" id="d_tot"></td></tr>
+   <tr><td><b>Property tax, per year</b></td><td id="n_taxy">–</td><td id="m_taxy">–</td><td class="diff" id="d_taxy"></td></tr>
+  </tbody>
+ </table>
+ </div>
+ <div class="grid2">
+  <div><label for="n_net">Estimated cash from selling your current home, $ <small>(after payoff and costs; ask your agent for a net sheet)</small></label><input type="number" id="n_net" min="0" step="any"></div>
+  <div><label for="m_dp">Down payment you plan on the new home, %</label><input type="number" id="m_dp" min="0" max="100" step="any"></div>
+ </div>
+ <div id="cmpOut" class="why" style="margin-top:10px;display:none"></div>
+ <label for="notes_col">Cost-of-living notes <small>(schools, state income tax, commute, anything else you want to remember)</small></label><textarea id="notes_col"></textarea>
+ <div style="margin-top:10px" class="noprint"><button class="btn pri" type="button" id="useBtn">Use these new-area figures in the prequalification check</button> <span class="note">fills price, tax rate, insurance, HOA and down payment.</span></div>
+</div>
+
+<div class="card" id="docs">
+ <p class="eyebrow">Checklist 1</p>
+ <h2>What a lender will ask for</h2>
+ <p class="note">Start collecting these now. Requirements vary by loan program, and your loan officer may ask for more.</p>
+ <div class="grid2">
+ <ul class="cl">
+  <li><label><input type="checkbox"> Photo ID and Social Security number</label></li>
+  <li><label><input type="checkbox"> Last 30 days of pay stubs</label></li>
+  <li><label><input type="checkbox"> W-2s for the last 2 years</label></li>
+  <li><label><input type="checkbox"> Federal tax returns for the last 2 years (all pages)</label></li>
+  <li><label><input type="checkbox"> Self-employed: year-to-date profit and loss, business returns if applicable</label></li>
+  <li><label><input type="checkbox"> Last 2 months of bank statements (all pages, all accounts)</label></li>
+  <li><label><input type="checkbox"> Retirement and investment account statements</label></li>
+ </ul>
+ <ul class="cl">
+  <li><label><input type="checkbox"> Explanation letters for large deposits, gaps in employment, or credit issues</label></li>
+  <li><label><input type="checkbox"> Gift letter and donor statements, if family is helping</label></li>
+  <li><label><input type="checkbox"> Divorce decree or child support documents, if they apply</label></li>
+  <li><label><input type="checkbox"> Veterans: Certificate of Eligibility (James can request it)</label></li>
+  <li><label><input type="checkbox"> Signed listing agreement and your sale contract (shows cash from your sale)</label></li>
+  <li><label><input type="checkbox"> Current mortgage statement (payoff estimate)</label></li>
+  <li><label><input type="checkbox"> Homeowners insurance quote for the new home</label></li>
+ </ul>
+ </div>
+</div>
+
+<div class="card" id="moving">
+ <p class="eyebrow">Checklist 2</p>
+ <h2>Moving checklist</h2>
+ <div class="grid2">
+ <div>
+  <h3>Before you list</h3>
+  <ul class="cl">
+   <li><label><input type="checkbox"> Run the prequalification check above and talk to James</label></li>
+   <li><label><input type="checkbox"> Pull your credit reports (annualcreditreport.com) and fix errors</label></li>
+   <li><label><input type="checkbox"> Get a net sheet from your listing agent</label></li>
+   <li><label><input type="checkbox"> Decide your timing: sell first, buy first, or a rent-back</label></li>
+   <li><label><input type="checkbox"> Declutter, repair, and schedule photos</label></li>
+  </ul>
+  <h3>While under contract</h3>
+  <ul class="cl">
+   <li><label><input type="checkbox"> Keep jobs, cards, and bank accounts steady. No new debt.</label></li>
+   <li><label><input type="checkbox"> Send lender documents the same day they're requested</label></li>
+   <li><label><input type="checkbox"> Book movers and get quotes</label></li>
+   <li><label><input type="checkbox"> Set up insurance for the new home</label></li>
+  </ul>
+ </div>
+ <div>
+  <h3>Final 2 weeks</h3>
+  <ul class="cl">
+   <li><label><input type="checkbox"> Change your address (USPS, banks, DMV, subscriptions)</label></li>
+   <li><label><input type="checkbox"> Transfer or schedule utilities at both homes</label></li>
+   <li><label><input type="checkbox"> Update school and medical records</label></li>
+   <li><label><input type="checkbox"> Pack an essentials box and keep key papers with you</label></li>
+   <li><label><input type="checkbox"> Plan for your closing funds (cashier's check or wire, verified by phone)</label></li>
+  </ul>
+  <h3>Move day</h3>
+  <ul class="cl">
+   <li><label><input type="checkbox"> Final walkthrough at the new home</label></li>
+   <li><label><input type="checkbox"> Photograph meters, and hand over all keys and openers</label></li>
+   <li><label><input type="checkbox"> Confirm your closing time with the title company</label></li>
+  </ul>
+ </div>
+ </div>
+</div>
+
+<div class="card noprint">
+ <p class="eyebrow">Next steps</p>
+ <h2>Two ways to go further</h2>
+ <div class="grid2">
+  <div class="linkcard"><h3>Compare loan options</h3><p>See different loan types for your price side by side, so you can see how the payment and cash needed change from one program to another.</p><a class="btn pri" href="https://loan-comparison.base44.app/compare-loans" target="_blank" rel="noopener">Open the loan comparison</a></div>
+  <div class="linkcard"><h3>Ask James for a loan estimate</h3><p>A loan estimate is the official 3-page form that shows your rate, payment, and cash to close for a specific loan. Email James your target price and area and he'll prepare one with real, current pricing.</p><a class="btn pri" id="leLink" href="mailto:jbarnes@nexalending.com?subject=Loan%20estimate%20request%20(Know%20Before%20You%20Go)&amp;body=Target%20price%3A%0AArea%3A%0ADown%20payment%3A%0AMy%20phone%3A%0A">Email James for a loan estimate</a></div>
+ </div>
+</div>
+
+<div class="card sig">
+ <div class="name">James Barnes</div>
+ <div>Senior Loan Officer · NEXA Lending · NMLS 215987</div>
+ <div class="btns noprint"><a class="sbtn" href="tel:+15122288124">Call James</a><a class="sbtn sec" href="mailto:jbarnes@nexalending.com">Email James</a></div>
+ <div style="margin-top:8px">(512) 228-8124 · jbarnes@nexalending.com</div>
+ <!-- CO-BRAND FOOTER SLOT (listing agent) -->
+ <div class="agent" id="agentFooter" style="margin-top:14px"><div><span class="tag">Your listing agent</span><b id="agName2">[Listing Agent Name]</b><br><span class="slot" id="agBrok2">[Brokerage Name] · [License #]</span></div><div class="slot" id="agContact2">[Agent Phone] · [Agent Email]</div></div>
+ <p class="disc">🏠 Equal Housing Opportunity. James Barnes, NMLS 215987. This material is for educational purposes only. All calculations are estimates based on general rules of thumb and the numbers you enter. Nothing here is a loan approval, a commitment to lend, or an offer of credit; all loans are subject to credit approval, underwriting, property appraisal, and program guidelines. Rates and terms are not shown and are not guaranteed. Not affiliated with any government agency. Property tax, insurance, and cost figures are entered by you; check official sources before you decide.</p>
+</div>
+</div>
+
+<script>
+(function(){
+var FORM_ENDPOINT='https://formsubmit.co/ajax/jbarnes@nexalending.com';
+var NOTIFY_EMAIL='jbarnes@nexalending.com';
+var BACKUP_ENDPOINT='https://codefreeform.com/api/contact-api/';
+var BACKUP_KEY='2F5DF1';
+function $(i){return document.getElementById(i)}
+function num(id){var v=parseFloat($(id).value);return isFinite(v)?v:0}
+function has(id){return $(id).value!==''&&isFinite(parseFloat($(id).value))}
+function usd(n){return (n<0?'-':'')+'$'+Math.abs(Math.round(n)).toLocaleString('en-US')}
+function sgn(n,f){f=f||usd;return n===0?'same':(n>0?'+':'')+f(n)}
+function pct(n){return (Math.round(n*10)/10).toFixed(1)+'%'}
+function validEmail(e){return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e||'')}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+
+// co-brand slots from URL params
+(function(){
+ var q=new URLSearchParams(location.search);var a=q.get('agent'),b=q.get('brokerage'),l=q.get('license'),p=q.get('phone'),e=q.get('email');
+ if(!a)return;
+ var brok=[b,l?('Lic. #'+l):''].filter(Boolean).join(' · ');
+ var cont=[];
+ if(p){var d=p.replace(/\D/g,'');cont.push('<a href="tel:+1'+esc(d.slice(-10))+'">'+esc(p)+'</a>')}
+ if(e&&validEmail(e))cont.push('<a href="mailto:'+esc(e)+'">'+esc(e)+'</a>');
+ [['agName','agName2',a],['agBrok','agBrok2',brok||'']].forEach(function(x){$(x[0]).textContent=x[2];$(x[1]).textContent=x[2]});
+ ['agContact','agContact2'].forEach(function(i){$(i).innerHTML=cont.join(' · ')});
+ $('s_agent').value=a;
+})();
+
+var last=null;
+function calc(){
+ var inc=num('f_income');
+ if(!(inc>0)){alert('Please enter your gross monthly income.');return}
+ var cr=$('f_credit').value; if(cr===''){alert('Please choose a credit score range (or "Not sure").');return}
+ cr=parseInt(cr,10);
+ var price=num('f_price'),down=num('f_down'),loan=Math.max(price-down,0);
+ var pay=0,how='';
+ if(has('f_pay')&&num('f_pay')>0){pay=num('f_pay');how='the total you entered'}
+ else if(has('f_rate')&&price>0){
+  var r=num('f_rate')/100/12,n=parseInt($('f_term').value,10)*12;
+  var pi=r>0?loan*r/(1-Math.pow(1+r,-n)):loan/n;
+  var tx=price*num('f_taxrate')/100/12,ins=num('f_ins')/12,hoa=num('f_hoa'),mi=num('f_mi');
+  pay=pi+tx+ins+hoa+mi;how='principal and interest at the rate you entered ('+usd(pi)+') plus taxes, insurance, HOA and mortgage insurance you entered';
+ } else {alert('Enter either a total monthly housing payment (Option A) or a price and an interest rate (Option B).');return}
+ var debts=num('f_car')+num('f_student')+num('f_cards')+num('f_other');
+ var front=pay/inc*100,back=(pay+debts)/inc*100,dpPct=price>0?down/price*100:null;
+ $('r_front').textContent=pct(front);$('r_back').textContent=pct(back);
+ $('r_front_n').textContent=' Common targets: about 28% (conventional) to 31% (FHA)';
+ $('r_back_n').textContent=' Common limits: about 36–45% (conventional), 43% (FHA), 41% (VA)';
+ $('r_dp').textContent=dpPct==null?'n/a':pct(dpPct);$('r_dp_n').textContent=price>0?(' '+usd(down)+' toward a '+usd(price)+' home'):' Enter a price to see it';
+ $('r_pay').textContent='Housing payment used: '+usd(pay)+' per month, from '+how+'. Monthly debts: '+usd(debts)+'.';
+ var vet=$('c_vet').checked,late=$('c_late').checked,bk=$('c_bk').checked,incChg=$('c_inc').checked,rural=$('c_rural').checked;
+ var rows=[];
+ function row(n,s,w){rows.push({n:n,s:s,w:w})}
+ // Conventional
+ var cs,cw=[];
+ if(cr===-1){cs='possible';cw.push('Credit score unknown. Conventional usually wants 620 or higher.')}
+ else if(cr<620){cs='unlikely';cw.push('Conventional usually needs a 620+ score.')}
+ else{cs='likely'}
+ if(dpPct!=null&&dpPct<3){cs='unlikely';cw.push('Down payment under 3%.')}
+ else if(dpPct!=null&&dpPct<5&&cs==='likely'){cs='possible';cw.push('Under 5% down may limit options.')}
+ if(back>50){cs='unlikely';cw.push('Back-end ratio is above about 50%.')}
+ else if(back>45){if(cs==='likely')cs='possible';cw.push('Back-end above 45% usually needs strong credit, savings, or other offsets.')}
+ else if(cs!=='unlikely'&&cw.length===0)cw.push('Score, ratios and down payment fit typical conventional guidelines.');
+ if(front>28&&cs!=='unlikely')cw.push('Housing ratio is above the 28% rule of thumb; many lenders look mainly at back-end.');
+ if(cr>=0&&cr<680&&cs!=='unlikely')cw.push('Scores under about 680 usually mean higher cost, especially with less than 20% down.');
+ row('Conventional (Fannie Mae / Freddie Mac)',cs,cw.join(' '));
+ // FHA
+ var fs,fw=[];
+ if(cr===-1){fs='possible';fw.push('Credit score unknown. FHA is usually used at 580+ with 3.5% down.')}
+ else if(cr<580){fs=(dpPct!=null&&dpPct>=10)?'possible':'unlikely';fw.push('Under 580 generally needs 10% down and a lender willing to go that low.')}
+ else fs='likely';
+ if(dpPct!=null&&dpPct<3.5){fs='unlikely';fw.push('FHA minimum down payment is 3.5%.')}
+ if(back>57){fs='unlikely';fw.push('Back-end ratio is above about 57%.')}
+ else if(back>50){if(fs==='likely')fs='possible';fw.push('Back-end above 50% is a stretch.')}
+ else if(back>43){if(fs==='likely')fs='possible';fw.push('Back-end above 43% usually needs compensating factors.')}
+ else if(fs!=='unlikely'&&fw.length===0)fw.push('Score, ratios and 3.5% down fit typical FHA guidelines.');
+ fw.push('FHA has upfront and monthly mortgage insurance.');
+ row('FHA',fs,fw.join(' '));
+ // VA
+ var vs,vw=[];
+ if(!vet){vs='unlikely';vw.push('Requires eligible military service. If you served, ask James to check your eligibility.')}
+ else{
+  vs='likely';
+  if(cr===-1){vs='possible';vw.push('Credit score unknown. Many lenders look for 580–620+.')}
+  else if(cr<580){vs='unlikely';vw.push('Most lenders want about 580–620 or higher.')}
+  if(back>50){vs='unlikely';vw.push('Back-end ratio is above about 50%.')}
+  else if(back>41){if(vs==='likely')vs='possible';vw.push('Back-end above 41% usually needs strong residual income.')}
+  if(vs==='likely')vw.push('Eligible service, ratios fit; VA allows 0% down and has no monthly mortgage insurance. A funding fee usually applies. VA also checks residual income.');
+ }
+ row('VA',vs,vw.join(' '));
+ // USDA
+ var us,uw=[];
+ if(!rural){us='unlikely';uw.push('USDA is for eligible rural areas with household income limits. Check the box above if the new home is rural.')}
+ else{us='possible';uw.push('Rural area noted. USDA typically needs about 640+ credit, a back-end ratio near 41% or less, and household income under program limits. Ask James to check the property and income limits.');
+  if(cr>=0&&cr<640||back>44){us='unlikely'}}
+ row('USDA (rural)',us,uw.join(' '));
+ var any=rows.some(function(x){return x.s==='likely'||x.s==='possible'});
+ var tb=$('progTable').querySelector('tbody');tb.innerHTML='';
+ rows.forEach(function(x){var tr=document.createElement('tr');tr.innerHTML='<td><b>'+esc(x.n)+'</b></td><td class="s-'+x.s+'">'+({likely:'Likely',possible:'Possible / stretch',unlikely:'Unlikely'})[x.s]+'</td><td>'+esc(x.w)+'</td>';tb.appendChild(tr)});
+ var fl=[];
+ if(late)fl.push('<b>Recent late payments or collections:</b> these can change your program options and cost. Ask James what can be improved and how long it would take.');
+ if(bk)fl.push('<b>Bankruptcy, foreclosure, or short sale:</b> waiting periods usually apply (they vary by program and event). James can tell you where you stand.');
+ if(incChg)fl.push('<b>Income change:</b> lenders usually want a 2-year history. A new job, self-employment, or retirement income is documented differently.');
+ if(!any||late||bk||cr===0)fl.push('<b>Other options:</b> if no standard program fits yet, there may be a path with some preparation, or non-QM and bank-statement programs for self-employed or credit-challenged buyers. Talk with James before you list.');
+ $('r_flags').innerHTML=fl.length?'<div class="why" style="margin-top:10px">'+fl.map(function(x){return '<p style="margin:4px 0">'+x+'</p>'}).join('')+'</div>':'';
+ $('results').style.display='block';
+ last={income:inc,credit:$('f_credit').options[$('f_credit').selectedIndex].text,debts:debts,pay:pay,front:front,back:back,price:price,down:down,dpPct:dpPct,where:$('f_state').value,rows:rows,flags:{vet:vet,late:late,bk:bk,incChg:incChg,rural:rural}};
+ $('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+$('calcBtn').addEventListener('click',calc);
+
+// comparison
+function cmp(){
+ var n={p:num('n_price'),t:num('n_tax'),i:num('n_ins'),h:num('n_hoa'),u:num('n_util'),o:num('n_oth')};
+ var m={p:num('m_price'),t:num('m_tax'),i:num('m_ins'),h:num('m_hoa'),u:num('m_util'),o:num('m_oth')};
+ function mk(x){var taxy=x.p*x.t/100;return {taxy:taxy,ti:taxy/12+x.i/12,tot:taxy/12+x.i/12+x.h+x.u+x.o}}
+ var a=mk(n),b=mk(m);
+ var any=['n_price','n_tax','n_ins','n_hoa','n_util','n_oth','m_price','m_tax','m_ins','m_hoa','m_util','m_oth'].some(has);
+ function set(id,v){$(id).textContent=any?v:'–'}
+ set('n_ti',usd(a.ti));set('m_ti',usd(b.ti));set('d_ti',sgn(b.ti-a.ti));
+ set('n_tot',usd(a.tot));set('m_tot',usd(b.tot));set('d_tot',sgn(b.tot-a.tot));
+ set('n_taxy',usd(a.taxy));set('m_taxy',usd(b.taxy));set('d_taxy',sgn(b.taxy-a.taxy));
+ [['price',usd],['tax',function(x){return pct(x)}],['ins',usd],['hoa',usd],['util',usd],['oth',usd]].forEach(function(k){
+  var an=has('n_'+k[0]),bm=has('m_'+k[0]);
+  $('d_'+k[0]).textContent=(an&&bm)?sgn(num('m_'+k[0])-num('n_'+k[0]),k[1]):'';
+ });
+ var out=[];
+ if(has('n_net')&&has('m_dp')&&m.p>0){
+  var need=m.p*num('m_dp')/100,gap=need-num('n_net');
+  out.push('Down payment needed on the new home: <b>'+usd(need)+'</b>. Estimated cash from your sale: <b>'+usd(num('n_net'))+'</b>. '+(gap>0?'Short by about <b>'+usd(gap)+'</b> (before closing costs), so plan for savings, a lower price, or a different program.':'That covers the down payment with about <b>'+usd(-gap)+'</b> left toward closing costs and moving.'));
+ }
+ if(any&&(has('n_price')||has('m_price')||has('n_tax')||has('m_tax')))out.push('Taxes, insurance, HOA, utilities and other costs you entered change by <b>'+sgn(b.tot-a.tot)+' per month</b> ('+sgn((b.tot-a.tot)*12)+' per year). This does not include your mortgage principal and interest.');
+ var o=$('cmpOut');o.innerHTML=out.join('<br><br>');o.style.display=out.length?'block':'none';
+}
+['n_price','n_tax','n_ins','n_hoa','n_util','n_oth','m_price','m_tax','m_ins','m_hoa','m_util','m_oth','n_net','m_dp'].forEach(function(i){$(i).addEventListener('input',cmp)});
+$('useBtn').addEventListener('click',function(){
+ var map=[['m_price','f_price'],['m_tax','f_taxrate'],['m_ins','f_ins'],['m_hoa','f_hoa']];
+ map.forEach(function(k){if(has(k[0]))$(k[1]).value=$(k[0]).value});
+ if($('m_area').value)$('f_state').value=$('m_area').value;
+ if(has('m_price')&&has('m_dp'))$('f_down').value=Math.round(num('m_price')*num('m_dp')/100);
+ $('prequal').scrollIntoView({behavior:'smooth'});
+});
+
+// submit
+function fmtPhone(p){var d=String(p||'').replace(/\D/g,'');if(d.length===11&&d[0]==='1')d=d.slice(1);return d.length===10?d.slice(0,3)+'-'+d.slice(3,6)+'-'+d.slice(6):String(p||'')}
+function postJson(url,body,ms){
+ var ctl=(typeof AbortController!=='undefined')?new AbortController():null,t=ctl?setTimeout(function(){ctl.abort()},ms||15000):null;
+ return fetch(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body),signal:ctl?ctl.signal:undefined}).then(function(x){if(t)clearTimeout(t);return x.json().catch(function(){return {}}).then(function(d){if(!x.ok)throw new Error('HTTP '+x.status);return d})},function(e){if(t)clearTimeout(t);throw e});
+}
+function summary(){
+ var L=['KNOW BEFORE YOU GO – prequalification check (ESTIMATE ONLY, not an approval)',''];
+ L.push('Name: '+$('s_name').value,'Phone: '+fmtPhone($('s_phone').value),'Email: '+$('s_email').value,'Listing agent: '+($('s_agent').value||'(none)'),'');
+ L.push('Gross monthly income: '+usd(last.income),'Credit range: '+last.credit,'Monthly debts: '+usd(last.debts),'Moving to: '+(last.where||'(not given)'),'Target price: '+usd(last.price),'Down payment: '+usd(last.down)+(last.dpPct!=null?' ('+pct(last.dpPct)+')':''),'Housing payment used: '+usd(last.pay),'');
+ L.push('Front-end ratio: '+pct(last.front),'Back-end ratio: '+pct(last.back),'');
+ L.push('Programs (rule of thumb):');last.rows.forEach(function(r){L.push(' - '+r.n+': '+r.s)});
+ var f=last.flags;L.push('','Flags: VA service='+f.vet+', recent lates='+f.late+', BK/foreclosure 7y='+f.bk+', income change='+f.incChg+', rural='+f.rural);
+ if($('n_area').value||$('m_area').value)L.push('','Comparison: now='+($('n_area').value||'?')+', moving to='+($('m_area').value||'?'));
+ if($('notes_col').value)L.push('Cost-of-living notes: '+$('notes_col').value);
+ if($('s_notes').value)L.push('','Notes: '+$('s_notes').value);
+ return L.join('\n');
+}
+function deliver(){
+ var nm=$('s_name').value.trim(),em=$('s_email').value.trim(),msg=summary();
+ var cf={access_key:BACKUP_KEY,email:validEmail(em)?em:NOTIFY_EMAIL,subject:'New Know Before You Go lead – '+nm,message:msg.replace(/\b(?:https?:\/\/|www\.)\S+/gi,'[link omitted]'),
+  'Form':'Know Before You Go','Name':nm,'Phone':fmtPhone($('s_phone').value),'Email':em,'Listing agent':$('s_agent').value||'(none)',
+  'Front-end DTI':pct(last.front),'Back-end DTI':pct(last.back),'Target price':usd(last.price),'Income (monthly)':usd(last.income)};
+ var fs={_subject:'New Know Before You Go lead – '+nm,_template:'table',_captcha:'false',_replyto:validEmail(em)?em:NOTIFY_EMAIL,form_name:'Know Before You Go',name:nm,email:em,phone:fmtPhone($('s_phone').value),listing_agent:$('s_agent').value||'(none)',front_end_dti:pct(last.front),back_end_dti:pct(last.back),message:msg};
+ return postJson(BACKUP_ENDPOINT,cf,15000).then(function(d){if(d&&d.success===false)throw new Error('rejected');return 'ok'})
+ .catch(function(){return postJson(FORM_ENDPOINT,fs,15000).then(function(d){if(!(d&&(d.success===true||d.success==='true')))throw new Error('not accepted');return 'ok'})});
+}
+$('sendBtn').addEventListener('click',function(){
+ var t=$('toast');t.className='toast';t.textContent='';
+ if(!last){calc();if(!last)return}
+ var nm=$('s_name').value.trim(),em=$('s_email').value.trim(),ph=$('s_phone').value.replace(/\D/g,'');
+ if(!nm||!validEmail(em)||ph.length<10){t.className='toast err';t.textContent='Please enter your name, a valid email, and a 10-digit phone number.';return}
+ if(!$('s_consent').checked){t.className='toast err';t.textContent='Please check the box to agree before sending.';return}
+ var b=$('sendBtn');b.disabled=true;b.textContent='Sending…';
+ deliver().then(function(){t.className='toast ok';t.textContent='Sent. James Barnes will review your numbers and reach out. This is an estimate, not an approval.';b.textContent='Sent'}).catch(function(){
+  b.disabled=false;b.textContent='Send my results to James';t.className='toast err';
+  var body=encodeURIComponent(summary());
+  t.innerHTML='We could not send automatically. <a href="mailto:'+NOTIFY_EMAIL+'?subject='+encodeURIComponent('Know Before You Go – '+nm)+'&body='+body+'">Click here to email James your results</a> or <a href="tel:+15122288124">Call James</a>.';
+ });
+});
+cmp();
+})();
+</script>
+</body>
+</html>
