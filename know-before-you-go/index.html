@@ -66,7 +66,7 @@ table.cmp td input{padding:8px}
 .disc{font-size:11.5px;color:#55657a;margin-top:10px}
 .toast{display:none;margin-top:10px;padding:10px 12px;border-radius:6px;font-size:14px}
 .toast.ok{display:block;background:#e6f4ea;color:#14532d}.toast.err{display:block;background:#fdecec;color:#7a1d1d}
-@media(max-width:700px){.grid2,.grid3{grid-template-columns:1fr}.hero h1{font-size:28px}.hdr .who{text-align:left}.card{padding:16px 14px}table.cmp{font-size:13px}.btn{width:100%;text-align:center}}
+@media(max-width:700px){.grid2,.grid3{grid-template-columns:1fr}.hero h1{font-size:28px}.hdr .who{text-align:left}.card{padding:16px 14px}table.cmp{font-size:13px}table.cmpres td,table.cmpres th{padding:6px 4px}.btn{width:100%;text-align:center}}
 @media print{
  body{background:#fff}.wrap{max-width:none;padding:0}
  .hero{background:var(--navy)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -74,6 +74,28 @@ table.cmp td input{padding:8px}
  .card{break-inside:avoid;border-color:#bbb}
  .noprint,.hero .btns{display:none!important}
  #printnote{display:block!important}
+ .printonly{display:block!important}
+}
+.printonly{display:none}
+.printonly table.cmp td{padding:13px 6px}.printonly table.cmp th:first-child{width:31%}.printonly table.cmp th{width:23%}
+.ac{position:relative}
+.aclist{display:none;position:absolute;z-index:20;left:0;right:0;top:100%;margin:2px 0 0;padding:0;list-style:none;background:#fff;border:1px solid #b9c4d8;border-radius:6px;box-shadow:0 6px 18px rgba(11,42,91,.15);max-height:260px;overflow-y:auto}
+.aclist li{padding:9px 10px;cursor:pointer;font-size:15px;border-bottom:1px solid #eef1f7}
+.aclist li small{color:#66758c}
+.aclist li[aria-selected=true],.aclist li:hover{background:var(--soft)}
+table.cmpres td,table.cmpres th{padding:8px 6px;vertical-align:top}
+table.cmpres td:first-child{color:#33425b}
+table.cmpres td small{display:block;color:#66758c;font-size:11.5px}
+table.cmpres tr.grp td{background:var(--soft);font-weight:bold;color:var(--navy);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.src-note{margin-top:12px}
+@media(max-width:600px){
+ table.cmpres,table.cmpres thead,table.cmpres tbody{display:block}
+ table.cmpres thead tr,table.cmpres tbody tr:not(.grp){display:grid;grid-template-columns:1fr 1fr .85fr;column-gap:6px;border-bottom:1px solid var(--line)}
+ table.cmpres thead th:first-child{display:none}
+ table.cmpres th,table.cmpres td{border:0!important}
+ table.cmpres tbody tr:not(.grp) td:first-child{grid-column:1/-1;padding-bottom:0;font-weight:bold}
+ table.cmpres tbody tr:not(.grp) td:first-child small{display:inline;font-weight:normal;margin-left:4px}
+ table.cmpres tr.grp{display:block}table.cmpres tr.grp td{display:block}
 }
 #printnote{display:none;font-size:13px;border:1px solid var(--line);padding:8px 12px;margin:8px 0;border-radius:6px}
 </style>
@@ -142,7 +164,7 @@ table.cmp td input{padding:8px}
   <div><label for="f_down">Down payment available, $ <small>(e.g. from your sale)</small></label><input id="f_down" type="number" min="0" step="any"></div>
   <div><label for="f_state">Where <small>(city, state)</small></label><input id="f_state" type="text"></div>
  </div>
- <p class="note" style="margin-top:8px">Your estimated monthly housing payment is needed to figure the ratios. Either type the total, or let the tool add it up from the pieces. <b>I don't supply a rate:</b> use one from a quote or a loan estimate, and the comparison tool below can feed in taxes and insurance.</p>
+ <p class="note" style="margin-top:8px">Your estimated monthly housing payment is needed to figure the ratios. Either type the total, or let the tool add it up from the pieces. <b>I don't supply a rate:</b> use one from a quote or a loan estimate, and the city comparison below can fill in a property tax rate for the new area.</p>
  <div class="grid2">
   <div><label for="f_pay">Option A: total new monthly housing payment, $ <small>(principal, interest, taxes, insurance, HOA)</small></label><input id="f_pay" type="number" min="0" step="any"></div>
   <div class="note" style="align-self:end;padding-bottom:10px">Or use Option B below. If you fill Option A, it's used.</div>
@@ -193,38 +215,29 @@ table.cmp td input{padding:8px}
 
 <div class="card" id="compare">
  <p class="eyebrow">Tool 2</p>
- <h2>Where you are now vs. where you're moving</h2>
- <p>Type in what you know for each place. The tool shows the differences. There are no pre-filled numbers: look yours up on your tax bill and insurance policy, or use the public sources below.</p>
- <div class="src"><b>Look up real numbers:</b>
-  <a href="https://www.census.gov/quickfacts" target="_blank" rel="noopener">Census QuickFacts (home values, taxes, income by place)</a>
-  <a href="https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area" target="_blank" rel="noopener">BEA Regional Price Parities (cost of living)</a>
-  <a href="https://taxfoundation.org/data/all/state/property-taxes-by-state-county/" target="_blank" rel="noopener">Tax Foundation property taxes by county</a>
-  <a href="https://msc.fema.gov/portal/home" target="_blank" rel="noopener">FEMA flood map lookup</a>
+ <h2>Where you live now vs. where you're going</h2>
+ <p class="noprint">Type the city you live in now and the city you're moving to, then press Compare. You'll see home values, rent, income, property taxes, state income and sales tax, and cost of living side by side, with the difference and what it means for you.</p>
+ <div class="printonly"><p>On the live page (<a href="https://jbarnes1960.github.io/know-before-you-go/#compare"><b>jbarnes1960.github.io/know-before-you-go</b></a>), type your current city and your new city to see a side-by-side comparison of home values, rent, household income, property taxes, state income tax, sales tax, and cost of living for about 6,700 U.S. cities and towns, using U.S. Census Bureau, BEA, and Tax Foundation data. Or fill in this worksheet by hand:</p>
+  <table class="cmp"><thead><tr><th></th><th>Now</th><th>Moving to</th><th>Difference</th></tr></thead><tbody>
+   <tr><td>City, state</td><td>&nbsp;</td><td></td><td></td></tr><tr><td>Typical home value</td><td>&nbsp;</td><td></td><td></td></tr><tr><td>Typical rent</td><td>&nbsp;</td><td></td><td></td></tr><tr><td>Property tax rate / yearly tax</td><td>&nbsp;</td><td></td><td></td></tr><tr><td>State income tax</td><td>&nbsp;</td><td></td><td></td></tr><tr><td>Sales tax</td><td>&nbsp;</td><td></td><td></td></tr><tr><td>Cost of living (US = 100)</td><td>&nbsp;</td><td></td><td></td></tr><tr><td>Home insurance, HOA, utilities</td><td>&nbsp;</td><td></td><td></td></tr>
+  </tbody></table></div>
+ <div class="grid2 noprint" style="align-items:end">
+  <div class="ac"><label for="cityA">Where you live now <small>City, ST</small></label><input type="text" id="cityA" placeholder="e.g. Austin, TX" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cityA_list"><ul class="aclist" id="cityA_list" role="listbox"></ul></div>
+  <div class="ac"><label for="cityB">Where you're moving <small>City, ST</small></label><input type="text" id="cityB" placeholder="e.g. Colorado Springs, CO" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cityB_list"><ul class="aclist" id="cityB_list" role="listbox"></ul></div>
  </div>
- <div style="overflow-x:auto">
- <table class="cmp" id="cmpTable">
-  <thead><tr><th></th><th>Now</th><th>Moving to</th><th>Difference</th></tr></thead>
-  <tbody>
-   <tr><td>Area / city</td><td><input type="text" id="n_area"></td><td><input type="text" id="m_area"></td><td></td></tr>
-   <tr><td>Home price or value, $</td><td><input type="number" id="n_price" min="0" step="any"></td><td><input type="number" id="m_price" min="0" step="any"></td><td class="diff" id="d_price"></td></tr>
-   <tr><td>Property tax rate, % per year</td><td><input type="number" id="n_tax" min="0" step="any"></td><td><input type="number" id="m_tax" min="0" step="any"></td><td class="diff" id="d_tax"></td></tr>
-   <tr><td>Home insurance, $ per year</td><td><input type="number" id="n_ins" min="0" step="any"></td><td><input type="number" id="m_ins" min="0" step="any"></td><td class="diff" id="d_ins"></td></tr>
-   <tr><td>HOA, $ per month</td><td><input type="number" id="n_hoa" min="0" step="any"></td><td><input type="number" id="m_hoa" min="0" step="any"></td><td class="diff" id="d_hoa"></td></tr>
-   <tr><td>Utilities, $ per month</td><td><input type="number" id="n_util" min="0" step="any"></td><td><input type="number" id="m_util" min="0" step="any"></td><td class="diff" id="d_util"></td></tr>
-   <tr><td>Other monthly costs, $ <small>(commute, flood/wind cover, etc.)</small></td><td><input type="number" id="n_oth" min="0" step="any"></td><td><input type="number" id="m_oth" min="0" step="any"></td><td class="diff" id="d_oth"></td></tr>
-   <tr><td><b>Taxes + insurance, per month</b></td><td id="n_ti">–</td><td id="m_ti">–</td><td class="diff" id="d_ti"></td></tr>
-   <tr><td><b>Total non-mortgage monthly costs</b></td><td id="n_tot">–</td><td id="m_tot">–</td><td class="diff" id="d_tot"></td></tr>
-   <tr><td><b>Property tax, per year</b></td><td id="n_taxy">–</td><td id="m_taxy">–</td><td class="diff" id="d_taxy"></td></tr>
-  </tbody>
- </table>
+ <div class="grid2 noprint">
+  <div><label for="cmpInc">Your household income, $ per year <small>(optional, for the cost-of-living math)</small></label><input type="number" id="cmpInc" min="0" step="any" inputmode="decimal" placeholder="100000"></div>
+  <div><label for="cmpPrice">Home price to compare taxes on, $ <small>(optional; defaults to the new city's typical value)</small></label><input type="number" id="cmpPrice" min="0" step="any" inputmode="decimal"></div>
  </div>
- <div class="grid2">
-  <div><label for="n_net">Estimated cash from selling your current home, $ <small>(after payoff and costs; ask your agent for a net sheet)</small></label><input type="number" id="n_net" min="0" step="any"></div>
-  <div><label for="m_dp">Down payment you plan on the new home, %</label><input type="number" id="m_dp" min="0" max="100" step="any"></div>
+ <div class="noprint" style="margin-top:12px"><button class="btn pri" type="button" id="cmpBtn">Compare</button> <span class="note" id="cmpMsg" role="alert"></span></div>
+ <div id="cmpRes" class="noprint" style="display:none;margin-top:14px" aria-live="polite">
+  <div style="overflow-x:auto"><table class="cmp cmpres" id="cmpTable"><thead><tr><th></th><th id="hA">Now</th><th id="hB">Moving to</th><th>Difference</th></tr></thead><tbody></tbody></table></div>
+  <div class="why" id="cmpOut" style="margin-top:12px"></div>
+  <div style="margin-top:10px"><button class="btn pri" type="button" id="useBtn">Use the new city's property tax rate in the prequalification check</button></div>
+  <p class="note" style="margin-top:10px">Not in the data: home insurance, HOA dues, utilities, commute, and schools. Ask your agent and an insurance agent for quotes in the new area.</p>
  </div>
- <div id="cmpOut" class="why" style="margin-top:10px;display:none"></div>
- <label for="notes_col">Cost-of-living notes <small>(schools, state income tax, commute, anything else you want to remember)</small></label><textarea id="notes_col"></textarea>
- <div style="margin-top:10px" class="noprint"><button class="btn pri" type="button" id="useBtn">Use these new-area figures in the prequalification check</button> <span class="note">fills price, tax rate, insurance, HOA and down payment.</span></div>
+ <label for="notes_col">Your notes <small>(schools, commute, insurance quotes, anything else you want to remember)</small></label><textarea id="notes_col"></textarea>
+ <p class="note src-note"><b>Sources:</b> Home value, rent, household income, population, and property taxes paid: U.S. Census Bureau, American Community Survey 2020–2024 5-year estimates (tables B25077, B25064, B19013, B01003, B25103), medians for each city or town of about 5,000+ people. Effective property tax rate = median real estate taxes paid ÷ median home value, a rough estimate; your actual bill depends on the appraisal, local rates, and exemptions. Cost of living: U.S. Bureau of Economic Analysis, Regional Price Parities 2024 (released Feb. 2026), by metro area; towns outside a metro area use their state's non-metro figure. State income tax: Tax Foundation, top marginal rate on wages as of Jan. 1, 2026 (local income taxes not included). Sales tax: Tax Foundation, state plus average local rate as of July 1, 2026 (state-wide average; the rate in a given city may differ). "n/a" means the source has no figure for that place.</p>
 </div>
 
 <div class="card" id="docs">
@@ -309,10 +322,11 @@ table.cmp td input{padding:8px}
  <div style="margin-top:8px">(512) 228-8124 · jbarnes@nexalending.com</div>
  <!-- CO-BRAND FOOTER SLOT (listing agent) -->
  <div class="agent" id="agentFooter" style="margin-top:14px"><div><span class="tag">Your listing agent</span><b id="agName2">[Listing Agent Name]</b><br><span class="slot" id="agBrok2">[Brokerage Name] · [License #]</span></div><div class="slot" id="agContact2">[Agent Phone] · [Agent Email]</div></div>
- <p class="disc">🏠 Equal Housing Opportunity. James Barnes, NMLS 215987. This material is for educational purposes only. All calculations are estimates based on general rules of thumb and the numbers you enter. Nothing here is a loan approval, a commitment to lend, or an offer of credit; all loans are subject to credit approval, underwriting, property appraisal, and program guidelines. Rates and terms are not shown and are not guaranteed. Not affiliated with any government agency. Property tax, insurance, and cost figures are entered by you; check official sources before you decide.</p>
+ <p class="disc">🏠 Equal Housing Opportunity. James Barnes, NMLS 215987. This material is for educational purposes only. All calculations are estimates based on general rules of thumb and the numbers you enter. Nothing here is a loan approval, a commitment to lend, or an offer of credit; all loans are subject to credit approval, underwriting, property appraisal, and program guidelines. Rates and terms are not shown and are not guaranteed. Not affiliated with any government agency. City comparison figures are public estimates (U.S. Census Bureau, BEA, Tax Foundation) and may not match a specific home; property tax, insurance, and cost figures you enter are your own. Check official sources before you decide.</p>
 </div>
 </div>
 
+<script src="cities.js"></script>
 <script>
 (function(){
 var FORM_ENDPOINT='https://formsubmit.co/ajax/jbarnes@nexalending.com';
@@ -422,35 +436,122 @@ function calc(){
 }
 $('calcBtn').addEventListener('click',calc);
 
-// comparison
-function cmp(){
- var n={p:num('n_price'),t:num('n_tax'),i:num('n_ins'),h:num('n_hoa'),u:num('n_util'),o:num('n_oth')};
- var m={p:num('m_price'),t:num('m_tax'),i:num('m_ins'),h:num('m_hoa'),u:num('m_util'),o:num('m_oth')};
- function mk(x){var taxy=x.p*x.t/100;return {taxy:taxy,ti:taxy/12+x.i/12,tot:taxy/12+x.i/12+x.h+x.u+x.o}}
- var a=mk(n),b=mk(m);
- var any=['n_price','n_tax','n_ins','n_hoa','n_util','n_oth','m_price','m_tax','m_ins','m_hoa','m_util','m_oth'].some(has);
- function set(id,v){$(id).textContent=any?v:'–'}
- set('n_ti',usd(a.ti));set('m_ti',usd(b.ti));set('d_ti',sgn(b.ti-a.ti));
- set('n_tot',usd(a.tot));set('m_tot',usd(b.tot));set('d_tot',sgn(b.tot-a.tot));
- set('n_taxy',usd(a.taxy));set('m_taxy',usd(b.taxy));set('d_taxy',sgn(b.taxy-a.taxy));
- [['price',usd],['tax',function(x){return pct(x)}],['ins',usd],['hoa',usd],['util',usd],['oth',usd]].forEach(function(k){
-  var an=has('n_'+k[0]),bm=has('m_'+k[0]);
-  $('d_'+k[0]).textContent=(an&&bm)?sgn(num('m_'+k[0])-num('n_'+k[0]),k[1]):'';
- });
- var out=[];
- if(has('n_net')&&has('m_dp')&&m.p>0){
-  var need=m.p*num('m_dp')/100,gap=need-num('n_net');
-  out.push('Down payment needed on the new home: <b>'+usd(need)+'</b>. Estimated cash from your sale: <b>'+usd(num('n_net'))+'</b>. '+(gap>0?'Short by about <b>'+usd(gap)+'</b> (before closing costs), so plan for savings, a lower price, or a different program.':'That covers the down payment with about <b>'+usd(-gap)+'</b> left toward closing costs and moving.'));
- }
- if(any&&(has('n_price')||has('m_price')||has('n_tax')||has('m_tax')))out.push('Taxes, insurance, HOA, utilities and other costs you entered change by <b>'+sgn(b.tot-a.tot)+' per month</b> ('+sgn((b.tot-a.tot)*12)+' per year). This does not include your mortgage principal and interest.');
- var o=$('cmpOut');o.innerHTML=out.join('<br><br>');o.style.display=out.length?'block':'none';
+// city comparison (static public data in cities.js)
+var CD=window.KBYG_CITIES||null,CITY=null;
+function normName(x){return String(x||'').toLowerCase().replace(/\bsaint\b/g,'st').replace(/\bst\./g,'st').replace(/\bft\.?\s/g,'fort ').replace(/\bmt\.?\s/g,'mount ').replace(/[^a-z0-9, ]+/g,' ').replace(/\s+/g,' ').trim()}
+function buildIdx(){
+ if(CITY||!CD)return;
+ CITY={list:[],byKey:{}};
+ var stN={};Object.keys(CD.s).forEach(function(k){stN[CD.s[k][0].toLowerCase()]=k});CITY.stN=stN;
+ CD.p.forEach(function(r,i){var lab=r[0]+', '+r[1];var o={i:i,lab:lab,n:normName(r[0]),st:r[1]};CITY.list.push(o);CITY.byKey[normName(lab)]=o});
+ Object.keys(CD.a||{}).forEach(function(k){var t=CITY.byKey[normName(CD.a[k])];if(t){CITY.byKey[normName(k)]=t;CITY.list.push({i:t.i,lab:t.lab,n:normName(k.split(',')[0]),st:t.st,alias:k})}});
 }
-['n_price','n_tax','n_ins','n_hoa','n_util','n_oth','m_price','m_tax','m_ins','m_hoa','m_util','m_oth','n_net','m_dp'].forEach(function(i){$(i).addEventListener('input',cmp)});
+function parseQ(q){q=normName(q);var m=q.match(/^(.*?)[, ]+([a-z]{2}|[a-z ]{4,})$/),city=q,st='';
+ if(m){var s2=m[2].trim();if(s2.length===2&&CD.s[s2.toUpperCase()]){city=m[1].trim();st=s2.toUpperCase()}else if(CITY.stN[s2]){city=m[1].trim();st=CITY.stN[s2]}}
+ return {city:city.replace(/,$/,'').trim(),st:st}}
+function suggest(q,max){
+ buildIdx();if(!CITY)return [];var p=parseQ(q);if(!p.city)return [];
+ var a=[],b=[],seen={};
+ for(var k=0;k<CITY.list.length;k++){var o=CITY.list[k];if(p.st&&o.st!==p.st)continue;
+  if(o.n.indexOf(p.city)===0){if(!seen[o.i]){seen[o.i]=1;a.push(o)}}
+  else if(o.n.indexOf(' '+p.city)>0&&p.city.length>2){if(!seen[o.i]){seen[o.i]=1;b.push(o)}}
+  if(a.length>=max)break}
+ return a.concat(b).slice(0,max)}
+function findCity(q){buildIdx();if(!CITY)return null;var k=normName(q);if(CITY.byKey[k])return CITY.byKey[k];
+ var p=parseQ(q);var exact=CITY.list.filter(function(o){return o.n===p.city&&(!p.st||o.st===p.st)});
+ if(exact.length===1||(exact.length&&p.st))return exact[0];
+ if(exact.length>1)return {ambig:exact.map(function(o){return o.lab})};
+ return null}
+function setupAC(id){
+ var inp=$(id),ul=$(id+'_list'),items=[],act=-1;
+ function close(){ul.style.display='none';ul.innerHTML='';inp.setAttribute('aria-expanded','false');act=-1}
+ function pick(o){inp.value=o.lab;close()}
+ function render(){
+  items=suggest(inp.value,8);ul.innerHTML='';act=-1;
+  if(!items.length||(items.length===1&&items[0].lab===inp.value)){close();return}
+  items.forEach(function(o,j){var li=document.createElement('li');li.setAttribute('role','option');li.id=id+'_o'+j;
+   var r=CD.p[o.i];li.innerHTML=esc(o.lab)+(o.alias?' <small>('+esc(o.alias)+')</small>':'')+' <small>· pop. '+r[2].toLocaleString('en-US')+'</small>';
+   li.addEventListener('mousedown',function(e){e.preventDefault();pick(o)});ul.appendChild(li)});
+  ul.style.display='block';inp.setAttribute('aria-expanded','true')}
+ function hi(){[].forEach.call(ul.children,function(li,j){li.setAttribute('aria-selected',j===act?'true':'false')});if(act>=0){inp.setAttribute('aria-activedescendant',id+'_o'+act);ul.children[act].scrollIntoView({block:'nearest'})}}
+ inp.addEventListener('input',render);
+ inp.addEventListener('blur',function(){setTimeout(close,120)});
+ inp.addEventListener('keydown',function(e){
+  if(ul.style.display!=='block'){if(e.key==='Enter'){e.preventDefault();cmpCities()}return}
+  if(e.key==='ArrowDown'){act=Math.min(act+1,items.length-1);hi();e.preventDefault()}
+  else if(e.key==='ArrowUp'){act=Math.max(act-1,0);hi();e.preventDefault()}
+  else if(e.key==='Enter'){e.preventDefault();if(act>=0)pick(items[act]);else if(items.length)pick(items[0])}
+  else if(e.key==='Escape')close()});
+}
+setupAC('cityA');setupAC('cityB');
+function topc(v,cap){return v!=null&&v>=cap}
+function money(v,cap){return v==null?'n/a':(topc(v,cap)?usd(cap-1)+'+':usd(v))}
+function pdiff(a,b,capA,capB){if(a==null||b==null||a===0||topc(a,capA)||topc(b,capB))return null;return (b-a)/a*100}
+function pfmt(p){if(p==null)return 'n/a';var r=Math.round(p);return r===0?'about the same':(r>0?'+':'')+r+'%'}
+var lastCmp=null;
+function cmpCities(){
+ var msg=$('cmpMsg');msg.textContent='';
+ if(!CD){msg.textContent='City data did not load. Please refresh the page.';return}
+ var A=findCity($('cityA').value),B=findCity($('cityB').value);
+ function bad(o,which,id){if(!$(id).value.trim()){msg.textContent='Please enter '+which+' as City, ST.';return true}
+  if(!o){msg.textContent='Couldn\u2019t find "'+$(id).value+'". Pick a city from the list (City, ST). Small towns under about 5,000 people aren\u2019t included; try the nearest larger city.';return true}
+  if(o.ambig){msg.textContent='More than one match for "'+$(id).value+'": '+o.ambig.slice(0,6).join('; ')+'. Add the state, e.g. City, ST.';return true}return false}
+ if(bad(A,'where you live now','cityA')||bad(B,'where you\u2019re moving','cityB'))return;
+ $('cityA').value=A.lab;$('cityB').value=B.lab;
+ var a=CD.p[A.i],b=CD.p[B.i];
+ function rec(r){var s=CD.s[r[1]],rp=r[7]!=null?CD.r[r[7]]:null;
+  var eff=(r[6]!=null&&r[3]&&!topc(r[6],10001)&&!topc(r[3],2000001))?r[6]/r[3]*100:null;
+  return {name:r[0]+', '+r[1],pop:r[2],hv:r[3],rent:r[4],inc:r[5],tax:r[6],eff:eff,st:s[0],itax:s[1],sales:s[2],rpp:rp?rp[1]:null,rh:rp?rp[2]:null,area:rp?rp[0]:'n/a',pti:(r[3]&&r[5]&&!topc(r[3],2000001)&&!topc(r[5],250001))?r[3]/r[5]:null}}
+ var x=rec(a),y=rec(b);
+ $('hA').textContent=x.name;$('hB').textContent=y.name;
+ function itx(v){return v==null?'None':(v%1?v.toFixed(2).replace(/0$/,''):v.toFixed(1))+'%'}
+ var refPrice=has('cmpPrice')&&num('cmpPrice')>0?num('cmpPrice'):(y.hv&&!topc(y.hv,2000001)?y.hv:null);
+ var tA=(x.eff!=null&&refPrice)?refPrice*x.eff/100:null,tB=(y.eff!=null&&refPrice)?refPrice*y.eff/100:null;
+ var R=[];
+ function grp(t){R.push('<tr class="grp"><td colspan="4">'+esc(t)+'</td></tr>')}
+ function row(l,va,vb,d,sub){R.push('<tr><td>'+l+(sub?'<small>'+sub+'</small>':'')+'</td><td>'+va+'</td><td>'+vb+'</td><td class="diff">'+d+'</td></tr>')}
+ grp('Housing');
+ row('Typical home value','<b>'+money(x.hv,2000001)+'</b>','<b>'+money(y.hv,2000001)+'</b>',pfmt(pdiff(x.hv,y.hv,2000001,2000001)),'median, owner-occupied');
+ row('Typical rent',money(x.rent,3501)+(x.rent!=null?'/mo':''),money(y.rent,3501)+(y.rent!=null?'/mo':''),pfmt(pdiff(x.rent,y.rent,3501,3501)),'median gross rent');
+ row('Home value ÷ household income',x.pti!=null?x.pti.toFixed(1)+'×':'n/a',y.pti!=null?y.pti.toFixed(1)+'×':'n/a',(x.pti!=null&&y.pti!=null)?((y.pti-x.pti>=0?'+':'')+(y.pti-x.pti).toFixed(1)+'×'):'n/a','higher = harder to afford');
+ grp('Taxes');
+ row('Property taxes paid',money(x.tax,10001)+(x.tax!=null?'/yr':''),money(y.tax,10001)+(y.tax!=null?'/yr':''),(x.tax!=null&&y.tax!=null&&!topc(x.tax,10001)&&!topc(y.tax,10001))?sgn(y.tax-x.tax)+'/yr':'n/a','median paid by homeowners');
+ row('Effective property tax rate',x.eff!=null?pct2(x.eff):'n/a',y.eff!=null?pct2(y.eff):'n/a',(x.eff!=null&&y.eff!=null)?((y.eff-x.eff>=0?'+':'')+(y.eff-x.eff).toFixed(2)+' pts'):'n/a','taxes paid ÷ home value (estimate)');
+ if(refPrice)row('Tax on the same '+usd(refPrice)+' home',tA!=null?usd(tA)+'/yr':'n/a',tB!=null?usd(tB)+'/yr':'n/a',(tA!=null&&tB!=null)?sgn(tB-tA)+'/yr':'n/a','at each city\u2019s effective rate');
+ row('State income tax',itx(x.itax),itx(y.itax),(x.itax||0)===(y.itax||0)?'same':(((y.itax||0)-(x.itax||0)>0?'+':'')+((y.itax||0)-(x.itax||0)).toFixed(2).replace(/0$/,'')+' pts'),'state top rate on wages, 2026');
+ row('Sales tax',x.sales.toFixed(2)+'%',y.sales.toFixed(2)+'%',(y.sales-x.sales===0?'same':((y.sales-x.sales>0?'+':'')+(y.sales-x.sales).toFixed(2)+' pts')),'state + average local, state-wide');
+ grp('Cost of living');
+ row('Overall prices (US = 100)',x.rpp!=null?x.rpp.toFixed(1):'n/a',y.rpp!=null?y.rpp.toFixed(1):'n/a',(x.rpp&&y.rpp)?pfmt((y.rpp-x.rpp)/x.rpp*100):'n/a','<span>'+esc(x.area)+' vs. '+esc(y.area)+'</span>');
+ row('Housing costs (US = 100)',x.rh!=null?x.rh.toFixed(1):'n/a',y.rh!=null?y.rh.toFixed(1):'n/a',(x.rh&&y.rh)?pfmt((y.rh-x.rh)/x.rh*100):'n/a','rents and housing, same areas');
+ grp('People');
+ row('Median household income',money(x.inc,250001),money(y.inc,250001),pfmt(pdiff(x.inc,y.inc,250001,250001)));
+ row('Population',x.pop.toLocaleString('en-US'),y.pop.toLocaleString('en-US'),pfmt(pdiff(x.pop,y.pop)));
+ $('cmpTable').querySelector('tbody').innerHTML=R.join('');
+ // takeaways
+ var T=[],yc=esc(y.name),xc=esc(x.name);
+ function hl(p,thing){if(p==null)return;var r=Math.round(p);if(Math.abs(r)<3)T.push(thing+' are about the same in both places.');else T.push(thing+' are about <b>'+Math.abs(r)+'% '+(r>0?'higher':'lower')+'</b> in '+yc+'.')}
+ hl(pdiff(x.hv,y.hv,2000001,2000001),'Home prices');
+ hl(pdiff(x.rent,y.rent,3501,3501),'Rents');
+ if(tA!=null&&tB!=null){var dt=tB-tA;T.push(Math.abs(dt)<100?'Property taxes on a '+usd(refPrice)+' home would be about the same.':'On a '+usd(refPrice)+' home, property taxes would run about <b>'+usd(Math.abs(dt))+' a year '+(dt>0?'more':'less')+'</b> in '+yc+' (about '+usd(Math.abs(dt)/12)+' a month in your payment).')}
+ if((x.itax||0)!==(y.itax||0)){
+  if(y.itax==null)T.push(esc(y.st)+' has <b>no state income tax</b> on wages; '+esc(x.st)+'\u2019s top rate is '+itx(x.itax)+'.');
+  else if(x.itax==null)T.push(esc(x.st)+' has no state income tax on wages; <b>'+esc(y.st)+' does</b> (top rate '+itx(y.itax)+'). Plan for it in your take-home pay.');
+  else T.push('State income tax top rate goes from '+itx(x.itax)+' to <b>'+itx(y.itax)+'</b>.')}
+ if(x.rpp&&y.rpp){var cr=(y.rpp-x.rpp)/x.rpp*100,ri=has('cmpInc')&&num('cmpInc')>0?num('cmpInc'):100000;
+  T.push((Math.abs(cr)<1.5?'Overall everyday prices are about the same.':'Overall everyday prices run about <b>'+Math.abs(Math.round(cr*10)/10)+'% '+(cr>0?'higher':'lower')+'</b> in '+yc+'.')+' To keep the same lifestyle, '+usd(ri)+' a year in '+xc+' is like about <b>'+usd(Math.round(ri*y.rpp/x.rpp/100)*100)+'</b> in '+yc+' (before taxes).')}
+ if(Math.abs(y.sales-x.sales)>=0.5)T.push('Sales tax is about '+Math.abs(y.sales-x.sales).toFixed(1)+' points '+(y.sales>x.sales?'higher':'lower')+' on average in '+esc(y.st)+'.');
+ T.push('<span class="note">Cost of living compares '+esc(x.area)+' with '+esc(y.area)+'. Taxes and prices on a specific home will differ, so get a quote for the home you pick.</span>');
+ $('cmpOut').innerHTML=T.map(function(t){return '<p style="margin:5px 0">'+t+'</p>'}).join('');
+ $('cmpRes').style.display='block';
+ lastCmp={a:x,b:y};
+ $('cmpRes').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function pct2(n){return n.toFixed(2)+'%'}
+$('cmpBtn').addEventListener('click',cmpCities);
 $('useBtn').addEventListener('click',function(){
- var map=[['m_price','f_price'],['m_tax','f_taxrate'],['m_ins','f_ins'],['m_hoa','f_hoa']];
- map.forEach(function(k){if(has(k[0]))$(k[1]).value=$(k[0]).value});
- if($('m_area').value)$('f_state').value=$('m_area').value;
- if(has('m_price')&&has('m_dp'))$('f_down').value=Math.round(num('m_price')*num('m_dp')/100);
+ if(!lastCmp)return;
+ if(lastCmp.b.eff!=null)$('f_taxrate').value=lastCmp.b.eff.toFixed(2);
+ $('f_state').value=lastCmp.b.name;
  $('prequal').scrollIntoView({behavior:'smooth'});
 });
 
@@ -467,8 +568,9 @@ function summary(){
  L.push('Front-end ratio: '+pct(last.front),'Back-end ratio: '+pct(last.back),'');
  L.push('Programs (rule of thumb):');last.rows.forEach(function(r){L.push(' - '+r.n+': '+r.s)});
  var f=last.flags;L.push('','Flags: VA service='+f.vet+', recent lates='+f.late+', BK/foreclosure 7y='+f.bk+', income change='+f.incChg+', rural='+f.rural);
- if($('n_area').value||$('m_area').value)L.push('','Comparison: now='+($('n_area').value||'?')+', moving to='+($('m_area').value||'?'));
- if($('notes_col').value)L.push('Cost-of-living notes: '+$('notes_col').value);
+ if(lastCmp)L.push('','City comparison: now='+lastCmp.a.name+', moving to='+lastCmp.b.name);
+ else if($('cityA').value||$('cityB').value)L.push('','Cities typed: now='+($('cityA').value||'?')+', moving to='+($('cityB').value||'?'));
+ if($('notes_col').value)L.push('Notes: '+$('notes_col').value);
  if($('s_notes').value)L.push('','Notes: '+$('s_notes').value);
  return L.join('\n');
 }
@@ -494,7 +596,6 @@ $('sendBtn').addEventListener('click',function(){
   t.innerHTML='We could not send automatically. <a href="mailto:'+NOTIFY_EMAIL+'?subject='+encodeURIComponent('Know Before You Go – '+nm)+'&body='+body+'">Click here to email James your results</a> or <a href="tel:+15122288124">Call James</a>.';
  });
 });
-cmp();
 })();
 </script>
 </body>
