@@ -359,8 +359,8 @@ function calc(){
  var debts=num('f_car')+num('f_student')+num('f_cards')+num('f_other');
  var front=pay/inc*100,back=(pay+debts)/inc*100,dpPct=price>0?down/price*100:null;
  $('r_front').textContent=pct(front);$('r_back').textContent=pct(back);
- $('r_front_n').textContent=' Common targets: about 28% (conventional) to 31% (FHA)';
- $('r_back_n').textContent=' Common limits: about 36–45% (conventional), 43% (FHA), 41% (VA)';
+ $('r_front_n').textContent=' For reference only. Conventional does not use a front-end ratio.';
+ $('r_back_n').textContent=' Worst-case limits: about 50% (conventional), 56% (FHA), 60% (VA)';
  $('r_dp').textContent=dpPct==null?'n/a':pct(dpPct);$('r_dp_n').textContent=price>0?(' '+usd(down)+' toward a '+usd(price)+' home'):' Enter a price to see it';
  $('r_pay').textContent='Housing payment used: '+usd(pay)+' per month, from '+how+'. Monthly debts: '+usd(debts)+'.';
  var vet=$('c_vet').checked,late=$('c_late').checked,bk=$('c_bk').checked,incChg=$('c_inc').checked,rural=$('c_rural').checked;
@@ -376,8 +376,7 @@ function calc(){
  if(back>50){cs='unlikely';cw.push('Back-end ratio is above about 50%.')}
  else if(back>45){if(cs==='likely')cs='possible';cw.push('Back-end above 45% usually needs strong credit, savings, or other offsets.')}
  else if(cs!=='unlikely'&&cw.length===0)cw.push('Score, ratios and down payment fit typical conventional guidelines.');
- if(front>28&&cs!=='unlikely')cw.push('Housing ratio is above the 28% rule of thumb; many lenders look mainly at back-end.');
- if(cr>=0&&cr<680&&cs!=='unlikely')cw.push('Scores under about 680 usually mean higher cost, especially with less than 20% down.');
+  if(cr>=0&&cr<680&&cs!=='unlikely')cw.push('Scores under about 680 usually mean higher cost, especially with less than 20% down.');
  row('Conventional (Fannie Mae / Freddie Mac)',cs,cw.join(' '));
  // FHA
  var fs,fw=[];
@@ -385,9 +384,8 @@ function calc(){
  else if(cr<580){fs=(dpPct!=null&&dpPct>=10)?'possible':'unlikely';fw.push('Under 580 generally needs 10% down and a lender willing to go that low.')}
  else fs='likely';
  if(dpPct!=null&&dpPct<3.5){fs='unlikely';fw.push('FHA minimum down payment is 3.5%.')}
- if(back>57){fs='unlikely';fw.push('Back-end ratio is above about 57%.')}
- else if(back>50){if(fs==='likely')fs='possible';fw.push('Back-end above 50% is a stretch.')}
- else if(back>43){if(fs==='likely')fs='possible';fw.push('Back-end above 43% usually needs compensating factors.')}
+ if(back>56){fs='unlikely';fw.push('Back-end ratio is above the 56% FHA maximum.')}
+ else if(back>50){if(fs==='likely')fs='possible';fw.push('Back-end between 50% and 56% can work on FHA with a strong automated approval.')}
  else if(fs!=='unlikely'&&fw.length===0)fw.push('Score, ratios and 3.5% down fit typical FHA guidelines.');
  fw.push('FHA has upfront and monthly mortgage insurance.');
  row('FHA',fs,fw.join(' '));
@@ -398,8 +396,8 @@ function calc(){
   vs='likely';
   if(cr===-1){vs='possible';vw.push('Credit score unknown. Many lenders look for 580–620+.')}
   else if(cr<580){vs='unlikely';vw.push('Most lenders want about 580–620 or higher.')}
-  if(back>50){vs='unlikely';vw.push('Back-end ratio is above about 50%.')}
-  else if(back>41){if(vs==='likely')vs='possible';vw.push('Back-end above 41% usually needs strong residual income.')}
+  if(back>60){vs='unlikely';vw.push('Back-end ratio is above the 60% VA maximum.')}
+  else if(back>50){if(vs==='likely')vs='possible';vw.push('Back-end between 50% and 60% can work on VA with strong residual income.')}
   if(vs==='likely')vw.push('Eligible service, ratios fit; VA allows 0% down and has no monthly mortgage insurance. A funding fee usually applies. VA also checks residual income.');
  }
  row('VA',vs,vw.join(' '));
