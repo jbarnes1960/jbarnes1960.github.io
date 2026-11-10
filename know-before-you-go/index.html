@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Know Before You Go | Nexa Lending – James Barnes</title>
 <meta name="description" content="Selling and moving? Find out what you can qualify for before you list. Estimates only, not a loan approval.">
+<script>/* ?src=james|fb|ig or utm_source=facebook|instagram hides the realtor block */(function(){try{var q=new URLSearchParams(location.search),a=(q.get('src')||'').toLowerCase(),u=(q.get('utm_source')||'').toLowerCase();if(/^(james|fb|ig|facebook|instagram|meta)$/.test(a)||/^(fb|ig|facebook|instagram|meta)$/.test(u))document.documentElement.className+=' nore'}catch(e){}})();</script>
 <style>
 :root{--navy:#0b2a5b;--blue:#1a4fa0;--soft:#e8eefa;--line:#d6dce8;--ok:#1b7a3d;--warn:#a86400;--bad:#a12626}
 *{box-sizing:border-box}
@@ -150,7 +151,6 @@ svg.ic{width:22px;height:22px;flex:none;vertical-align:-5px}
 .prg b{display:block;color:var(--navy);font-size:14.5px}
 .ch3{display:flex;align-items:center;gap:8px}
 .ch3 svg.ic{color:var(--blue)}
-.cl li.add label{background:#fff8e6;border-radius:6px;padding:2px 6px;margin-left:-6px}
 .badge{display:inline-block;background:var(--gold);color:#3b2a00;font-size:10.5px;font-weight:bold;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:1px;letter-spacing:.03em;text-transform:uppercase}
 .movepic{border-radius:8px;overflow:hidden;margin:4px 0 12px;max-height:210px}
 .movepic img{display:block;width:100%;height:210px;object-fit:cover;object-position:50% 58%}
@@ -181,6 +181,107 @@ svg.ic{width:22px;height:22px;flex:none;vertical-align:-5px}
  .cl li{margin:3px 0}.cl label{font-size:13px}
  .gives li{font-size:13.5px}
 }
+
+/* ---- r3 ---- */
+.jfoot{display:flex;gap:16px;align-items:center;flex-wrap:wrap;background:var(--navy);color:#fff;border-radius:8px;padding:16px 18px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.jfoot a{color:#fff}
+.jf-head{width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid #fff;background:#fff}
+.jf-txt{flex:1;min-width:220px;font-size:14px;line-height:1.5}
+.jf-logo{height:36px;width:auto;display:block;margin-bottom:4px}
+.jf-name{font-size:19px;font-weight:bold}
+.jf-web a{color:#fff;text-decoration:underline}
+.jf-btns{display:flex;gap:8px;flex-wrap:wrap}
+.jf-btns a{background:#fff;color:var(--navy);text-decoration:none;font-weight:bold;font-size:14px;padding:10px 16px;border-radius:6px;display:inline-flex;align-items:center;gap:6px}
+.jf-btns a.sec{background:transparent;color:#fff;border:1px solid #fff}
+.jf-btns svg.ic{width:16px;height:16px;vertical-align:0}
+@media(max-width:700px){.jf-btns{width:100%}.jf-btns a{flex:1;justify-content:center;white-space:nowrap;padding:10px 8px}}
+@media print{.jfoot{padding:10px 12px}.jf-head{width:60px;height:60px}.jf-logo{height:26px}.jf-txt{font-size:12px}.jf-name{font-size:15px}}
+
+/* header chips = jump links */
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+#prequal,#compare,#moving,#docs,#lead,#why,#steps{scroll-margin-top:16px}
+.chips a{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 11px;font-size:13px;color:#fff;text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s,transform .15s}
+.chips a:hover,.chips a:focus-visible{background:rgba(255,255,255,.26);border-color:var(--gold);transform:translateY(-1px)}
+.chips a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.chips a:after{content:"\203A";color:var(--gold);font-weight:bold;margin-left:2px}
+@media print{.chips a:after{content:""}}
+
+[hidden]{display:none!important}
+#results,#r_flags,.why,.foot-n,#progTable td{overflow-wrap:anywhere;word-break:break-word}
+.btns{flex-wrap:wrap}
+.btns a{margin:0}
+.why{background:#f7f9fc;border:1px solid var(--line);border-radius:8px;padding:10px 12px;color:#33425b;line-height:1.45}
+.nore .agent,.nore .agentonly{display:none!important}
+.hdr{margin-bottom:10px}
+.ctastrip{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:linear-gradient(90deg,#fff8e6,#fff);border:1px solid #f1d58f;border-left:5px solid var(--gold);border-radius:8px;padding:12px 16px;margin:14px 0}
+.ctastrip p{margin:0;font-size:15px;color:#33425b;display:flex;align-items:center;gap:10px}
+.ctastrip p b{color:var(--navy)}
+.secpic{border-radius:8px;overflow:hidden;margin:6px 0 14px;position:relative}
+.secpic img{display:block;width:100%;height:190px;object-fit:cover}
+.secpic span{position:absolute;left:12px;bottom:10px;background:rgba(11,42,91,.82);color:#fff;font-size:12.5px;font-weight:bold;padding:5px 10px;border-radius:999px;display:inline-flex;gap:6px;align-items:center}
+.secpic span svg.ic{width:16px;height:16px;color:var(--gold);vertical-align:0}
+#docs .secpic span svg.ic,#moving .secpic span svg.ic{color:#fff}
+.fgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 14px;align-items:start}
+.fgrid>div{display:flex;flex-direction:column;min-width:0}
+.fgrid>div.span2{grid-column:span 2}
+.fgrid label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:10px 0 4px}
+.fgrid input,.fgrid select{height:44px}
+.help{display:block;font-size:12px;color:#66758c;margin-top:4px;min-height:16px;line-height:1.35}
+.qrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;background:var(--soft);border-radius:8px;padding:10px 14px;margin:6px 0 4px}
+.qrow .ql{font-weight:bold;color:var(--navy);font-size:14.5px}
+.qrow label{display:inline-flex;align-items:center;gap:6px;margin:0;font-weight:normal;font-size:14.5px;color:#222}
+table.pay{width:100%;border-collapse:collapse;font-size:14px;margin:6px 0 4px}
+table.pay td{border-bottom:1px solid var(--line);padding:7px 6px;vertical-align:top}
+table.pay td:last-child{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+table.pay td small{display:block;color:#66758c;font-size:11.5px}
+table.pay tr.tot td{background:var(--soft);font-size:16px;color:var(--navy);border-bottom:0}
+.paybox{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:start}
+.foot-n{font-size:11.5px;color:#55657a;margin:6px 0 0}
+.grid2.eq{align-items:stretch}
+.linkcard{display:flex;flex-direction:column;height:100%}
+.linkcard p{flex:1}
+.linkcard .btn{align-self:flex-start;margin-top:auto}
+.jcard{display:flex;gap:14px;align-items:center;background:var(--navy);color:#fff;border-radius:8px;padding:14px 16px;flex-wrap:wrap}
+.jcard img.head{width:72px;height:72px;border-radius:50%;object-fit:cover;background:#fff;border:3px solid #fff}
+.jcard img.logo{height:34px;width:auto}
+.jcard .jt{flex:1;min-width:200px;font-size:13.5px;line-height:1.45}
+.jcard .jt b{font-size:17px}
+.jcard a{color:#fff}
+.jcard .jb{display:flex;gap:8px;flex-wrap:wrap}
+.jcard .jb a{background:#fff;color:var(--navy);text-decoration:none;font-weight:bold;font-size:14px;padding:9px 14px;border-radius:6px;display:inline-flex;align-items:center;gap:6px}
+.jcard .jb a.sec{background:transparent;color:#fff;border:1px solid #fff}
+.jcard .jb svg.ic{width:16px;height:16px;vertical-align:0}
+.leadgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 14px}
+.leadgrid .full{grid-column:1/-1}
+.thanks{text-align:center;padding:26px 14px;background:var(--mint);border-radius:8px}
+.thanks .big{display:inline-flex;width:64px;height:64px;border-radius:50%;background:var(--ok);color:#fff;align-items:center;justify-content:center;margin-bottom:8px}
+.thanks .big svg.ic{width:34px;height:34px;vertical-align:0}
+.thanks h3{color:var(--navy);font-size:22px;margin:4px 0}
+.leadside{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:12px}
+@media(max-width:700px){
+ .fgrid,.leadgrid,.paybox{grid-template-columns:1fr}.fgrid>div.span2{grid-column:auto}
+ .fgrid label{white-space:normal}
+ .secpic img{height:150px}
+ .ctastrip .btn{width:100%}
+}
+@media print{
+ .secpic img{height:110px}
+ #compare .secpic,#prequal .secpic{display:none}
+ #prequal .help,#calcBtn,#prequal p.note{display:none}
+ #prequal .chk{margin:3px 0}
+ #prequal .progs{display:none}
+ #prequal h3{margin:8px 0 4px}
+ #prequal .qrow{margin:2px 0}
+ #prequal input:not([type=checkbox]):not([type=radio]),#prequal select{height:32px!important;padding-top:4px;padding-bottom:4px}
+ #prequal .chk{font-size:12.5px}
+ #prequal .fgrid label{margin:6px 0 2px}
+ #prequal .qrow{padding:6px 10px}
+ #prequal .fgrid input,#prequal .fgrid select{height:34px}
+ .ctastrip,.leadform-wrap{display:none!important}
+ .jcard{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ #lead{break-inside:avoid}
+}
 #printnote{display:none;font-size:13px;border:1px solid var(--line);padding:8px 12px;margin:8px 0;border-radius:6px}
 </style>
 </head>
@@ -188,24 +289,24 @@ svg.ic{width:22px;height:22px;flex:none;vertical-align:-5px}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4.5V3h6v1.5"/><path d="M9 13l2 2 4-4"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></symbol><symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0-5.3 5.1L4 16.8 7.2 20l5.2-5.2a4 4 0 0 0 5.1-5.3l-2.4 2.4-2.6-.6-.6-2.6z"/></symbol><symbol id="i-sign" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V3"/><path d="M5 5h14"/><rect x="8" y="8" width="11" height="7" rx="1"/><path d="M10.5 8V5M16.5 8V5"/></symbol><symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5L12 12l8.5-4.5M12 12v9"/></symbol><symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6h11v10h-11z"/><path d="M13.5 9.5h4l3 3.5V16h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol><symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></symbol><symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7V5a1.5 1.5 0 0 1 1.5-1.5h4A1.5 1.5 0 0 1 15.5 5v2M3 12.5h18"/></symbol><symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol><symbol id="i-lien" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M12.5 10.5v4.5"/><circle cx="12.5" cy="18" r=".6" fill="currentColor"/></symbol><symbol id="i-calc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8v3H8z"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01M8.5 17h.01M12 17h.01M15.5 17h.01" stroke-width="2.6"/></symbol><symbol id="i-homesearch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l8-7 8 7"/><path d="M5 9.5V20h6"/><circle cx="16" cy="16" r="3"/><path d="M21 21l-2.8-2.8"/></symbol><symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7.5 9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/></symbol><symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.5c0 4.5-3.2 8-7.5 9.5-4.3-1.5-7.5-5-7.5-9.5V6z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l8.5-8.5M16 7l2.5 2.5M14 9l2 2"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5.5-13.5 14.5-14-.5 9-6 14.5-14 14z"/><path d="M5 19l7-7"/></symbol><symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.5l1.5 4.5-2.2 1.4a11 11 0 0 0 5.8 5.8L15 13l4.5 1.5V18a2 2 0 0 1-2 2A15.5 15.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6.5L20.5 7"/></symbol><symbol id="i-compare" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-3.5-3.5M20 16H6l3.5 3.5"/></symbol><symbol id="i-listcheck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5l1.5 1.5 3-3M4 12.5l1.5 1.5 3-3M4 18.5l1.5 1.5 3-3"/><path d="M11.5 7h8.5M11.5 13h8.5M11.5 19h8.5"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol><symbol id="i-hail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 15a4 4 0 0 1-.5-8A5.5 5.5 0 0 1 17 8a3.5 3.5 0 0 1 .5 7z"/><circle cx="8.5" cy="19" r=".9"/><circle cx="12.5" cy="20.5" r=".9"/><circle cx="16" cy="18.5" r=".9"/></symbol><symbol id="i-crack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20V9l7-5 7 5v11"/><path d="M12 9l-1.5 3 2.5 2-2 3 1 3"/></symbol><symbol id="i-umbrella" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0z"/><path d="M12 12v6.5a2 2 0 0 1-4 0"/><path d="M12 3v0"/></symbol><symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol><symbol id="i-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M14.8 9.2c-.5-1-1.6-1.5-2.8-1.5-1.6 0-2.8.8-2.8 2s1.2 1.7 2.8 2 2.8.8 2.8 2.1-1.2 2-2.8 2c-1.3 0-2.4-.6-2.9-1.6M12 6v1.7M12 16.3V18"/></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8-4.2-4.1 5.9-.9z"/></symbol></defs></svg>
 <div class="wrap">
 
-<!-- CO-BRAND HEADER SLOT (listing agent). Fill with URL params ?agent=Name&brokerage=Brokerage&phone=5125551234&email=a@b.com or replace the placeholders below. -->
-<div class="agent" id="agentHeader">
- <div><span class="tag">Provided to you by your listing agent</span><b id="agName">[Listing Agent Name]</b><br><span class="slot" id="agBrok">[Brokerage Name] · [License #]</span></div>
- <div class="slot" id="agContact">[Agent Phone] · [Agent Email]</div>
-</div>
-
 <div class="hdr">
  <img class="logo" alt="NEXA Lending" src="assets/nexa-logo.png">
  <div class="who"><div><b>James Barnes</b><br>Senior Loan Officer · NEXA Lending · NMLS 215987<br><a href="tel:+15122288124">(512) 228-8124</a> · <a href="mailto:jbarnes@nexalending.com">jbarnes@nexalending.com</a></div><img class="head" alt="James Barnes" src="assets/james-headshot.png"></div>
 </div>
+<!-- CO-BRAND HEADER SLOT (listing agent). Fill with URL params ?agent=Name&brokerage=Brokerage&phone=5125551234&email=a@b.com or replace the placeholders below. -->
+<div class="agent" id="agentHeader">
+ <div><span class="tag">Your listing agent</span><b id="agName">[Listing Agent Name]</b><br><span class="slot" id="agBrok">[Brokerage Name] · [License #]</span></div>
+ <div class="slot" id="agContact">[Agent Phone] · [Agent Email]</div>
+</div>
+
 
 <div class="hero">
  <div class="htxt">
  <p class="eyebrow" style="color:#cfe0ff">For homeowners who are selling and moving</p>
  <h1>Know Before You Go</h1>
  <p>Find out what you can qualify for <b>before</b> you list, before you pack, and before you sign anything. It takes about five minutes and it's free.</p>
- <div class="chips"><span><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg>5-minute prequal check</span><span><svg class="ic" aria-hidden="true"><use href="#i-compare"/></svg>City-to-city comparison</span><span><svg class="ic" aria-hidden="true"><use href="#i-listcheck"/></svg>Seller checklists</span></div>
- <div class="btns"><a class="btn" href="#prequal"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>Start my quick check</a><a class="btn ghost" href="tel:+15122288124"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call James</a></div>
+ <nav class="chips" aria-label="Jump to a section"><a href="#prequal"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg>5-minute prequal check</a><a href="#compare"><svg class="ic" aria-hidden="true"><use href="#i-compare"/></svg>City-to-city comparison</a><a href="#docs"><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg>Lender Checklist</a><a href="#moving"><svg class="ic" aria-hidden="true"><use href="#i-listcheck"/></svg>Seller Checklist</a></nav>
+ <div class="btns"><a class="btn" href="#prequal"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>Start my quick check</a><a class="btn ghost" href="#lead"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Get my free move plan</a><a class="btn ghost" href="tel:+15122288124"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call James</a></div>
  </div>
  <div class="hpic"><img src="assets/hero-family-moving.jpg" alt="A happy family sitting together among moving boxes in their new home" width="1400" height="934"></div>
  <!-- Hero photo: Kampus Production via Pexels, https://www.pexels.com/photo/a-family-taking-a-selfie-8730061/ (Pexels License, free to use) -->
@@ -223,7 +324,9 @@ svg.ic{width:22px;height:22px;flex:none;vertical-align:-5px}
  </ol>
 </div>
 
-<div id="printnote">The interactive tools (prequalification check and area comparison) work on the live page: <b>https://jbarnes1960.github.io/know-before-you-go/</b>. Worksheets below can be filled in by hand.</div>
+<div class="ctastrip noprint"><p><span class="hic"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><span><b>Want James to run real numbers for your move?</b><br>Tell him where you're headed and when. No cost, no obligation.</span></p><a class="btn pri" href="#lead"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>Get my free move plan</a></div>
+
+<div id="printnote">The interactive tools (payment and prequalification check, city comparison, and the request form) work on the live page: <b><a class="slink" data-co="KBYGpage" data-j="KBYGJames" href="https://is.gd/KBYGpage">is.gd/KBYGpage</a></b>. Worksheets below can be filled in by hand.</div>
 
 <div class="card" id="why">
  <p class="eyebrow">Why now</p>
@@ -265,7 +368,9 @@ svg.ic{width:22px;height:22px;flex:none;vertical-align:-5px}
 <div class="card" id="prequal">
  <p class="eyebrow">Tool 1</p>
  <h2 class="wi"><span class="hic"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg></span>Quick prequalification check</h2>
- <p>Enter your numbers and see your debt-to-income ratios and the loan programs you would <i>likely</i> fit. Everything is calculated in your browser. Nothing is sent until you press "Send my results to James."</p>
+ <p>Answer a few questions and see an estimated payment, your debt-to-income ratios, and the loan programs you would <i>likely</i> fit. You don't need to know your taxes, insurance, or mortgage insurance: the tool estimates them for you. Everything is calculated in your browser, and nothing is sent unless you send it to James.</p>
+ <div class="secpic"><img src="assets/couple-budget-laptop.jpg" alt="A couple working through their budget with a laptop and calculator" width="1000" height="666"><span><svg class="ic" aria-hidden="true"><use href="#i-calc"/></svg>About 5 minutes</span></div>
+ <!-- Photo: Mikhail Nilov via Pexels, https://www.pexels.com/photo/couple-calculating-all-their-bills-6964107/ (Pexels License) -->
  <div class="progs" aria-label="Loan programs this check looks at">
   <div class="prg"><span class="hic"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span><b>Conventional</b>Fannie Mae / Freddie Mac, as little as 3% down</div>
   <div class="prg"><span class="hic"><svg class="ic" aria-hidden="true"><use href="#i-key"/></svg></span><b>FHA</b>Flexible credit, 3.5% down</div>
@@ -285,36 +390,37 @@ svg.ic{width:22px;height:22px;flex:none;vertical-align:-5px}
   <div><label for="f_cards">Credit card minimums</label><input id="f_cards" type="number" min="0" step="any"></div>
   <div><label for="f_other">Other debts <small>(child support, personal loans…)</small></label><input id="f_other" type="number" min="0" step="any"></div>
  </div>
- <h3>The home you're moving to</h3>
- <div class="grid3">
-  <div><label for="f_price">Target purchase price, $</label><input id="f_price" type="number" min="0" step="any"></div>
-  <div><label for="f_down">Down payment available, $ <small>(e.g. from your sale)</small></label><input id="f_down" type="number" min="0" step="any"></div>
-  <div><label for="f_state">Where <small>(city, state)</small></label><input id="f_state" type="text"></div>
+ <h3 class="ch3"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg>The home you're moving to</h3>
+ <div class="qrow"><span class="ql">Do you already have a home in mind?</span><label><input type="radio" name="mind" value="yes"> Yes</label><label><input type="radio" name="mind" value="no" checked> Not yet</label></div>
+ <div class="fgrid" id="mindYes" hidden>
+  <div class="span2"><label for="f_link">Address or Zillow / Realtor.com link</label><input id="f_link" type="text" placeholder="123 Main St, Austin, TX  or  https://www.zillow.com/..."><small class="help">James will pull the property details (taxes, HOA, insurance) when you send this. This page can't read Zillow or Realtor.com itself.</small></div>
+  <div><label for="f_lprice">List price, $</label><input id="f_lprice" type="number" min="0" step="any" inputmode="decimal"><small class="help">From the listing</small></div>
  </div>
- <p class="note" style="margin-top:8px">Your estimated monthly housing payment is needed to figure the ratios. Either type the total, or let the tool add it up from the pieces. <b>I don't supply a rate:</b> use one from a quote or a loan estimate, and the city comparison below can fill in a property tax rate for the new area.</p>
- <div class="grid2">
-  <div><label for="f_pay">Option A: total new monthly housing payment, $ <small>(principal, interest, taxes, insurance, HOA)</small></label><input id="f_pay" type="number" min="0" step="any"></div>
-  <div class="note" style="align-self:end;padding-bottom:10px">Or use Option B below. If you fill Option A, it's used.</div>
+ <div class="fgrid" id="mindNo">
+  <div class="span2"><label for="f_price">Target price, $ <small>(optional)</small></label><input id="f_price" type="number" min="0" step="any" inputmode="decimal"><small class="help" id="f_price_help">Blank = typical home value in the city below</small></div>
  </div>
- <div class="grid3">
-  <div><label for="f_rate">Option B: interest rate % <small>from a quote</small></label><input id="f_rate" type="number" min="0" step="any"></div>
-  <div><label for="f_term">Term</label><select id="f_term"><option value="30">30 years</option><option value="20">20 years</option><option value="15">15 years</option></select></div>
-  <div><label for="f_taxrate">Property tax rate % <small>per year</small></label><input id="f_taxrate" type="number" min="0" step="any"></div>
-  <div><label for="f_ins">Home insurance, $ per year</label><input id="f_ins" type="number" min="0" step="any"></div>
-  <div><label for="f_hoa">HOA, $ per month</label><input id="f_hoa" type="number" min="0" step="any"></div>
-  <div><label for="f_mi">Mortgage insurance, $ per month <small>(if quoted)</small></label><input id="f_mi" type="number" min="0" step="any"></div>
+ <div class="fgrid">
+  <div class="ac"><label for="f_state">City you're moving to</label><input id="f_state" type="text" placeholder="City, ST" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="f_state_list"><ul class="aclist" id="f_state_list" role="listbox"></ul><small class="help" id="f_state_help">Used for the property tax estimate</small></div>
+  <div><label for="f_type">Loan type</label><select id="f_type"><option value="conv">Conventional</option><option value="fha">FHA</option><option value="va">VA</option><option value="usda">USDA (rural)</option></select><small class="help">Not sure? Leave Conventional; all four are checked below.</small></div>
+  <div><label for="f_dpp">Down payment, %</label><input id="f_dpp" type="number" min="0" max="100" step="any" inputmode="decimal"><small class="help" id="f_dpp_help">&nbsp;</small></div>
+  <div><label for="f_rate">Interest rate, % <small>(assumed)</small></label><input id="f_rate" type="number" min="0" step="0.001" inputmode="decimal"><small class="help" id="f_rate_help">&nbsp;</small></div>
+  <div><label for="f_hoa">HOA dues, $ per month</label><input id="f_hoa" type="number" min="0" step="any" inputmode="decimal" placeholder="0"><small class="help">Leave blank if none</small></div>
+  <div id="vaWrap" hidden><label for="f_vause">VA funding fee</label><select id="f_vause"><option value="first">First-time VA use</option><option value="sub">Used VA before</option><option value="exempt">Exempt (VA disability)</option></select><small class="help">Financed into the loan</small></div>
  </div>
+ <p class="note" style="margin-top:8px">We estimate the rest for you: property taxes from the area's average rate (Census data), homeowners insurance at 0.55% of the price per year, and mortgage insurance from standard MGIC (conventional), FHA, VA, and USDA charts. Sample rates are from James's pricing on Nov 10, 2026.</p>
  <h3>A few things that change the answer</h3>
  <label class="chk"><input type="checkbox" id="c_vet"> I or my spouse served in the military (VA loan may be possible)</label>
  <label class="chk"><input type="checkbox" id="c_late"> Late payments or collections in the last 12 months</label>
  <label class="chk"><input type="checkbox" id="c_bk"> Bankruptcy, foreclosure, or short sale in the last 7 years</label>
  <label class="chk"><input type="checkbox" id="c_inc"> My income changed, or will change, in the last 2 years (new job, self-employed, retiring, less overtime)</label>
  <label class="chk"><input type="checkbox" id="c_rural"> The new home is in a rural area</label>
- <div style="margin-top:12px"><button class="btn pri" type="button" id="calcBtn">Show my ratios and likely programs</button></div>
+ <div style="margin-top:12px"><button class="btn pri" type="button" id="calcBtn">Estimate my payment and programs</button></div>
  </form>
 
  <div class="results" id="results" aria-live="polite">
-  <h3 style="margin-top:0">Your estimate</h3>
+  <h3 style="margin-top:0" id="payHead">Your payment estimate</h3>
+  <div class="paybox"><div><table class="pay" id="payTable"><tbody></tbody></table></div>
+  <div class="why" style="font-size:13.5px"><b>How this is figured</b><br>Principal and interest on a 30-year fixed loan at the assumed rate. Taxes use the average effective rate where you're moving (median property taxes paid ÷ median home value, Census ACS 2020–2024). Insurance is 0.55% of the price per year. Conventional mortgage insurance uses MGIC's standard borrower-paid monthly rates by down payment and credit score; FHA uses 0.55% a year plus a 1.75% upfront premium added to the loan; VA has no monthly MI but adds a funding fee to the loan; USDA uses 0.35% a year plus a 1% upfront fee.</div></div>
   <div class="ratio">
    <div><span class="note">Front-end ratio (housing ÷ income)</span><b id="r_front">–</b><span class="note" id="r_front_n"></span></div>
    <div><span class="note">Back-end ratio (housing + debts ÷ income)</span><b id="r_back">–</b><span class="note" id="r_back_n"></span></div>
@@ -325,26 +431,18 @@ svg.ic{width:22px;height:22px;flex:none;vertical-align:-5px}
   <div id="r_flags"></div>
   <p class="disc"><b>This is not a loan approval, a prequalification letter, or a commitment to lend.</b> Estimates use general rules of thumb that differ by lender, loan product, and your full file. Final eligibility depends on credit, income, assets, property, and underwriting.</p>
 
-  <h3>Send my results to James <small class="note">(optional)</small></h3>
-  <p class="note">James will review your numbers and call you with next steps. No obligation.</p>
-  <div class="grid2">
-   <div><label for="s_name">Your name *</label><input id="s_name" type="text" autocomplete="name"></div>
-   <div><label for="s_phone">Phone *</label><input id="s_phone" type="tel" autocomplete="tel"></div>
-   <div><label for="s_email">Email *</label><input id="s_email" type="email" autocomplete="email"></div>
-   <div><label for="s_agent">Your listing agent <small>(if any)</small></label><input id="s_agent" type="text"></div>
-  </div>
-  <label for="s_notes">Anything else James should know? <small>(optional)</small></label><textarea id="s_notes"></textarea>
-  <label class="chk"><input type="checkbox" id="s_consent"> I agree James Barnes / NEXA Lending may contact me about these results and that this is an estimate, not an approval.</label>
-  <button class="btn pri" type="button" id="sendBtn">Send my results to James</button>
-  <div class="toast" id="toast"></div>
+  <p class="foot-n">Mortgage insurance: MGIC Borrower-Paid Monthly Premiums, fixed rate, term over 20 years, standard coverage, effective July 9, 2018 (MGIC Bulletin 03-2018, the last rate card MGIC posted publicly; MGIC now quotes through MiQ and current quotes are often lower). FHA: 0.55% annual MIP and 1.75% upfront MIP. VA funding fee: 2.15% first use under 5% down, 1.5% at 5–10%, 1.25% at 10%+ (3.3% subsequent use under 5% down). Sample rates and APRs: James Barnes pricing pulled Nov 10, 2026 for a $400,000 purchase, 30-year fixed, 30-day lock; not a quote, offer, or rate lock. Your rate depends on credit, loan amount, property, and market changes.</p>
+  <div style="margin-top:12px" class="noprint"><button class="btn pri" type="button" id="toLead"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>Send my results to James</button> <span class="note">Opens the short form below; your numbers go with it.</span></div>
  </div>
 </div>
 
 <div class="card" id="compare">
  <p class="eyebrow">Tool 2</p>
  <h2 class="wi"><span class="hic"><svg class="ic" aria-hidden="true"><use href="#i-compare"/></svg></span>Where you live now vs. where you're going</h2>
+ <div class="secpic"><img src="assets/aerial-neighborhood.jpg" alt="Aerial view of a suburban neighborhood" width="1000" height="750" style="object-position:50% 40%"><span><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>About 6,700 U.S. cities and towns</span></div>
+ <!-- Photo: Drones Flown via Pexels, https://www.pexels.com/photo/aerial-view-of-a-suburban-neighborhood-17286412/ (Pexels License) -->
  <p class="noprint">Type the city you live in now and the city you're moving to, then press Compare. You'll see home values, rent, income, property taxes, state income and sales tax, and cost of living side by side, with the difference and what it means for you.</p>
- <div class="printonly"><p>On the live page (<a href="https://jbarnes1960.github.io/know-before-you-go/#compare"><b>jbarnes1960.github.io/know-before-you-go</b></a>), type your current city and your new city to see a side-by-side comparison of home values, rent, household income, property taxes, state income tax, sales tax, and cost of living for about 6,700 U.S. cities and towns, using U.S. Census Bureau, BEA, and Tax Foundation data. Or fill in this worksheet by hand:</p>
+ <div class="printonly"><p>On the live page (<a class="slink" data-co="KBYGcompare" data-j="KBYGJamesCompare" href="https://is.gd/KBYGcompare"><b>is.gd/KBYGcompare</b></a>), type your current city and your new city to see a side-by-side comparison of home values, rent, household income, property taxes, state income tax, sales tax, and cost of living for about 6,700 U.S. cities and towns, using U.S. Census Bureau, BEA, and Tax Foundation data. Or fill in this worksheet by hand:</p>
   <table class="cmp"><thead><tr><th></th><th>Now</th><th>Moving to</th><th>Difference</th></tr></thead><tbody>
    <tr><td>City, state</td><td>&nbsp;</td><td></td><td></td></tr><tr><td>Typical home value</td><td>&nbsp;</td><td></td><td></td></tr><tr><td>Typical rent</td><td>&nbsp;</td><td></td><td></td></tr><tr><td>Property tax rate / yearly tax</td><td>&nbsp;</td><td></td><td></td></tr><tr><td>State income tax</td><td>&nbsp;</td><td></td><td></td></tr><tr><td>Sales tax</td><td>&nbsp;</td><td></td><td></td></tr><tr><td>Cost of living (US = 100)</td><td>&nbsp;</td><td></td><td></td></tr><tr><td>Home insurance, HOA, utilities</td><td>&nbsp;</td><td></td><td></td></tr>
   </tbody></table></div>
@@ -360,7 +458,7 @@ svg.ic{width:22px;height:22px;flex:none;vertical-align:-5px}
  <div id="cmpRes" class="noprint" style="display:none;margin-top:14px" aria-live="polite">
   <div style="overflow-x:auto"><table class="cmp cmpres" id="cmpTable"><thead><tr><th></th><th id="hA">Now</th><th id="hB">Moving to</th><th>Difference</th></tr></thead><tbody></tbody></table></div>
   <div class="why" id="cmpOut" style="margin-top:12px"></div>
-  <div style="margin-top:10px"><button class="btn pri" type="button" id="useBtn">Use the new city's property tax rate in the prequalification check</button></div>
+  <div style="margin-top:10px"><button class="btn pri" type="button" id="useBtn">Use this city in the payment and prequalification check</button></div>
   <p class="note" style="margin-top:10px">Not in the data: home insurance, HOA dues, utilities, commute, and schools. Ask your agent and an insurance agent for quotes in the new area.</p>
  </div>
  <label for="notes_col">Your notes <small>(schools, commute, insurance quotes, anything else you want to remember)</small></label><textarea id="notes_col"></textarea>
@@ -370,6 +468,8 @@ svg.ic{width:22px;height:22px;flex:none;vertical-align:-5px}
 <div class="card" id="docs">
  <p class="eyebrow">Checklist 1</p>
  <h2 class="wi"><span class="hic"><svg class="ic" aria-hidden="true"><use href="#i-listcheck"/></svg></span>What a lender will ask for</h2>
+ <div class="secpic"><img src="assets/signing-paperwork.jpg" alt="Buyers reviewing and signing real estate paperwork" width="1000" height="666" style="object-position:50% 55%"><span><svg class="ic" aria-hidden="true"><use href="#i-listcheck"/></svg>Gather these early</span></div>
+ <!-- Photo: RDNE Stock project via Pexels, https://www.pexels.com/photo/a-person-holding-a-ballpen-on-a-white-paper-8292787/ (Pexels License) -->
  <p class="note">Start collecting these now. Requirements vary by loan program, and your loan officer may ask for more.</p>
  <div class="grid2">
  <ul class="cl">
@@ -388,7 +488,7 @@ svg.ic{width:22px;height:22px;flex:none;vertical-align:-5px}
   <li><label><input type="checkbox"> Veterans: Certificate of Eligibility (James can request it)</label></li>
   <li><label><input type="checkbox"> Signed listing agreement and your sale contract (shows cash from your sale)</label></li>
   <li><label><input type="checkbox"> Current mortgage statement, plus a written payoff statement for every loan on the home (mortgage, HELOC, second lien)</label></li>
-  <li class="add"><label><input type="checkbox"> Preliminary title report from the title company, showing any liens to clear</label></li>
+  <li><label><input type="checkbox"> Preliminary title report from the title company, showing any liens to clear</label></li>
   <li><label><input type="checkbox"> Homeowners insurance quote for the new home</label></li>
  </ul>
  </div>
@@ -405,11 +505,11 @@ svg.ic{width:22px;height:22px;flex:none;vertical-align:-5px}
   <ul class="cl">
    <li><label><input type="checkbox"> Run the prequalification check above and talk to James</label></li>
    <li><label><input type="checkbox"> Pull your credit reports (annualcreditreport.com) and fix errors</label></li>
-   <li class="add"><label><input type="checkbox"> Request a mortgage payoff statement (and one for any HELOC or second loan)</label></li>
+   <li><label><input type="checkbox"> Request a mortgage payoff statement (and one for any HELOC or second loan)</label></li>
    <li><label><input type="checkbox"> Get a net sheet from your listing agent, using the real payoff</label></li>
-   <li class="add"><label><input type="checkbox"> Ask your title company to run a preliminary title search for liens</label></li>
-   <li class="add"><label><input type="checkbox"> Order a pre-listing home inspection</label></li>
-   <li class="add"><label><input type="checkbox"> Schedule repairs; call your insurance company first if it could be a claim (hail, storm, foundation, water)</label></li>
+   <li><label><input type="checkbox"> Ask your title company to run a preliminary title search for liens</label></li>
+   <li><label><input type="checkbox"> Order a pre-listing home inspection</label></li>
+   <li><label><input type="checkbox"> Schedule repairs; call your insurance company first if it could be a claim (hail, storm, foundation, water)</label></li>
    <li><label><input type="checkbox"> Decide your timing: sell first, buy first, or a rent-back</label></li>
    <li><label><input type="checkbox"> Declutter, repair, and schedule photos</label></li>
   </ul>
@@ -443,21 +543,62 @@ svg.ic{width:22px;height:22px;flex:none;vertical-align:-5px}
 <div class="card noprint">
  <p class="eyebrow">Next steps</p>
  <h2 class="wi"><span class="hic"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>Two ways to go further</h2>
- <div class="grid2">
+ <div class="grid2 eq">
   <div class="linkcard"><h3><span class="hic"><svg class="ic" aria-hidden="true"><use href="#i-compare"/></svg></span>Compare loan options</h3><p>See different loan types for your price side by side, so you can see how the payment and cash needed change from one program to another.</p><a class="btn pri" href="https://loan-comparison.base44.app/compare-loans" target="_blank" rel="noopener">Open the loan comparison</a></div>
   <div class="linkcard"><h3><span class="hic"><svg class="ic" aria-hidden="true"><use href="#i-dollar"/></svg></span>Ask James for a loan estimate</h3><p>A loan estimate is the official 3-page form that shows your rate, payment, and cash to close for a specific loan. Email James your target price and area and he'll prepare one with real, current pricing.</p><a class="btn pri" id="leLink" href="mailto:jbarnes@nexalending.com?subject=Loan%20estimate%20request%20(Know%20Before%20You%20Go)&amp;body=Target%20price%3A%0AArea%3A%0ADown%20payment%3A%0AMy%20phone%3A%0A">Email James for a loan estimate</a></div>
  </div>
 </div>
 
+<div class="card" id="lead">
+ <p class="eyebrow">Talk with James</p>
+ <h2 class="wi"><span class="hic"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></span>Get your free move plan</h2>
+ <p>Tell James where you're going and when. He'll look at your numbers, pull details on any home you have in mind, and call you with a plan for your sale and your next purchase. No cost and no obligation.</p>
+ <div class="leadside">
+  <div class="jcard"><img class="head" src="assets/james-headshot.png" alt="James Barnes"><div class="jt"><img class="logo" src="assets/nexa-logo.png" alt="NEXA Lending"><br><b>James Barnes</b><br>Senior Loan Officer · NEXA Lending · NMLS 215987<br><a href="tel:+15122288124">(512) 228-8124</a> · <a href="mailto:jbarnes@nexalending.com">jbarnes@nexalending.com</a></div><div class="jb noprint"><a href="tel:+15122288124"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call James</a><a class="sec" href="mailto:jbarnes@nexalending.com"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Email James</a></div></div>
+  <div class="agent" id="agentLead"><div><span class="tag">Your listing agent</span><b id="agName3">[Listing Agent Name]</b><br><span class="slot" id="agBrok3">[Brokerage Name] · [License #]</span></div><div class="slot" id="agContact3">[Agent Phone] · [Agent Email]</div></div>
+ </div>
+ <p class="printonly">Request a free move plan on the live page: <b><a class="slink" data-co="KBYGplan" data-j="KBYGJamesPlan" href="https://is.gd/KBYGplan">is.gd/KBYGplan</a></b>, or call James at (512) 228-8124.</p>
+ <div class="leadform-wrap">
+ <form id="leadForm" onsubmit="return false" novalidate>
+  <input type="hidden" id="l_src"><input type="hidden" id="l_utm_source"><input type="hidden" id="l_utm_medium"><input type="hidden" id="l_utm_campaign"><input type="hidden" id="l_utm_content">
+  <div class="leadgrid">
+   <div><label for="l_name">Your name *</label><input id="l_name" type="text" autocomplete="name"></div>
+   <div><label for="l_phone">Phone *</label><input id="l_phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 555-5555"></div>
+   <div><label for="l_email">Email *</label><input id="l_email" type="email" autocomplete="email" placeholder="name@example.com"></div>
+   <div><label for="l_when">When do you plan to move?</label><select id="l_when"><option>In the next 3 months</option><option>3 to 6 months</option><option>6 to 12 months</option><option>More than a year</option><option>Just exploring</option></select></div>
+   <div class="ac"><label for="l_from">Where you live now</label><input id="l_from" type="text" placeholder="City, ST" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="l_from_list"><ul class="aclist" id="l_from_list" role="listbox"></ul></div>
+   <div class="ac"><label for="l_to">Where you're moving</label><input id="l_to" type="text" placeholder="City, ST" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="l_to_list"><ul class="aclist" id="l_to_list" role="listbox"></ul></div>
+   <div><label for="l_mind">Have a home in mind?</label><select id="l_mind"><option value="no">Not yet</option><option value="yes">Yes</option></select></div>
+   <div class="agentonly"><label for="l_agent">Your listing agent <small>(if any)</small></label><input id="l_agent" type="text"></div>
+   <div class="full" id="l_linkWrap" hidden><label for="l_link">Address or Zillow / Realtor.com link</label><input id="l_link" type="text" placeholder="123 Main St, City, ST  or  paste the listing link"></div>
+   <div class="full"><label for="l_msg">Anything else James should know? <small>(optional)</small></label><textarea id="l_msg"></textarea></div>
+  </div>
+  <p class="note" id="l_pqnote"></p>
+  <label class="chk"><input type="checkbox" id="l_consent"> I agree James Barnes / NEXA Lending may contact me by phone or email about my move. This is not a loan application or approval.</label>
+  <button class="btn pri" type="button" id="leadBtn"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>Send to James</button>
+  <div class="toast" id="leadToast"></div>
+ </form>
+ <div class="thanks" id="leadThanks" hidden><span class="big"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span><h3>Thanks, <span id="leadThanksName">there</span>!</h3><p>James Barnes has your information and will reach out soon, usually within one business day. Want to talk sooner?</p><a class="btn pri" href="tel:+15122288124"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call James</a></div>
+ </div>
+</div>
+
 <div class="card sig">
- <div class="name">James Barnes</div>
- <div>Senior Loan Officer · NEXA Lending · NMLS 215987</div>
- <div class="btns noprint"><a class="sbtn" href="tel:+15122288124"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call James</a><a class="sbtn sec" href="mailto:jbarnes@nexalending.com"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Email James</a></div>
- <div style="margin-top:8px">(512) 228-8124 · jbarnes@nexalending.com</div>
+ <!-- JAMES STANDARD FOOTER (matches welcome kit / rate sheet) -->
+ <div class="jfoot">
+  <img class="jf-head" src="assets/james-headshot.png" alt="James Barnes">
+  <div class="jf-txt">
+   <img class="jf-logo" src="assets/nexa-logo.png" alt="Nexa Lending">
+   <div class="jf-name">James Barnes</div>
+   <div>Senior Loan Officer · Nexa Lending · NMLS 215987</div>
+   <div><a href="tel:+15122288124">(512) 228-8124</a> · <a href="mailto:jbarnes@nexalending.com">jbarnes@nexalending.com</a></div>
+   <div class="jf-web"><a href="https://bestlenderintexas.com" target="_blank" rel="noopener">BestLenderinTexas.com</a> · <a href="https://www.BestLenderinColorado.com" target="_blank" rel="noopener">BestLenderinColorado.com</a></div>
+  </div>
+  <div class="jf-btns noprint"><a href="tel:+15122288124"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call James</a><a class="sec" href="mailto:jbarnes@nexalending.com"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Email James</a></div>
+ </div>
  <!-- CO-BRAND FOOTER SLOT (listing agent) -->
  <div class="agent" id="agentFooter" style="margin-top:14px"><div><span class="tag">Your listing agent</span><b id="agName2">[Listing Agent Name]</b><br><span class="slot" id="agBrok2">[Brokerage Name] · [License #]</span></div><div class="slot" id="agContact2">[Agent Phone] · [Agent Email]</div></div>
- <p class="credits">Photos from Pexels (free to use under the Pexels License): family with moving boxes by <a href="https://www.pexels.com/photo/a-family-taking-a-selfie-8730061/" target="_blank" rel="noopener">Kampus Production</a>; roof work on a brick house by <a href="https://www.pexels.com/photo/roof-installation-on-brick-house-in-fort-worth-33404080/" target="_blank" rel="noopener">Ryan Stephens</a>; couple with moving boxes by <a href="https://www.pexels.com/photo/happy-diverse-couple-unpacking-boxes-in-new-home-4246062/" target="_blank" rel="noopener">Ketut Subiyanto</a>. Photos are for illustration only.</p>
- <p class="disc">🏠 Equal Housing Opportunity. James Barnes, NMLS 215987. This material is for educational purposes only. All calculations are estimates based on general rules of thumb and the numbers you enter. Nothing here is a loan approval, a commitment to lend, or an offer of credit; all loans are subject to credit approval, underwriting, property appraisal, and program guidelines. Rates and terms are not shown and are not guaranteed. Not affiliated with any government agency. City comparison figures are public estimates (U.S. Census Bureau, BEA, Tax Foundation) and may not match a specific home; property tax, insurance, and cost figures you enter are your own. Check official sources before you decide.</p>
+ <p class="credits">Photos from Pexels (free to use under the Pexels License): family with moving boxes by <a href="https://www.pexels.com/photo/a-family-taking-a-selfie-8730061/" target="_blank" rel="noopener">Kampus Production</a>; roof work on a brick house by <a href="https://www.pexels.com/photo/roof-installation-on-brick-house-in-fort-worth-33404080/" target="_blank" rel="noopener">Ryan Stephens</a>; couple with moving boxes by <a href="https://www.pexels.com/photo/happy-diverse-couple-unpacking-boxes-in-new-home-4246062/" target="_blank" rel="noopener">Ketut Subiyanto</a>; couple with a calculator by <a href="https://www.pexels.com/photo/couple-calculating-all-their-bills-6964107/" target="_blank" rel="noopener">Mikhail Nilov</a>; aerial neighborhood by <a href="https://www.pexels.com/photo/aerial-view-of-a-suburban-neighborhood-17286412/" target="_blank" rel="noopener">Drones Flown</a>; signing paperwork by <a href="https://www.pexels.com/photo/a-person-holding-a-ballpen-on-a-white-paper-8292787/" target="_blank" rel="noopener">RDNE Stock project</a>. Photos are for illustration only.</p>
+ <p class="disc">🏠 Equal Housing Opportunity. James Barnes, Senior Loan Officer, Nexa Lending, NMLS 215987. This material is for educational purposes only. All calculations are estimates based on general rules of thumb and the numbers you enter. Nothing here is a loan approval, a commitment to lend, or an offer of credit; all loans are subject to credit approval, underwriting, property appraisal, and program guidelines. Interest rates in the payment estimate are sample rates from Nov 10, 2026 for illustration only, not a quote, offer, or rate lock; rates and terms change daily and depend on your full application. Mortgage insurance, taxes, and insurance in the estimate are approximations. Not affiliated with any government agency. City comparison figures are public estimates (U.S. Census Bureau, BEA, Tax Foundation) and may not match a specific home; property tax, insurance, and cost figures you enter are your own. Check official sources before you decide.</p>
 </div>
 </div>
 
@@ -485,77 +626,138 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){retur
  var cont=[];
  if(p){var d=p.replace(/\D/g,'');cont.push('<a href="tel:+1'+esc(d.slice(-10))+'">'+esc(p)+'</a>')}
  if(e&&validEmail(e))cont.push('<a href="mailto:'+esc(e)+'">'+esc(e)+'</a>');
- [['agName','agName2',a],['agBrok','agBrok2',brok||'']].forEach(function(x){$(x[0]).textContent=x[2];$(x[1]).textContent=x[2]});
- ['agContact','agContact2'].forEach(function(i){$(i).innerHTML=cont.join(' · ')});
- $('s_agent').value=a;
+ [['agName','agName2','agName3',a],['agBrok','agBrok2','agBrok3',brok||'']].forEach(function(x){$(x[0]).textContent=x[3];$(x[1]).textContent=x[3];$(x[2]).textContent=x[3]});
+ ['agContact','agContact2','agContact3'].forEach(function(i){$(i).innerHTML=cont.join(' · ')});
+ $('l_agent').value=a;
 })();
 
 var last=null;
+// ---- Payment assumptions for the estimate ----
+// Sample rates: James's pricing pulled Nov 10, 2026 (30-yr fixed, $400,000 purchase, 30-day lock; Travis Co. TX / El Paso Co. CO). Not a quote.
+var RATES={asof:'Nov 10, 2026',
+ tx:{conv:[7.125,7.612],fha:[6.499,7.222],va:[6.375,6.583],usda:[6.375,6.829]},
+ co:{conv:[7.125,7.636],fha:[6.499,7.222],va:[6.375,6.583],usda:[6.375,6.829]}};
+// MGIC borrower-paid monthly MI, annual % of loan, fixed rate, term > 20 yrs, standard GSE coverage
+// (35% / 30% / 25% / 12%). Source: MGIC Bulletin 03-2018, rates effective July 9, 2018 (MGIC's last publicly posted rate card;
+// current MGIC pricing is quoted through MiQ and is often lower).
+var MGIC={cols:['760+','740-759','720-739','700-719','680-699','660-679','640-659','620-639'],
+ rows:[[95,[.58,.70,.87,.99,1.21,1.54,1.65,1.86]],[90,[.38,.53,.66,.78,.96,1.28,1.33,1.42]],[85,[.28,.38,.46,.55,.65,.90,.91,.94]],[80,[.19,.20,.23,.25,.28,.38,.40,.44]]]};
+var INS_RATE=0.55, FHA_MIP=0.55, FHA_UFMIP=1.75, USDA_UP=1.0, USDA_ANN=0.35;
+var DP_DEF={conv:5,fha:3.5,va:0,usda:0},DP_MIN={conv:3,fha:3.5,va:0,usda:0};
+var TNAME={conv:'Conventional',fha:'FHA',va:'VA',usda:'USDA'};
+function miCol(cr){return cr>=720?2:cr>=680?4:cr>=640?6:cr>=620?7:cr===-1?4:7}
+function vaFee(dp,use){if(use==='exempt')return 0;if(use==='sub')return dp<5?3.3:dp<10?1.5:1.25;return dp<5?2.15:dp<10?1.5:1.25}
+function rateSet(){var st=(cityState($('f_state').value)||'').toUpperCase();return st==='CO'?RATES.co:RATES.tx}
+function cityState(txt){var m=String(txt||'').match(/,\s*([A-Za-z]{2})\s*$/);if(m)return m[1];var c=window.KBYG_CITIES&&findCity(txt);return c&&!c.ambig?c.st:''}
+function taxInfo(txt){
+ var D=window.KBYG_CITIES;if(!D)return {rate:null,label:'n/a'};
+ var c=txt?findCity(txt):null;
+ if(c&&!c.ambig){var r=D.p[c.i];if(r[6]!=null&&r[3]&&r[6]<10001&&r[3]<2000001)return {rate:r[6]/r[3]*100,label:c.lab+' average',city:c.lab,median:r[3]}
+  var s=D.s[c.st];if(s&&s[3])return {rate:s[3],label:s[0]+' state average',city:c.lab,median:(r[3]&&r[3]<2000001)?r[3]:null}}
+ var st=cityState(txt);if(st&&D.s[st.toUpperCase()]&&D.s[st.toUpperCase()][3])return {rate:D.s[st.toUpperCase()][3],label:D.s[st.toUpperCase()][0]+' state average'};
+ return {rate:D.us,label:'U.S. average'}}
+function pmt(loan,ratePct,yrs){var r=ratePct/100/12,n=yrs*12;return r>0?loan*r/(1-Math.pow(1+r,-n)):loan/n}
+function payFor(type,price,dpUser,cr,taxRate,hoa,rateOverride,vaUse){
+ var dp=Math.max(dpUser,DP_MIN[type]),base=price*(1-dp/100),ltv=100-dp,fee=0,feeLbl='',mi=0,miLbl='None';
+ var rs=rateSet()[type],rate=(rateOverride!=null?rateOverride:rs[0]);
+ if(type==='conv'){if(ltv>80){var row=null;for(var k=0;k<MGIC.rows.length;k++){if(ltv>MGIC.rows[k][0]){row=MGIC.rows[k];break}}
+   if(row){var c=miCol(cr),pr=row[1][c];mi=base*pr/100/12;miLbl='MGIC '+pr.toFixed(2)+'%/yr ('+(row[0]===95?'95.01–97':row[0]===90?'90.01–95':row[0]===85?'85.01–90':'80.01–85')+'% LTV, '+MGIC.cols[c]+' score)'}}
+  else miLbl='None (20%+ down)'}
+ else if(type==='fha'){fee=base*FHA_UFMIP/100;feeLbl='FHA upfront MIP 1.75% (financed)';mi=base*FHA_MIP/100/12;miLbl='FHA annual MIP 0.55%'}
+ else if(type==='va'){var f=vaFee(dp,vaUse);fee=base*f/100;feeLbl='VA funding fee '+f.toFixed(2)+'% (financed)';miLbl='None (VA has no monthly MI)'}
+ else if(type==='usda'){fee=base*USDA_UP/100;feeLbl='USDA guarantee fee 1% (financed)';mi=base*USDA_ANN/100/12;miLbl='USDA annual fee 0.35%'}
+ var loan=base+fee,pi=pmt(loan,rate,30),tax=price*taxRate/100/12,ins=price*INS_RATE/100/12;
+ return {type:type,dp:dp,down:price*dp/100,base:base,fee:fee,feeLbl:feeLbl,loan:loan,rate:rate,apr:(rateOverride!=null&&rateOverride!==rs[0])?null:rs[1],pi:pi,tax:tax,ins:ins,mi:mi,miLbl:miLbl,hoa:hoa,total:pi+tax+ins+mi+hoa,ltv:ltv}}
+var dpTouched=false,rateTouched=false;
+function mindYes(){var r=document.querySelector('input[name=mind]:checked');return r&&r.value==='yes'}
+function syncPq(){
+ var t=$('f_type').value;
+ $('mindYes').hidden=!mindYes();$('mindNo').hidden=mindYes();
+ $('vaWrap').hidden=t!=='va';
+ if(!dpTouched)$('f_dpp').value=DP_DEF[t];
+ var rs=rateSet()[t];if(!rateTouched)$('f_rate').value=rs[0];
+ $('f_rate_help').textContent='Sample '+TNAME[t]+' rate, '+RATES.asof+(rateTouched?'':' (APR '+rs[1].toFixed(3)+'%)')+'. Edit if you have a quote.';
+ var ti=taxInfo($('f_state').value),price=mindYes()?num('f_lprice'):(has('f_price')?num('f_price'):(ti.median||0));
+ $('f_dpp_help').textContent=price>0&&has('f_dpp')?usd(price*num('f_dpp')/100)+' on a '+usd(price)+' home':'Minimum: '+DP_MIN[t]+'%';
+ $('f_price_help').textContent=ti.median&&!has('f_price')?'Blank = typical home value in '+ti.city+' ('+usd(ti.median)+')':'Blank = typical home value in the city below';
+ $('f_state_help').textContent=$('f_state').value?('Property tax estimate: '+(ti.rate!=null?ti.rate.toFixed(2)+'%/yr ('+ti.label+')':'n/a')):'Used for the property tax estimate';
+}
 function calc(){
  var inc=num('f_income');
  if(!(inc>0)){alert('Please enter your gross monthly income.');return}
  var cr=$('f_credit').value; if(cr===''){alert('Please choose a credit score range (or "Not sure").');return}
  cr=parseInt(cr,10);
- var price=num('f_price'),down=num('f_down'),loan=Math.max(price-down,0);
- var pay=0,how='';
- if(has('f_pay')&&num('f_pay')>0){pay=num('f_pay');how='the total you entered'}
- else if(has('f_rate')&&price>0){
-  var r=num('f_rate')/100/12,n=parseInt($('f_term').value,10)*12;
-  var pi=r>0?loan*r/(1-Math.pow(1+r,-n)):loan/n;
-  var tx=price*num('f_taxrate')/100/12,ins=num('f_ins')/12,hoa=num('f_hoa'),mi=num('f_mi');
-  pay=pi+tx+ins+hoa+mi;how='principal and interest at the rate you entered ('+usd(pi)+') plus taxes, insurance, HOA and mortgage insurance you entered';
- } else {alert('Enter either a total monthly housing payment (Option A) or a price and an interest rate (Option B).');return}
+ var ti=taxInfo($('f_state').value),yes=mindYes(),price;
+ if(yes){price=num('f_lprice');if(!(price>0)){alert('Please enter the list price of the home you have in mind.');return}}
+ else{price=has('f_price')&&num('f_price')>0?num('f_price'):(ti.median||0);if(!(price>0)){alert('Enter a target price, or type the city you are moving to so we can use its typical home value.');return}}
+ var type=$('f_type').value,dpPct=has('f_dpp')?Math.min(Math.max(num('f_dpp'),0),100):DP_DEF[type],hoa=num('f_hoa'),vaUse=$('f_vause').value;
+ var rateOv=has('f_rate')?num('f_rate'):null,taxRate=ti.rate!=null?ti.rate:0;
+ var P={};['conv','fha','va','usda'].forEach(function(t){P[t]=payFor(t,price,dpPct,cr,taxRate,hoa,t===type?rateOv:null,vaUse)});
+ var sel=P[type],pay=sel.total,down=price*dpPct/100;
  var debts=num('f_car')+num('f_student')+num('f_cards')+num('f_other');
- var front=pay/inc*100,back=(pay+debts)/inc*100,dpPct=price>0?down/price*100:null;
+ function bk_(t){return (P[t].total+debts)/inc*100}
+ var front=pay/inc*100,back=bk_(type);
+ // breakdown
+ var R=[['Home price'+(yes?' (list price)':(has('f_price')?'':' (typical value in '+(ti.city||'the area')+')')),usd(price)],
+  ['Down payment ('+pct(sel.dp)+')'+(sel.dp>dpPct?' <small>raised to the '+TNAME[type]+' minimum</small>':''),usd(sel.down)],
+  ];
+ if(sel.fee>0)R.push(['Base loan amount',usd(sel.base)],[esc(sel.feeLbl),usd(sel.fee)]);
+ R.push(['<b>Loan amount</b>','<b>'+usd(sel.loan)+'</b>'],['Interest rate assumption'+(sel.apr?' <small>APR '+sel.apr.toFixed(3)+'%</small>':' <small>(your rate)</small>'),sel.rate.toFixed(3)+'%, 30-yr fixed'],
+  ['Principal &amp; interest',usd(sel.pi)],['Property taxes <small>'+(ti.rate!=null?ti.rate.toFixed(2)+'%/yr, '+esc(ti.label):'n/a')+'</small>',usd(sel.tax)],
+  ['Homeowners insurance <small>0.55% of price/yr</small>',usd(sel.ins)],['Mortgage insurance <small>'+esc(sel.miLbl)+'</small>',usd(sel.mi)],['HOA dues',usd(hoa)],
+  ['<b>Estimated monthly payment</b>','<b>'+usd(pay)+'</b>']);
+ $('payTable').querySelector('tbody').innerHTML=R.map(function(r,i){return '<tr'+(i===R.length-1?' class="tot"':'')+'><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>'}).join('');
+ $('payHead').textContent=TNAME[type]+' payment estimate';
  $('r_front').textContent=pct(front);$('r_back').textContent=pct(back);
  $('r_front_n').textContent=' For reference only. Conventional does not use a front-end ratio.';
  $('r_back_n').textContent=' Worst-case limits: about 50% (conventional), 56% (FHA), 60% (VA)';
- $('r_dp').textContent=dpPct==null?'n/a':pct(dpPct);$('r_dp_n').textContent=price>0?(' '+usd(down)+' toward a '+usd(price)+' home'):' Enter a price to see it';
- $('r_pay').textContent='Housing payment used: '+usd(pay)+' per month, from '+how+'. Monthly debts: '+usd(debts)+'.';
+ $('r_dp').textContent=pct(dpPct);$('r_dp_n').textContent=' '+usd(down)+' toward a '+usd(price)+' home';
+ $('r_pay').textContent='Monthly debts used: '+usd(debts)+'. Each program below is checked with its own estimated payment (its mortgage insurance, fees, and rate).';
  var vet=$('c_vet').checked,late=$('c_late').checked,bk=$('c_bk').checked,incChg=$('c_inc').checked,rural=$('c_rural').checked;
  var rows=[];
- function row(n,s,w){rows.push({n:n,s:s,w:w})}
- // Conventional
- var cs,cw=[];
+ function row(n,s,w,t){rows.push({n:n,s:s,w:w,t:t})}
+ function payNote(t){var x=P[t];return 'Est. payment '+usd(x.total)+' ('+pct(x.dp)+' down'+(x.mi>0?', MI '+usd(x.mi):'')+'), back-end '+pct(bk_(t))+'.'}
+ // Conventional (back-end only, about 50% max)
+ var back_c=bk_('conv'),cs,cw=[];
  if(cr===-1){cs='possible';cw.push('Credit score unknown. Conventional usually wants 620 or higher.')}
  else if(cr<620){cs='unlikely';cw.push('Conventional usually needs a 620+ score.')}
  else{cs='likely'}
- if(dpPct!=null&&dpPct<3){cs='unlikely';cw.push('Down payment under 3%.')}
- else if(dpPct!=null&&dpPct<5&&cs==='likely'){cs='possible';cw.push('Under 5% down may limit options.')}
- if(back>50){cs='unlikely';cw.push('Back-end ratio is above about 50%.')}
- else if(back>45){if(cs==='likely')cs='possible';cw.push('Back-end above 45% usually needs strong credit, savings, or other offsets.')}
+ if(dpPct<3){cw.push('Needs at least 3% down; this estimate uses 3%.')}
+ else if(dpPct<5&&cs==='likely'){cs='possible';cw.push('Under 5% down may limit options.')}
+ if(back_c>50){cs='unlikely';cw.push('Back-end ratio is above about 50%.')}
+ else if(back_c>45){if(cs==='likely')cs='possible';cw.push('Back-end above 45% usually needs strong credit, savings, or other offsets.')}
  else if(cs!=='unlikely'&&cw.length===0)cw.push('Score, ratios and down payment fit typical conventional guidelines.');
-  if(cr>=0&&cr<680&&cs!=='unlikely')cw.push('Scores under about 680 usually mean higher cost, especially with less than 20% down.');
- row('Conventional (Fannie Mae / Freddie Mac)',cs,cw.join(' '));
- // FHA
- var fs,fw=[];
+ if(cr>=0&&cr<680&&cs!=='unlikely')cw.push('Scores under about 680 usually mean higher cost, especially with less than 20% down.');
+ row('Conventional (Fannie Mae / Freddie Mac)',cs,payNote('conv')+' '+cw.join(' '),'conv');
+ // FHA (up to 56% back-end)
+ var back_f=bk_('fha'),fs,fw=[];
  if(cr===-1){fs='possible';fw.push('Credit score unknown. FHA is usually used at 580+ with 3.5% down.')}
- else if(cr<580){fs=(dpPct!=null&&dpPct>=10)?'possible':'unlikely';fw.push('Under 580 generally needs 10% down and a lender willing to go that low.')}
+ else if(cr<580){fs=(dpPct>=10)?'possible':'unlikely';fw.push('Under 580 generally needs 10% down and a lender willing to go that low.')}
  else fs='likely';
- if(dpPct!=null&&dpPct<3.5){fs='unlikely';fw.push('FHA minimum down payment is 3.5%.')}
- if(back>56){fs='unlikely';fw.push('Back-end ratio is above the 56% FHA maximum.')}
- else if(back>50){if(fs==='likely')fs='possible';fw.push('Back-end between 50% and 56% can work on FHA with a strong automated approval.')}
+ if(dpPct<3.5){fw.push('FHA needs at least 3.5% down; this estimate uses 3.5%.')}
+ if(back_f>56){fs='unlikely';fw.push('Back-end ratio is above the 56% FHA maximum.')}
+ else if(back_f>50){if(fs==='likely')fs='possible';fw.push('Back-end between 50% and 56% can work on FHA with a strong automated approval.')}
  else if(fs!=='unlikely'&&fw.length===0)fw.push('Score, ratios and 3.5% down fit typical FHA guidelines.');
  fw.push('FHA has upfront and monthly mortgage insurance.');
- row('FHA',fs,fw.join(' '));
- // VA
- var vs,vw=[];
+ row('FHA',fs,payNote('fha')+' '+fw.join(' '),'fha');
+ // VA (up to 60% back-end)
+ var back_v=bk_('va'),vs,vw=[];
  if(!vet){vs='unlikely';vw.push('Requires eligible military service. If you served, ask James to check your eligibility.')}
  else{
   vs='likely';
   if(cr===-1){vs='possible';vw.push('Credit score unknown. Many lenders look for 580–620+.')}
   else if(cr<580){vs='unlikely';vw.push('Most lenders want about 580–620 or higher.')}
-  if(back>60){vs='unlikely';vw.push('Back-end ratio is above the 60% VA maximum.')}
-  else if(back>50){if(vs==='likely')vs='possible';vw.push('Back-end between 50% and 60% can work on VA with strong residual income.')}
+  if(back_v>60){vs='unlikely';vw.push('Back-end ratio is above the 60% VA maximum.')}
+  else if(back_v>50){if(vs==='likely')vs='possible';vw.push('Back-end between 50% and 60% can work on VA with strong residual income.')}
   if(vs==='likely')vw.push('Eligible service, ratios fit; VA allows 0% down and has no monthly mortgage insurance. A funding fee usually applies. VA also checks residual income.');
  }
- row('VA',vs,vw.join(' '));
+ row('VA',vs,(vet?payNote('va')+' ':'')+vw.join(' '),'va');
  // USDA
- var us,uw=[];
+ var back_u=bk_('usda'),us,uw=[];
  if(!rural){us='unlikely';uw.push('USDA is for eligible rural areas with household income limits. Check the box above if the new home is rural.')}
  else{us='possible';uw.push('Rural area noted. USDA typically needs about 640+ credit, a back-end ratio near 41% or less, and household income under program limits. Ask James to check the property and income limits.');
-  if(cr>=0&&cr<640||back>44){us='unlikely'}}
- row('USDA (rural)',us,uw.join(' '));
+  if(cr>=0&&cr<640||back_u>44){us='unlikely'}}
+ row('USDA (rural)',us,(rural?payNote('usda')+' ':'')+uw.join(' '),'usda');
  var any=rows.some(function(x){return x.s==='likely'||x.s==='possible'});
  var tb=$('progTable').querySelector('tbody');tb.innerHTML='';
  rows.forEach(function(x){var tr=document.createElement('tr');tr.innerHTML='<td><b>'+esc(x.n)+'</b></td><td class="s-'+x.s+'">'+({likely:'Likely',possible:'Possible / stretch',unlikely:'Unlikely'})[x.s]+'</td><td>'+esc(x.w)+'</td>';tb.appendChild(tr)});
@@ -564,12 +766,19 @@ function calc(){
  if(bk)fl.push('<b>Bankruptcy, foreclosure, or short sale:</b> waiting periods usually apply (they vary by program and event). James can tell you where you stand.');
  if(incChg)fl.push('<b>Income change:</b> lenders usually want a 2-year history. A new job, self-employment, or retirement income is documented differently.');
  if(!any||late||bk||cr===0)fl.push('<b>Other options:</b> if no standard program fits yet, there may be a path with some preparation, or non-QM and bank-statement programs for self-employed or credit-challenged buyers. Talk with James before you list.');
+ if(yes)fl.push('<b>Home in mind:</b> James will pull the actual taxes, HOA, and insurance details for '+esc($('f_link').value||'the home you entered')+' when you send this to him.');
  $('r_flags').innerHTML=fl.length?'<div class="why" style="margin-top:10px">'+fl.map(function(x){return '<p style="margin:4px 0">'+x+'</p>'}).join('')+'</div>':'';
  $('results').style.display='block';
- last={income:inc,credit:$('f_credit').options[$('f_credit').selectedIndex].text,debts:debts,pay:pay,front:front,back:back,price:price,down:down,dpPct:dpPct,where:$('f_state').value,rows:rows,flags:{vet:vet,late:late,bk:bk,incChg:incChg,rural:rural}};
+ last={income:inc,credit:$('f_credit').options[$('f_credit').selectedIndex].text,debts:debts,pay:pay,front:front,back:back,price:price,down:down,dpPct:dpPct,where:$('f_state').value,type:TNAME[type],sel:sel,taxLabel:ti.rate!=null?ti.rate.toFixed(2)+'% ('+ti.label+')':'n/a',mind:yes?'Yes':'Not yet',link:yes?$('f_link').value:'',rows:rows,flags:{vet:vet,late:late,bk:bk,incChg:incChg,rural:rural}};
  $('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
 $('calcBtn').addEventListener('click',calc);
+['f_type','f_state','f_price','f_lprice','f_dpp'].forEach(function(i){$(i).addEventListener('input',syncPq);$(i).addEventListener('change',syncPq)});
+$('f_dpp').addEventListener('input',function(){dpTouched=true});
+$('f_rate').addEventListener('input',function(){rateTouched=true;syncPq()});
+$('f_type').addEventListener('change',function(){rateTouched=false;syncPq()});
+[].forEach.call(document.querySelectorAll('input[name=mind]'),function(r){r.addEventListener('change',syncPq)});
+$('c_vet').addEventListener('change',function(){if(this.checked&&$('f_type').value==='conv'&&!dpTouched){$('f_type').value='va';rateTouched=false;syncPq()}});
 
 // city comparison (static public data in cities.js)
 var CD=window.KBYG_CITIES||null,CITY=null;
@@ -600,7 +809,7 @@ function findCity(q){buildIdx();if(!CITY)return null;var k=normName(q);if(CITY.b
 function setupAC(id){
  var inp=$(id),ul=$(id+'_list'),items=[],act=-1;
  function close(){ul.style.display='none';ul.innerHTML='';inp.setAttribute('aria-expanded','false');act=-1}
- function pick(o){inp.value=o.lab;close()}
+ function pick(o){inp.value=o.lab;close();try{inp.dispatchEvent(new Event('change'))}catch(e){}}
  function render(){
   items=suggest(inp.value,8);ul.innerHTML='';act=-1;
   if(!items.length||(items.length===1&&items[0].lab===inp.value)){close();return}
@@ -612,7 +821,7 @@ function setupAC(id){
  inp.addEventListener('input',render);
  inp.addEventListener('blur',function(){setTimeout(close,120)});
  inp.addEventListener('keydown',function(e){
-  if(ul.style.display!=='block'){if(e.key==='Enter'){e.preventDefault();cmpCities()}return}
+  if(ul.style.display!=='block'){if(e.key==='Enter'){e.preventDefault();if(id==='cityA'||id==='cityB')cmpCities()}return}
   if(e.key==='ArrowDown'){act=Math.min(act+1,items.length-1);hi();e.preventDefault()}
   else if(e.key==='ArrowUp'){act=Math.max(act-1,0);hi();e.preventDefault()}
   else if(e.key==='Enter'){e.preventDefault();if(act>=0)pick(items[act]);else if(items.length)pick(items[0])}
@@ -685,52 +894,80 @@ function pct2(n){return n.toFixed(2)+'%'}
 $('cmpBtn').addEventListener('click',cmpCities);
 $('useBtn').addEventListener('click',function(){
  if(!lastCmp)return;
- if(lastCmp.b.eff!=null)$('f_taxrate').value=lastCmp.b.eff.toFixed(2);
- $('f_state').value=lastCmp.b.name;
+ $('f_state').value=lastCmp.b.name;syncPq();
  $('prequal').scrollIntoView({behavior:'smooth'});
 });
 
-// submit
+// submit (same delivery as the /intake/ DSCR and HELOC forms: CodeFreeForm first, FormSubmit fallback, both to NOTIFY_EMAIL)
 function fmtPhone(p){var d=String(p||'').replace(/\D/g,'');if(d.length===11&&d[0]==='1')d=d.slice(1);return d.length===10?d.slice(0,3)+'-'+d.slice(3,6)+'-'+d.slice(6):String(p||'')}
 function postJson(url,body,ms){
  var ctl=(typeof AbortController!=='undefined')?new AbortController():null,t=ctl?setTimeout(function(){ctl.abort()},ms||15000):null;
  return fetch(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body),signal:ctl?ctl.signal:undefined}).then(function(x){if(t)clearTimeout(t);return x.json().catch(function(){return {}}).then(function(d){if(!x.ok)throw new Error('HTTP '+x.status);return d})},function(e){if(t)clearTimeout(t);throw e});
 }
+var META=(function(){var q={};try{var p=new URLSearchParams(location.search);['src','utm_source','utm_medium','utm_campaign','utm_content','agent'].forEach(function(k){q[k]=(p.get(k)||'').slice(0,200)})}catch(e){}
+ q.variant=document.documentElement.className.indexOf('nore')>=0?'James only (no realtor block)':'Co-branded (James + realtor)';
+ q.source=q.src||(q.utm_source?q.utm_source:'know-before-you-go');return q})();
+['l_src','l_utm_source','l_utm_medium','l_utm_campaign','l_utm_content'].forEach(function(id){var k=id.slice(2);if(k==='src')k='source';$(id).value=META[k]||''});
+function leadVal(id){return ($(id).value||'').trim()}
 function summary(){
- var L=['KNOW BEFORE YOU GO – prequalification check (ESTIMATE ONLY, not an approval)',''];
- L.push('Name: '+$('s_name').value,'Phone: '+fmtPhone($('s_phone').value),'Email: '+$('s_email').value,'Listing agent: '+($('s_agent').value||'(none)'),'');
- L.push('Gross monthly income: '+usd(last.income),'Credit range: '+last.credit,'Monthly debts: '+usd(last.debts),'Moving to: '+(last.where||'(not given)'),'Target price: '+usd(last.price),'Down payment: '+usd(last.down)+(last.dpPct!=null?' ('+pct(last.dpPct)+')':''),'Housing payment used: '+usd(last.pay),'');
- L.push('Front-end ratio: '+pct(last.front),'Back-end ratio: '+pct(last.back),'');
- L.push('Programs (rule of thumb):');last.rows.forEach(function(r){L.push(' - '+r.n+': '+r.s)});
- var f=last.flags;L.push('','Flags: VA service='+f.vet+', recent lates='+f.late+', BK/foreclosure 7y='+f.bk+', income change='+f.incChg+', rural='+f.rural);
+ var L=['KNOW BEFORE YOU GO – lead (ESTIMATE ONLY, not an approval)',''];
+ L.push('Name: '+leadVal('l_name'),'Phone: '+fmtPhone(leadVal('l_phone')),'Email: '+leadVal('l_email'));
+ L.push('Current city: '+(leadVal('l_from')||'(not given)'),'Moving to: '+(leadVal('l_to')||'(not given)'),'Timeframe: '+leadVal('l_when'),'Home in mind: '+($('l_mind').value==='yes'?'Yes – '+(leadVal('l_link')||'(no address/link given)'):'Not yet'));
+ if(META.agent||leadVal('l_agent'))L.push('Listing agent: '+(leadVal('l_agent')||META.agent));
+ L.push('','Lead source: '+META.source+' | '+META.variant,'UTM: '+([META.utm_source,META.utm_medium,META.utm_campaign,META.utm_content].filter(Boolean).join(' / ')||'(none)'));
+ if(last){var s=last.sel;
+  L.push('','PREQUAL CHECK INPUTS / RESULTS','Gross monthly income: '+usd(last.income),'Credit range: '+last.credit,'Monthly debts: '+usd(last.debts),'Moving to (prequal): '+(last.where||'(not given)'),'Home in mind: '+last.mind+(last.link?' – '+last.link:''),'Price used: '+usd(last.price),'Loan type: '+last.type+', down payment '+usd(last.down)+' ('+pct(last.dpPct)+')',
+   'Loan amount: '+usd(s.loan)+(s.fee>0?' (incl. '+s.feeLbl+')':''),'Rate assumption: '+s.rate.toFixed(3)+'%','Est. payment: '+usd(last.pay)+' = P&I '+usd(s.pi)+' + tax '+usd(s.tax)+' ['+last.taxLabel+'] + ins '+usd(s.ins)+' + MI '+usd(s.mi)+' + HOA '+usd(s.hoa),
+   'Front-end ratio: '+pct(last.front)+' | Back-end ratio: '+pct(last.back),'Programs (rule of thumb):');
+  last.rows.forEach(function(r){L.push(' - '+r.n+': '+r.s)});
+  var f=last.flags;L.push('Flags: VA service='+f.vet+', recent lates='+f.late+', BK/foreclosure 7y='+f.bk+', income change='+f.incChg+', rural='+f.rural);
+ } else L.push('','Prequal check: not run');
  if(lastCmp)L.push('','City comparison: now='+lastCmp.a.name+', moving to='+lastCmp.b.name);
- else if($('cityA').value||$('cityB').value)L.push('','Cities typed: now='+($('cityA').value||'?')+', moving to='+($('cityB').value||'?'));
- if($('notes_col').value)L.push('Notes: '+$('notes_col').value);
- if($('s_notes').value)L.push('','Notes: '+$('s_notes').value);
+ if($('notes_col').value)L.push('Comparison notes: '+$('notes_col').value);
+ if(leadVal('l_msg'))L.push('','Message: '+leadVal('l_msg'));
  return L.join('\n');
 }
 function deliver(){
- var nm=$('s_name').value.trim(),em=$('s_email').value.trim(),msg=summary();
- var cf={access_key:BACKUP_KEY,email:validEmail(em)?em:NOTIFY_EMAIL,subject:'New Know Before You Go lead – '+nm,message:msg.replace(/\b(?:https?:\/\/|www\.)\S+/gi,'[link omitted]'),
-  'Form':'Know Before You Go','Name':nm,'Phone':fmtPhone($('s_phone').value),'Email':em,'Listing agent':$('s_agent').value||'(none)',
-  'Front-end DTI':pct(last.front),'Back-end DTI':pct(last.back),'Target price':usd(last.price),'Income (monthly)':usd(last.income)};
- var fs={_subject:'New Know Before You Go lead – '+nm,_template:'table',_captcha:'false',_replyto:validEmail(em)?em:NOTIFY_EMAIL,form_name:'Know Before You Go',name:nm,email:em,phone:fmtPhone($('s_phone').value),listing_agent:$('s_agent').value||'(none)',front_end_dti:pct(last.front),back_end_dti:pct(last.back),message:msg};
+ var nm=leadVal('l_name'),em=leadVal('l_email'),msg=summary(),ad=META.utm_content||META.utm_campaign||META.utm_source||'';
+ var subj='New Know Before You Go lead – '+nm+(META.source&&META.source!=='know-before-you-go'?' – '+META.source:'')+(ad&&ad!==META.source?' – Ad '+ad:'');
+ function strip(v){return String(v==null?'':v).replace(/\b(?:https?:\/\/|www\.)\S+/gi,'[link omitted]')}
+ var cf={access_key:BACKUP_KEY,email:validEmail(em)?em:NOTIFY_EMAIL,subject:subj,message:strip(msg),'Form':'Know Before You Go','Name':nm,'Phone':fmtPhone(leadVal('l_phone')),'Email':em,
+  'Current city':leadVal('l_from'),'Moving to':leadVal('l_to'),'Timeframe':leadVal('l_when'),'Home in mind':$('l_mind').value==='yes'?'Yes':'Not yet','Home address or link':strip(leadVal('l_link')),
+  'Lead source':META.source,'Ad source':[META.utm_source,META.utm_medium,META.utm_campaign,META.utm_content].filter(Boolean).join(' / ')||'(none)','Page version':META.variant};
+ if(last){cf['Est. payment']=usd(last.pay);cf['Back-end DTI']=pct(last.back);cf['Price used']=usd(last.price);cf['Loan type']=last.type;cf['Income (monthly)']=usd(last.income)}
+ Object.keys(cf).forEach(function(k){if(cf[k]===''||cf[k]==null)delete cf[k]});
+ var fs={_subject:subj,_template:'table',_captcha:'false',_replyto:validEmail(em)?em:NOTIFY_EMAIL,form_name:'Know Before You Go',name:nm,email:em,phone:fmtPhone(leadVal('l_phone')),current_city:leadVal('l_from'),moving_to:leadVal('l_to'),timeframe:leadVal('l_when'),home_in_mind:$('l_mind').value,home_address_or_link:leadVal('l_link'),
+  source:META.source,utm_source:META.utm_source,utm_medium:META.utm_medium,utm_campaign:META.utm_campaign,utm_content:META.utm_content,page_version:META.variant,listing_agent:leadVal('l_agent')||META.agent||'(none)',
+  est_payment:last?usd(last.pay):'',back_end_dti:last?pct(last.back):'',message:msg};
  return postJson(BACKUP_ENDPOINT,cf,15000).then(function(d){if(d&&d.success===false)throw new Error('rejected');return 'ok'})
  .catch(function(){return postJson(FORM_ENDPOINT,fs,15000).then(function(d){if(!(d&&(d.success===true||d.success==='true')))throw new Error('not accepted');return 'ok'})});
 }
-$('sendBtn').addEventListener('click',function(){
- var t=$('toast');t.className='toast';t.textContent='';
- if(!last){calc();if(!last)return}
- var nm=$('s_name').value.trim(),em=$('s_email').value.trim(),ph=$('s_phone').value.replace(/\D/g,'');
+function prefillLead(){
+ if(!leadVal('l_to'))$('l_to').value=(lastCmp&&lastCmp.b.name)||$('f_state').value||$('cityB').value||'';
+ if(!leadVal('l_from'))$('l_from').value=(lastCmp&&lastCmp.a.name)||$('cityA').value||'';
+ if(mindYes()&&$('f_link').value&&!leadVal('l_link')){$('l_mind').value='yes';$('l_link').value=$('f_link').value}
+ $('l_linkWrap').hidden=$('l_mind').value!=='yes';
+ $('l_pqnote').textContent=last?'Your prequalification estimate ('+usd(last.pay)+'/mo, '+last.type+') will be included.':'Tip: run the quick check above first and your numbers will be included.';
+}
+$('l_mind').addEventListener('change',prefillLead);
+$('toLead').addEventListener('click',function(){prefillLead();$('lead').scrollIntoView({behavior:'smooth'})});
+[].forEach.call(document.querySelectorAll('a[href="#lead"]'),function(a){a.addEventListener('click',prefillLead)});
+$('leadBtn').addEventListener('click',function(){
+ var t=$('leadToast');t.className='toast';t.textContent='';prefillLead();
+ var nm=leadVal('l_name'),em=leadVal('l_email'),ph=leadVal('l_phone').replace(/\D/g,'');
  if(!nm||!validEmail(em)||ph.length<10){t.className='toast err';t.textContent='Please enter your name, a valid email, and a 10-digit phone number.';return}
- if(!$('s_consent').checked){t.className='toast err';t.textContent='Please check the box to agree before sending.';return}
- var b=$('sendBtn');b.disabled=true;b.textContent='Sending…';
- deliver().then(function(){t.className='toast ok';t.textContent='Sent. James Barnes will review your numbers and reach out. This is an estimate, not an approval.';b.textContent='Sent'}).catch(function(){
-  b.disabled=false;b.textContent='Send my results to James';t.className='toast err';
+ if(!$('l_consent').checked){t.className='toast err';t.textContent='Please check the box to agree before sending.';return}
+ var b=$('leadBtn');b.disabled=true;b.textContent='Sending…';
+ deliver().then(function(){$('leadForm').hidden=true;$('leadThanks').hidden=false;$('leadThanksName').textContent=nm.split(' ')[0];$('leadThanks').scrollIntoView({behavior:'smooth',block:'center'})}).catch(function(){
+  b.disabled=false;b.textContent='Send to James';t.className='toast err';
   var body=encodeURIComponent(summary());
-  t.innerHTML='We could not send automatically. <a href="mailto:'+NOTIFY_EMAIL+'?subject='+encodeURIComponent('Know Before You Go – '+nm)+'&body='+body+'">Click here to email James your results</a> or <a href="tel:+15122288124">Call James</a>.';
+  t.innerHTML='We could not send automatically. <a href="mailto:'+NOTIFY_EMAIL+'?subject='+encodeURIComponent('Know Before You Go – '+nm)+'&body='+body+'">Click here to email James</a> or <a href="tel:+15122288124">Call James</a>.';
  });
 });
+/* printed short links (is.gd): James-only versions when the realtor block is hidden */
+if(document.documentElement.className.indexOf('nore')>=0)[].forEach.call(document.querySelectorAll('a.slink'),function(a){a.href='https://is.gd/'+a.getAttribute('data-j');a.textContent='is.gd/'+a.getAttribute('data-j')});
+setupAC('f_state');setupAC('l_from');setupAC('l_to');
+syncPq();prefillLead();
 })();
 </script>
 </body>
