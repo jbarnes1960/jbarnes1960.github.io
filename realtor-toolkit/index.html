@@ -130,7 +130,7 @@ footer{background:#0b2a5b;color:#fff;padding:30px 0;margin-top:40px}.fwrap{displ
 <div class="cbody"><h3>Virus Watch Weekly</h3><p>A plain-English weekly newsletter on scams, malware and wire fraud that you can share with clients.</p>
 <div class="cact"><button type="button" class="btn sm" data-order="Virus Watch Weekly">Order this</button><a class="lnk" href="https://jbarnes1960.github.io/" target="_blank" rel="noopener">See it live →</a></div></div></article></div></section>
 <section id="order"><div id="formwrap"><h2>Doc Order Form</h2><p>Tell me what you need and for which property. Every document is co-branded with you, and you can ask for changes with a simple email.</p>
-<form id="of" action="https://formsubmit.co/jbarnes@mail.grokbot.com" method="POST">
+<form id="of" action="https://formsubmit.co/2229496f4e1e59c9dfced34e2da44cb7" method="POST">
 <input type="hidden" name="form_name" value="Realtor Toolkit Order">
 <input type="hidden" name="_subject" id="subj" value="Realtor Toolkit Order">
 <input type="hidden" name="_cc" value="jbarnes@nexalending.com">
@@ -167,7 +167,7 @@ document.getElementById('again').onclick=function(){f.reset();document.getElemen
 f.addEventListener('submit',function(e){
  if(!window.fetch||!window.FormData)return; e.preventDefault(); upd();
  var sb=document.getElementById('sb'),er=document.getElementById('err');sb.disabled=true;sb.textContent='Sending…';er.style.display='none';
- fetch('https://formsubmit.co/ajax/jbarnes@mail.grokbot.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+ fetch('https://formsubmit.co/ajax/2229496f4e1e59c9dfced34e2da44cb7',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
  .then(function(r){return r.json()}).then(function(d){if(d&&(d.success===true||d.success==='true'))thanks();else throw new Error(d&&d.message);})
  .catch(function(){sb.disabled=false;sb.textContent='Send my order';er.innerHTML='Sorry, that didn\'t go through. Please try again, or email your request to <a href="mailto:jbarnes@nexalending.com">jbarnes@nexalending.com</a>.';er.style.display='block';});
 });
