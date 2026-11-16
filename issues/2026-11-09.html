@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Virus Watch Weekly — Issue 9 (2026-11-09)</title>
+  <meta name="description" content="Newly discovered malware, ransomware, and computer viruses — summarized. Issue 9." />
+  <link rel="canonical" href="https://jbarnes1960.github.io/issues/2026-11-09.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Virus Watch Weekly · NEXA Lending" />
+  <meta property="og:title" content="Virus Watch Weekly — Issue 9: Week of Nov 2 – 9, 2026" />
+  <meta property="og:description" content="Plain-English malware alerts and how to stay safe — Fake Claude Code ads on Google install a password stealer and a hidden back door on Macs; Free streaming app on Google Play led to Android malware…" />
+  <meta property="og:url" content="https://jbarnes1960.github.io/issues/2026-11-09.html" />
+  <meta property="og:image" content="https://jbarnes1960.github.io/assets/brand/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Virus Watch Weekly — Issue 9: Week of Nov 2 – 9, 2026" />
+  <meta name="twitter:description" content="Plain-English malware alerts and how to stay safe — Fake Claude Code ads on Google install a password stealer and a hidden back door on Macs; Free streaming app on Google Play led to Android malware…" />
+  <meta name="twitter:image" content="https://jbarnes1960.github.io/assets/brand/og-image.png" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <link rel="stylesheet" href="../assets/style-v2.css" />
+</head>
+<body class="v2">
+  <div class="wrap">
+    <header class="site-header">
+      <div class="brand brand-with-logo">
+        <img class="nexa-logo" src="../assets/brand/nexa-lending-logo-web.png" alt="NEXA Lending" />
+        <div>
+          <h1>Virus Watch Weekly</h1>
+          <p class="tagline">Newly discovered malware, ransomware, and computer viruses — summarized.</p>
+          <p class="brand-byline">From James Barnes · Senior Loan Officer · NEXA Lending</p>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Site">
+        <a href="../index.html">Latest</a>
+        <a href="../subscribe.html">Subscribe</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="hero-meta">
+        <span class="badge badge-issue">Issue 9</span>
+        <span>2026-11-09</span>
+        <span>Week of Nov 2 – 9, 2026</span>
+        <span>6 top stories</span>
+      </div>
+      <h2>This week in malware</h2>
+      <p class="intro">Welcome to Virus Watch Weekly #9. Research for this issue was pulled from public reporting on Monday, Nov 9, 2026 (America/Denver). This week&#x27;s theme: the trap is hiding inside something you already trust. A Google ad for a popular AI coding tool led Mac users to a password stealer, a free streaming app on Google Play led Android users to a bank-draining remote-control app, and another Android banker now hands your text messages to an AI to find your balance. On the business side, a web-hosting control panel was quietly rebuilt into a back door, hijacked developer packages fetch their orders from the Ethereum blockchain, and U.S. agencies warned that hackers are going after grocery and cold-storage refrigeration controls.</p>
+    </div>
+
+    <section aria-labelledby="top-stories">
+      <h3 id="top-stories">Top Stories</h3>
+      <p class="stories-hint">Tap any story to open the full details. <span class="stories-controls"></span></p>
+      <div class="stories">
+<details class="story" id="story-1">
+  <summary class="story-summary">
+    <div class="story-header">
+      <h4>Fake Claude Code ads on Google install a password stealer and a hidden back door on Macs</h4>
+      <span class="severity severity-high">High</span>
+    </div>
+    <div class="malware-name">AMOS (Atomic macOS Stealer) — &#x27;PasteSwitch&#x27; kit</div>
+    <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
+  </summary>
+  <div class="story-body">
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Criminals are buying Google search ads that look like the official download page for Claude Code, a popular AI coding tool. The page shows a normal-looking install command, but its Copy button secretly puts a different command on your clipboard; paste it into Terminal and it installs a program that steals saved passwords, crypto wallets and work cloud logins, plus a back door that survives a restart. A newer version skips the paste entirely and uses an Apple-signed installer file. The lesson: don&#x27;t install software from search ads, and never paste commands from a web page into Terminal.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Skip the &#x27;Sponsored&#x27; results: type the software maker&#x27;s address yourself (for Claude, claude.ai, claude.com or anthropic.com) or use a bookmark.</li><li>Never paste a command from a web page into Terminal unless you fully trust and understand it — a page&#x27;s Copy button can put something different on your clipboard.</li><li>Be suspicious of any pop-up that asks for your Mac password right after you install or paste something; real macOS prompts don&#x27;t come from a random script.</li><li>Use a dedicated password manager with a strong master password, and turn on two-step sign-in for work cloud accounts.</li><li>If you think you ran one of these commands, disconnect the Mac, tell IT, and change passwords and cloud keys from a different, clean device.</li></ul></div>
+    <p>Mate Research (Nov 5) tracks an AMOS-family campaign active since at least May 2026 behind Claude Code, Homebrew, OpenAI Codex, disk-cleaner and (late October) fake ChatGPT lures, still shipping new builds on Nov 1. Google Ads redirect through an abused site to look-alike pages (e.g. claude-desk-code[.]com) whose Copy button swaps in `curl -s $(echo ... | openssl base64 -d -A) | zsh`. A second route uses Apple Developer ID-signed DMGs (Claude.dmg from claude-desktop[.]com, Antigravity, WPS Office, macOSRJ; certificates since revoked) that need no paste. Stage 2 beacons /api/metrics/run?event=pasted, drops the stealer in /tmp, clears quarantine with xattr -c, and runs it. The stealer prompts for the login password via a fake osascript dialog, then takes wallets, Bitwarden and Telegram data and AWS/gcloud/Docker/FileZilla credentials; two root LaunchDaemons with Apple-looking labels (com.apple.accountsd.helper, com.apple.metadata.mds.worker) keep a backdoor running every five seconds. Delivery servers are registered a day or two before each build, so blocklists lag; Mate published 708 indicators (461 new) and behavior-based detections.</p>
+    <div class="story-meta">
+      <div><strong>Platforms:</strong> macOS</div>
+      <div><strong>How it spreads:</strong> Paid Google search ads leading to fake download pages with a clipboard-swap Terminal command, or Apple-signed fake installer DMGs.</div>
+    </div>
+    <div class="story-source">Source: <a href="https://mate.security/labs/fake-claude-code-ads-are-installing-amos-on-macs" rel="noopener noreferrer" target="_blank">Mate Security Research (Nov 5, 2026)</a></div>
+  </div>
+</details>
+<details class="story" id="story-2">
+  <summary class="story-summary">
+    <div class="story-header">
+      <h4>Free streaming app on Google Play led to Android malware that drained thousands of bank accounts</h4>
+      <span class="severity severity-high">High</span>
+    </div>
+    <div class="malware-name">Mirax (Android device-takeover RAT, &#x27;aquafina&#x27; campaign)</div>
+    <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
+  </summary>
+  <div class="story-body">
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>A free video-streaming app on the Google Play Store showed ads that led people to download a second app from outside the store. That app pretended to be &#x27;Google Play Services&#x27; and pushed the user to turn on a powerful phone setting called Accessibility, which lets it see and tap the screen. With that, criminals could read text-message codes, learn the phone&#x27;s PIN, open the banking app and send money abroad — all from the victim&#x27;s own phone. Researchers say thousands of accounts were hit, with losses in the millions.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Don&#x27;t tap ads or pop-ups inside free streaming or video apps, and don&#x27;t install apps they offer outside the Play Store.</li><li>If any app other than a genuine accessibility tool asks you to turn on Accessibility, say no and uninstall it.</li><li>Real Google Play Services never needs to be downloaded from a website — treat any app asking you to do that as malware.</li><li>Keep Google Play Protect turned on and remove apps you don&#x27;t recognize or no longer use.</li><li>Turn on transaction alerts with your bank, and call the bank right away if you see a transfer or new payee you didn&#x27;t add.</li></ul></div>
+    <p>Group-IB (Nov 5) details Mirax, an Android device-takeover (DTO) RAT sold since December 2025 as private malware-as-a-service on Russian-language forums. In the &#x27;aquafina&#x27; campaign (March–September 2026, still active), ad banners in low-reputation streaming apps on Google Play lead to an off-store dropper (one posed as &#x27;TikTok 18+&#x27;), which installs a payload impersonating &#x27;Google Play Services&#x27; (with a Cyrillic homoglyph), hides its icon and randomizes its package name per build. After coercing Accessibility access it offers overlay/HTML injection, keylogging, SMS and notification interception, hidden VNC, lock-screen PIN capture and replay, a SOCKS5 residential proxy, anti-uninstall and AV blocking. C2 uses dual WebSockets with DNS-over-HTTPS and an HTTP long-poll fallback; target lists and phishing templates for 20+ regional banks and wallets are pushed from the server at runtime. Group-IB estimates losses in the millions of dollars, with funds routed to mule accounts in India.</p>
+    <div class="story-meta">
+      <div><strong>Platforms:</strong> Android</div>
+      <div><strong>How it spreads:</strong> Malicious ads inside free streaming apps on Google Play leading to an off-store dropper that impersonates Google Play Services.</div>
+    </div>
+    <div class="story-source">Source: <a href="https://www.group-ib.com/blog/mirax-android-device-takeover-rat/" rel="noopener noreferrer" target="_blank">Group-IB (Nov 5, 2026)</a></div>
+  </div>
+</details>
+<details class="story" id="story-3">
+  <summary class="story-summary">
+    <div class="story-header">
+      <h4>New Android banking trojan hands your text messages to an AI chatbot to find your money</h4>
+      <span class="severity severity-med">Med</span>
+    </div>
+    <div class="malware-name">Groklem (Android banking RAT using xAI&#x27;s Grok)</div>
+    <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
+  </summary>
+  <div class="story-body">
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>This is a phone app that, once installed, copies your text messages — including the one-time codes banks send — and passes them to an AI service to work out which bank you use and roughly how much is in your account. The criminal gets a tidy summary instead of reading your texts himself. It also can show fake bank login screens, record what you type and lock your phone for ransom. It spreads through fake apps, including one posing as a traffic-fine (e-challan) notice, so only install apps from the official store and never sideload an app a text message sends you.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Only install apps from the Google Play Store; never install an app file (APK) sent by text message, WhatsApp or email — even if it claims to be about a fine or a government notice.</li><li>Deny &#x27;read SMS&#x27; and Accessibility permissions to any app that has no obvious need for them.</li><li>Where your bank offers it, use in-app approval or an authenticator app instead of text-message codes.</li><li>If your phone suddenly shows a lock screen demanding payment, don&#x27;t pay — contact your bank and a phone repair or security professional.</li></ul></div>
+    <p>STAR Labs (Nov 6) analyzed Groklem, an Android banking RAT with a raw-TCP multi-channel C2, a reflection-and-GZIP (or AES-GCM) packer, overlay/web injection, keylogging, hidden VNC (HVNC), a dropper and lock-screen extortion. Its novel stage forwards stolen SMS (the triggering OTP plus about ten days of history) to xAI&#x27;s Grok API with an operator-supplied key pushed over C2 at runtime (no key is embedded in any of the six payloads studied), and Grok returns structured JSON identifying banks, OTPs, transactions, PIN resets and an estimated balance. Hardcoded signals (an eChallan lure, PhonePe hooks, a bKash/BDT default in the prompt) point to India and Bangladesh, but because identification is delegated to the model, any bank&#x27;s SMS can be parsed. STAR Labs&#x27; analysis was static; the AI feature ships switched off until a key arrives.</p>
+    <div class="story-meta">
+      <div><strong>Platforms:</strong> Android</div>
+      <div><strong>How it spreads:</strong> Sideloaded fake apps, including traffic-fine (eChallan) themed lures; targeting signals point to India and Bangladesh.</div>
+    </div>
+    <div class="story-source">Source: <a href="https://starlabs.sg/blog/2026/11-groklem-an-android-banker-that-rents-grok-to-read-your-texts/" rel="noopener noreferrer" target="_blank">STAR Labs (Nov 6, 2026)</a></div>
+  </div>
+</details>
+<details class="story" id="story-4">
+  <summary class="story-summary">
+    <div class="story-header">
+      <h4>Back door hidden inside the Control Web Panel server lets hackers run commands on Linux hosting servers without leaving logs</h4>
+      <span class="severity severity-med">Med</span>
+    </div>
+    <div class="malware-name">CWPdoor (trojanized cwpsrv)</div>
+    <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
+  </summary>
+  <div class="story-body">
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Control Web Panel (CWP) is free software many small hosting companies and website owners use to manage Linux web servers. Researchers found a tampered copy of CWP&#x27;s own web server program that behaves normally but secretly obeys specially signed web requests from the attacker — and those requests never show up in the logs. The attackers already need full control of the server to plant it, so it&#x27;s a way to stay in quietly. If you or your web host run CWP, ask them to check for it.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>If your website runs on a server with Control Web Panel, ask your host or IT person to run XLab&#x27;s checks (the &#x27;integrity&#x27; socket and header-name tests) this week.</li><li>Keep CWP updated to the latest version, and don&#x27;t expose its admin login page to the whole internet.</li><li>If the server is infected, restore the original cwpsrv, update, change every control-panel password, and treat the whole server as compromised.</li><li>Use strong, unique passwords or SSH keys for server root logins, since attackers need root access to plant this back door.</li></ul></div>
+    <p>QiAnXin XLab (reported by BleepingComputer Nov 5 and The Hacker News Nov 6) named CWPdoor, a rebuilt cwpsrv binary installed by a fake update script (cwpsrv_update.sh) that targets cwpsrv 1.15.10 and 1.24.0, restores original file timestamps, deletes temp files and wipes shell history. It acts as a passive backdoor: requests with a valid timestamp and signature in custom X-Ngx-Integrity* headers trigger command execution through a Unix socket (ngx_http_integrity_helper) and are suppressed from access logs. Installation requires root; the initial access vector is unknown. A sample uploaded to VirusTotal from Brazil on Sep 30 had 0/63 detections and was bundled with the Ebury OpenSSH backdoor. XLab counts more than 340,000 internet-exposed CWP instances. Checks: `ss -axp | grep integrity`, look for unexpected cwpsrv helper processes, and `strings /usr/local/cwpsrv/bin/cwpsrv | grep X-Ngx-Integrity`. Download server: 136.0.141[.]71.</p>
+    <div class="story-meta">
+      <div><strong>Platforms:</strong> Linux servers running Control Web Panel (CWP)</div>
+      <div><strong>How it spreads:</strong> Planted by attackers who already have root, via a fake cwpsrv update script; how they first get root is not yet known.</div>
+    </div>
+    <div class="story-source">Source: <a href="https://thehackernews.com/2026/11/hackers-hide-linux-backdoor-in-control.html" rel="noopener noreferrer" target="_blank">QiAnXin XLab via The Hacker News (Nov 6, 2026)</a></div>
+  </div>
+</details>
+<details class="story" id="story-5">
+  <summary class="story-summary">
+    <div class="story-header">
+      <h4>Hijacked developer packages on npm fetch hidden malware using the Ethereum blockchain</h4>
+      <span class="severity severity-med">Med</span>
+    </div>
+    <div class="malware-name">PolinRider loader (hijacked npm packages)</div>
+    <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
+  </summary>
+  <div class="story-body">
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Programmers build apps from free, shared code &#x27;packages.&#x27; Attackers took over ten of these packages and slipped in hidden code that runs as soon as an app loads them. That code looks up a note stored on the Ethereum cryptocurrency network to learn where to download its next instructions, which lets the criminals change servers whenever they like. Most people aren&#x27;t affected directly, but if your company builds software, have your developers check for these package names and change any passwords or keys on affected machines.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>If your business builds software, have developers search lockfiles, internal mirrors and build logs for the ten package names listed by Sonatype.</li><li>If an affected version ran anywhere, treat that machine as compromised and rotate every credential it could reach (npm publish tokens, cloud keys, CI secrets).</li><li>Block outbound traffic to 95.135.181.151 and watch for unexpected &#x27;node -i&#x27; processes.</li><li>Pin dependency versions and review updates before they reach production instead of auto-installing the newest release.</li></ul></div>
+    <p>Sonatype Research Labs (Nov 4, tracked as sonatype-2026-010515), OX Security and Greenflagged report 12 malicious releases across 10 hijacked npm packages: @adminide-stack/client-redux, health-api-server, user-activity-browser, utils, forms-core, yantra-help-browser, server-hemera-mongo, cdeops, @cdmbase/wiki-browser and @pubngo-stack/help-browser (about 1,400 weekly downloads combined; now taken down). There are no install hooks; loaders (eval(atob(...)) or a character-permutation bootstrap with the Function constructor) execute when an entry point is loaded or, for server-hemera-mongo, when the service starts. They query public Ethereum RPC endpoints (Blockscout fallback) for a transaction from wallet 0x1eef0849eda15d87f64e51c73c8442cf3c8bcef3, decode the C2 IPv4 from the recipient address (95.135.181[.]151 on Nov 3), fetch XOR-encoded JavaScript over plain HTTP on TCP 443 from /0x/cls and /0x/ls, and run it via eval and detached `node -i` processes. The wallet and paths match GitGuardian&#x27;s Oct 27 PolinRider reporting, which other researchers tie to North Korea&#x27;s Contagious Interview activity.</p>
+    <div class="story-meta">
+      <div><strong>Platforms:</strong> Developer machines and servers running Node.js (Windows, macOS, Linux)</div>
+      <div><strong>How it spreads:</strong> Malicious versions published to hijacked npm packages; runs when an application loads the package.</div>
+    </div>
+    <div class="story-source">Source: <a href="https://www.sonatype.com/blog/polinrider-loader-reappears-in-hijacked-npm-packages" rel="noopener noreferrer" target="_blank">Sonatype Research Labs (Nov 4, 2026)</a></div>
+  </div>
+</details>
+<details class="story" id="story-6">
+  <summary class="story-summary">
+    <div class="story-header">
+      <h4>FBI and CISA warn hackers are targeting grocery and cold-storage refrigeration controls</h4>
+      <span class="severity severity-high">High</span>
+    </div>
+    <div class="malware-name">Attacks on internet-exposed refrigeration and temperature controllers (joint advisory)</div>
+    <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
+  </summary>
+  <div class="story-body">
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>The FBI, CISA and three other federal agencies warned that hackers around the world are breaking into the computer controls that run commercial refrigerators, freezers and cold-storage monitoring in grocery stores, warehouses, hospitals and trucking. Many of these controllers are reachable from the internet and still use factory passwords. Once in, an attacker can change temperatures or force units to keep heating and defrosting, spoiling food or medicine and even creating a fire risk. If your business has smart refrigeration, make sure it&#x27;s not open to the internet and the default password is changed.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Ask your refrigeration vendor or IT provider whether your controllers can be reached from the internet, and take them off it (use a VPN for remote access).</li><li>Change every default password on refrigeration and temperature-monitoring equipment.</li><li>Apply the manufacturer&#x27;s firmware updates, and plan to replace controllers the vendor no longer supports.</li><li>Set up independent high-temperature alarms so you&#x27;re alerted fast if settings are changed, and report suspicious activity to the FBI at ic3.gov.</li></ul></div>
+    <p>On Nov 5, 2026, CISA, FBI, HHS, USDA and DOT published a joint fact sheet on ongoing activity against unpatched or internet-accessible electronic temperature controllers and commercial refrigeration controllers in retail grocery and cold-storage facilities, affecting the Healthcare, Chemical, Food and Agriculture, and Transportation sectors. Actors exploit authentication bypasses, code injection and weak or default configurations to alter setpoints, force continuous heating/defrost cycles, and remove temperature visibility, risking inventory loss, shortened equipment life and fire hazards. Recommended mitigations: remove control devices from the internet and isolate OT networks, change default passwords, patch firmware, retire unsupported legacy devices, restrict and log remote access, and set safe temperature limits and alerts.</p>
+    <div class="story-meta">
+      <div><strong>Platforms:</strong> Industrial/commercial refrigeration and cold-chain monitoring controllers (OT)</div>
+      <div><strong>How it spreads:</strong> Direct attacks on controllers exposed to the internet with unpatched flaws or default passwords.</div>
+    </div>
+    <div class="story-source">Source: <a href="https://www.cisa.gov/news-events/news/cisa-fbi-hhs-usda-and-dot-urge-critical-infrastructure-strengthen-industrial-refrigeration-and-cold" rel="noopener noreferrer" target="_blank">CISA / FBI / HHS / USDA / DOT joint fact sheet (Nov 5, 2026)</a></div>
+  </div>
+</details>
+      </div>
+    </section>
+
+    <section aria-labelledby="quick-hits">
+      <h3 id="quick-hits">Quick Hits</h3>
+      <div class="quick-hits-box">
+        <ul class="quick-hits">
+<li>Mac users: WithSecure says &#x27;Phexia,&#x27; a password stealer and back door sold to several criminal groups, keeps spreading through fake &#x27;verify you&#x27;re human&#x27; pages that tell you to paste a command into Terminal; it steals your login password, browser data and Keychain and can add a crypto miner (WithSecure, Nov 4).</li>
+<li>Fortinet FortiGuard Labs found a new remote-control trojan, PapRAT, used by the South Asian spy group Bitter against government and energy targets via booby-trapped shortcut files, disk images and MSI installers (FortiGuard Labs, Nov 2).</li>
+<li>Linux admins: attackers began probing &#x27;SSHole&#x27; (CVE-2026-123158) within hours of disclosure — an OpenSSH bug that can let anyone into password-less accounts on musl-based systems such as Alpine Linux; update to OpenSSH 10.6p2 (The Hacker News, Nov 6).</li>
+<li>CISA added a SonicWall SonicOS SSL-VPN flaw (CVE-2026-19868) that can bypass SAML multi-factor sign-in to its exploited-bugs list; SonicWall customers should update now (The Hacker News, Nov 9).</li>
+<li>Ransomware leak sites listed 257 claimed victims from Nov 2–9; the n0n gang led with 45 and a brand-new group called &#x27;Soul&#x27; posted 25 on its first day (Orbitaley weekly bulletin, Nov 9).</li>
+<li>Keplr crypto wallets created with Google or Apple sign-in were drained through a flaw at login provider Web3Auth; wallets made with a recovery phrase or hardware wallet are not affected, and Google/Apple sign-in is paused (The Hacker News, Nov 9).</li>
+<li>Windows Paint&#x27;s fix for a remote-code bug (CVE-2026-83844) arrives only through the Microsoft Store, not Windows Update — open the Store and update Paint to build 11.2609.401.0 or later (The Hacker News, Nov 6).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="sources">
+      <h3 id="sources">Sources</h3>
+      <div class="sources-note">Primary sources this week: Mate Security Research on the fake Claude Code/AMOS campaign (Nov 5); Group-IB on Mirax (Nov 5); STAR Labs on Groklem (Nov 6); QiAnXin XLab&#x27;s CWPdoor research via BleepingComputer (Nov 5) and The Hacker News (Nov 6); Sonatype Research Labs (Nov 4), OX Security and Greenflagged on the PolinRider npm wave; and the CISA/FBI/HHS/USDA/DOT joint fact sheet on refrigeration controllers (Nov 5). Quick hits drew on WithSecure Labs, Fortinet FortiGuard Labs, Orbitaley and The Hacker News. New sources scouted this week: Mate Security Research, STAR Labs (Singapore), Greenflagged, OX Security, Orbitaley&#x27;s ransomware leak-site bulletin, Zimperium&#x27;s Mobile Threat Watch and the Ransom-ISAC blog. Skipped items already covered in earlier issues (Hirudo, ICMacOS) and items without primary reporting.</div>
+    </section>
+
+    <section class="subscribe-box" id="subscribe" aria-labelledby="subscribe-heading">
+      <div class="subscribe-box-inner">
+        <h3 id="subscribe-heading">Subscribe to Virus Watch Weekly</h3>
+        <p class="subscribe-lead">Get plain-English malware roundups every Monday. Free — just enter your email.</p>
+        <form id="subscribe-form" class="subscribe-form" novalidate>
+          <div class="subscribe-fields">
+            <div class="form-group">
+              <label for="sub-name">Name <span class="optional">(optional)</span></label>
+              <input type="text" id="sub-name" name="name" autocomplete="name" placeholder="Jane Doe" />
+            </div>
+            <div class="form-group">
+              <label for="sub-email">Email <span class="required">*</span></label>
+              <input type="email" id="sub-email" name="email" required autocomplete="email" placeholder="you@example.com" />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn">Subscribe</button>
+            <a class="btn btn-secondary" href="../subscribe.html">Manage subscription</a>
+          </div>
+        </form>
+        <div id="form-message" class="msg" role="status" aria-live="polite"></div>
+        <p class="subscribe-hint">Or email <a href="mailto:jbarnes@nexalending.com?subject=SUBSCRIBE">jbarnes@nexalending.com</a> with the subject <strong>SUBSCRIBE</strong>.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="archive">
+      <h3 id="archive">Archive</h3>
+      <ul class="archive-list">
+<li><a href="2026-11-02.html">2026-11-02</a></li>
+<li><a href="2026-10-26.html">2026-10-26</a></li>
+<li><a href="2026-10-19.html">2026-10-19</a></li>
+<li><a href="2026-10-12.html">2026-10-12</a></li>
+<li><a href="2026-10-05.html">2026-10-05</a></li>
+<li><a href="2026-09-28.html">2026-09-28</a></li>
+<li><a href="2026-09-21.html">2026-09-21</a></li>
+<li><a href="2026-09-18.html">2026-09-18</a></li>
+      </ul>
+    </section>
+
+    <footer class="site-footer">
+      <p>Virus Watch Weekly · Issue 9 · 2026-11-09</p>
+      <p>
+        <a href="../subscribe.html">Subscribe</a>
+        ·
+        <a href="../subscribe.html?action=unsubscribe">Unsubscribe</a>
+        ·
+        <a href="../index.html">Latest issue</a>
+      </p>
+      <div class="author-card">
+        <img class="author-photo" src="../assets/brand/james-barnes.jpg" alt="James Barnes" width="72" height="72" />
+        <div class="author-info">
+          <strong>James Barnes</strong>
+          <div>Senior Loan Officer · NEXA Lending LLC</div>
+          <div>NMLS #215987 · Company NMLS #1660690</div>
+          <div><a href="tel:+15122288124">(512) 228-8124</a> · <a href="mailto:jbarnes@nexalending.com">jbarnes@nexalending.com</a></div>
+          <div><a href="https://www.nexalending.com" rel="noopener" target="_blank">NEXALending.com</a> · Licensed in AR, CO, TX</div>
+          <div class="author-disclaimer">Equal Housing Lender · Research summaries only — not formal threat intel.</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="../assets/newsletter.js"></script>
+</body>
+</html>

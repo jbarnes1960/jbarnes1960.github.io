@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Virus Watch Weekly — Issue 8 (2026-11-02)</title>
-  <meta name="description" content="Newly discovered malware, ransomware, and computer viruses — summarized. Issue 8." />
+  <title>Virus Watch Weekly — Issue 10 (2026-11-16)</title>
+  <meta name="description" content="Newly discovered malware, ransomware, and computer viruses — summarized. Issue 10." />
   <link rel="canonical" href="https://jbarnes1960.github.io/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Virus Watch Weekly · NEXA Lending" />
-  <meta property="og:title" content="Virus Watch Weekly — Issue 8: Week of Oct 27 – Nov 2, 2026" />
-  <meta property="og:description" content="Plain-English malware alerts and how to stay safe — New password stealer asks an AI chatbot to rank its victims by how much they&#x27;re worth; Ransomware is locking Synology network storage boxes…" />
+  <meta property="og:title" content="Virus Watch Weekly — Issue 10: Week of Nov 9 – 16, 2026" />
+  <meta property="og:description" content="Plain-English malware alerts and how to stay safe — Hackers broke into IT companies&#x27; remote-support tool (ScreenConnect) and planted a spreading &#x27;worm&#x27; on client computers; Business firewalls from…" />
   <meta property="og:url" content="https://jbarnes1960.github.io/" />
   <meta property="og:image" content="https://jbarnes1960.github.io/assets/brand/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Virus Watch Weekly — Issue 8: Week of Oct 27 – Nov 2, 2026" />
-  <meta name="twitter:description" content="Plain-English malware alerts and how to stay safe — New password stealer asks an AI chatbot to rank its victims by how much they&#x27;re worth; Ransomware is locking Synology network storage boxes…" />
+  <meta name="twitter:title" content="Virus Watch Weekly — Issue 10: Week of Nov 9 – 16, 2026" />
+  <meta name="twitter:description" content="Plain-English malware alerts and how to stay safe — Hackers broke into IT companies&#x27; remote-support tool (ScreenConnect) and planted a spreading &#x27;worm&#x27; on client computers; Business firewalls from…" />
   <meta name="twitter:image" content="https://jbarnes1960.github.io/assets/brand/og-image.png" />
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="stylesheet" href="assets/style-v2.css" />
@@ -40,13 +40,13 @@
 
     <div class="hero">
       <div class="hero-meta">
-        <span class="badge badge-issue">Issue 8</span>
-        <span>2026-11-02</span>
-        <span>Week of Oct 27 – Nov 2, 2026</span>
+        <span class="badge badge-issue">Issue 10</span>
+        <span>2026-11-16</span>
+        <span>Week of Nov 9 – 16, 2026</span>
         <span>6 top stories</span>
       </div>
       <h2>This week in malware</h2>
-      <p class="intro">Welcome to Virus Watch Weekly #8. Research for this issue was pulled from public reporting on Monday, Nov 2, 2026 (America/Denver). This week&#x27;s theme: criminals putting AI to work, and hitting the places we keep our backups. A new password stealer hands everything it takes to an AI chatbot to rank who is worth robbing, fake ChatGPT and Claude desktop apps on GitHub turned PCs into crypto-mining machines, and home and office network storage boxes from Synology are being locked by ransomware. Plus a Japanese cloud-desktop provider told customers to unplug their computers, a hidden back door that takes orders through Microsoft 365 calendar entries, and an infamous password stealer that came back from a police takedown as a full remote-control tool.</p>
+      <p class="intro">Welcome to Virus Watch Weekly #10. Research for this issue was pulled from public reporting on Monday, Nov 16, 2026 (America/Denver). This week&#x27;s theme: attackers going after the tools that are supposed to keep us safe. Hackers broke into the remote-support software IT companies use to fix their clients&#x27; computers, and others hijacked business firewalls to wipe out data. A fake &#x27;verify you&#x27;re human&#x27; box is spreading a new spy program for Windows, and hacked WordPress sites are pushing another password stealer. The good news: police in nine countries just took down servers behind three big malware operations and found more than 6 million stolen logins, which will be shared with free breach-checking sites.</p>
     </div>
 
     <section aria-labelledby="top-stories">
@@ -56,121 +56,121 @@
 <details class="story" id="story-1">
   <summary class="story-summary">
     <div class="story-header">
-      <h4>New password stealer asks an AI chatbot to rank its victims by how much they&#x27;re worth</h4>
+      <h4>Hackers broke into IT companies&#x27; remote-support tool (ScreenConnect) and planted a spreading &#x27;worm&#x27; on client computers</h4>
       <span class="severity severity-high">High</span>
     </div>
-    <div class="malware-name">VOLTA-AUTODOXER (self-deleting Windows infostealer)</div>
+    <div class="malware-name">SCKit (with RelayTrap / TrapWatch components)</div>
     <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
   </summary>
   <div class="story-body">
-    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>This is a program that, once it gets onto a Windows PC, grabs saved passwords, saved credit cards, email, Wi-Fi passwords and crypto wallets. Then it does something new: it searches the victim&#x27;s Gmail for Amazon, DoorDash and PayPal receipts to work out their home address and habits, and sends the whole profile to an AI chatbot to rank what is worth stealing first. Afterward it deletes itself, so you may never see it. The best defense is the boring one: don&#x27;t run programs from unknown sources, and don&#x27;t let your browser be the only place your passwords and cards live.</p></div>
-    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Only install software from the maker&#x27;s official website or app store; skip &#x27;free&#x27; cracked tools, game cheats and emulators.</li><li>Use a dedicated password manager instead of saving passwords and credit cards in your web browser.</li><li>Turn on two-step sign-in (MFA) for Gmail, Microsoft, PayPal and Amazon so a stolen password alone isn&#x27;t enough.</li><li>If a PC may be infected, change important passwords from a different, clean device and sign out all other sessions.</li><li>Watch bank and card statements for small test charges, and set up purchase alerts with your card issuer.</li></ul></div>
-    <p>Cisco Talos documented VOLTA-AUTODOXER, a self-deleting Windows infostealer built for resale (six build-time slots for Telegram channel, API keys and settings). It steals browser passwords, cookies and saved cards (bypassing Chrome App-Bound Encryption by launching Chrome headless), Outlook/Thunderbird profiles, Microsoft OAuth tokens, Discord and Roblox sessions, plaintext Wi-Fi keys, SSH/cloud configs and screenshots, and tries to crack crypto-wallet vaults inline. It then enriches the haul live (Gmail receipt searches for Amazon/DoorDash/Uber Eats/Grubhub/Walmart/PayPal, delivery order histories, Discord profile), builds Identity_Report.txt/JSON, and POSTs it via OpenRouter to Claude Opus 4.6 (temperature 0.2) with a &#x27;forensic intelligence analyst&#x27; prompt; on refusal it falls back to Kimi K2, then Gemini 2.5 Flash. Output (AI_Analysis.txt) and the dossier are exfiltrated as volta_dox.zip over Telegram; without an API key it skips the AI step.</p>
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Many small businesses pay an outside IT company (an &#x27;MSP&#x27;) to fix their computers remotely using a tool called ScreenConnect. Starting Nov 11, criminals got into some of those IT companies&#x27; ScreenConnect accounts and used them to install their own remote-control program and a toolkit called SCKit on client PCs — hundreds of machines in under 90 minutes. SCKit even tries to infect the IT technician&#x27;s own computer when they connect to help, so it can spread to more businesses. If someone else manages your computers, ask them now whether they were affected and whether they&#x27;ve checked your machines.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>If an outside IT company manages your computers, ask them today whether their ScreenConnect was affected and whether they&#x27;ve checked your devices.</li><li>IT providers: update every ScreenConnect client to version 26.6.5 or later and follow ConnectWise&#x27;s investigation guidance.</li><li>Look for a second, unfamiliar remote-access program in your installed apps — but don&#x27;t just uninstall it; Microsoft says the hidden toolkit stays behind, so have IT do a full check.</li><li>After any cleanup, sign out all ScreenConnect web sessions and reset technician passwords with multi-factor sign-in turned on.</li><li>Technicians: be cautious about any file that appears to come back from a client PC during a support session.</li></ul></div>
+    <p>ConnectWise reported unauthorized access to cloud-hosted ScreenConnect instances belonging to MSPs beginning Nov 11, 2026; Microsoft Threat Intelligence confirmed the activity (Nov 13). Attackers issued commands through ScreenConnect to silently install a second, attacker-controlled ScreenConnect client, then a batch launcher fetched a PowerShell decoder that decrypts SCKit using device-specific key material. SCKit (16 scripts/components per Huntress and Blackpoint Cyber) persists via scheduled tasks and registry Run keys and deploys RelayTrap — compiled locally from C# source — which replaces the ScreenConnect Guest process and tries to push a payload back to a connecting technician by abusing CVE-2026-84869 (client-side file-transfer flaw patched in client 26.6.5). Huntress counts at least 288 endpoints across 48 organizations hit, all within 90 minutes; Blackpoint found the reverse-transfer exploit fails against patched clients and no successful technician compromise has been seen. Microsoft warns that removing the rogue client alone does not remove the toolkit&#x27;s persistence or invalidate exposed web sessions.</p>
     <div class="story-meta">
-      <div><strong>Platforms:</strong> Windows</div>
-      <div><strong>How it spreads:</strong> Delivered as a custom build by each criminal customer; Talos did not tie it to a single lure. Runs once, steals, then deletes itself.</div>
+      <div><strong>Platforms:</strong> Windows (ScreenConnect-managed endpoints and MSP technician workstations)</div>
+      <div><strong>How it spreads:</strong> Unauthorized access to MSPs&#x27; cloud ScreenConnect instances, then remote commands to managed client devices; attempted spread to technicians via a malicious ScreenConnect Guest.</div>
     </div>
-    <div class="story-source">Source: <a href="https://www.tomshardware.com/tech-industry/cyber-security/new-ai-driven-windows-malware-feeds-stolen-data-to-claude-to-rank-victims-assets-by-value-then-deletes-itself-payload-builds-custom-target-assessment-can-switch-models-if-one-refuses-or-skip-the-ai-step-entirely" rel="noopener noreferrer" target="_blank">Cisco Talos research via Tom&#x27;s Hardware (Nov 1, 2026)</a></div>
+    <div class="story-source">Source: <a href="https://www.microsoft.com/en-us/security/blog/2026/11/13/sckit-abuses-screenconnect-deploy-remote-access-target-technician-sessions/" rel="noopener noreferrer" target="_blank">Microsoft Security Blog (Nov 13, 2026); BleepingComputer (Nov 12, 2026)</a></div>
   </div>
 </details>
 <details class="story" id="story-2">
   <summary class="story-summary">
     <div class="story-header">
-      <h4>Ransomware is locking Synology network storage boxes through an unpatched security hole</h4>
+      <h4>Business firewalls from Check Point hacked to wipe out company servers</h4>
       <span class="severity severity-high">High</span>
     </div>
-    <div class="malware-name">C3RB3R (Cerber variant) — &#x27;.L0CK3D&#x27; files, &#x27;read-me3.txt&#x27; note</div>
+    <div class="malware-name">destroy_v6 wiper, TSGA backdoor / TSProxy (via PHP2Shell + CVE-2026-123039)</div>
     <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
   </summary>
   <div class="story-body">
-    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Lots of homes and small offices use a Synology &#x27;NAS&#x27; box, a small file server that holds family photos, business documents and backups. Since about Oct 28, criminals have been breaking into ones that are reachable from the internet and scrambling every file, then asking for about $3,000 in bitcoin (doubling after five days). A password or two-step login doesn&#x27;t stop this one, because the attackers use a flaw that skips the login entirely. If you own a Synology box, update it today and make sure it isn&#x27;t open to the whole internet.</p></div>
-    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Update Synology DSM to 7.4-90075, 7.3.2-86009-4, 7.2.2-72806-9 or 7.2.1-69057-12 (or newer). Check the full build number, not just &#x27;7.2.2&#x27;.</li><li>Don&#x27;t leave the NAS admin page open to the internet: turn off router port forwarding and UPnP for it, and use a VPN for remote access.</li><li>Keep at least one backup copy somewhere the NAS can&#x27;t reach, like an unplugged USB drive or a separate cloud backup.</li><li>Turn on DSM automatic updates and Btrfs snapshots so you can roll files back.</li><li>If files end in .L0CK3D, unplug the NAS from the network and power it off, then get professional help before paying anything.</li></ul></div>
-    <p>Since ~Oct 28, 2026, South Korean users have reported Synology NAS devices encrypted with a Cerber variant (&#x27;C3RB3R&#x27;), appending .L0CK3D and dropping read-me3.txt demanding 0.03696 BTC (~$2,952), doubling after five days. Chinese firm 360 attributes initial access to two unauthenticated DSM flaws disclosed Sep 18 (CVE-2026-13639, predictable session entropy CWE-331; CVE-2026-13684, SCGI output encoding CWE-116; both CVSS 9.8), while Synology points to the Dec 2024 fix (Synology-SA-24:20). Common factor: DSM management exposed to the internet via port forwarding, UPnP, QuickConnect or reverse proxy. Per-file 256-bit keys wrapped with RSA-2048; no free decryptor. Fixed DSM builds: 7.4-90075, 7.3.2-86009-4, 7.2.2-72806-9, 7.2.1-69057-12 or later. JPCERT/CC flagged the flaws Sep 30; Synology Japan urged updates Oct 29.</p>
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>A firewall is the security gate between a company&#x27;s network and the internet. Attackers broke into Check Point firewalls through their remote-access (VPN) login page, took full control, and then used them as a stepping stone to reach the company&#x27;s main servers and erase the data on them. They weren&#x27;t asking for ransom — the goal was pure destruction. Any business using Check Point gear should install the November emergency update right away.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>If your business uses Check Point firewalls, have your IT team install Check Point&#x27;s November Jumbo Hotfix on every gateway and management server now.</li><li>Do the ones with the remote-access (Mobile Access/VPN) portal open to the internet first.</li><li>Ask IT to check the firewalls and any VMware servers for unknown accounts, web files or programs added since late October.</li><li>Keep offline backups (not reachable from the network) and test that you can actually restore them — wipers destroy online copies too.</li></ul></div>
+    <p>BleepingComputer (Nov 13) reports a campaign that began Oct 30, initially against Israeli organizations, in which the actor exploited &#x27;PHP2Shell&#x27; flaws in Check Point Security Gateways&#x27; Mobile Access portal, then a zero-day local privilege escalation in the Gaia OS DynamicCLI IPC interface (CVE-2026-123039) to gain root. The attackers installed PHP webshells and the TSGA backdoor with its TSProxy networking component (previously seen in Ivanti appliance attacks), pivoted to VMware ESXi hosts, and ran a wiper named destroy_v6 that recursively deletes data, first attempting a zero-fill to hinder recovery (a &#x27;fast mode&#x27; skips that). Notes carried political messages and explicitly refused ransom negotiation, raising questions about a possible false flag. Check Point released emergency hotfixes and recommends the November Jumbo Hotfix on all Management Servers and Security Gateways, prioritizing internet-facing Mobile Access portals.</p>
     <div class="story-meta">
-      <div><strong>Platforms:</strong> Synology NAS (DiskStation Manager / DSM)</div>
-      <div><strong>How it spreads:</strong> Remote exploitation of internet-exposed DSM management interfaces; no user action or login required.</div>
+      <div><strong>Platforms:</strong> Check Point Security Gateways (Gaia OS); VMware ESXi hosts</div>
+      <div><strong>How it spreads:</strong> Exploitation of internet-facing Check Point Mobile Access portals, then lateral movement to virtualization hosts.</div>
     </div>
-    <div class="story-source">Source: <a href="https://bitcomme.com/ransomware-c3rb3r-hits-synology-nas-3-9-million-won-in-bitcoin-demanded-no-fix-beyond-patching/" rel="noopener noreferrer" target="_blank">Bitcomme, summarizing Korean reporting, 360&#x27;s analysis and Synology&#x27;s advisory (Nov 1, 2026)</a></div>
+    <div class="story-source">Source: <a href="https://www.bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper/" rel="noopener noreferrer" target="_blank">BleepingComputer (Nov 13, 2026)</a></div>
   </div>
 </details>
 <details class="story" id="story-3">
   <summary class="story-summary">
     <div class="story-header">
-      <h4>Fake ChatGPT and Claude desktop apps on GitHub secretly turn PCs into crypto miners</h4>
-      <span class="severity severity-med">Med</span>
+      <h4>Fake &#x27;Verify you are human&#x27; box tricks Windows users into installing a full spy program</h4>
+      <span class="severity severity-high">High</span>
     </div>
-    <div class="malware-name">Yoba campaign: YobaDropper + YobaLoader delivering XMRig miner</div>
+    <div class="malware-name">StrikeStub (ClickFix-delivered RAT / stealer)</div>
     <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
   </summary>
   <div class="story-body">
-    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Criminals posted fake download pages on GitHub for made-up AI apps with exciting names like &#x27;GPT-6 Astra&#x27; and &#x27;Claude Opus&#x27; desktop. The download includes a real, signed OpenAI or Anthropic program, so it looks trustworthy, but a hidden file tucked next to it gets loaded too. That hidden file quietly uses your computer to mine cryptocurrency for the criminals, which slows your PC, runs up your power bill and wears out the hardware. Only get AI apps from the company&#x27;s own website.</p></div>
-    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Download ChatGPT only from openai.com and Claude only from claude.ai or anthropic.com, never from a random GitHub page.</li><li>Be suspicious of AI apps with names that don&#x27;t exist yet (like &#x27;GPT-6&#x27;); that&#x27;s a common lure.</li><li>If your PC&#x27;s fan runs loud and it&#x27;s slow when idle, open Task Manager and look for unknown programs using lots of CPU.</li><li>Keep Microsoft Defender or your antivirus turned on and up to date.</li></ul></div>
-    <p>Check Point Research&#x27;s &#x27;Yoba&#x27; campaign uses fake GitHub repositories posing as desktop apps (GPT-5.6 Sol, GPT-6 Astra, Claude Opus). ZIPs ship a legitimate signed OpenAI Codex or Claude executable renamed Setup.exe alongside a malicious winmm.dll (YobaDropper) that is DLL-sideloaded and only runs under the expected host name (hash check 0xE6C2F326). YobaLoader, sideloaded by wmpdmc.exe, pulls an image from a Telegram channel, uses its last 50 bytes to seed a DGA (adjective-noun-verb-digit.dedyn[.]io), resolves a Base64 TXT record via Google DNS-over-HTTPS, decrypts a catbox[.]moe URL and injects an XMRig miner into svchost.exe. First repo created ~July 2026; malicious releases from late August.</p>
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>You visit a website and a box says &#x27;Verify you are human&#x27; — then tells you to press the Windows key + R, then Ctrl + V, then Enter. That isn&#x27;t a real check: the site has secretly copied a command to your clipboard, and those keys run it. The result is StrikeStub, a program that steals saved browser passwords and lets criminals watch your screen, log your typing, turn on your webcam and control the PC. No real website ever asks you to press those keys.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Never follow a website&#x27;s instructions to press Windows key + R, then Ctrl + V, then Enter — close the page instead.</li><li>Real &#x27;are you human&#x27; checks only ask you to click a box or pick pictures; they never ask you to run anything.</li><li>Small businesses: ask IT about blocking the Windows Run box or PowerShell for everyday staff accounts.</li><li>If you already did it, disconnect from the internet, run a full antivirus scan, and change your saved passwords from a different, clean device.</li></ul></div>
+    <p>Akamai (Nov 12) analyzed StrikeStub, a modular Windows RAT and stealer likely sold as malware-as-a-service, resembling DcRat/AsyncRAT-style builder kits (its User-Agent is &#x27;StrikeStub/1.0&#x27;). Delivery is a ClickFix page on a compromised site (spiraldirect.ch) that places a hidden PowerShell command on the clipboard (iwr from squidscript[.]com/Cloudflare.exe to %TEMP%\svc.exe, then Start-Process). The binary masquerades as RuntimeBroker.exe with spoofed manifests and persists as WindowsUpdate.exe via registry Run keys and the Startup folder. Strings are protected with compile-time XOR; C2 runs over WebSockets with an enrollment/challenge handshake and config-driven host/port. Operators can toggle hidden VNC, keylogging, webcam capture, live desktop streaming and clipboard monitoring; credential theft targets Chromium browsers via DPAPI and clones Firefox profiles to bypass SQLite locks. An internal binder drops further stages at runtime.</p>
     <div class="story-meta">
       <div><strong>Platforms:</strong> Windows</div>
-      <div><strong>How it spreads:</strong> Fake GitHub repositories and releases advertising unofficial AI desktop apps.</div>
+      <div><strong>How it spreads:</strong> ClickFix fake human-verification pages on compromised websites that instruct Win+R, Ctrl+V, Enter.</div>
     </div>
-    <div class="story-source">Source: <a href="https://thehackernews.com/2026/10/fake-chatgpt-and-claude-apps-abuse.html" rel="noopener noreferrer" target="_blank">Check Point Research via The Hacker News (Oct 29, 2026)</a></div>
+    <div class="story-source">Source: <a href="https://www.akamai.com/blog/security-research/strikestub-clickfix-powershell-malware-modular-rat" rel="noopener noreferrer" target="_blank">Akamai Security Research (Nov 12, 2026)</a></div>
   </div>
 </details>
 <details class="story" id="story-4">
   <summary class="story-summary">
     <div class="story-header">
-      <h4>Japan&#x27;s GMO tells cloud-desktop customers to unplug their PCs after hackers threaten ransomware</h4>
-      <span class="severity severity-high">High</span>
+      <h4>Police take down servers behind Gootloader, CastleRAT and StealC — and find 6.4 million stolen logins</h4>
+      <span class="severity severity-med">Med</span>
     </div>
-    <div class="malware-name">Onamae Desktop Cloud breach with planted ransomware threat</div>
+    <div class="malware-name">Gootloader, CastleRAT, StealC (Operation Endgame)</div>
     <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
   </summary>
   <div class="story-body">
-    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>GMO runs a popular rented-computer service in Japan, often used by people who trade currencies with MetaTrader software. Hackers broke in on Oct 20, may have planted malware on up to 26,739 customer machines, demanded about $50 million, and threatened to set off ransomware. GMO refused to pay, told customers to shut down and unplug their computers, and confirmed stolen customer data was posted online. The lesson for everyone: when a service you rent gets hacked, change those passwords and follow the company&#x27;s official instructions quickly.</p></div>
-    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>If you use a hosted or cloud desktop, change the passwords for every account you used on it, especially trading and banking logins.</li><li>Turn on two-step sign-in for brokerage and MetaTrader accounts where your broker supports it.</li><li>Follow only the provider&#x27;s official website or email for instructions; scammers often pose as the company after a breach.</li><li>Keep your own backup of important files and settings instead of relying on the provider alone.</li></ul></div>
-    <p>GMO Internet detected an intrusion on Oct 20, 2026 into Onamae Desktop Cloud (a Japanese VPS service) that could have installed malware on up to 26,739 customer servers; it shut servers down and said payment data was not exposed but MetaTrader 4/5 credentials and trading-account details may be. The attacker demanded ¥8 billion (~$50M), which GMO refused, offering ¥5,000 per customer. On Oct 26 GMO warned of a planned leak and ransomware trigger; on Oct 27 it told customers to disconnect PCs, shut them down and unplug cables before noon while working with Trend Micro. GMO later confirmed company and customer data were published; BleepingComputer reports no ransomware actually triggered on customer machines.</p>
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Some good news: police from nine countries, coordinated by Europol, seized 235 servers and 257 web addresses used by three well-known malware operations that steal passwords and open the door for ransomware. On those servers they found more than 6 million sets of stolen login details. Those will be shared with free breach-checking services such as Have I Been Pwned, so this is a good week to check whether your email shows up — and to change any password that does.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Check your email addresses at haveibeenpwned.com over the next few weeks as the seized data is added.</li><li>If you show up, change that password — and anywhere else you reused it — and turn on two-step sign-in.</li><li>WordPress site owners: update your admin passwords, turn on multi-factor sign-in, and update all plugins and themes.</li><li>Use a password manager so every site gets its own password.</li></ul></div>
+    <p>BleepingComputer (Nov 12) reports a new phase of Operation Endgame in which law enforcement from Bulgaria, Canada, Denmark, Germany, Moldova, the Netherlands, Poland, the UK and the US, coordinated by Europol and Eurojust with private partners, seized 257 domains and 235 servers tied to Gootloader (a loader active since 2020), StealC (infostealer) and CastleRAT (remote access trojan). Authorities identified 6.4 million victim datasets used for resale and follow-on attacks including ransomware. Europol said victim data will be provided to HaveIBeenPwned, DIVD, CheckjeHack, NoMoreLeaks, Sekoia, The Shadowserver Foundation and NL-NCSC, and urged WordPress users to update credentials, enable MFA and patch. Earlier Endgame phases hit SocGholish, Amadey/StealC, Rhadamanthys, VenomRAT and others.</p>
     <div class="story-meta">
-      <div><strong>Platforms:</strong> Hosted Windows VPS (Onamae Desktop Cloud); MetaTrader 4/5 trading accounts</div>
-      <div><strong>How it spreads:</strong> Intrusion into the provider&#x27;s infrastructure, with the attacker claiming malware staged on customer servers.</div>
+      <div><strong>Platforms:</strong> Windows (infostealer victims); WordPress sites (Gootloader)</div>
+      <div><strong>How it spreads:</strong> Gootloader via poisoned search results on compromised WordPress sites; StealC and CastleRAT via various loaders and lures.</div>
     </div>
-    <div class="story-source">Source: <a href="https://www.bleepingcomputer.com/news/security/japans-gmo-urges-customers-to-shut-down-pcs-amid-ransomware-threat/" rel="noopener noreferrer" target="_blank">BleepingComputer (Oct 27, 2026)</a></div>
+    <div class="story-source">Source: <a href="https://www.bleepingcomputer.com/news/security/police-dismantles-gootloader-castlerat-stealc-malware-infrastructure/" rel="noopener noreferrer" target="_blank">BleepingComputer (Nov 12, 2026), citing Europol</a></div>
   </div>
 </details>
 <details class="story" id="story-5">
   <summary class="story-summary">
     <div class="story-header">
-      <h4>GraphFleet back door takes orders through hidden Microsoft 365 calendar entries</h4>
+      <h4>Hacked WordPress sites push &#x27;Hermes,&#x27; a new password stealer that lets criminals control your PC</h4>
       <span class="severity severity-med">Med</span>
     </div>
-    <div class="malware-name">GraphFleet (64-bit Windows backdoor abusing Microsoft Graph)</div>
+    <div class="malware-name">Hermes stealer (a.k.a. hermes_stealer / DesktopStreamRAT)</div>
     <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
   </summary>
   <div class="story-body">
-    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Most malware has to &#x27;phone home&#x27; to a criminal&#x27;s server, which security tools can spot. GraphFleet instead logs in to a Microsoft 365 account and reads its instructions from hidden notes attached to a calendar event, and if that fails, from email drafts, To Do tasks or a OneDrive file. To your company&#x27;s network it looks like normal Microsoft Teams traffic. It mainly matters to businesses: watch for odd Microsoft sign-ins and have your IT person know about it.</p></div>
-    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Businesses: review Microsoft 365 sign-in logs for Teams sign-ins from unfamiliar devices or locations.</li><li>If anything looks off, revoke the affected user&#x27;s sessions and refresh tokens, not just the password.</li><li>Require MFA and limit which apps can get access to company Microsoft 365 data.</li><li>Have your IT provider check PCs for a hidden file at %LOCALAPPDATA%\Microsoft\WindowsUpdate\state.dat and a &#x27;OneDriveSync.cmd&#x27; in the Startup folder.</li></ul></div>
-    <p>Rubrik Zero Labs (Oct 30) analyzed GraphFleet, a 64-bit Windows backdoor (campaign marker gcx-fleet-2026-10, mutex Global\gc-7f2a91c4) that uses an OAuth refresh token to sign in to Microsoft Graph as Microsoft Teams (FOCI family). Primary C2 is open extensions (com.c2.cmd / com.c2.out) on a per-host &#x27;Sync-&lt;id&gt;&#x27; calendar event, with fallbacks to Outlook Drafts (cmd-/out-), Microsoft To Do (notes-), and OneDrive approot settings.dat. Tokens are cached DPAPI-encrypted at %LOCALAPPDATA%\Microsoft\WindowsUpdate\state.dat; recovery via a SharePoint token drop (heightcontrollawnandlandsca-my[.]sharepoint[.]com) and an HMAC-verified BNB Smart Chain contract. Commands include shell execution, in-memory PE/shellcode loading, a script VM, self-update, and persistence via Run key, UserInitMprLogonScript, Startup folder, or a print-processor component (mpf64).</p>
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Hermes is a new password-stealing program sold to criminals for $150–$500. Researchers traced one buyer who hacked at least 57 ordinary WordPress websites so visitors saw a fake &#x27;verify you&#x27;re human&#x27; page that tricks them into running a command — the same trick as the StrikeStub story above. When the site&#x27;s own administrator was logged in, the hidden code also created a secret admin account called &#x27;admin_seo&#x27;. Website owners should look for that account and update their plugins; visitors should never run commands a website tells them to.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>WordPress owners: check your Users list for an account named &#x27;admin_seo&#x27; or any admin you don&#x27;t recognize, and remove it.</li><li>Update all WordPress plugins, especially Popup Builder, Eventin, tagDiv Composer and Slider Hero, and delete plugins you don&#x27;t use.</li><li>Visitors: never copy-and-run a command a website asks you to run to &#x27;prove you&#x27;re human&#x27;.</li><li>If you manage a site, turn on two-step sign-in for every admin account.</li></ul></div>
+    <p>Telekom Security (Nov 11) maps the server fleet of Hermes, a stealer with remote-control features advertised on the Exploit forum on Aug 21 (ZeroFox) for $150 per two weeks to $500 per month, excluding CIS countries. Its census found 46 backend servers on Oct 28 and at least 55 by Nov 9; half were stood up in three weeks of September, and 21 of 46 were absent from ThreatFox while 22 had no VirusTotal file of their own. One vendor maintains matching module, loader and panel builds across hosters, likely serving multiple customers. One customer&#x27;s chain runs through at least 57 compromised WordPress sites with an injected script that shows ClickFix pages and creates a backdoor admin account &#x27;admin_seo&#x27; when an administrator is logged in; injector placement on 26 sites matches vulnerable plugins including Popup Builder &lt;4.2.3, Eventin 4.0.x, tagDiv Composer and Slider Hero. The family is tracked as win.hermes_stealer (ThreatFox/Malpedia) and DesktopStreamRAT (MalwareBazaar).</p>
     <div class="story-meta">
-      <div><strong>Platforms:</strong> Windows; Microsoft 365 accounts</div>
-      <div><strong>How it spreads:</strong> Initial access not described; relies on a stolen or attacker-controlled Microsoft 365 refresh token.</div>
+      <div><strong>Platforms:</strong> Windows (victims); WordPress (compromised delivery sites)</div>
+      <div><strong>How it spreads:</strong> ClickFix pages injected into compromised WordPress sites, plus other delivery channels using the same loader.</div>
     </div>
-    <div class="story-source">Source: <a href="https://zerolabs.rubrik.com/blog/commands-cloud-uncovering-graphfleet-backdoor" rel="noopener noreferrer" target="_blank">Rubrik Zero Labs (Oct 30, 2026)</a></div>
+    <div class="story-source">Source: <a href="https://github.security.telekom.com/2026/11/tracking-hermes.html" rel="noopener noreferrer" target="_blank">Telekom Security (Nov 11, 2026)</a></div>
   </div>
 </details>
 <details class="story" id="story-6">
   <summary class="story-summary">
     <div class="story-header">
-      <h4>StealC, a password stealer police shut down in June, is back as a full remote-control tool</h4>
+      <h4>Fake AI models on Hugging Face secretly turn computers into crypto-mining machines</h4>
       <span class="severity severity-med">Med</span>
     </div>
-    <div class="malware-name">Stadia RAT (StealC rebrand)</div>
+    <div class="malware-name">Hugging Face &#x27;Load/Mine&#x27; campaign (fake Qwen2 test models)</div>
     <span class="story-toggle"><span class="t-closed">Tap to read the full story</span><span class="t-open">Tap to close</span></span>
   </summary>
   <div class="story-body">
-    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>In June, international police shut down StealC, a widely sold password-stealing program. Four months later, its seller is back with &#x27;Stadia,&#x27; which still steals passwords, cookies and crypto wallets but now also lets criminals secretly see and control your screen, run commands and move files. It hides under names that look like real Windows or Google updaters. It&#x27;s sold to other criminals for $300 to $900 a month, so expect it to show up through all the usual traps: fake downloads, cracked software and booby-trapped links.</p></div>
-    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Avoid cracked software, game cheats and &#x27;free&#x27; paid apps; they&#x27;re the most common way stealers arrive.</li><li>Keep Microsoft Defender on, and treat any unknown Defender exclusion you didn&#x27;t add as a red flag.</li><li>Store passwords in a password manager and turn on two-step sign-in for email, banking and crypto accounts.</li><li>If you suspect infection, disconnect the PC and change passwords from a different device.</li></ul></div>
-    <p>Varonis Threat Labs (Oct 22; covered by The Hacker News Oct 29) found StealC&#x27;s seller relaunched on Oct 16 as Stadia, a Windows RAT priced $300/$550/$900 per month with a free Pro month for former StealC customers. Modules: hidden VNC, remote cmd, loader (EXE/PS/CMD/MSI, disk or memory), file explorer, process manager, and a stealer built on StealC v3.5 (a byte-identical 26 KB Chromium App-Bound Encryption helper blob). Installs to C:\ProgramData\&lt;12 random chars&gt;\ using names like MicrosoftEdgeUpdate.exe or GoogleUpdate.exe, adds a hidden COM-registered scheduled task every 15 minutes for 3,650 days, and when elevated adds a Defender exclusion. C2 is HTTP POST of Base64 RC4 ciphertext labeled application/json; exits on Russian/CIS locales.</p>
+    <div class="plain-english"><div class="plain-english-label">In plain English</div><p>Hugging Face is a popular website where people share AI models, a bit like an app store for AI. Criminals uploaded 31 fake &#x27;tiny test&#x27; models that, when loaded with a common setting turned on, quietly ran their own code — installing a hidden crypto miner that uses the computer&#x27;s expensive graphics chips and, in some versions, a back door for the attackers. They were downloaded more than 32,000 times and came back within days after being taken down. This mainly matters to businesses or hobbyists who run AI models themselves.</p></div>
+    <div class="stay-safe"><div class="stay-safe-label">&#128737; How to stay safe</div><ul><li>Only load AI models from publishers you trust, and avoid turning on &#x27;trust_remote_code&#x27; unless you&#x27;ve read the code.</li><li>Be wary of tiny &#x27;test&#x27; models from unknown accounts — some contain no real model at all.</li><li>If you run GPU or AI servers, watch for unexpected high GPU use or unknown processes, and limit who can run jobs on them.</li><li>Run AI experiments in an isolated machine or account without access to your important data.</li></ul></div>
+    <p>Pluto Security tracked 31 malicious repositories across seven Hugging Face accounts in two waves since September, posing as small Qwen2 test checkpoints; downloads exceed 32,000 including linked models (downloads, not confirmed infections). Payloads abuse trust_remote_code=True, which makes Transformers import the repo&#x27;s Python with the caller&#x27;s privileges before any weights load — the flagship &#x27;MENXIANGYU/qwen2-tiny&#x27; contained no model at all. Code runs a GPU miner disguised as a Linux kernel process with a watchdog, kills rival miners, and in some builds opens reverse shells (replacing a hardcoded SSH key after the first takedown); one build attempts container escape to root. Targets are self-hosted inference hosts (Xinference, GPUStack), rented GPU machines, notebooks and CI jobs. All files passed Hub antivirus and partner scanners. The first-wave wallet has received about 2,276 PRL (~$5,000). BleepingComputer covered the return of the campaign.</p>
     <div class="story-meta">
-      <div><strong>Platforms:</strong> Windows</div>
-      <div><strong>How it spreads:</strong> Malware-as-a-service; each buyer chooses delivery (typically fake downloads, cracks and loaders).</div>
+      <div><strong>Platforms:</strong> Linux GPU servers, AI notebooks and CI pipelines</div>
+      <div><strong>How it spreads:</strong> Malicious Hugging Face model repositories loaded with trust_remote_code=True.</div>
     </div>
-    <div class="story-source">Source: <a href="https://www.varonis.com/blog/stealc-returns" rel="noopener noreferrer" target="_blank">Varonis Threat Labs (Oct 22, 2026)</a></div>
+    <div class="story-source">Source: <a href="https://pluto.security/blog/hugging-face-malware-campaign-load-mine/" rel="noopener noreferrer" target="_blank">Pluto Security Research; BleepingComputer (Nov 2026)</a></div>
   </div>
 </details>
       </div>
@@ -180,19 +180,16 @@
       <h3 id="quick-hits">Quick Hits</h3>
       <div class="quick-hits-box">
         <ul class="quick-hits">
-<li>Binance says a compromised DevOps engineer&#x27;s laptop led to the theft of about $6.3 billion in crypto on Oct 29, which TRM Labs and Chainalysis tie to North Korea&#x27;s TraderTraitor (Lazarus) group; Binance says user funds are covered (BleepingComputer, Oct 30).</li>
-<li>The n0n ransomware gang left its own staging server open, exposing 829 attack scripts, five encryptor versions and an AI coding setup; it broke in mostly by trying leaked passwords on FortiGate VPNs and open Remote Desktop (SOCRadar via Crypto Briefing, Oct 30).</li>
-<li>CISA says attackers are now exploiting &#x27;Node2Shell&#x27; (CVE-2026-111497), a critical bug in Google&#x27;s Brotli compression library; businesses running affected servers should patch and rebuild container images (BleepingComputer, Oct 28).</li>
-<li>A critical Linux kernel bug (CVE-2026-98432) can give remote attackers full control of some servers; Ubuntu and Red Hat fixes are still rolling out, with no in-the-wild attacks reported yet (BleepingComputer, Oct 30).</li>
-<li>Old copies of Popcorn Time / Time4Popcorn left a background updater on millions of PCs and Macs that attackers could have hijacked; Malwarebytes says uninstall it (Malwarebytes, Oct 26).</li>
-<li>Update Microsoft Authenticator on Android: versions before 6.2606.4246 could leak sign-in tokens to other apps, and Microsoft shipped out-of-band Windows updates to distrust compromised eMudhra certificates (SANS Internet Storm Center, Oct 28).</li>
+<li>Linux GPU servers: Elastic Security Labs found &#x27;SANSAR,&#x27; a crypto-mining toolkit that broke in through an exposed Ray job service, hides with a kernel rootkit, and fakes NVIDIA readings so the graphics cards look idle (0% use) while they mine (Elastic via The Hacker News, Nov 16).</li>
+<li>Shipping giant Maersk confirmed a data breach at a company it acquired after the WhiteArmor ransomware gang claimed 100 GB of logistics data and demanded $5 million (BleepingComputer, Nov 11).</li>
+<li>Android users in the Middle East, Türkiye and Africa: Group-IB&#x27;s &#x27;Mirax&#x27; banking malware — spread through ads in low-quality streaming apps on Google Play — keeps drawing coverage; never install an app from a link inside another app (Cybersecurity News, Nov 10).</li>
         </ul>
       </div>
     </section>
 
     <section aria-labelledby="sources">
       <h3 id="sources">Sources</h3>
-      <div class="sources-note">Primary sources this week: Cisco Talos research on VOLTA-AUTODOXER via Tom&#x27;s Hardware (Nov 1); 360 and Synology advisories on C3RB3R via Bitcomme (Nov 1); Check Point Research on the Yoba campaign via The Hacker News (Oct 29); BleepingComputer on GMO Onamae Desktop Cloud (Oct 27), Binance (Oct 30), Node2Shell (Oct 28) and the Linux MPTCP flaw (Oct 30); Rubrik Zero Labs on GraphFleet (Oct 30); Varonis Threat Labs on Stadia (Oct 22). Quick hits also drew on SOCRadar (via Crypto Briefing), Malwarebytes and the SANS Internet Storm Center. New sources scouted this week: Rubrik Zero Labs, Varonis Threat Labs, Bitcomme (Korean-language incident roundups in English) and Tom&#x27;s Hardware&#x27;s security desk. Skipped items already covered in earlier issues (Aokigahara, Armorsteal, ICMacOS, SafePay, LunexStealer) and items without primary reporting.</div>
+      <div class="sources-note">Primary sources this week: Microsoft Security Blog on SCKit (Nov 13) with BleepingComputer (Nov 12, citing Huntress and Blackpoint Cyber); BleepingComputer on the Check Point PHP2Shell/CVE-2026-123039 wiper campaign (Nov 13); Akamai Security Research on StrikeStub (Nov 12); BleepingComputer/Europol on Operation Endgame&#x27;s Gootloader/CastleRAT/StealC takedown (Nov 12); Telekom Security on the Hermes stealer fleet (Nov 11); Pluto Security Research on the Hugging Face cryptomining campaign. Quick hits from Elastic Security Labs via The Hacker News (SANSAR), BleepingComputer (Maersk/WhiteArmor) and Cybersecurity News (Mirax). New sources scouted this week: Telekom Security&#x27;s GitHub-hosted research blog, Pluto Security Research, Blackpoint Cyber&#x27;s Adversary Pursuit Group, and the wokb.cz monthly alerts digest (used only as a lead list). Skipped items already covered in issue #9 (Mirax, Groklem) except as a quick hit, and the Oct 20 SafePay advisory covered in issue #7.</div>
     </section>
 
     <section class="subscribe-box" id="subscribe" aria-labelledby="subscribe-heading">
@@ -202,8 +199,8 @@
         <form id="subscribe-form" class="subscribe-form" novalidate>
           <div class="subscribe-fields">
             <div class="form-group">
-              <label for="sub-name">Name <span class="required">*</span></label>
-              <input type="text" id="sub-name" name="name" required autocomplete="name" placeholder="Jane Doe" />
+              <label for="sub-name">Name <span class="optional">(optional)</span></label>
+              <input type="text" id="sub-name" name="name" autocomplete="name" placeholder="Jane Doe" />
             </div>
             <div class="form-group">
               <label for="sub-email">Email <span class="required">*</span></label>
@@ -223,7 +220,9 @@
     <section aria-labelledby="archive">
       <h3 id="archive">Archive</h3>
       <ul class="archive-list">
-<li><a href="issues/2026-11-02.html">2026-11-02</a> ← current</li>
+<li><a href="issues/2026-11-16.html">2026-11-16</a> ← current</li>
+<li><a href="issues/2026-11-09.html">2026-11-09</a></li>
+<li><a href="issues/2026-11-02.html">2026-11-02</a></li>
 <li><a href="issues/2026-10-26.html">2026-10-26</a></li>
 <li><a href="issues/2026-10-19.html">2026-10-19</a></li>
 <li><a href="issues/2026-10-12.html">2026-10-12</a></li>
@@ -235,7 +234,7 @@
     </section>
 
     <footer class="site-footer">
-      <p>Virus Watch Weekly · Issue 8 · 2026-11-02</p>
+      <p>Virus Watch Weekly · Issue 10 · 2026-11-16</p>
       <p>
         <a href="subscribe.html">Subscribe</a>
         ·
