@@ -121,11 +121,6 @@
       const email = (emailInput && emailInput.value || "").trim().toLowerCase();
       const name = (nameInput && nameInput.value || "").trim();
 
-      if (!name) {
-        showMsg(msg, "error", "Please enter your name.");
-        if (nameInput) nameInput.focus();
-        return;
-      }
       if (!email) {
         showMsg(msg, "error", "Email is required.");
         return;
@@ -134,24 +129,6 @@
         showMsg(msg, "error", "Please enter a valid email address.");
         return;
       }
-      try {
-        fetch("https://formsubmit.co/ajax/2229496f4e1e59c9dfced34e2da44cb7", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({
-            form_name: "Form Lead – Virus Watch Weekly",
-            name: name,
-            email: email,
-            phone: "",
-            property_address: "",
-            page_url: location.href,
-            _subject: "Form Lead: Virus Watch Weekly – " + name,
-            _cc: "jbarnes@nexalending.com",
-            _template: "table",
-            _captcha: "false"
-          })
-        }).catch(function () {});
-      } catch (e) {}
 
       if (!hasLocalServer()) {
         openMailto("subscribe", email, name);
