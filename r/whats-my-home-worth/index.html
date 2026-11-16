@@ -73,6 +73,23 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(29,111,224,.25);b
 .suf{position:relative}.suf span{position:absolute;right:13px;top:50%;transform:translateY(-50%);color:var(--mute)}
 body[data-state="TX"] .co-only,body[data-state="CO"] .tx-only{display:none}
 .note{font-size:12px;color:var(--mute);margin-top:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.statepick{margin:0 0 18px;padding:14px 16px;background:linear-gradient(180deg,#fbf6e8 0%,#f4f7fb 100%);border:1.5px solid rgba(242,180,58,.55);border-radius:16px}
+.statepick-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.statepick-label{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
+.statepick-btns{display:inline-flex;background:var(--navy);border-radius:999px;padding:4px;gap:4px;box-shadow:inset 0 0 0 1px rgba(242,180,58,.35)}
+.sp-btn{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:#d5e3f7;font:inherit;font-weight:800;font-size:15px;padding:10px 22px;border-radius:999px;cursor:pointer;min-width:124px;line-height:1.2}
+.sp-btn[aria-pressed="true"]{background:var(--gold);color:var(--navy);box-shadow:0 2px 8px rgba(242,180,58,.4)}
+.sp-btn:focus-visible{outline:3px solid rgba(242,180,58,.65);outline-offset:2px}
+.statepick .note{margin:8px 0 0}
+.tx-opts{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.est-note{margin:12px 0 0;padding:10px 12px;background:#f7f4ea;border:1px solid rgba(242,180,58,.4);border-radius:10px;color:#5b6b82}
+.pill.tx{background:#fff6df;border-color:rgba(242,180,58,.7);color:var(--navy)}
+@media(max-width:640px){
+  .statepick-row{flex-direction:column;align-items:stretch;gap:10px}
+  .statepick-btns{width:100%}
+  .sp-btn{flex:1;min-width:0;padding:12px 10px}
+}
 details{margin-top:18px;border:1px solid var(--line);border-radius:12px;background:var(--card2)}
 summary{cursor:pointer;padding:14px 16px;font-weight:700;list-style:none;color:var(--navy)}
 summary::after{content:"+";float:right;font-size:20px;line-height:1;color:var(--blue)}
@@ -227,6 +244,18 @@ document.documentElement.className+=(forced||!real)?' nore':' cob'}catch(e){docu
 <section id="inputs"><div class="card lead">
  <h2><span class="hico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 12h2M12 12h2M16 12h0M8 16h2M12 16h2M16 16h0"/></svg></span>Your numbers</h2>
  <p class="sub">Results update as you type.</p>
+ <div class="statepick">
+  <div class="statepick-row">
+   <div class="statepick-label" id="stateLbl">Seller closing costs for</div>
+   <div class="statepick-btns" role="group" aria-labelledby="stateLbl">
+    <button type="button" class="sp-btn" id="btnCO" data-state="CO" aria-pressed="true">Colorado</button>
+    <button type="button" class="sp-btn" id="btnTX" data-state="TX" aria-pressed="false">Texas</button>
+   </div>
+  </div>
+  <label class="sr-only" for="state">State</label>
+  <select id="state" class="sr-only" tabindex="-1" aria-hidden="true"><option value="CO" selected>Colorado</option><option value="TX">Texas</option></select>
+  <p class="note" id="stateHint">Colorado uses El Paso County–area title and fee estimates. Switch to Texas for official TDI title rates and typical Texas seller fees. All figures are estimates.</p>
+ </div>
  <div class="grid">
   <div class="full"><label for="address">Property address</label><input id="address" type="text" autocomplete="street-address" placeholder="123 Main St, Colorado Springs, CO 80903"></div>
   <div class="full"><label for="email">Your email (we'll send your comps here)</label><input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" aria-describedby="emailMsg"><div class="note" id="emailMsg2">Needed only for the comps report. Your net sheet works without it.</div></div>
@@ -237,24 +266,32 @@ document.documentElement.className+=(forced||!real)?' nore':' cob'}catch(e){docu
 
  <details id="adv"><summary>Advanced (editable defaults)</summary>
  <div class="adv"><div class="grid">
-  <div><label for="state">State</label><select id="state"><option value="CO" selected>Colorado</option><option value="TX">Texas</option></select></div>
   <div><label for="closing">Closing date</label><input id="closing" type="date"><div class="note">Default: 30 days from today</div></div>
   <div><label for="sellerFee">Seller broker fee</label><div class="suf"><input id="sellerFee" type="text" inputmode="decimal"><span>%</span></div></div>
   <div><label for="buyerFee">Buyer broker fee (paid by seller)</label><div class="suf"><input id="buyerFee" type="text" inputmode="decimal"><span>%</span></div></div>
   <div><label for="taxRate">Annual property tax rate</label><div class="suf"><input id="taxRate" type="text" inputmode="decimal"><span>%</span></div><div class="note" id="taxNote"></div></div>
   <div><label for="titleOverride">Owner's title policy ($)</label><div class="pre"><span>$</span><input id="titleOverride" type="text" inputmode="decimal" placeholder="auto"></div><div class="note" id="titleNote"></div></div>
-  <div class="tx-only"><label for="closingFee">Closing fee</label><div class="pre"><span>$</span><input id="closingFee" type="text" inputmode="decimal"></div></div>
-  <div class="tx-only"><label for="guarantyFee">Guaranty fee</label><div class="pre"><span>$</span><input id="guarantyFee" type="text" inputmode="decimal"></div></div>
-  <div class="tx-only"><label for="docPrep">Doc prep</label><div class="pre"><span>$</span><input id="docPrep" type="text" inputmode="decimal"></div></div>
+  <div class="tx-only"><label for="closingFee">Escrow / settlement fee (seller’s half)</label><div class="pre"><span>$</span><input id="closingFee" type="text" inputmode="decimal"></div><div class="note">Typical seller’s half; editable</div></div>
+  <div class="tx-only"><label for="guarantyFee">Policy guaranty fee</label><div class="pre"><span>$</span><input id="guarantyFee" type="text" inputmode="decimal"></div></div>
+  <div class="tx-only"><label for="docPrep">Deed / doc prep</label><div class="pre"><span>$</span><input id="docPrep" type="text" inputmode="decimal"></div></div>
+  <div class="tx-only"><label for="txTaxCert">Tax certificates</label><div class="pre"><span>$</span><input id="txTaxCert" type="text" inputmode="decimal"></div></div>
+  <div class="tx-only"><label for="txRecording">Recording / release fees</label><div class="pre"><span>$</span><input id="txRecording" type="text" inputmode="decimal"></div></div>
   <div class="tx-only"><label for="notary">Mobile notary</label><div class="pre"><span>$</span><input id="notary" type="text" inputmode="decimal"></div></div>
   <div class="co-only"><label for="extCov">Owner's extended coverage</label><div class="pre"><span>$</span><input id="extCov" type="text" inputmode="decimal"></div></div>
   <div class="co-only"><label for="bundled">Bundled closing fees (seller share)</label><div class="pre"><span>$</span><input id="bundled" type="text" inputmode="decimal"></div></div>
   <div class="co-only"><label for="taxCert">Tax certificate</label><div class="pre"><span>$</span><input id="taxCert" type="text" inputmode="decimal"></div></div>
   <div class="co-only"><label for="finalWater">Final water</label><div class="pre"><span>$</span><input id="finalWater" type="text" inputmode="decimal"></div></div>
   <div class="co-only"><label for="release">Release service fee</label><div class="pre"><span>$</span><input id="release" type="text" inputmode="decimal"></div></div>
-  <div><label for="misc">Misc. ($)</label><div class="pre"><span>$</span><input id="misc" type="text" inputmode="decimal"></div><div class="note">Repairs, HOA, home warranty, anything else</div></div>
+  <div><label for="misc">Misc. ($)</label><div class="pre"><span>$</span><input id="misc" type="text" inputmode="decimal"></div><div class="note" id="miscNote">Repairs, HOA, home warranty, anything else</div></div>
  </div></div>
  </details>
+ <div class="tx-only tx-opts">
+  <p class="note" style="margin:0 0 8px">Optional Texas seller items — leave at $0 if they don’t apply (buyer pays the survey, no HOA, or an existing survey will be used).</p>
+  <div class="grid">
+   <div><label for="survey">New survey (if applicable)</label><div class="pre"><span>$</span><input id="survey" type="text" inputmode="decimal"></div><div class="note">Often $400–$700 if the seller provides a new survey</div></div>
+   <div><label for="hoa">HOA resale cert / transfer (if applicable)</label><div class="pre"><span>$</span><input id="hoa" type="text" inputmode="decimal"></div><div class="note">Often $200–$500 when the home is in an HOA</div></div>
+  </div>
+ </div>
 </div></section>
 
 <section id="results"><div class="card">
@@ -264,6 +301,7 @@ document.documentElement.className+=(forced||!real)?' nore':' cob'}catch(e){docu
  <div class="balwarn" id="balWarn" hidden>No current mortgage balance entered. The numbers below assume the home is paid off. Enter your balance above to see what you really walk away with.</div>
  <p class="note no-print" style="margin:0 0 6px">On a phone, swipe the table sideways to see all four columns.</p>
  <div class="tablewrap"><div style="overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%"><table id="tbl"></table></div></div>
+ <p class="note est-note" id="estNote">These figures are estimates for illustration only. Actual costs depend on your contract, title company, county, payoff statement and closing date.</p>
  <div class="btns no-print"><button class="btn" id="printBtn" type="button">Print / Save as PDF</button></div>
 </div></section>
 
@@ -338,7 +376,7 @@ document.documentElement.className+=(forced||!real)?' nore':' cob'}catch(e){docu
 </div></section>
 
 <section><div class="card legal">
- <b>Important.</b> All figures are estimates for illustration only and are not a commitment to lend or an offer of credit. Actual costs depend on your contract, title company, payoff statement, county, and closing date. Texas owner's title premiums use the Texas Department of Insurance promulgated basic rate. Colorado uses an El Paso County area basic owner's title rate effective 2/6/2025 and a standard Colorado fee schedule; other Colorado counties, title companies and property tax rates differ, so edit them for your county. This is not tax, legal or real estate advice. Equal Housing Opportunity.
+ <b>Important.</b> All figures are estimates for illustration only and are not a commitment to lend or an offer of credit. Actual costs depend on your contract, title company, payoff statement, county, and closing date. Texas owner’s title premiums use the Texas Department of Insurance promulgated basic rate schedule (rates effective March 1, 2026). Texas has no state real estate transfer tax. Texas property taxes are paid in arrears and are prorated by day through the closing date, using a 2.00% statewide estimate (typical range about 1.8–2.2%; local rates vary, so edit the rate for your county). Optional items such as a new survey or an HOA resale certificate are $0 unless you add them. Colorado uses an El Paso County area basic owner’s title rate effective 2/6/2025 and a standard Colorado fee schedule; other Colorado counties, title companies and property tax rates differ, so edit them for your county. This is not tax, legal or real estate advice. Equal Housing Opportunity.
 </div></section>
 
 </main>
@@ -433,8 +471,9 @@ var NS = (function(){
       items.extCov = o.extCov; items.bundled = o.bundled; items.taxCert = o.taxCert; items.finalWater = o.finalWater; items.release = o.release;
       order = order.concat(['extCov','bundled','taxCert','finalWater','release']);
     } else {
-      items.closingFee = o.closingFee; items.guaranty = o.guaranty; items.docPrep = o.docPrep; items.notary = o.notary;
-      order = order.concat(['closingFee','guaranty','docPrep','notary']);
+      items.closingFee = o.closingFee; items.guaranty = o.guaranty; items.docPrep = o.docPrep;
+      items.txTaxCert = o.txTaxCert; items.txRecording = o.txRecording; items.survey = o.survey; items.hoa = o.hoa; items.notary = o.notary;
+      order = order.concat(['closingFee','guaranty','docPrep','txTaxCert','txRecording','survey','hoa','notary']);
     }
     items.interest = r2(bal * (o.rate/100) * days / 365);
     items.buyerFee = r2(price * o.buyerFee/100);
@@ -458,7 +497,7 @@ if (typeof module !== 'undefined') module.exports = NS;
 (function(){
   var $ = function(id){ return document.getElementById(id); };
   var DEFAULTS = {
-    TX:{taxRate:'2.996', note:'Austin-area estimate. Edit for your county.'},
+    TX:{taxRate:'2.00', note:'Statewide estimate of 2.00% (typical 1.8–2.2% range). Tax Foundation’s 2026 effective rate on owner-occupied homes is 1.40%; Central Texas, MUDs and some cities are often higher. Edit for your county.'},
     CO:{taxRate:'0.55', note:'Estimate, edit for your county.'}
   };
   var CONCS = [0,1,2,3];
@@ -480,17 +519,26 @@ if (typeof module !== 'undefined') module.exports = NS;
     var parts=v.split('.'); parts[0]=(parts[0]||'0').replace(/\B(?=(\d{3})+(?!\d))/g,',');
     el.value=parts.length>1?parts[0]+'.'+parts[1].slice(0,2):parts[0];
   }
-  var MONEY_IDS=['price','balance','closingFee','guarantyFee','docPrep','notary','extCov','bundled','taxCert','finalWater','release','misc','titleOverride','compsValue'];
+  var MONEY_IDS=['price','balance','closingFee','guarantyFee','docPrep','txTaxCert','txRecording','notary','survey','hoa','extCov','bundled','taxCert','finalWater','release','misc','titleOverride','compsValue'];
   var TODAY = todayStr();
 
   var taxTouched = false;
   function setState(st){
     $('state').value = st;
     document.body.setAttribute('data-state', st);
+    ['btnCO','btnTX'].forEach(function(id){ var b=$(id); if(b) b.setAttribute('aria-pressed', b.getAttribute('data-state')===st ? 'true' : 'false'); });
     if(!taxTouched) $('taxRate').value = DEFAULTS[st].taxRate;
     $('taxNote').textContent = DEFAULTS[st].note;
-    $('titleNote').textContent = st==='CO' ? 'Auto: Colorado basic owner\'s title rate (El Paso County area, rates eff. 2/6/2025). Other counties or title companies may differ.' : 'Auto: Texas promulgated basic premium (rates eff. 3/1/2026).';
-    $('schedNote').innerHTML = '<span class="pill">'+(st==='CO' ? 'Colorado estimate' : 'Texas estimate')+'</span>';
+    $('titleNote').textContent = st==='CO' ? 'Auto: Colorado basic owner\'s title rate (El Paso County area, rates eff. 2/6/2025). Other counties or title companies may differ.' : 'Auto: Texas Department of Insurance promulgated basic premium (rates eff. 3/1/2026). Seller customarily pays the owner\'s policy in Texas.';
+    $('schedNote').innerHTML = '<span class="pill'+(st==='TX'?' tx':'')+'">'+(st==='CO' ? 'Colorado estimate' : 'Texas estimate · no state transfer tax')+'</span>';
+    $('address').placeholder = st==='TX' ? '123 Main St, Austin, TX 78701' : '123 Main St, Colorado Springs, CO 80903';
+    if($('miscNote')) $('miscNote').textContent = st==='TX' ? 'Repairs, home warranty, anything else' : 'Repairs, HOA, home warranty, anything else';
+    if($('stateHint')) $('stateHint').textContent = st==='TX'
+      ? 'Texas uses official TDI owner’s title rates, typical seller-paid escrow, tax certificates and recording fees, and prorated property taxes (paid in arrears). There is no state transfer tax. All figures are estimates.'
+      : 'Colorado uses El Paso County–area title and fee estimates. Switch to Texas for official TDI title rates and typical Texas seller fees. All figures are estimates.';
+    if($('estNote')) $('estNote').textContent = st==='TX'
+      ? 'These figures are estimates for illustration only. Actual costs depend on your contract, title company, county, payoff statement and closing date. Texas property taxes are paid in arrears and are prorated by day through closing. Texas has no state real estate transfer tax.'
+      : 'These figures are estimates for illustration only. Actual costs depend on your contract, title company, county, payoff statement and closing date.';
   }
   function autoState(){
     var s = NS.detectState($('address').value);
@@ -502,7 +550,7 @@ if (typeof module !== 'undefined') module.exports = NS;
     setState(st);
     $('closing').value = q.get('closing') && /^\d{4}-\d{2}-\d{2}$/.test(q.get('closing')) ? q.get('closing') : addDays(TODAY, 30);
     $('sellerFee').value='3'; $('buyerFee').value='3';
-    $('closingFee').value='650'; $('guarantyFee').value='3'; $('docPrep').value='80'; $('notary').value='0'; $('misc').value='0';
+    $('closingFee').value='450'; $('guarantyFee').value='3'; $('docPrep').value='200'; $('txTaxCert').value='70'; $('txRecording').value='100'; $('notary').value='0'; $('survey').value='0'; $('hoa').value='0'; $('misc').value='0';
     $('extCov').value='95'; $('bundled').value='170'; $('taxCert').value='13.50'; $('finalWater').value='200'; $('release').value='60';
     if(q.get('address')) $('address').value=q.get('address');
     if(q.get('price')) $('price').value=q.get('price');
@@ -522,7 +570,7 @@ if (typeof module !== 'undefined') module.exports = NS;
       closing:$('closing').value || addDays(TODAY,30), today:TODAY,
       sellerFee:num('sellerFee'), buyerFee:num('buyerFee'), taxRate:num('taxRate'),
       titleOverride: t==='' ? null : num('titleOverride'),
-      closingFee:num('closingFee'), guaranty:num('guarantyFee'), docPrep:num('docPrep'), notary:num('notary'),
+      closingFee:num('closingFee'), guaranty:num('guarantyFee'), docPrep:num('docPrep'), txTaxCert:num('txTaxCert'), txRecording:num('txRecording'), survey:num('survey'), hoa:num('hoa'), notary:num('notary'),
       extCov:num('extCov'), bundled:num('bundled'), taxCert:num('taxCert'), finalWater:num('finalWater'), release:num('release'), misc:num('misc')
     };
   }
@@ -536,14 +584,14 @@ if (typeof module !== 'undefined') module.exports = NS;
     function m(v){ return {t:money(v)}; }
     grp('Sale');
     row('Sales price', function(r){return m(r.price);});
-    row('Prorated property tax owed ('+(o.taxRate)+'% through day '+R[0].doy+')', function(r){return m(-r.tax);});
+    row('Prorated property tax owed ('+(o.taxRate)+'% through day '+R[0].doy+(o.state==='TX' ? '; paid in arrears' : '')+')', function(r){return m(-r.tax);});
     grp('Closing costs');
-    var LBL = {title:'Owner\'s title policy', closingFee:'Closing fee', guaranty:'Guaranty fee', docPrep:'Doc prep', notary:'Mobile notary',
+    var LBL = {title:'Owner\'s title policy', closingFee:'Escrow / settlement fee (seller\'s half)', guaranty:'Policy guaranty fee', docPrep:'Deed / doc prep', txTaxCert:'Tax certificates', txRecording:'Recording / release fees', survey:'New survey', hoa:'HOA resale cert / transfer', notary:'Mobile notary',
       extCov:'Owner\'s extended coverage', bundled:'Bundled closing fees', taxCert:'Tax certificate', finalWater:'Final water', release:'Release service fee',
       interest:'Mortgage interest to closing ('+R[0].days+' days)', buyerFee:'Buyer broker fee ('+o.buyerFee+'%)', sellerFee:'Seller broker fee ('+o.sellerFee+'%)',
       concession:'Seller concession', misc:'Misc.'};
     R[0].order.forEach(function(k){
-      if(k==='misc' && !o.misc) return;
+      if((k==='misc' || k==='survey' || k==='hoa' || k==='notary') && !R[0].items[k]) return;
       row(LBL[k], function(r){return m(r.items[k]);});
     });
     row('Total closing costs', function(r){return m(r.closingCosts);}, 'tot');
@@ -615,7 +663,7 @@ if (typeof module !== 'undefined') module.exports = NS;
     var L=['Hi James,','','Please run a free comparable-sales (comps) analysis for my home.','',
       'PROPERTY','Address: '+(a||'(please add)')];
     if(CHK.fmt) L.push('Address check: '+CHK.fmt+(CHK.county?' ('+CHK.county+')':''));
-    L.push('State schedule used: '+(st==='CO'?'Colorado':'Texas'));
+    L.push('State (fee schedule): '+(st==='CO'?'Colorado':'Texas'));
     [['Beds','pBeds'],['Baths','pBaths'],['Living area (sq ft)','pSqft'],['Year built','pYear'],['Subdivision','pSub'],['Notes','pNotes']].forEach(function(p){ if(v(p[1])) L.push(p[0]+': '+v(p[1])); });
     L.push('','MY NUMBERS','Estimated sales price: '+(num('price')?money(num('price'),false):'(not entered)'),
       'Current mortgage balance: '+(num('balance')?money(num('balance'),false):'(not entered)'),
@@ -676,6 +724,7 @@ if (typeof module !== 'undefined') module.exports = NS;
     render();
   });
   $('state').addEventListener('change', function(){ setState(this.value); render(); });
+  ['btnCO','btnTX'].forEach(function(id){ $(id).addEventListener('click', function(){ setState(this.getAttribute('data-state')); render(); }); });
   $('taxRate').addEventListener('input', function(){ taxTouched = true; });
   $('address').addEventListener('input', function(){ autoState(); });
   $('printBtn').addEventListener('click', function(){ $('adv').open=true; window.print(); });
