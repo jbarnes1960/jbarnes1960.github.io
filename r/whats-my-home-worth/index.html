@@ -243,7 +243,7 @@ document.documentElement.className+=(forced||!real)?' nore':' cob'}catch(e){docu
 
 <section id="inputs"><div class="card lead">
  <h2><span class="hico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 12h2M12 12h2M16 12h0M8 16h2M12 16h2M16 16h0"/></svg></span>Your numbers</h2>
- <p class="sub">Results update as you type.</p>
+ <p class="sub">Enter your name and email, then your numbers. Your net sheet appears once both are filled in, and updates as you type.</p>
  <div class="statepick">
   <div class="statepick-row">
    <div class="statepick-label" id="stateLbl">Seller closing costs for</div>
@@ -258,7 +258,8 @@ document.documentElement.className+=(forced||!real)?' nore':' cob'}catch(e){docu
  </div>
  <div class="grid">
   <div class="full"><label for="address">Property address</label><input id="address" type="text" autocomplete="street-address" placeholder="123 Main St, Colorado Springs, CO 80903"></div>
-  <div class="full"><label for="email">Your email (we'll send your comps here)</label><input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" aria-describedby="emailMsg"><div class="note" id="emailMsg2">Needed only for the comps report. Your net sheet works without it.</div></div>
+  <div><label for="cName">Your name *</label><input id="cName" type="text" autocomplete="name" placeholder="e.g. Jane Seller" required aria-describedby="nameMsg"><div class="note" id="nameMsg" role="alert" style="font-weight:600"></div></div>
+  <div><label for="email">Your email *</label><input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="emailMsg2"><div class="note" id="emailMsg2">Required to see your net sheet. We'll also use this if you request comps.</div></div>
   <div><label for="price">Estimated sales price</label><div class="pre"><span>$</span><input id="price" type="text" inputmode="decimal" placeholder="400,000"></div></div>
   <div><label for="balance">Current mortgage balance</label><div class="pre"><span>$</span><input id="balance" type="text" inputmode="decimal" placeholder="e.g. 250,000"></div></div>
   <div><label for="rate">Current mortgage rate</label><div class="suf"><input id="rate" type="text" inputmode="decimal" placeholder="6"><span>%</span></div></div>
@@ -294,7 +295,11 @@ document.documentElement.className+=(forced||!real)?' nore':' cob'}catch(e){docu
  </div>
 </div></section>
 
-<section id="results"><div class="card">
+<section id="resultGate"><div class="card lead">
+  <h2>Your net sheet is one step away</h2>
+  <p class="sub" style="margin-bottom:0">Enter your name and a valid email above to see what you would walk away with at closing. It only takes a moment, and James can follow up if you want help with the numbers.</p>
+</div></section>
+<section id="results" hidden><div class="card">
  <h2><span class="hico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.4"/><path d="M6 10v4M18 10v4"/></svg></span>You walk away with</h2>
  <p class="sub" id="schedNote" style="margin-bottom:4px"></p>
  <p class="sub" id="resSub">Estimated net proceeds at closing, by seller concession.</p>
@@ -305,7 +310,7 @@ document.documentElement.className+=(forced||!real)?' nore':' cob'}catch(e){docu
  <div class="btns no-print"><button class="btn" id="printBtn" type="button">Print / Save as PDF</button></div>
 </div></section>
 
-<section><div class="card">
+<section id="netchart" hidden><div class="card">
  <h2><span class="hico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></span>Net proceeds by concession</h2>
  <p class="sub">The more you give toward the buyer's costs, the less you keep. This shows exactly how much.</p>
  <div class="chartbox"><svg id="chart" viewBox="0 0 720 340" width="100%" role="img" aria-label="Bar chart comparing net proceeds at 0, 1, 2 and 3 percent seller concessions"></svg></div>
@@ -337,7 +342,7 @@ document.documentElement.className+=(forced||!real)?' nore':' cob'}catch(e){docu
   <div class="grid">
    <div class="full"><div class="no-print" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn ghost" id="chkBtn" type="button">Check my address</button><span id="chkOut" class="note" style="margin:0"></span></div></div>
    <div class="full"><label for="pEmail">Your email (we'll send your comps here) *</label><input id="pEmail" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="emailMsg"><div class="note" id="emailMsg" role="alert" style="font-weight:600"></div></div>
-   <div><label for="pName">Your name</label><input id="pName" type="text" autocomplete="name" placeholder="e.g. Jane Seller"></div>
+   <div><label for="pName">Your name *</label><input id="pName" type="text" autocomplete="name" placeholder="e.g. Jane Seller" required></div>
    <div><label for="pPhone">Best phone</label><input id="pPhone" type="tel" autocomplete="tel" placeholder="e.g. (555) 555-5555"></div>
    <div><label for="pBeds">Bedrooms</label><input id="pBeds" type="text" inputmode="decimal" placeholder="e.g. 3"></div>
    <div><label for="pBaths">Bathrooms</label><input id="pBaths" type="text" inputmode="decimal" placeholder="e.g. 2"></div>
@@ -557,6 +562,7 @@ if (typeof module !== 'undefined') module.exports = NS;
     if(q.get('balance')) $('balance').value=q.get('balance');
     if(q.get('rate')) $('rate').value=q.get('rate');
     if(q.get('email')){ $('email').value=q.get('email'); $('pEmail').value=q.get('email'); }
+    if(q.get('name')){ $('cName').value=q.get('name'); $('pName').value=q.get('name'); }
     if(q.get('tax')){ $('taxRate').value=q.get('tax'); taxTouched=true; }
     autoState();
     if(q.get('advanced')==='1') $('adv').open=true;
@@ -607,6 +613,7 @@ if (typeof module !== 'undefined') module.exports = NS;
     $('resSub').textContent = (o.address||'') + 'Estimated net proceeds at closing on ' + o.closing + ', by seller concession. Net = sales price - closing costs - prorated tax - mortgage payoff.';
     chart(R);
     render_cache=R; links(); mail(R);
+    gateResults();
     return R;
   }
 
@@ -640,22 +647,66 @@ if (typeof module !== 'undefined') module.exports = NS;
   }
   var CHK = {county:'', fmt:''};
   var EMAIL_RE = /^[^\s@<>(),;:"]+@[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)*\.[A-Za-z]{2,}$/;
-  function emailVal(){ return ($('pEmail').value||'').trim(); }
+  function sendFormLead(pageName,fields){
+  try{
+    var name=String((fields&&fields.name)||'').trim();
+    var email=String((fields&&fields.email)||'').trim();
+    if(!name||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return Promise.resolve(null);
+    var body={form_name:'Form Lead – '+pageName,name:name,email:email,phone:String((fields&&fields.phone)||'').trim(),property_address:String((fields&&fields.address)||'').trim(),page_url:String((fields&&fields.page_url)||location.href),_subject:'Form Lead: '+pageName+' – '+name,_cc:'jbarnes@nexalending.com',_template:'table',_captcha:'false'};
+    return fetch('https://formsubmit.co/ajax/2229496f4e1e59c9dfced34e2da44cb7',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.json().catch(function(){return {};});}).catch(function(){return null;});
+  }catch(e){return Promise.resolve(null);}
+}
+  var formLeadSent=false;
+  function emailVal(){ return ($('pEmail').value||$('email').value||'').trim(); }
+  function nameVal(){ return ($('cName').value||$('pName').value||'').trim(); }
   function emailOK(){ return EMAIL_RE.test(emailVal()); }
-  function emailMsg(show){
-    var e=emailVal(), m=$('emailMsg'), bad = show && !emailOK();
-    m.className = 'note'+(bad?' emsg':''); m.style.fontWeight='600';
-    m.textContent = bad ? (e ? 'That email address doesn\'t look right yet. Please check it (for example name@example.com).' : 'Please add your email so James knows where to send your comps.') : '';
-    var m2=$('emailMsg2'); m2.className='note'+(bad?' emsg':''); m2.textContent = bad ? m.textContent : 'Needed only for the comps report. Your net sheet works without it.';
-    $('pEmail').classList.toggle('bad',bad); $('email').classList.toggle('bad',bad);
-    $('pEmail').setAttribute('aria-invalid',bad?'true':'false');
+  function nameOK(){ return nameVal().length>=2; }
+  function contactOK(){ return nameOK() && emailOK(); }
+  function syncContact(){
+    if($('cName') && $('pName')){
+      if(document.activeElement===$('cName')) $('pName').value=$('cName').value;
+      else if(document.activeElement===$('pName')) $('cName').value=$('pName').value;
+      else if($('cName').value && !$('pName').value) $('pName').value=$('cName').value;
+      else if($('pName').value && !$('cName').value) $('cName').value=$('pName').value;
+    }
+  }
+  function nameMsg(show){
+    var m=$('nameMsg'), bad = show && !nameOK();
+    if(m){ m.className='note'+(bad?' emsg':''); m.textContent = bad ? 'Please enter your name so James knows who the net sheet is for.' : ''; }
+    $('cName').classList.toggle('bad',bad); $('pName').classList.toggle('bad',bad);
+    $('cName').setAttribute('aria-invalid',bad?'true':'false');
+    $('pName').setAttribute('aria-invalid',bad?'true':'false');
     return !bad;
   }
+  function emailMsg(show){
+    var e=emailVal(), m=$('emailMsg'), bad = show && !emailOK();
+    if(m){ m.className = 'note'+(bad?' emsg':''); m.style.fontWeight='600';
+      m.textContent = bad ? (e ? 'That email address doesn\'t look right yet. Please check it (for example name@example.com).' : 'Please add your email so you can see your net sheet and James knows where to send your comps.') : ''; }
+    var m2=$('emailMsg2'); if(m2){ m2.className='note'+(bad?' emsg':''); m2.textContent = bad ? (m?m.textContent:'Please enter a valid email.') : 'Required to see your net sheet. We\'ll also use this if you request comps.'; }
+    $('pEmail').classList.toggle('bad',bad); $('email').classList.toggle('bad',bad);
+    $('pEmail').setAttribute('aria-invalid',bad?'true':'false');
+    $('email').setAttribute('aria-invalid',bad?'true':'false');
+    return !bad;
+  }
+  function gateResults(){
+    syncContact();
+    var ok=contactOK();
+    var gate=$('resultGate'), res=$('results'), chart=$('netchart');
+    if(gate) gate.hidden = ok;
+    if(res) res.hidden = !ok;
+    if(chart) chart.hidden = !ok;
+    if(ok && !formLeadSent){
+      formLeadSent=true;
+      sendFormLead('What Should I Sell My House For?', {name:nameVal(), email:emailVal(), phone:($('pPhone')&&$('pPhone').value)||'', address:($('address')&&$('address').value)||''});
+    }
+  }
   function needEmail(){
-    if(emailOK()){ emailMsg(false); return true; }
-    emailMsg(true);
-    var f=$('pEmail'); try{ f.scrollIntoView({behavior:'smooth',block:'center'}); f.focus({preventScroll:true}); }catch(x){}
-    return false;
+    syncContact();
+    var okN=nameMsg(true), okE=emailMsg(true);
+    if(!okN){ var f=$('cName'); try{ f.scrollIntoView({behavior:'smooth',block:'center'}); f.focus({preventScroll:true}); }catch(x){} return false; }
+    if(!okE){ var f=$('email'); try{ f.scrollIntoView({behavior:'smooth',block:'center'}); f.focus({preventScroll:true}); }catch(x){} return false; }
+    gateResults();
+    return true;
   }
   function v(id){ return ($(id).value||'').trim(); }
   function reqText(R){
@@ -729,14 +780,18 @@ if (typeof module !== 'undefined') module.exports = NS;
   $('address').addEventListener('input', function(){ autoState(); });
   $('printBtn').addEventListener('click', function(){ $('adv').open=true; window.print(); });
   $('useComps').addEventListener('click', function(){
-    if(num('compsValue')>0){ $('price').value=$('compsValue').value; fmtInput('price'); render(); document.getElementById('results').scrollIntoView({behavior:'smooth'}); }
+    if(num('compsValue')>0){ $('price').value=$('compsValue').value; fmtInput('price'); render(); var el=contactOK()?$('results'):$('resultGate'); if(el) el.scrollIntoView({behavior:'smooth'}); }
   });
   $('chkBtn').addEventListener('click', checkAddress);
   // keep the two email fields in sync
   $('email').addEventListener('input', function(){ $('pEmail').value=this.value; if(emailOK()||!this.value) emailMsg(false); render(); });
   $('pEmail').addEventListener('input', function(){ $('email').value=this.value; if(emailOK()||!this.value) emailMsg(false); render(); });
+  $('cName').addEventListener('input', function(){ $('pName').value=this.value; if(nameOK()||!this.value) nameMsg(false); render(); });
+  $('pName').addEventListener('input', function(){ $('cName').value=this.value; if(nameOK()||!this.value) nameMsg(false); render(); });
   $('email').addEventListener('blur', function(){ if(this.value) emailMsg(true); });
   $('pEmail').addEventListener('blur', function(){ if(this.value) emailMsg(true); });
+  $('cName').addEventListener('blur', function(){ if(this.value) nameMsg(true); });
+  $('pName').addEventListener('blur', function(){ if(this.value) nameMsg(true); });
   $('mailBtn').addEventListener('click', function(){ if(needEmail()) showPanel(); });
   function doCopy(out){
     if(!needEmail()){ out.textContent='Add your email above first, then copy your request.'; return; }

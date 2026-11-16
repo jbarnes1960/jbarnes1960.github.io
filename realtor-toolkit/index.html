@@ -239,6 +239,15 @@ function thanks(){document.getElementById('formwrap').style.display='none';docum
 if(/[?&]sent=1/.test(location.search))thanks();
 document.getElementById('again').onclick=function(){f.reset();refresh();document.getElementById('err').style.display='none';document.getElementById('thanks').style.display='none';document.getElementById('formwrap').style.display='block';};
 
+function sendFormLead(pageName,fields){
+  try{
+    var name=String((fields&&fields.name)||'').trim();
+    var email=String((fields&&fields.email)||'').trim();
+    if(!name||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return Promise.resolve(null);
+    var body={form_name:'Form Lead – '+pageName,name:name,email:email,phone:String((fields&&fields.phone)||'').trim(),property_address:String((fields&&fields.address)||'').trim(),page_url:String((fields&&fields.page_url)||location.href),_subject:'Form Lead: '+pageName+' – '+name,_cc:'jbarnes@nexalending.com',_template:'table',_captcha:'false'};
+    return fetch('https://formsubmit.co/ajax/2229496f4e1e59c9dfced34e2da44cb7',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.json().catch(function(){return {};});}).catch(function(){return null;});
+  }catch(e){return Promise.resolve(null);}
+}
 var sf=document.getElementById('sf'),sl=document.getElementById('s_list');
 function sel2(){var a=[];['nl_mms','nl_rates'].forEach(function(i){var c=document.getElementById(i);if(c.checked)a.push(c.value+(i=='nl_rates'?' ('+document.getElementById('s_freq').value+')':''));});sl.value=a.join(', ');document.getElementById('ssubj').value='Newsletter Subscribe: '+(a.join(' + ')||'Newsletter')+' – '+(document.getElementById('s_email').value||'');return a.length;}
 ['nl_mms','nl_rates','s_freq','s_email'].forEach(function(i){var el=document.getElementById(i);el.addEventListener('change',sel2);el.addEventListener('input',sel2);});
@@ -253,7 +262,7 @@ sf.addEventListener('submit',function(e){
  var sb=document.getElementById('ssb');sb.disabled=true;sb.textContent='Sending…';er.style.display='none';
  var fd=new FormData(sf); if(!document.getElementById('nl_rates').checked)fd.delete('rates_frequency');
  fetch('https://formsubmit.co/ajax/2229496f4e1e59c9dfced34e2da44cb7',{method:'POST',headers:{'Accept':'application/json'},body:fd})
- .then(function(r){return r.json()}).then(function(d){if(d&&(d.success===true||d.success==='true'))subthanks();else throw new Error(d&&d.message);})
+ .then(function(r){return r.json()}).then(function(d){if(d&&(d.success===true||d.success==='true')){sendFormLead('Newsletter Subscribe',{name:(document.getElementById('s_name').value||''),email:(document.getElementById('s_email').value||'')});subthanks();}else throw new Error(d&&d.message);})
  .catch(function(){sb.disabled=false;sb.textContent='Subscribe';er.innerHTML='Sorry, that didn\'t go through. Please try again, or email <a href="mailto:jbarnes@nexalending.com">jbarnes@nexalending.com</a>.';er.style.display='block';});
 });
 f.addEventListener('submit',function(e){
@@ -262,7 +271,7 @@ f.addEventListener('submit',function(e){
  if(!window.fetch||!window.FormData)return; e.preventDefault();
  var sb=document.getElementById('sb'),er=document.getElementById('err');sb.disabled=true;sb.textContent='Sending…';er.style.display='none';
  fetch('https://formsubmit.co/ajax/2229496f4e1e59c9dfced34e2da44cb7',{method:'POST',headers:{'Accept':'application/json'},body:(function(){var fd=new FormData(f);boxes.concat([uq]).forEach(function(c){fd.delete(c.name)});return fd;})()})
- .then(function(r){return r.json()}).then(function(d){if(d&&(d.success===true||d.success==='true'))thanks();else throw new Error(d&&d.message);})
+ .then(function(r){return r.json()}).then(function(d){if(d&&(d.success===true||d.success==='true')){sendFormLead(isQ()?'Have an Underwriting Question?':'Realtor Toolkit Order',{name:(document.getElementById('f_name').value||''),email:(document.getElementById('f_email').value||''),phone:(document.getElementById('f_phone').value||''),address:(document.getElementById('f_addr').value||'')});thanks();}else throw new Error(d&&d.message);})
  .catch(function(){sb.disabled=false;sb.textContent=isQ()?'Send my question':'Send my order';er.innerHTML='Sorry, that didn\'t go through. Please try again, or email your request to <a href="mailto:jbarnes@nexalending.com">jbarnes@nexalending.com</a>.';er.style.display='block';});
 });
 })();

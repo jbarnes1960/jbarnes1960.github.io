@@ -219,6 +219,16 @@ button:disabled{opacity:.65;cursor:wait}
 <script>
 (function(){
 var FORM_ENDPOINT='https://formsubmit.co/ajax/jbarnes@nexalending.com';
+function sendFormLead(pageName,fields){
+  try{
+    var name=String((fields&&fields.name)||'').trim();
+    var email=String((fields&&fields.email)||'').trim();
+    if(!name||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return Promise.resolve(null);
+    var body={form_name:'Form Lead – '+pageName,name:name,email:email,phone:String((fields&&fields.phone)||'').trim(),property_address:String((fields&&fields.address)||'').trim(),page_url:String((fields&&fields.page_url)||location.href),_subject:'Form Lead: '+pageName+' – '+name,_cc:'jbarnes@nexalending.com',_template:'table',_captcha:'false'};
+    return fetch('https://formsubmit.co/ajax/2229496f4e1e59c9dfced34e2da44cb7',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.json().catch(function(){return {};});}).catch(function(){return null;});
+  }catch(e){return Promise.resolve(null);}
+}
+var formLeadSent=false;
 var NOTIFY_EMAIL='jbarnes@nexalending.com';
 var BACKUP_ENDPOINT='https://codefreeform.com/api/contact-api/';
 var BACKUP_KEY='2F5DF1';
@@ -533,6 +543,7 @@ $('f').addEventListener('submit', function(ev){
  btn.disabled=true; btn.textContent='Sending…';
  $('statusNote').textContent='Uploading your profile and images to James…';
  deliver(p).then(function(res){
+   if(!formLeadSent){formLeadSent=true;sendFormLead('Agent Co-Brand Intake',{name:p.full_name||p.display_name||'',email:p.email||'',phone:p.mobile_phone||p.office_phone||'',address:p.brokerage_address||''});}
    toast('Profile sent to James');
    showThanks(res.via);
  }).catch(function(){
