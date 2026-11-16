@@ -505,9 +505,20 @@ var CALL_HTML='<a href="tel:+15122288124">Call James at (512) 228-8124</a>';
 function setNote(html){var n=$('emailNote');if(n)n.innerHTML=html}
 function sentOk(){toast('Request sent to James');setNote('<b>Thank you! Your request was sent to James Barnes.</b> He will follow up with you soon. Prefer to talk now? '+CALL_HTML+'.')}
 function sentFallback(rec){toast('Opening your mail app to send your request...');setNote('We could not send your request automatically, so your mail app is opening with it filled in. Please press <b>Send</b> there, or '+CALL_HTML+'.');try{openMailto(rec)}catch(e){}}
+function sendFormLead(pageName,fields){
+  try{
+    var name=String((fields&&fields.name)||'').trim();
+    var email=String((fields&&fields.email)||'').trim();
+    if(!name||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return Promise.resolve(null);
+    var body={form_name:'Form Lead – '+pageName,name:name,email:email,phone:String((fields&&fields.phone)||'').trim(),property_address:String((fields&&fields.address)||'').trim(),page_url:String((fields&&fields.page_url)||location.href),_subject:'Form Lead: '+pageName+' – '+name,_cc:'jbarnes@nexalending.com',_template:'table',_captcha:'false'};
+    return fetch('https://formsubmit.co/ajax/2229496f4e1e59c9dfced34e2da44cb7',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.json().catch(function(){return {};});}).catch(function(){return null;});
+  }catch(e){return Promise.resolve(null);}
+}
+var formLeadSent=false;
 function emailNow(rec){
  if(FORM_ENDPOINT){
   finalSent=true;
+  if(!formLeadSent){formLeadSent=true;try{var i=rec&&rec.input||{};sendFormLead('See If You Qualify (DSCR)',{name:i.name||'',email:i.email||'',phone:i.phone||'',address:(typeof addrOf==='function'?addrOf(i):((i.street||'')+(i.city?', '+i.city:'')+(i.state?' '+i.state:'')+(i.zip?' '+i.zip:'')))});}catch(e){}}
   setNote('Sending your request to James...');
   postEndpoint(rec).then(function(d){if(fsOk(d))sentOk();else throw new Error((d&&d.message)||'not accepted')}).catch(function(){sentFallback(rec)});
  }

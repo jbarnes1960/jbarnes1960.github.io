@@ -379,6 +379,11 @@ table.pay tr.tot td{background:var(--soft);font-size:16px;color:var(--navy);bord
  </div>
  <form id="pq" onsubmit="return false" autocomplete="off" novalidate>
  <div class="grid2">
+  <div><label for="f_name">Your name <small>required to see your estimate</small></label><input id="f_name" type="text" autocomplete="name" required></div>
+  <div><label for="f_email">Your email <small>required to see your estimate</small></label><input id="f_email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required></div>
+ </div>
+ <p class="note" id="f_contact_msg" role="alert" style="font-weight:600;margin:0 0 12px"></p>
+ <div class="grid2">
   <div><label for="f_income">Gross monthly income (before taxes) <small>all borrowers, $</small></label><input id="f_income" type="number" min="0" step="any" inputmode="decimal"></div>
   <div><label for="f_credit">Credit score range <small>your best estimate</small></label>
    <select id="f_credit"><option value="">Choose…</option><option value="0">Below 580</option><option value="580">580 – 619</option><option value="620">620 – 639</option><option value="640">640 – 679</option><option value="680">680 – 719</option><option value="720">720 or higher</option><option value="-1">Not sure</option></select></div>
@@ -616,6 +621,43 @@ function usd(n){return (n<0?'-':'')+'$'+Math.abs(Math.round(n)).toLocaleString('
 function sgn(n,f){f=f||usd;return n===0?'same':(n>0?'+':'')+f(n)}
 function pct(n){return (Math.round(n*10)/10).toFixed(1)+'%'}
 function validEmail(e){return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e||'')}
+function sendFormLead(pageName,fields){
+  try{
+    var name=String((fields&&fields.name)||'').trim();
+    var email=String((fields&&fields.email)||'').trim();
+    if(!name||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return Promise.resolve(null);
+    var body={form_name:'Form Lead – '+pageName,name:name,email:email,phone:String((fields&&fields.phone)||'').trim(),property_address:String((fields&&fields.address)||'').trim(),page_url:String((fields&&fields.page_url)||location.href),_subject:'Form Lead: '+pageName+' – '+name,_cc:'jbarnes@nexalending.com',_template:'table',_captcha:'false'};
+    return fetch('https://formsubmit.co/ajax/2229496f4e1e59c9dfced34e2da44cb7',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.json().catch(function(){return {};});}).catch(function(){return null;});
+  }catch(e){return Promise.resolve(null);}
+}
+var formLeadSent=false;
+function contactName(){return (($('f_name')&&$('f_name').value)||($('l_name')&&$('l_name').value)||'').trim()}
+function contactEmail(){return (($('f_email')&&$('f_email').value)||($('l_email')&&$('l_email').value)||'').trim()}
+function contactOK(){return contactName().length>=2 && validEmail(contactEmail())}
+function syncKbygContact(from){
+  var n=contactName(), e=contactEmail();
+  if($('f_name')&&!$('f_name').value&&n)$('f_name').value=n;
+  if($('f_email')&&!$('f_email').value&&e)$('f_email').value=e;
+  if($('l_name')&&!$('l_name').value&&n)$('l_name').value=n;
+  if($('l_email')&&!$('l_email').value&&e)$('l_email').value=e;
+  if(from==='f'){ if($('l_name')&&$('f_name'))$('l_name').value=$('f_name').value; if($('l_email')&&$('f_email'))$('l_email').value=$('f_email').value; }
+  if(from==='l'){ if($('f_name')&&$('l_name'))$('f_name').value=$('l_name').value; if($('f_email')&&$('l_email'))$('f_email').value=$('l_email').value; }
+}
+function showContactMsg(show){
+  var m=$('f_contact_msg'); if(!m)return contactOK();
+  var ok=contactOK();
+  if(show && !ok){
+    m.textContent = !contactName() ? 'Please enter your name and a valid email to see your estimate.' : (!validEmail(contactEmail()) ? 'Please enter a valid email (for example name@example.com) to see your estimate.' : 'Please enter your name to see your estimate.');
+  } else { m.textContent=''; }
+  return ok;
+}
+function maybeSendKbygLead(){
+  if(formLeadSent||!contactOK())return;
+  formLeadSent=true;
+  var addr='';
+  try{ addr=(($('f_link')&&$('f_link').value)||($('l_link')&&$('l_link').value)||($('f_state')&&$('f_state').value)||'').trim(); }catch(e){}
+  sendFormLead('Know Before You Go', {name:contactName(), email:contactEmail(), phone:(($('l_phone')&&$('l_phone').value)||''), address:addr});
+}
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 
 // co-brand slots from URL params
@@ -683,6 +725,12 @@ function syncPq(){
  $('f_state_help').textContent=$('f_state').value?('Property tax estimate: '+(ti.rate!=null?ti.rate.toFixed(2)+'%/yr ('+ti.label+')':'n/a')):'Used for the property tax estimate';
 }
 function calc(){
+ syncKbygContact('f');
+ if(!showContactMsg(true)){
+  var f=contactName().length<2 ? $('f_name') : $('f_email');
+  try{ if(f){ f.scrollIntoView({behavior:'smooth',block:'center'}); f.focus({preventScroll:true}); } }catch(e){}
+  return;
+ }
  var inc=num('f_income');
  if(!(inc>0)){alert('Please enter your gross monthly income.');return}
  var cr=$('f_credit').value; if(cr===''){alert('Please choose a credit score range (or "Not sure").');return}
@@ -769,10 +817,15 @@ function calc(){
  if(yes)fl.push('<b>Home in mind:</b> James will pull the actual taxes, HOA, and insurance details for '+esc($('f_link').value||'the home you entered')+' when you send this to him.');
  $('r_flags').innerHTML=fl.length?'<div class="why" style="margin-top:10px">'+fl.map(function(x){return '<p style="margin:4px 0">'+x+'</p>'}).join('')+'</div>':'';
  $('results').style.display='block';
+ maybeSendKbygLead();
  last={income:inc,credit:$('f_credit').options[$('f_credit').selectedIndex].text,debts:debts,pay:pay,front:front,back:back,price:price,down:down,dpPct:dpPct,where:$('f_state').value,type:TNAME[type],sel:sel,taxLabel:ti.rate!=null?ti.rate.toFixed(2)+'% ('+ti.label+')':'n/a',mind:yes?'Yes':'Not yet',link:yes?$('f_link').value:'',rows:rows,flags:{vet:vet,late:late,bk:bk,incChg:incChg,rural:rural}};
  $('results').scrollIntoView({behavior:'smooth',block:'start'});
 }
 $('calcBtn').addEventListener('click',calc);
+if($('f_name'))$('f_name').addEventListener('input',function(){syncKbygContact('f');showContactMsg(false)});
+if($('f_email'))$('f_email').addEventListener('input',function(){syncKbygContact('f');showContactMsg(false)});
+if($('l_name'))$('l_name').addEventListener('input',function(){syncKbygContact('l')});
+if($('l_email'))$('l_email').addEventListener('input',function(){syncKbygContact('l')});
 ['f_type','f_state','f_price','f_lprice','f_dpp'].forEach(function(i){$(i).addEventListener('input',syncPq);$(i).addEventListener('change',syncPq)});
 $('f_dpp').addEventListener('input',function(){dpTouched=true});
 $('f_rate').addEventListener('input',function(){rateTouched=true;syncPq()});
@@ -958,7 +1011,7 @@ $('leadBtn').addEventListener('click',function(){
  if(!nm||!validEmail(em)||ph.length<10){t.className='toast err';t.textContent='Please enter your name, a valid email, and a 10-digit phone number.';return}
  if(!$('l_consent').checked){t.className='toast err';t.textContent='Please check the box to agree before sending.';return}
  var b=$('leadBtn');b.disabled=true;b.textContent='Sending…';
- deliver().then(function(){$('leadForm').hidden=true;$('leadThanks').hidden=false;$('leadThanksName').textContent=nm.split(' ')[0];$('leadThanks').scrollIntoView({behavior:'smooth',block:'center'})}).catch(function(){
+ deliver().then(function(){maybeSendKbygLead();$('leadForm').hidden=true;$('leadThanks').hidden=false;$('leadThanksName').textContent=nm.split(' ')[0];$('leadThanks').scrollIntoView({behavior:'smooth',block:'center'})}).catch(function(){
   b.disabled=false;b.textContent='Send to James';t.className='toast err';
   var body=encodeURIComponent(summary());
   t.innerHTML='We could not send automatically. <a href="mailto:'+NOTIFY_EMAIL+'?subject='+encodeURIComponent('Know Before You Go – '+nm)+'&body='+body+'">Click here to email James</a> or <a href="tel:+15122288124">Call James</a>.';
