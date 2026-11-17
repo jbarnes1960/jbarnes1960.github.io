@@ -6,7 +6,7 @@
 <meta property="og:description" content="CMAs, comps, net sheets, buyer kits, market guides, rate sheets and more, co-branded for you. Live tools plus one order form.">
 <meta property="og:image" content="https://jbarnes1960.github.io/realtor-toolkit/assets/thumbs/cma.jpg">
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#1d2a3a;background:#f4f6fb;line-height:1.45}
+html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#1d2a3a;background:#f4f6fb;line-height:1.45}
 a{color:#1a4fa0}.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 header{background:linear-gradient(135deg,#0b2a5b,#1a4fa0);color:#fff}
 .top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
@@ -21,7 +21,7 @@ header{background:linear-gradient(135deg,#0b2a5b,#1a4fa0);color:#fff}
 .btn.sm{background:#1a4fa0;color:#fff;padding:8px 14px;font-size:13px}
 .how{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:-22px auto 10px;position:relative}
 .how div{background:#fff;border-radius:10px;padding:16px 18px;box-shadow:0 4px 14px rgba(11,42,91,.1)}.how b{color:#1a4fa0;font-size:13px;letter-spacing:1px;text-transform:uppercase}.how p{margin:6px 0 0;font-size:14px}
-.sec h2{color:#0b2a5b;font-size:24px;margin:34px 0 14px;padding-bottom:6px;border-bottom:3px solid #d6dce8}
+.sec,#subscribe,#order{scroll-margin-top:24px}.sec h2{color:#0b2a5b;font-size:24px;margin:34px 0 14px;padding-bottom:6px;border-bottom:3px solid #d6dce8}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
 .card{background:#fff;border:1px solid #d6dce8;border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
 .credit{display:block;font-size:11px;color:#6b7a8f;margin:-6px 0 10px;line-height:1.35}.credit a{color:#6b7a8f}
@@ -73,18 +73,26 @@ footer{background:linear-gradient(135deg,#071d42,#0b2a5b);border-top:4px solid #
 @media (max-width:560px){.hero h1{font-size:34px}.hero p.value{font-size:18px}.chips li{font-size:12px}.ftag{font-size:18px}}
 
 .cact .bdg{box-shadow:none;align-self:center}.btn.sm.golive{background:#0e7a4f;color:#fff}.btn.sm.golive:hover{background:#0b6641}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}.card:hover,.btn:hover{transform:none}.card:hover .thumb img{transform:none}}
-</style></head><body>
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.jmp{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.35);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:bold;text-decoration:none;line-height:1.25;transition:background .15s ease,border-color .15s ease,color .15s ease,transform .15s ease}
+.jmp:hover,.jmp:focus-visible{background:#f2b705;color:#0b2a5b;border-color:#f2b705;transform:translateY(-1px)}
+.jico{font-size:14px;line-height:1}
+.backtop{text-align:right;margin:10px 0 0;font-size:13px}
+.backtop a{color:#1a4fa0;font-weight:bold;text-decoration:none}
+.backtop a:hover{text-decoration:underline}
+@media (max-width:560px){.jump{gap:8px}.jmp{flex:1 1 calc(50% - 8px);justify-content:center;text-align:center}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.card:hover,.btn:hover,.jmp:hover{transform:none}.card:hover .thumb img{transform:none}}
+</style></head><body id="top">
 <header><div class="wrap"><div class="top"><span class="logo"><img src="assets/nexa-logo.png" alt="Nexa Lending"></span>
 <div class="who"><div><b>James Barnes</b><span>Senior Loan Officer · NMLS 215987</span></div><img src="assets/james-headshot.png" alt="James Barnes"></div></div>
 <div class="hero"><p class="eyebrow">For my realtor partners</p><h1>Realtor <span class="gold">Toolkit</span></h1>
 <p class="value">Close more deals with these <span class="gold">FREE</span> tools that make you look good.</p>
 <p>CMAs, comps, net sheets, buyer kits, market guides, rate sheets and more, all made for you and co-branded with your name, photo and logo. Use the live tools any time, or pick a co-branded piece, tell me the property, and my team will get it to you.</p>
-<div class="btns"><a class="btn go" href="#order">Order a Document</a><a class="btn alt" href="#subscribe">Subscribe</a><a class="btn" href="tel:+15122288124">Call James</a><a class="btn alt" href="mailto:jbarnes@nexalending.com?subject=Realtor%20Toolkit%20request">Email James</a><a class="btn alt" href="https://calendly.com/jbarnes1960" target="_blank" rel="noopener">Book a call</a></div>
+<nav class="jump" aria-label="Toolkit sections"><a class="jmp" href="#listing-seller-tools"><span class="jico" aria-hidden="true">🏡</span>Listing &amp; Seller Tools</a><a class="jmp" href="#buyer-tools"><span class="jico" aria-hidden="true">🔑</span>Buyer Tools</a><a class="jmp" href="#market-rate-updates"><span class="jico" aria-hidden="true">📈</span>Market &amp; Rate Updates</a><a class="jmp" href="#loan-programs-guidelines"><span class="jico" aria-hidden="true">📋</span>Loan Programs &amp; Guidelines</a><a class="jmp" href="#marketing-for-you"><span class="jico" aria-hidden="true">📣</span>Marketing for You</a><a class="jmp" href="#underwriting-help"><span class="jico" aria-hidden="true">🛡️</span>Underwriting Help</a></nav><div class="btns"><a class="btn go" href="#order">Order a Document</a><a class="btn alt" href="#subscribe">Subscribe</a><a class="btn" href="tel:+15122288124">Call James</a><a class="btn alt" href="mailto:jbarnes@nexalending.com?subject=Realtor%20Toolkit%20request">Email James</a><a class="btn alt" href="https://calendly.com/jbarnes1960" target="_blank" rel="noopener">Book a call</a></div>
 <ul class="chips"><li>⚡ Live tools, open any time</li><li>🎨 Co-branded with you</li><li>📬 Newsletters to forward</li><li>🛡️ Underwriting help</li></ul></div></div></header>
 <main class="wrap">
 <div class="how"><div><b><i>1</i>Pick</b><p>Browse below. Live tools open right away; property- and client-specific pieces have an Order this button.</p></div><div><b><i>2</i>Order</b><p>Fill out the short order form with the property address and any details.</p></div><div><b><i>3</i>Receive</b><p>It's built, co-branded and emailed to you. Need changes? Just reply with a quick email.</p></div></div>
-<section class="sec"><h2><span class="ico" aria-hidden="true">🏡</span>Listing &amp; Seller Tools</h2><div class="grid"><article class="card" id="doc-cma">
+<section class="sec" id="listing-seller-tools"><h2><span class="ico" aria-hidden="true">🏡</span>Listing &amp; Seller Tools</h2><div class="grid"><article class="card" id="doc-cma">
 <div class="thumb"><div class="badges"></div><img src="assets/thumbs/cma.jpg" alt="Preview of Nexa Standard CMA" loading="lazy" width="480" height="320"></div>
 <div class="cbody"><h3>Nexa Standard CMA</h3><p>A full comparative market analysis for a property: adjusted comps, a comp map, a suggested price range and a payment snapshot, co-branded with you. Use it for listing appointments or to back up a list price.</p>
 <div class="cact"><button type="button" class="btn sm" data-order="Nexa Standard CMA">Order this</button><span class="bdg ord">Custom order</span></div></div></article><article class="card" id="doc-comps">
@@ -105,7 +113,7 @@ footer{background:linear-gradient(135deg,#071d42,#0b2a5b);border-top:4px solid #
 <div class="cact"><button type="button" class="btn sm" data-order="Buy Before You Sell Kit">Order this</button><span class="bdg ord">Custom order</span></div></div></article><article class="card" id="doc-flyers">
 <div class="thumb"><div class="badges"></div><img src="assets/thumbs/flyers.jpg?v=2" alt="Preview of Listing Flyers" loading="lazy" width="480" height="320"></div>
 <div class="cbody"><h3>Listing Flyers</h3><p>Property flyers with photos, key facts and a sample monthly payment, co-branded with you and James. Use them for open houses and for promoting a listing.</p>
-<div class="cact"><button type="button" class="btn sm" data-order="Listing Flyers">Order this</button><span class="bdg ord">Custom order</span></div></div></article></div></section><section class="sec"><h2><span class="ico" aria-hidden="true">🔑</span>Buyer Tools</h2><div class="grid"><article class="card" id="doc-buyers">
+<div class="cact"><button type="button" class="btn sm" data-order="Listing Flyers">Order this</button><span class="bdg ord">Custom order</span></div></div></article></div><p class="backtop"><a href="#top">Back to top ↑</a></p></section><section class="sec" id="buyer-tools"><h2><span class="ico" aria-hidden="true">🔑</span>Buyer Tools</h2><div class="grid"><article class="card" id="doc-buyers">
 <div class="thumb"><div class="badges"></div><img src="assets/thumbs/buyers.jpg" alt="Preview of Buyer&#x27;s Kit" loading="lazy" width="480" height="320"></div>
 <div class="cbody"><h3>Buyer&#x27;s Kit</h3><p>A buyer&#x27;s guide for a specific property, with photos, payment options by loan type, cash to close and next steps. Send it to buyers who are interested in a listing.</p>
 <div class="cact"><button type="button" class="btn sm" data-order="Buyer&#x27;s Kit">Order this</button><span class="bdg ord">Custom order</span></div></div></article><article class="card" id="doc-what-not-to-do">
@@ -123,7 +131,7 @@ footer{background:linear-gradient(135deg,#071d42,#0b2a5b);border-top:4px solid #
 <div class="cact"><a class="btn sm golive" href="https://jbarnes1960.github.io/intake/" target="_blank" rel="noopener">See it live →</a></div></div></article><article class="card" id="doc-fnitin">
 <div class="thumb"><div class="badges"></div><img src="assets/thumbs/fnitin.jpg" alt="Preview of Foreign National &amp; ITIN Mortgage Guide" loading="lazy" width="480" height="320"></div>
 <div class="cbody"><h3>Foreign National &amp; ITIN Mortgage Guide</h3><p>Who qualifies for each loan type (Conventional, FHA, VA, USDA, ITIN and foreign national), the down payment and credit each one needs, and the documents to gather.</p>
-<div class="cact"><a class="btn sm golive" href="https://is.gd/ForeignNationalITIN" target="_blank" rel="noopener">See it live →</a><a class="lnk" href="https://jbarnes1960.github.io/guides/foreign-national-itin/Foreign-National-ITIN-Mortgage-Guide-James-Barnes.pdf" target="_blank" rel="noopener" download>Download PDF ↓</a></div></div></article></div></section><section class="sec"><h2><span class="ico" aria-hidden="true">📈</span>Market &amp; Rate Updates</h2><div class="grid"><article class="card" id="doc-mmm">
+<div class="cact"><a class="btn sm golive" href="https://is.gd/ForeignNationalITIN" target="_blank" rel="noopener">See it live →</a><a class="lnk" href="https://jbarnes1960.github.io/guides/foreign-national-itin/Foreign-National-ITIN-Mortgage-Guide-James-Barnes.pdf" target="_blank" rel="noopener" download>Download PDF ↓</a></div></div></article></div><p class="backtop"><a href="#top">Back to top ↑</a></p></section><section class="sec" id="market-rate-updates"><h2><span class="ico" aria-hidden="true">📈</span>Market &amp; Rate Updates</h2><div class="grid"><article class="card" id="doc-mmm">
 <div class="thumb"><div class="badges"></div><img src="assets/thumbs/mmm.jpg" alt="Preview of Master My Market" loading="lazy" width="480" height="320"></div>
 <div class="cbody"><h3>Master My Market</h3><p>A city guide by ZIP code with quarter-by-quarter trends in prices, inventory and days on market. Available for Austin, San Antonio, Colorado Springs, College Station, Denver, Houston, Dallas, Fort Worth and more.</p>
 <div class="cact"><a class="btn sm golive" href="https://jbarnes1960.github.io/master-my-market/" target="_blank" rel="noopener">See it live →</a></div></div></article><article class="card" id="doc-mms">
@@ -135,7 +143,7 @@ footer{background:linear-gradient(135deg,#071d42,#0b2a5b);border-top:4px solid #
 <div class="cact"><button type="button" class="btn sm sub" data-sub="rates">Subscribe</button></div></div></article><article class="card" id="doc-reloc">
 <div class="thumb"><div class="badges"></div><img src="assets/thumbs/reloc.jpg" alt="Preview of Relocation Comparison" loading="lazy" width="480" height="320"></div>
 <div class="cbody"><h3>Relocation Comparison</h3><p>Two cities compared side by side on home prices, taxes, insurance and cost of living. Use it for buyers relocating in or out.</p>
-<div class="cact"><a class="btn sm golive" href="https://jbarnes1960.github.io/relocation-compare/" target="_blank" rel="noopener">See it live →</a></div></div></article></div></section><section class="sec"><h2><span class="ico" aria-hidden="true">📋</span>Loan Programs &amp; Guidelines</h2><div class="grid"><article class="card" id="doc-uw">
+<div class="cact"><a class="btn sm golive" href="https://jbarnes1960.github.io/relocation-compare/" target="_blank" rel="noopener">See it live →</a></div></div></article></div><p class="backtop"><a href="#top">Back to top ↑</a></p></section><section class="sec" id="loan-programs-guidelines"><h2><span class="ico" aria-hidden="true">📋</span>Loan Programs &amp; Guidelines</h2><div class="grid"><article class="card" id="doc-uw">
 <div class="thumb"><div class="badges"></div><img src="assets/thumbs/uw.jpg" alt="Preview of 2-4 Family Guidelines" loading="lazy" width="480" height="320"></div>
 <div class="cbody"><h3>2-4 Family Guidelines</h3><p>How are guidelines different between agencies regarding 2-4 family homes? See how they compare.</p>
 <div class="cact"><a class="btn sm golive" href="https://jbarnes1960.github.io/2-4-family-guidelines/" target="_blank" rel="noopener">See it live →</a></div></div></article><article class="card" id="doc-condo">
@@ -150,7 +158,7 @@ footer{background:linear-gradient(135deg,#071d42,#0b2a5b);border-top:4px solid #
 <div class="cact"><button type="button" class="btn sm" data-order="Non-QM &amp; Investor Program Comparison">Order this</button><span class="bdg ord">Custom order</span></div></div></article><article class="card" id="doc-llc">
 <div class="thumb"><div class="badges"></div><img src="assets/thumbs/llc.jpg" alt="Preview of Closing in an LLC" loading="lazy" width="480" height="320"></div>
 <div class="cbody"><h3>Closing in an LLC</h3><p>What lenders require when a buyer wants to close in an LLC, and the documents to gather ahead of time.</p>
-<div class="cact"><button type="button" class="btn sm" data-order="Closing in an LLC">Order this</button><span class="bdg ord">Custom order</span></div></div></article></div></section><section class="sec"><h2><span class="ico" aria-hidden="true">📣</span>Marketing for You</h2><div class="grid"><article class="card" id="doc-welcome">
+<div class="cact"><button type="button" class="btn sm" data-order="Closing in an LLC">Order this</button><span class="bdg ord">Custom order</span></div></div></article></div><p class="backtop"><a href="#top">Back to top ↑</a></p></section><section class="sec" id="marketing-for-you"><h2><span class="ico" aria-hidden="true">📣</span>Marketing for You</h2><div class="grid"><article class="card" id="doc-welcome">
 <div class="thumb"><div class="badges"></div><img src="assets/thumbs/welcome.jpg" alt="Preview of New Agent Welcome Kit" loading="lazy" width="480" height="320"></div>
 <div class="cbody"><h3>New Agent Welcome Kit</h3><p>A welcome letter for new partner agents that explains the co-branded materials and how to request them.</p>
 <div class="cact"><a class="btn sm golive" href="https://jbarnes1960.github.io/agent-intake/welcome/" target="_blank" rel="noopener">See it live →</a></div></div></article><article class="card" id="doc-intake">
@@ -162,13 +170,13 @@ footer{background:linear-gradient(135deg,#071d42,#0b2a5b);border-top:4px solid #
 <div class="cact"><button type="button" class="btn sm" data-order="Social Media Ads">Order this</button><span class="bdg ord">Custom order</span></div></div></article><article class="card" id="doc-vww">
 <div class="thumb"><div class="badges"><span class="bdg subb">Subscribe</span></div><img src="assets/thumbs/vww.jpg?v=2" alt="Preview of Virus Watch Weekly" loading="lazy" width="480" height="320"></div>
 <div class="cbody"><h3>Virus Watch Weekly</h3><p>A weekly plain-English newsletter about new viruses and scams, and how to stay safe. Share it with your clients.</p>
-<div class="cact"><a class="btn sm sub" href="mailto:jbarnes@nexalending.com?subject=Subscribe%20Virus%20Watch%20Weekly&body=Please%20add%20me%20to%20Virus%20Watch%20Weekly.%0A%0AMy%20email%3A%20">Subscribe</a><a class="btn sm golive" href="https://is.gd/VirusWatch" target="_blank" rel="noopener">See it live →</a></div></div></article></div></section><section class="sec"><h2><span class="ico" aria-hidden="true">🛡️</span>Underwriting Help</h2><div class="grid"><article class="card" id="doc-ugs">
+<div class="cact"><a class="btn sm sub" href="mailto:jbarnes@nexalending.com?subject=Subscribe%20Virus%20Watch%20Weekly&body=Please%20add%20me%20to%20Virus%20Watch%20Weekly.%0A%0AMy%20email%3A%20">Subscribe</a><a class="btn sm golive" href="https://is.gd/VirusWatch" target="_blank" rel="noopener">See it live →</a></div></div></article></div><p class="backtop"><a href="#top">Back to top ↑</a></p></section><section class="sec" id="underwriting-help"><h2><span class="ico" aria-hidden="true">🛡️</span>Underwriting Help</h2><div class="grid"><article class="card" id="doc-ugs">
 <div class="thumb"><div class="badges"><span class="bdg live">Weekly alerts</span></div><div class="tcard q"><span>Underwriting Monitor Pro</span><small>Weekly underwriting change alerts</small></div></div>
 <div class="cbody"><h3>Underwriting Monitor Pro</h3><p>Sign up once and get notified every week of underwriting changes from all the agencies, so you and your buyers hear about new rules before they affect a deal.</p>
 <div class="cact"><a class="btn sm" href="https://under-guide-sync.base44.app/register" target="_blank" rel="noopener">Get weekly updates</a></div></div></article><article class="card" id="doc-uwq">
 <div class="thumb"><div class="badges"><span class="bdg ord">Ask James</span></div><div class="tcard q"><div class="qm">?</div><span>Have an Underwriting Question?</span><small>Ask James&#39;s team · answered by email</small></div></div>
 <div class="cbody"><h3>Have an Underwriting Question?</h3><p>Ask any loan guideline question, from credit and income to property type or a tricky scenario, and get a plain answer from James&#x27;s team.</p>
-<div class="cact"><button type="button" class="btn sm" data-order="Have an Underwriting Question?">Ask a question</button></div></div></article></div></section>
+<div class="cact"><button type="button" class="btn sm" data-order="Have an Underwriting Question?">Ask a question</button></div></div></article></div><p class="backtop"><a href="#top">Back to top ↑</a></p></section>
 <section id="subscribe"><div id="subwrap"><p class="eyebrow">Stay in the loop</p><h2>Subscribe to my newsletters</h2><p>Get these in your inbox on a regular schedule, ready to forward to your clients and sphere. Unsubscribe any time with a quick email.</p>
 <form id="sf" action="https://formsubmit.co/2229496f4e1e59c9dfced34e2da44cb7" method="POST">
 <input type="hidden" name="form_name" value="Newsletter Subscribe">
