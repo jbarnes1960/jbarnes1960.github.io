@@ -54,7 +54,7 @@ footer{background:#0b2a5b;color:#fff;padding:30px 0;margin-top:40px}.fwrap{displ
 header{background:radial-gradient(900px 400px at 85% -10%,rgba(242,183,5,.28),transparent 60%),radial-gradient(700px 380px at -10% 110%,rgba(90,150,255,.25),transparent 60%),linear-gradient(135deg,#071d42 0%,#0b2a5b 45%,#1a4fa0 100%);position:relative;overflow:hidden}
 header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#f2b705,#ffd965,#f2b705)}
 .eyebrow{display:inline-block;font-size:12px!important;letter-spacing:2px;text-transform:uppercase;font-weight:bold;color:#f2b705;margin:0 0 8px!important;opacity:1!important}
-.hero h1{font-size:54px;line-height:1.05}.gold{color:#f2b705}.hero p.value{font-size:22px;font-weight:bold;margin:0 0 10px;opacity:1}
+.hero-title{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;margin:0 0 10px}.hero-title h1{margin:0;flex:1 1 auto}.hero-title .hero-sub{flex:0 0 auto;white-space:nowrap;align-self:center}.hero h1{font-size:54px;line-height:1.05}.gold{color:#f2b705}.hero p.value{font-size:22px;font-weight:bold;margin:0 0 10px;opacity:1;max-width:100%}
 .btn{transition:transform .15s ease,box-shadow .15s ease,background .15s}.btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.18)}.btn.go{box-shadow:0 6px 18px rgba(242,183,5,.35)}
 .btn:focus-visible,.lnk:focus-visible,a:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
 .chips{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px}.chips li{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:6px 12px;font-size:13px}
@@ -70,7 +70,7 @@ header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;ba
 #order{border-top:5px solid #f2b705}
 footer{background:linear-gradient(135deg,#071d42,#0b2a5b);border-top:4px solid #f2b705}.ftag{font-size:22px;font-weight:bold;margin:0 0 18px;color:#fff}.legal{border-top:1px solid rgba(255,255,255,.18);padding-top:14px}
 @media (max-width:820px){.hero h1{font-size:40px}}
-@media (max-width:560px){.hero h1{font-size:34px}.hero p.value{font-size:18px}.chips li{font-size:12px}.ftag{font-size:18px}}
+@media (max-width:560px){.hero-title{flex-direction:column;align-items:flex-start;gap:10px}.hero-title .hero-sub{flex:0 0 auto}.hero h1{font-size:34px}.hero p.value{font-size:18px}.chips li{font-size:12px}.ftag{font-size:18px}}
 
 .cact .bdg{box-shadow:none;align-self:center}.btn.sm.golive{background:#0e7a4f;color:#fff}.btn.sm.golive:hover{background:#0b6641}
 .jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
@@ -85,10 +85,10 @@ footer{background:linear-gradient(135deg,#071d42,#0b2a5b);border-top:4px solid #
 </style></head><body id="top">
 <header><div class="wrap"><div class="top"><span class="logo"><img src="assets/nexa-logo.png" alt="Nexa Lending"></span>
 <div class="who"><div><b>James Barnes</b><span>Senior Loan Officer · NMLS&nbsp;215987</span><a class="who-tel" href="tel:+15122288124">(512) 228-8124</a></div><img src="assets/james-headshot.png" alt="James Barnes"></div></div>
-<div class="hero"><p class="eyebrow">For my realtor partners</p><h1>Realtor <span class="gold">Toolkit</span></h1>
-<p class="value">Close more deals with these <span class="gold">FREE</span> co-branded tools that make you look good.</p>
+<div class="hero"><p class="eyebrow">For my realtor partners</p><div class="hero-title"><h1>Realtor <span class="gold">Toolkit</span></h1><a class="btn alt hero-sub" href="#subscribe">Subscribe</a></div>
+<p class="value">Close more deals with these <span class="gold">FREE</span> co-branded tools that make you look&nbsp;good.</p>
 <p>CMAs, comps, net sheets, buyer kits, market guides, rate sheets and more, all made for you and co-branded with your name, photo and logo. Use the live tools any time, or pick a co-branded piece, tell me the property, and my team will get it to you.</p>
-<nav class="jump" aria-label="Toolkit sections"><a class="jmp" href="#listing-seller-tools"><span class="jico" aria-hidden="true">🏡</span>Listing &amp; Seller Tools</a><a class="jmp" href="#buyer-tools"><span class="jico" aria-hidden="true">🔑</span>Buyer Tools</a><a class="jmp" href="#market-rate-updates"><span class="jico" aria-hidden="true">📈</span>Market &amp; Rate Updates</a><a class="jmp" href="#loan-programs-guidelines"><span class="jico" aria-hidden="true">📋</span>Loan Programs &amp; Guidelines</a><a class="jmp" href="#marketing-for-you"><span class="jico" aria-hidden="true">📣</span>Marketing for You</a><a class="jmp" href="#underwriting-help"><span class="jico" aria-hidden="true">🛡️</span>Underwriting Help</a></nav><div class="btns"><a class="btn alt" href="#subscribe">Subscribe</a></div>
+<nav class="jump" aria-label="Toolkit sections"><a class="jmp" href="#listing-seller-tools"><span class="jico" aria-hidden="true">🏡</span>Listing &amp; Seller Tools</a><a class="jmp" href="#buyer-tools"><span class="jico" aria-hidden="true">🔑</span>Buyer Tools</a><a class="jmp" href="#market-rate-updates"><span class="jico" aria-hidden="true">📈</span>Market &amp; Rate Updates</a><a class="jmp" href="#loan-programs-guidelines"><span class="jico" aria-hidden="true">📋</span>Loan Programs &amp; Guidelines</a><a class="jmp" href="#marketing-for-you"><span class="jico" aria-hidden="true">📣</span>Marketing for You</a><a class="jmp" href="#underwriting-help"><span class="jico" aria-hidden="true">🛡️</span>Underwriting Help</a></nav>
 <ul class="chips"><li>⚡ Live tools, open any time</li><li>🎨 Co-branded with you</li><li>📬 Newsletters to forward</li><li>🛡️ Underwriting help</li></ul></div></div></header>
 <main class="wrap">
 <div class="how"><div><b><i>1</i>Pick</b><p>Browse below. Live tools open right away; property- and client-specific pieces have an Order this button.</p></div><div><b><i>2</i>Order</b><p>Fill out the short order form with the property address and any details.</p><a class="btn go how-order" href="#order">Order a Document</a></div><div><b><i>3</i>Receive</b><p>It's built, co-branded and emailed to you. Need changes? Just reply with a quick email.</p></div></div>
