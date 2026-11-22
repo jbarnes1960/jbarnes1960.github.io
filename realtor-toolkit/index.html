@@ -21,7 +21,7 @@ header{background:linear-gradient(135deg,#0b2a5b,#1a4fa0);color:#fff}
 .btn.sm{background:#1a4fa0;color:#fff;padding:8px 14px;font-size:13px}
 .how{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:-22px auto 10px;position:relative}
 .how div{background:#fff;border-radius:10px;padding:16px 18px;box-shadow:0 4px 14px rgba(11,42,91,.1)}.how b{color:#1a4fa0;font-size:13px;letter-spacing:1px;text-transform:uppercase}.how p{margin:6px 0 0;font-size:14px}.how .how-order{margin-top:12px;padding:10px 16px;font-size:14px}
-.sec,#subscribe,#order{scroll-margin-top:24px}.sec h2{color:#0b2a5b;font-size:24px;margin:34px 0 14px;padding-bottom:6px;border-bottom:3px solid #d6dce8}
+.sec,#subscribe,#order,#builder-report{scroll-margin-top:24px}.sec h2{color:#0b2a5b;font-size:24px;margin:34px 0 14px;padding-bottom:6px;border-bottom:3px solid #d6dce8}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
 .card{background:#fff;border:1px solid #d6dce8;border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
 .credit{display:block;font-size:11px;color:#6b7a8f;margin:-6px 0 10px;line-height:1.35}.credit a{color:#6b7a8f}
@@ -33,6 +33,10 @@ header{background:linear-gradient(135deg,#0b2a5b,#1a4fa0);color:#fff}
 .nl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}.nl label.opt{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #b9c3d6;border-radius:8px;padding:12px;font-weight:normal;color:#1d2a3a;font-size:14px;cursor:pointer;margin:0}.nl input[type=checkbox]{width:18px;height:18px;margin-top:2px;flex:0 0 auto}.nl b{color:#0b2a5b;display:block}.nl .vw{display:flex;flex-direction:column;gap:8px;background:#fff;border:1px solid #b9c3d6;border-radius:8px;padding:12px;font-size:14px}.nl .vw .btn{align-self:flex-start}#subthanks{display:none;text-align:center;padding:16px 6px}#suberr{display:none;color:#c0392b;margin-top:10px;font-size:14px}.lnk{font-size:13px;font-weight:bold;text-decoration:none}
 #order{background:#fff;border-radius:12px;border:1px solid #d6dce8;padding:26px;margin:40px 0;box-shadow:0 4px 14px rgba(11,42,91,.08)}
 #order h2{margin:0 0 6px;color:#0b2a5b;font-size:26px}#order>p{margin:0 0 18px;color:#55657a}
+#builder-report{background:#fff;border-radius:12px;border:1px solid #d6dce8;border-top:5px solid #f2b705;padding:26px;margin:40px 0;box-shadow:0 4px 14px rgba(11,42,91,.08)}
+#builder-report h2{margin:0 0 6px;color:#0b2a5b;font-size:26px}#builder-report>p{margin:0 0 18px;color:#55657a}
+#bithanks{display:none;text-align:center;padding:30px 10px}#bithanks h2{font-size:28px}#bierr{display:none;color:#c0392b;margin-top:10px;font-size:14px}
+.btn.sm.go{background:#f2b705;color:#0b2a5b}.btn.sm.go:hover{background:#ffd965}
 .fg{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}
 label{display:block;font-size:13px;font-weight:bold;color:#0b2a5b;margin-bottom:5px}
 input,select,textarea{width:100%;padding:11px 12px;border:1px solid #b9c3d6;border-radius:7px;font-size:15px;font-family:inherit;background:#fff}
@@ -48,7 +52,7 @@ footer{background:#0b2a5b;color:#fff;padding:30px 0;margin-top:40px}.fwrap{displ
 .fwho{display:flex;gap:14px;align-items:center}.fwho img{width:72px;height:72px;border-radius:50%;border:2px solid #fff}.fwho p{margin:2px 0;font-size:14px}.fwho a{color:#fff}
 .legal{font-size:11px;opacity:.75;margin-top:16px}
 @media (max-width:820px){.docs{grid-template-columns:1fr 1fr}.nl{grid-template-columns:1fr}.how{grid-template-columns:1fr;margin-top:-18px}.how .how-order{width:100%;text-align:center;box-sizing:border-box}.hero h1{font-size:34px}}
-@media (max-width:560px){.docs{grid-template-columns:1fr}#subscribe{padding:18px}.who{gap:8px}.who img{width:48px;height:48px}.who b{font-size:13px}.who span{font-size:11px}.who-tel{font-size:12px;padding:2px 0}.hero h1{font-size:30px}.hero p{font-size:16px}.fg{grid-template-columns:1fr}#order{padding:18px}.btn{flex:1 1 auto;text-align:center}.btn.sm{flex:0 0 auto}.how .how-order{width:100%;text-align:center;box-sizing:border-box}}
+@media (max-width:560px){.docs{grid-template-columns:1fr}#subscribe{padding:18px}.who{gap:8px}.who img{width:48px;height:48px}.who b{font-size:13px}.who span{font-size:11px}.who-tel{font-size:12px;padding:2px 0}.hero h1{font-size:30px}.hero p{font-size:16px}.fg{grid-template-columns:1fr}#order,#builder-report{padding:18px}.btn{flex:1 1 auto;text-align:center}.btn.sm{flex:0 0 auto}.how .how-order{width:100%;text-align:center;box-sizing:border-box}}
 
 /* --- pizazz --- */
 header{background:radial-gradient(900px 400px at 85% -10%,rgba(242,183,5,.28),transparent 60%),radial-gradient(700px 380px at -10% 110%,rgba(90,150,255,.25),transparent 60%),linear-gradient(135deg,#071d42 0%,#0b2a5b 45%,#1a4fa0 100%);position:relative;overflow:hidden}
@@ -88,7 +92,7 @@ footer{background:linear-gradient(135deg,#071d42,#0b2a5b);border-top:4px solid #
 <div class="hero"><p class="eyebrow">For my realtor partners</p><div class="hero-title"><h1>Realtor <span class="gold">Toolkit</span></h1><a class="btn alt hero-sub" href="#subscribe">Subscribe</a></div>
 <p class="value">Close more deals with these <span class="gold">FREE</span> co-branded tools that make you look&nbsp;good.</p>
 <p>CMAs, comps, net sheets, buyer kits, market guides, rate sheets and more, all made for you and co-branded with your name, photo and logo. Use the live tools any time, or pick a co-branded piece, tell me the property, and my team will get it to you.</p>
-<nav class="jump" aria-label="Toolkit sections"><a class="jmp" href="#listing-seller-tools"><span class="jico" aria-hidden="true">🏡</span>Listing &amp; Seller Tools</a><a class="jmp" href="#buyer-tools"><span class="jico" aria-hidden="true">🔑</span>Buyer Tools</a><a class="jmp" href="#market-rate-updates"><span class="jico" aria-hidden="true">📈</span>Market &amp; Rate Updates</a><a class="jmp" href="#loan-programs-guidelines"><span class="jico" aria-hidden="true">📋</span>Loan Programs &amp; Guidelines</a><a class="jmp" href="#marketing-for-you"><span class="jico" aria-hidden="true">📣</span>Marketing for You</a><a class="jmp" href="#underwriting-help"><span class="jico" aria-hidden="true">🛡️</span>Underwriting Help</a></nav>
+<nav class="jump" aria-label="Toolkit sections"><a class="jmp" href="#listing-seller-tools"><span class="jico" aria-hidden="true">🏡</span>Listing &amp; Seller Tools</a><a class="jmp" href="#buyer-tools"><span class="jico" aria-hidden="true">🔑</span>Buyer Tools</a><a class="jmp" href="#new-construction-builder-tools"><span class="jico" aria-hidden="true">🏗️</span>New Construction / Builder Tools</a><a class="jmp" href="#market-rate-updates"><span class="jico" aria-hidden="true">📈</span>Market &amp; Rate Updates</a><a class="jmp" href="#loan-programs-guidelines"><span class="jico" aria-hidden="true">📋</span>Loan Programs &amp; Guidelines</a><a class="jmp" href="#marketing-for-you"><span class="jico" aria-hidden="true">📣</span>Marketing for You</a><a class="jmp" href="#underwriting-help"><span class="jico" aria-hidden="true">🛡️</span>Underwriting Help</a></nav>
 <ul class="chips"><li>⚡ Live tools, open any time</li><li>🎨 Co-branded with you</li><li>📬 Newsletters to forward</li><li>🛡️ Underwriting help</li></ul></div></div></header>
 <main class="wrap">
 <div class="how"><div><b><i>1</i>Pick</b><p>Browse below. Live tools open right away; property- and client-specific pieces have an Order this button.</p></div><div><b><i>2</i>Order</b><p>Fill out the short order form with the property address and any details.</p><a class="btn go how-order" href="#order">Order a Document</a></div><div><b><i>3</i>Receive</b><p>It's built, co-branded and emailed to you. Need changes? Just reply with a quick email.</p></div></div>
@@ -131,7 +135,10 @@ footer{background:linear-gradient(135deg,#071d42,#0b2a5b);border-top:4px solid #
 <div class="cact"><a class="btn sm golive" href="https://jbarnes1960.github.io/intake/" target="_blank" rel="noopener">See it live →</a></div></div></article><article class="card" id="doc-fnitin">
 <div class="thumb"><div class="badges"></div><img src="assets/thumbs/fnitin.jpg" alt="Preview of Foreign National &amp; ITIN Mortgage Guide" loading="lazy" width="480" height="320"></div>
 <div class="cbody"><h3>Foreign National &amp; ITIN Mortgage Guide</h3><p>Who qualifies for each loan type (Conventional, FHA, VA, USDA, ITIN and foreign national), the down payment and credit each one needs, and the documents to gather.</p>
-<div class="cact"><a class="btn sm golive" href="https://is.gd/ForeignNationalITIN" target="_blank" rel="noopener">See it live →</a><a class="lnk" href="https://jbarnes1960.github.io/guides/foreign-national-itin/Foreign-National-ITIN-Mortgage-Guide-James-Barnes.pdf" target="_blank" rel="noopener" download>Download PDF ↓</a></div></div></article></div><p class="backtop"><a href="#top">Back to top ↑</a></p></section><section class="sec" id="market-rate-updates"><h2><span class="ico" aria-hidden="true">📈</span>Market &amp; Rate Updates</h2><div class="grid"><article class="card" id="doc-mmm">
+<div class="cact"><a class="btn sm golive" href="https://is.gd/ForeignNationalITIN" target="_blank" rel="noopener">See it live →</a><a class="lnk" href="https://jbarnes1960.github.io/guides/foreign-national-itin/Foreign-National-ITIN-Mortgage-Guide-James-Barnes.pdf" target="_blank" rel="noopener" download>Download PDF ↓</a></div></div></article></div><p class="backtop"><a href="#top">Back to top ↑</a></p></section><section class="sec" id="new-construction-builder-tools"><h2><span class="ico" aria-hidden="true">🏗️</span>New Construction / Builder Tools</h2><div class="grid"><article class="card" id="doc-builder-incentives">
+<div class="thumb"><div class="badges"><span class="bdg ord">Weekly</span></div><img src="assets/thumbs/builder-incentives.jpg" alt="Preview of Builder Incentives Report: Quick Move-In Homes" loading="lazy" width="480" height="320"></div>
+<div class="cbody"><h3>Builder Incentives Report: Quick Move-In Homes</h3><p>A weekly co-branded report of quick move-in new-construction homes where builders are offering price cuts, rate buydowns or flex cash and closing credits, with deadlines, required lenders and sales contacts. It comes as a PDF plus a homes spreadsheet, and I refresh it and email it every Monday, co-branded with your name, brokerage, photo and colors.</p>
+<div class="cact"><a class="btn sm go" href="#builder-report">Request for my city</a><a class="btn sm golive" href="https://is.gd/lxmwyi" target="_blank" rel="noopener">See a sample →</a><a class="lnk" href="https://is.gd/lxmwyi" target="_blank" rel="noopener">Download sample PDF ↓</a></div></div></article></div><p class="backtop"><a href="#top">Back to top ↑</a></p></section><section class="sec" id="market-rate-updates"><h2><span class="ico" aria-hidden="true">📈</span>Market &amp; Rate Updates</h2><div class="grid"><article class="card" id="doc-mmm">
 <div class="thumb"><div class="badges"></div><img src="assets/thumbs/mmm.jpg" alt="Preview of Master My Market" loading="lazy" width="480" height="320"></div>
 <div class="cbody"><h3>Master My Market</h3><p>A city guide by ZIP code with quarter-by-quarter trends in prices, inventory and days on market. Available for Austin, San Antonio, Colorado Springs, College Station, Denver, Houston, Dallas, Fort Worth and more.</p>
 <div class="cact"><a class="btn sm golive" href="https://jbarnes1960.github.io/master-my-market/" target="_blank" rel="noopener">See it live →</a></div></div></article><article class="card" id="doc-mms">
@@ -177,6 +184,53 @@ footer{background:linear-gradient(135deg,#071d42,#0b2a5b);border-top:4px solid #
 <div class="thumb"><div class="badges"><span class="bdg ord">Ask James</span></div><div class="tcard q"><div class="qm">?</div><span>Have an Underwriting Question?</span><small>Ask James&#39;s team · answered by email</small></div></div>
 <div class="cbody"><h3>Have an Underwriting Question?</h3><p>Ask any loan guideline question, from credit and income to property type or a tricky scenario, and get a plain answer from James&#x27;s team.</p>
 <div class="cact"><button type="button" class="btn sm" data-order="Have an Underwriting Question?">Ask a question</button></div></div></article></div><p class="backtop"><a href="#top">Back to top ↑</a></p></section>
+
+<section id="builder-report"><div id="bifwrap">
+<p class="eyebrow" style="color:#1a4fa0">New construction</p>
+<h2>Request a Builder Incentives Report for your city</h2>
+<p>Tell me the city or area you work in, and I will co-brand a weekly report of quick move-in new-construction homes — price cuts, rate buydowns, flex cash and closing credits, with deadlines, required lenders and sales contacts. You will get a PDF and a homes spreadsheet, refreshed and emailed every Monday. <a href="https://is.gd/lxmwyi" target="_blank" rel="noopener">See a sample</a> (example market, with your name and logo shown as placeholders).</p>
+<form id="bif" action="https://formsubmit.co/2229496f4e1e59c9dfced34e2da44cb7" method="POST">
+<input type="hidden" name="form_name" value="Builder Incentives Report Request">
+<input type="hidden" name="_subject" id="bisubj" value="Builder Incentives Report Request">
+<input type="hidden" name="_cc" value="jbarnes@nexalending.com">
+<input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://jbarnes1960.github.io/realtor-toolkit/?builder=1#builder-report">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<div class="fg">
+<div><label for="bi_name">Your name <span class="req">*</span></label><input id="bi_name" name="name" required autocomplete="name"></div>
+<div><label for="bi_email">Email <span class="req">*</span></label><input id="bi_email" type="email" name="email" required autocomplete="email"></div>
+<div><label for="bi_phone">Phone</label><input id="bi_phone" type="tel" name="phone" autocomplete="tel"></div>
+<div><label for="bi_brk">Brokerage</label><input id="bi_brk" name="brokerage" autocomplete="organization"></div>
+<div><label for="bi_lic">License #</label><input id="bi_lic" name="license" autocomplete="off"></div>
+<div><label for="bi_city">City or area <span class="req">*</span></label>
+<select id="bi_city" name="city_area" required>
+<option value="">Choose a city or area</option>
+<option value="Colorado Springs">Colorado Springs</option>
+<option value="Monument/Falcon/Peyton">Monument/Falcon/Peyton</option>
+<option value="Denver metro">Denver metro</option>
+<option value="Austin">Austin</option>
+<option value="Round Rock/Georgetown">Round Rock/Georgetown</option>
+<option value="Manor/Elgin/Bastrop">Manor/Elgin/Bastrop</option>
+<option value="Temple/Belton">Temple/Belton</option>
+<option value="Killeen/Harker Heights">Killeen/Harker Heights</option>
+<option value="San Marcos/Kyle/Buda">San Marcos/Kyle/Buda</option>
+<option value="Houston">Houston</option>
+<option value="Dallas">Dallas</option>
+<option value="Fort Worth">Fort Worth</option>
+<option value="San Antonio">San Antonio</option>
+<option value="Other city">Other city</option>
+</select></div>
+<div class="full" id="bi_other_wrap" style="display:none"><label for="bi_other">Other city <span class="req">*</span></label><input id="bi_other" name="other_city" placeholder="City, state or area" autocomplete="address-level2"></div>
+<div><label for="bi_colors">Preferred brand colors</label><input id="bi_colors" name="brand_colors" placeholder="e.g. navy and gold"></div>
+<div><label for="bi_logo">Logo or headshot link</label><input id="bi_logo" name="logo_headshot_link" type="url" placeholder="https://" autocomplete="url"></div>
+<div class="full"><label for="bi_interest">Price range or builders of interest</label><textarea id="bi_interest" name="price_range_or_builders" placeholder="e.g. $300k–$500k, or D.R. Horton, Lennar, local custom builders" style="min-height:80px"></textarea></div>
+</div>
+<button class="btn submit" type="submit" id="bisb">Request my city report</button>
+<div id="bierr"></div>
+<p class="note">Your request goes straight to James's team. Prefer to talk? <a href="tel:+15122288124">Call James at (512) 228-8124</a> or <a href="mailto:jbarnes@nexalending.com">email jbarnes@nexalending.com</a>.</p>
+</form></div>
+<div id="bithanks"><h2>Thank you! 🎉</h2><p>Your Builder Incentives Report request is in. James's team will co-brand it for your city and email the first report to you soon.<br>Need to change anything? Just reply to that email or <a href="mailto:jbarnes@nexalending.com">email James</a>.</p><p><button class="btn sm" type="button" id="biagain">Request another city</button></p></div>
+</section>
 <section id="subscribe"><div id="subwrap"><p class="eyebrow">Stay in the loop</p><h2>Subscribe to my newsletters</h2><p>Get these in your inbox on a regular schedule, ready to forward to your clients and sphere. Unsubscribe any time with a quick email.</p>
 <form id="sf" action="https://formsubmit.co/2229496f4e1e59c9dfced34e2da44cb7" method="POST">
 <input type="hidden" name="form_name" value="Newsletter Subscribe">
@@ -215,7 +269,7 @@ footer{background:linear-gradient(135deg,#071d42,#0b2a5b);border-top:4px solid #
 <div><label for="f_brk">Brokerage</label><input id="f_brk" name="brokerage" autocomplete="organization"></div>
 <fieldset class="full docbox" id="f_doc"><legend>Documents <span class="req">*</span> <span class="hint">Tick one or more</span></legend>
 <label class="dc uwqbox"><input type="checkbox" name="doc_uwq" value="Have an Underwriting Question?" id="d_uwq"><span><b>Have an Underwriting Question?</b> Ask instead of ordering. This clears any documents you've ticked.</span></label>
-<div class="docs"><div class="dgh">Listing &amp; Seller Tools</div><label class="dc"><input type="checkbox" name="doc_cma" value="Nexa Standard CMA" data-k="cma"><span>Nexa Standard CMA</span></label><label class="dc"><input type="checkbox" name="doc_comps" value="Comps Report" data-k="comps"><span>Comps Report</span></label><label class="dc"><input type="checkbox" name="doc_why" value="Why Isn&#x27;t My House Selling?" data-k="why"><span>Why Isn&#x27;t My House Selling?</span></label><label class="dc"><input type="checkbox" name="doc_bbs" value="Buy Before You Sell Kit" data-k="bbs"><span>Buy Before You Sell Kit</span></label><label class="dc"><input type="checkbox" name="doc_flyers" value="Listing Flyers" data-k="flyers"><span>Listing Flyers</span></label><div class="dgh">Buyer Tools</div><label class="dc"><input type="checkbox" name="doc_buyers" value="Buyer&#x27;s Kit" data-k="buyers"><span>Buyer&#x27;s Kit</span></label><label class="dc"><input type="checkbox" name="doc_lc" value="Loan Estimate / Loan Comparison" data-k="lc"><span>Loan Estimate / Loan Comparison</span></label><label class="dc"><input type="checkbox" name="doc_dpa" value="Down Payment Assistance Programs" data-k="dpa"><span>Down Payment Assistance Programs</span></label><div class="dgh">Loan Programs &amp; Guidelines</div><label class="dc"><input type="checkbox" name="doc_nonqm" value="Non-QM &amp; Investor Program Comparison" data-k="nonqm"><span>Non-QM &amp; Investor Program Comparison</span></label><label class="dc"><input type="checkbox" name="doc_llc" value="Closing in an LLC" data-k="llc"><span>Closing in an LLC</span></label><div class="dgh">Marketing for You</div><label class="dc"><input type="checkbox" name="doc_ads" value="Social Media Ads" data-k="ads"><span>Social Media Ads</span></label><div class="dgh">Other</div><label class="dc"><input type="checkbox" name="doc_other" value="Something else (describe in notes)" data-k="other"><span>Something else (describe in notes)</span></label></div></fieldset>
+<div class="docs"><div class="dgh">Listing &amp; Seller Tools</div><label class="dc"><input type="checkbox" name="doc_cma" value="Nexa Standard CMA" data-k="cma"><span>Nexa Standard CMA</span></label><label class="dc"><input type="checkbox" name="doc_comps" value="Comps Report" data-k="comps"><span>Comps Report</span></label><label class="dc"><input type="checkbox" name="doc_why" value="Why Isn&#x27;t My House Selling?" data-k="why"><span>Why Isn&#x27;t My House Selling?</span></label><label class="dc"><input type="checkbox" name="doc_bbs" value="Buy Before You Sell Kit" data-k="bbs"><span>Buy Before You Sell Kit</span></label><label class="dc"><input type="checkbox" name="doc_flyers" value="Listing Flyers" data-k="flyers"><span>Listing Flyers</span></label><div class="dgh">Buyer Tools</div><label class="dc"><input type="checkbox" name="doc_buyers" value="Buyer&#x27;s Kit" data-k="buyers"><span>Buyer&#x27;s Kit</span></label><label class="dc"><input type="checkbox" name="doc_lc" value="Loan Estimate / Loan Comparison" data-k="lc"><span>Loan Estimate / Loan Comparison</span></label><label class="dc"><input type="checkbox" name="doc_dpa" value="Down Payment Assistance Programs" data-k="dpa"><span>Down Payment Assistance Programs</span></label><div class="dgh">New Construction / Builder Tools</div><label class="dc"><input type="checkbox" name="doc_builder_incentives" value="Builder Incentives Report (co-branded, weekly)" data-k="builder-incentives"><span>Builder Incentives Report (co-branded, weekly)</span></label><div class="dgh">Loan Programs &amp; Guidelines</div><label class="dc"><input type="checkbox" name="doc_nonqm" value="Non-QM &amp; Investor Program Comparison" data-k="nonqm"><span>Non-QM &amp; Investor Program Comparison</span></label><label class="dc"><input type="checkbox" name="doc_llc" value="Closing in an LLC" data-k="llc"><span>Closing in an LLC</span></label><div class="dgh">Marketing for You</div><label class="dc"><input type="checkbox" name="doc_ads" value="Social Media Ads" data-k="ads"><span>Social Media Ads</span></label><div class="dgh">Other</div><label class="dc"><input type="checkbox" name="doc_other" value="Something else (describe in notes)" data-k="other"><span>Something else (describe in notes)</span></label></div></fieldset>
 <input type="hidden" name="documents" id="f_docs" value="">
 <div class="full"><label for="f_addr">Property address <span class="req" id="addr_req">*</span><span id="addr_opt" style="display:none;font-weight:normal;color:#55657a"> (optional)</span></label><input id="f_addr" name="property_address" placeholder="Street, city, state, ZIP" autocomplete="street-address"></div>
 <div class="full"><label for="f_notes"><span id="notes_lbl">Notes / details</span> <span class="req" id="notes_req" style="display:none">*</span></label><textarea id="f_notes" name="notes" placeholder="Client name, price, loan type, deadline, co-branding notes, anything that helps. For an underwriting question, type your question here."></textarea></div>
@@ -294,6 +348,26 @@ f.addEventListener('submit',function(e){
  fetch('https://formsubmit.co/ajax/2229496f4e1e59c9dfced34e2da44cb7',{method:'POST',headers:{'Accept':'application/json'},body:(function(){var fd=new FormData(f);boxes.concat([uq]).forEach(function(c){fd.delete(c.name)});return fd;})()})
  .then(function(r){return r.json()}).then(function(d){if(d&&(d.success===true||d.success==='true')){sendFormLead(isQ()?'Have an Underwriting Question?':'Realtor Toolkit Order',{name:(document.getElementById('f_name').value||''),email:(document.getElementById('f_email').value||''),phone:(document.getElementById('f_phone').value||''),address:(document.getElementById('f_addr').value||'')});thanks();}else throw new Error(d&&d.message);})
  .catch(function(){sb.disabled=false;sb.textContent=isQ()?'Send my question':'Send my order';er.innerHTML='Sorry, that didn\'t go through. Please try again, or email your request to <a href="mailto:jbarnes@nexalending.com">jbarnes@nexalending.com</a>.';er.style.display='block';});
+});
+var bif=document.getElementById('bif'), biCity=document.getElementById('bi_city'), biOther=document.getElementById('bi_other'), biOtherWrap=document.getElementById('bi_other_wrap');
+function biCityVal(){var v=(biCity.value||'').trim(); if(v==='Other city')v=(biOther.value||'').trim(); return v;}
+function biToggleOther(){var o=biCity.value==='Other city'; biOtherWrap.style.display=o?'block':'none'; biOther.required=o; if(!o)biOther.value='';}
+function biSubj(){document.getElementById('bisubj').value='Builder Incentives Report Request: '+(biCityVal()||'City')+' – '+(document.getElementById('bi_name').value||'Realtor');}
+biCity.addEventListener('change',function(){biToggleOther();biSubj();});
+biOther.addEventListener('input',biSubj); document.getElementById('bi_name').addEventListener('input',biSubj);
+function biThanks(){document.getElementById('bifwrap').style.display='none';document.getElementById('bithanks').style.display='block';document.getElementById('builder-report').scrollIntoView();}
+if(/[?&]builder=1/.test(location.search))biThanks();
+if(/[?&]doc=builder-incentives\b/.test(location.search)){document.getElementById('builder-report').scrollIntoView();setTimeout(function(){document.getElementById('bi_name').focus()},400);}
+document.getElementById('biagain').onclick=function(){bif.reset();biToggleOther();biSubj();document.getElementById('bierr').style.display='none';document.getElementById('bithanks').style.display='none';document.getElementById('bifwrap').style.display='block';};
+bif.addEventListener('submit',function(e){
+ biSubj();
+ var er=document.getElementById('bierr');
+ if(biCity.value==='Other city'&&!String(biOther.value||'').trim()){e.preventDefault();er.textContent='Please enter your city or area.';er.style.display='block';biOther.focus();return;}
+ if(!window.fetch||!window.FormData)return; e.preventDefault();
+ var sb=document.getElementById('bisb');sb.disabled=true;sb.textContent='Sending…';er.style.display='none';
+ fetch('https://formsubmit.co/ajax/2229496f4e1e59c9dfced34e2da44cb7',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(bif)})
+ .then(function(r){return r.json()}).then(function(d){if(d&&(d.success===true||d.success==='true')){sendFormLead('Builder Incentives Report Request',{name:(document.getElementById('bi_name').value||''),email:(document.getElementById('bi_email').value||''),phone:(document.getElementById('bi_phone').value||''),address:biCityVal()});biThanks();}else throw new Error(d&&d.message);})
+ .catch(function(){sb.disabled=false;sb.textContent='Request my city report';er.innerHTML='Sorry, that didn\'t go through. Please try again, or email <a href="mailto:jbarnes@nexalending.com">jbarnes@nexalending.com</a>.';er.style.display='block';});
 });
 })();
 </script></body></html>
