@@ -138,7 +138,8 @@ button:disabled{opacity:.65;cursor:wait}
     <div><label for="instagram">Instagram</label><input id="instagram" name="instagram" type="text" placeholder="@handle or URL"></div>
     <div><label for="linkedin">LinkedIn</label><input id="linkedin" name="linkedin" type="text" placeholder="URL or username"></div>
     <div><label for="tiktok">TikTok</label><input id="tiktok" name="tiktok" type="text" placeholder="@handle"></div>
-    <div class="full"><label for="youtube">YouTube</label><input id="youtube" name="youtube" type="text" placeholder="Channel URL or @handle"></div>
+    <div><label for="youtube">YouTube</label><input id="youtube" name="youtube" type="text" placeholder="Channel URL or @handle"></div>
+    <div><label for="x_twitter">X (Twitter)</label><input id="x_twitter" name="x_twitter" type="text" placeholder="@handle or URL"></div>
    </div>
   </div>
 
@@ -341,6 +342,7 @@ function collect(){
   linkedin:$('linkedin').value.trim(),
   tiktok:$('tiktok').value.trim(),
   youtube:$('youtube').value.trim(),
+  x_twitter:$('x_twitter').value.trim(),
   primary_color:normHex($('primary_color_hex').value)||$('primary_color').value,
   secondary_color:normHex($('secondary_color_hex').value)||$('secondary_color').value,
   fonts_tagline:$('fonts_tagline').value.trim(),
@@ -396,6 +398,7 @@ function buildMessage(p){
  L.push('LinkedIn: '+(p.linkedin||'-'));
  L.push('TikTok: '+(p.tiktok||'-'));
  L.push('YouTube: '+(p.youtube||'-'));
+ L.push('X (Twitter): '+(p.x_twitter||'-'));
  L.push('');
  L.push('BRAND');
  L.push('Primary color: '+p.primary_color);
@@ -414,6 +417,47 @@ function buildMessage(p){
  L.push('');
  L.push('Consent to use on co-branded marketing: '+p.consent);
  return L.join('\n');
+}
+
+// CodeFreeForm rejects submissions whose message contains URLs
+// ("Links are not allowed in the message"). Encode them so James can
+// still read the links, and attach the raw URLs as co-brand-links.txt.
+function encodeUrlToken(u){
+  var suffix='';
+  u=String(u||'').replace(/[),.;:!?]+$/g,function(p){suffix=p;return '';});
+  u=u.replace(/^https?:\/\//i,'');
+  return u.replace(/\./g,' [dot] ')+suffix;
+}
+function encodeLinksForCff(text){
+  var re=/(https?:\/\/[^\s<>"']+)|((?:www\.)[^\s<>"']+)|\b((?:[a-z0-9-]+\.)+(?:com|net|org|io|co|us|biz|info|me|tv|cc|ly|app|dev|ai|edu|gov|xyz)(?:\/[^\s<>"']*)?)/gi;
+  return String(text==null?'':text).replace(re,function(m, _a,_b,_c, offset, str){
+    if(offset>0 && str.charAt(offset-1)==='@') return m; // leave email domains alone
+    return encodeUrlToken(m);
+  });
+}
+function linkFields(p){
+  return [
+    ['Website', p.website],
+    ['Facebook', p.facebook],
+    ['Instagram', p.instagram],
+    ['LinkedIn', p.linkedin],
+    ['TikTok', p.tiktok],
+    ['YouTube', p.youtube],
+    ['X (Twitter)', p.x_twitter]
+  ];
+}
+function buildLinksTxt(p){
+  var L=['Agent Co-Brand Intake — website and social links','Raw URLs are in this file because CodeFreeForm cannot accept links in the email body.','Submitted: '+new Date().toLocaleString('en-US',{timeZone:'America/Denver'})+' MT','Agent: '+(p.display_name||p.full_name||''),''];
+  var any=false;
+  linkFields(p).forEach(function(r){
+    if(r[1]){ L.push(r[0]+': '+r[1]); any=true; }
+  });
+  return any?L.join('\n')+'\n':'';
+}
+function attachLinksTxt(fd, p){
+  var txt=buildLinksTxt(p);
+  if(!txt) return;
+  fd.append('attachment', new Blob([txt],{type:'text/plain'}), 'co-brand-links.txt');
 }
 
 function appendFields(fd, p){
@@ -457,8 +501,13 @@ function deliver(p){
  fd.append('access_key', BACKUP_KEY);
  fd.append('email', validEmail(p.email)?p.email:NOTIFY_EMAIL);
  fd.append('subject', 'New Agent Co-Brand Intake – '+(p.display_name||p.full_name||'(no name)'));
- fd.append('message', buildMessage(p).replace(/\b(?:https?:\/\/|www\.)\S+/gi,'[link omitted]'));
- appendFields(fd, {
+ var cffMsg=encodeLinksForCff(buildMessage(p));
+ var linksTxt=buildLinksTxt(p);
+ if(linksTxt){
+  cffMsg+='\n\nWebsite and social links are written with [dot] so they arrive intact. The original URLs are also attached as co-brand-links.txt.';
+ }
+ fd.append('message', cffMsg);
+ var cffFields={
   'Form':'Agent Co-Brand Intake',
   'Name':p.full_name,
   'Display name':p.display_name,
@@ -469,10 +518,13 @@ function deliver(p){
   'Preferred contact':p.preferred_contact,
   'Primary color':p.primary_color,
   'Secondary color':p.secondary_color,
-  'Markets':p.markets,
+  'Markets':encodeLinksForCff(p.markets||''),
   'Consent':p.consent
- });
+ };
+ linkFields(p).forEach(function(r){ if(r[1]) cffFields[r[0]]=encodeLinksForCff(r[1]); });
+ appendFields(fd, cffFields);
  attachFiles(fd);
+ attachLinksTxt(fd, p);
  return postFormData(BACKUP_ENDPOINT, fd, 45000).then(function(d){
    if(d && d.success===false) throw new Error((d&&d.message)||'backup rejected');
    return {success:true, via:'codefreeform', attachments:d&&d.attachments};
@@ -489,6 +541,7 @@ function deliver(p){
    fs.append('message', buildMessage(p));
    appendFields(fs, p);
    attachFiles(fs);
+   attachLinksTxt(fs, p);
    return postFormData(FORM_ENDPOINT, fs, 45000).then(function(d){
      if(!(d && (d.success===true || d.success==='true'))) throw new Error((d&&d.message)||'formsubmit not accepted');
      return {success:true, via:'formsubmit'};
