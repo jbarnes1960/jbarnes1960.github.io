@@ -87,3 +87,9 @@ body.v2{background:#f1f5f9;color:#0f172a;font-family:-apple-system,BlinkMacSyste
 .v2 .stories-controls button:hover{background:#e2e8f0}
 @media (max-width:600px){.v2 .story-summary{padding:14px 16px}.v2 .story-body{padding:4px 16px 16px}}
 @media print{.v2 .story-toggle,.v2 .stories-hint{display:none}.v2 details.story .story-body{display:block}}
+
+/* AI Scams section (odd issues only) */
+.v2 .ai-scams-section{margin-top:28px}
+.v2 .ai-badge{background:#fef3c7;color:#b45309}
+.v2 .ai-spot{background:#fff7ed;border-left:4px solid #f59e0b;border-radius:6px;padding:10px 14px;margin:10px 0;color:#7c2d12;font-size:15px;line-height:1.5}
+@media (max-width:600px){.v2 .ai-spot{font-size:14px}}
